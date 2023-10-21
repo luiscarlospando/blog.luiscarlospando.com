@@ -233,10 +233,6 @@
 <?php endif; ?>
 
     <!-- Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
     <script async defer src="https://scripts.withcabin.com/hello.js"></script>
 </body>
 </html>
