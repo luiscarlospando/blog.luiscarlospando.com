@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js" <?php language_attributes(); ?>>
+<?php if (is_single()): ?>
+<head profile="http://gmpg.org/xfn/11" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<?php elseif(is_home() || is_page() || is_category() || is_archive() || is_tag()): ?>
+<head profile="http://gmpg.org/xfn/11" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<?php endif; ?>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title><?php if (is_home()): ?><?php bloginfo('name'); ?><?php else: ?><?php wp_title( '' ); ?><?php if ( wp_title( '', false ) ) { echo ' - '; } ?><?php bloginfo( 'name' ); ?><?php endif; ?></title>
+
+    <!--
+    ================================================================================
+    === <?php bloginfo('name'); ?> v<?php include('includes/site-version.php'); ?> =================================================
+    ================================================================================
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+++++*++++++;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;++*??%%SSSSSSSSS%%?*++;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;+*?%%%%%%S#S%%%%SSSSS%SS%?*+;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;+?%SSSS%S%S#S%%%S#S%%%%%%SSS#S?+;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;*S########SS##SSS#SSSSSS#########?+;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;+####@@@@@@@@@@@#@####@@@@#########S+;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;%###@#S?*****************??%S@@#####S+;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;%@###%;:::,,,,,,,,,,,,,,,,,,::+%#####@S+;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;*####*;::::,,,,,,,,,,,,,,,,,:::::*######?;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;+####?;;:::;++;,,,,,,,,,;;::,,:::::?#####S+;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;*@###+;;+?%%SS*::,,,,,,:%SS%?*;::;;+S####@?;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;+#@@%;+??+;:;;:::::,,:::;;;;+*??*;;;%#####S;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;+#@@?;;;:,,,:::;:::,::::::,,,,,:+;;;*####@S;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;+#@@?;;;+*???+;;;:,,,:::;;+**+;:::;;+S@##@S;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;S@S*;+*;S?@@S;;;:,,,:;;:?*#@#?+;:;++%@@@@%;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;S%+*;;::%#@#?::;:,,,:;:,%@@@S+,;:;++%?+S@?;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;%?**;;:,,,::,:::::::::,,:++;:,,::;+*#*;?@+;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;?S*?;;:::,,,,::;:,::;:,,,,,,,,::;;+%@+:SS+;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;*#%S+;;:::,,,:;;:::;+:,,,,,:::::;+?@S;*@%;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;*#@@%+;:::;++***????+++++;:::::;*%#@S%S#*;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;?##@@#%?*%%%SSSSSSSSSSSS%%%*+*?S###@@@##+;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;*##@@#####*,:;;++++++;;:,;S#######@@@##S+;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;+S##@######?;::+???*:,::*S########@@@##%;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;+S#@########SS##SS#S%%S#########@@@@@#*;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;+*%##############S################S#?;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;+S@####SSSSSSSSSSSSS#####@S*+++;+;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;+%###########SSSS######S?+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;+?%S#############SS?*+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;++**???????**++;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ================================================================================
+    =================================================== © <?php echo date("Y") ?> Luis Carlos Pando ===
+    ================================================================================
+	-->
+
+	<!-- Meta Tags -->
+    <meta name="robots" content="index, follow" />
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <meta name="description" content="<?php the_excerpt_rss(); ?>" />
+<?php endwhile; endif; elseif(is_home() || is_category() || is_archive() || is_tag()) : ?>
+    <meta name="description" content="<?php bloginfo('description'); ?>" />
+<?php endif; ?>
+    <meta name="author" content="Luis Carlos Pando" />
+    <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
+    <meta name="email" content="hey@luiscarlospando.com" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="es-MX" />
+    <meta name="ICBM" content="28.6189208162, -106.101984179" />
+    <meta name="DC.title" content="<?php bloginfo('name'); ?>" />
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-TileColor" content="#0e0f34">
+    <meta name="theme-color" content="#0e0f34">
+
+    <meta property="og:title" content="<?php if (is_home()): ?><?php bloginfo('name'); ?><?php else: ?><?php wp_title( '' ); ?><?php if ( wp_title( '', false ) ) { echo ' - '; } ?><?php bloginfo( 'name' ); ?><?php endif; ?>" />
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <meta property="description" content="<?php the_excerpt_rss(); ?>" />
+    <meta property="og:description" content="<?php the_excerpt_rss(); ?>" />
+<?php endwhile; endif; elseif(is_home() || is_category() || is_archive() || is_tag()) : ?>
+    <meta property="description" content="<?php bloginfo('description'); ?>" />
+    <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+<?php endif; ?>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<?php the_permalink(); ?>" />
+    <meta property="og:image" content="<?php
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
+        echo $thumb_url[0];
+    ?>">
+
+    <link rel="author" href="https://<?php include('includes/site-domain.php'); ?>/humans.txt" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include('includes/site-domain.php'); ?>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://<?php include('includes/site-domain.php'); ?>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://<?php include('includes/site-domain.php'); ?>/favicon-16x16.png">
+    <link rel="manifest" href="https://<?php include('includes/site-domain.php'); ?>/site.webmanifest">
+    <link rel="mask-icon" href="https://<?php include('includes/site-domain.php'); ?>/safari-pinned-tab.svg" color="#0e0f34">
+    <link rel="canonical" href="<?php the_permalink(); ?>">
+    <link rel="me" href="https://social.lol/@mijo" />
+    <link rel="me" href="https://mastodon.online/@mijo" />
+    <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
+    <link rel="me" href="https://github.com/luiscarlospando" />
+    <link rel="me" href="https://proven.lol/75353b">
+
+    <!-- Webmentions -->
+    <link rel="webmention" href="https://webmention.io/luiscarlospando.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/luiscarlospando.com/xmlrpc" />
+    
+	<!-- X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@<?php include('includes/twitter-account.php'); ?>">
+    <meta name="twitter:creator" content="@<?php include('includes/twitter-account.php'); ?>">
+    <meta name="twitter:domain" content="<?php include('includes/site-domain.php'); ?>">
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <meta name="twitter:url" content="<?php the_permalink(); ?>">
+    <meta name="twitter:image" content="<?php
+    $thumb_id = get_post_thumbnail_id();
+    $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true);
+    echo $thumb_url[0];
+    ?>">
+<?php endwhile; endif; elseif(is_home()) : ?>
+    <meta name="twitter:url" content="https://<?php include('includes/site-domain.php'); ?>/">
+    <meta name="twitter:image" content="https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png">
+<?php endif; ?>
+    <meta name="twitter:title" content="<?php if (is_home()): ?><?php bloginfo('name'); ?><?php else: ?><?php wp_title( '' ); ?><?php if ( wp_title( '', false ) ) { echo ' - '; } ?><?php bloginfo( 'name' ); ?><?php endif; ?>">
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <meta name="twitter:description" content="<?php the_excerpt_rss(); ?>">
+<?php endwhile; endif; elseif(is_home() || is_category() || is_archive() || is_tag()) : ?>
+    <meta name="twitter:description" content="<?php bloginfo('description'); ?>">
+<?php endif; ?>
+    <meta name="twitter:widgets:theme" content="dark">
+    <meta name="twitter:widgets:link-color" content="#ff4081">
+    <meta name="twitter:widgets:border-color" content="#ff4081">
+
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class('gesture'); ?>>
+    <progress id="progress-bar" value="0" max="100"></progress>
+
+	<!-- Wrapper for mmenu -->
+	<div>
+        <a id="btn-skip-nav" class="btn btn-primary btn-sm" href="#main-content">
+            <i class="fa-solid fa-forward"></i> Saltar navegación
+        </a>
+
+        <a id="btn-burger" href="#navigation">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+
+		<div class="nav-container">
+            <?php if (is_single() ): ?>
+                <p class="d-none d-lg-block">
+                    💬 Estás en:
+                    <em>
+                        <?php the_title(); ?>
+                    </em>
+                </p>
+            <?php endif; ?>
+        </div>
+        
+		<nav id="navigation"></nav>
+
+        <header class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center mb-3 mb-md-0">
+                            <div class="mt-3 mb-1" id="logo">
+                                <a href="https://<?php include('includes/site-domain.php'); ?>/" data-toggle="tooltip" data-placement="right" title="" data-original-title="Sígueme en Mastodon: <?php include('includes/mastodon-account.php'); ?>">
+                                    <span>Logo</span>
+                                </a>
+                            </div>
+                            <div id="logo-blur"></div>
+                        </div>
+                        <div class="col-12 col-md-9 col-lg-10 d-flex align-items-center flex-wrap">
+                            <div id="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="m7gp-livestream-alert" class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <div class="card last-updated text-center mt-3">
+                        <div class="card-body rounded">
+                            <p>
+                                <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
+                                ¡El <a href="https://<?php include('includes/site-domain.php'); ?>/nintendo/mario-kart/">Mode 7 Grand Prix</a> está en vivo!
+                                <a href="https://<?php include('includes/site-domain.php'); ?>/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
+                                    <img style="vertical-align: text-top;" alt="Twitch Status" src="https://img.shields.io/twitch/status/mexicanskynet?logo=twitch&logoColor=white&color=6441a5">
+                                </a>
+                            </p>
+                            <p>
+                                Código del torneo: <code>0746-6549-8155</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
