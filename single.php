@@ -73,7 +73,7 @@
 					<!-- toot this post -->
 					<div class="share-post card text-center mb-4">
 						<div class="card-body">
-							Si te gustó este post, por favor considera seguir <a class="btn btn-primary btn-sm" href="https://hachyderm.io/@luiscarlospando" target="_blank"><i class="fa-brands fa-mastodon"></i> @luiscarlospando</a> en Mastodon para recibir notificaciones.
+							Si te gustó este post, por favor considera seguir <a class="btn btn-primary btn-sm" href="https://hachyderm.io/@luiscarlospando" target="_blank"><i class="fa-brands fa-mastodon"></i> @luiscarlospando</a> en Mastodon para recibir notificaciones o si prefieres, suscribirte por <a href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a>.
 						</div>
 					</div>
 					<!-- /toot this post -->
