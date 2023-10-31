@@ -56,7 +56,7 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php if( is_single() ): ?><?php the_title(); ?><?php echo ' - '; ?><?php endif; ?><?php bloginfo( 'name' ); ?>" />
-    <meta name="description" content="<?php if( is_single() ): ?><?php html5wp_excerpt('html5wp_index') ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta name="description" content="<?php the_excerpt_rss(); ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
