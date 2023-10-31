@@ -112,6 +112,13 @@
     <meta name="msapplication-TileColor" content="#0e0f34">
     <meta name="theme-color" content="#0e0f34">
 
+
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <meta name="description" content="<?php the_excerpt_rss(); ?>" />
+<?php endwhile; endif; elseif(is_home() || is_category() || is_archive() || is_tag()) : ?>
+    <meta name="description" content="<?php bloginfo('description'); ?>" />
+<?php endif; ?>
+
     <!-- Open Graph / Facebook -->
 <?php 
     if( is_category() ):
