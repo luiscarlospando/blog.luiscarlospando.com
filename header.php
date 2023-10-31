@@ -58,13 +58,67 @@
     ================================================================================
 	-->
 
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{% if page.url == '/' %}{% else %}{{ page.title }} - {% endif %}{{ site.title }}" />
+    <meta name="description" content="<?php if (is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Luis Carlos Pando" />
+    <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
+    <meta name="email" content="hey@luiscarlospando.com" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="es-MX" />
+    <meta name="ICBM" content="28.6189208162, -106.101984179" />
+    <meta name="DC.title" content="<?php bloginfo('name'); ?>" />
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-TileColor" content="#0e0f34">
+    <meta name="theme-color" content="#0e0f34">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{% if page.url == '/' %}{{ site.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
+    <meta property="og:title" content="{% if page.url == '/' %}{% else %}{{ page.title }} - {% endif %}{{ site.title }}" />
+    <meta property="og:description" content="<?php if (is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}" />
+
+    <!-- X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{% if page.url == '/' %}{{ site.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
+    <meta property="twitter:title" content="{% if page.url == '/' %}{% else %}{{ page.title }} - {% endif %}{{ site.title }}" />
+    <meta property="twitter:description" content="<?php if (is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta property="twitter:image" content="{{ site.url }}{{ page.image }}" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+
+    <link rel="author" href="https://<?php include('includes/site-domain.php'); ?>/humans.txt" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include('includes/site-domain.php'); ?>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://<?php include('includes/site-domain.php'); ?>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://<?php include('includes/site-domain.php'); ?>/favicon-16x16.png">
+    <link rel="manifest" href="https://<?php include('includes/site-domain.php'); ?>/site.webmanifest">
+    <link rel="mask-icon" href="https://<?php include('includes/site-domain.php'); ?>/safari-pinned-tab.svg" color="#0e0f34">
+    <link rel="canonical" href="<?php the_permalink(); ?>">
+    <link rel="me" href="https://social.lol/@mijo" />
+    <link rel="me" href="https://mastodon.online/@mijo" />
+    <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
+    <link rel="me" href="https://github.com/luiscarlospando" />
+    <link rel="me" href="https://proven.lol/75353b">
+
+    <!-- Webmentions -->
+    <link rel="webmention" href="https://webmention.io/luiscarlospando.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/luiscarlospando.com/xmlrpc" />
+
+
+
+
+
+
+
 	<!-- Meta Tags -->
     <meta name="robots" content="index, follow" />
-<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <meta name="description" content="<?php the_excerpt_rss(); ?>" />
-<?php endwhile; endif; elseif(is_home() || is_category() || is_archive() || is_tag()) : ?>
-    <meta name="description" content="<?php bloginfo('description'); ?>" />
-<?php endif; ?>
+    <meta name="description" content="<?php if (is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
     <meta name="email" content="hey@luiscarlospando.com" />
