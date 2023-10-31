@@ -96,7 +96,7 @@
 <?php else: ?>
     <meta name="title" content="<?php bloginfo( 'name' ); ?>" />
 <?php endif; ?>
-    <meta name="description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
+    <meta name="description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_content(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
