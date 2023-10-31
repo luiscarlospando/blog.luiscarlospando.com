@@ -96,7 +96,7 @@
 <?php else: ?>
     <meta name="title" content="<?php bloginfo( 'name' ); ?>" />
 <?php endif; ?>
-    <meta name="description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
+    <meta name="description" content="<?php if( is_single() || is_page() ): ?><?php if( have_posts()): while (have_posts() ): the_post(); ?><?php the_excerpt_rss(); ?><?php endwhile; endif; ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
@@ -136,7 +136,7 @@
 <?php endif; ?>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php the_permalink(); ?>" />
-    <meta property="og:description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
+    <meta property="og:description" content="<?php if( is_single() || is_page() ): ?><?php if( have_posts()): while (have_posts() ): the_post(); ?><?php the_excerpt_rss(); ?><?php endwhile; endif; ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta property="og:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
     <!-- X -->
@@ -163,7 +163,7 @@
 <?php endif; ?>
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="<?php the_permalink(); ?>" />
-    <meta property="twitter:description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
+    <meta property="twitter:description" content="<?php if( is_single() || is_page() ): ?><?php if( have_posts()): while (have_posts() ): the_post(); ?><?php the_excerpt_rss(); ?><?php endwhile; endif; ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta property="twitter:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
