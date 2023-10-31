@@ -56,7 +56,7 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="{% if page.url == '/' %}{% else %}{{ page.title }} - {% endif %}{{ site.title }}" />
-    <meta name="description" content="<?php if(is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta name="description" content="<?php if(is_single() || is_page() ): ?><?php the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
