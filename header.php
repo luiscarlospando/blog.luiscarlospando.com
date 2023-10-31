@@ -56,7 +56,7 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php if( is_home() ): ?><?php bloginfo('name'); ?><?php else: ?><?php the_title(); ?><?php echo ' - '; ?><?php bloginfo( 'name' ); ?><?php endif; ?>" />
-    <meta name="description" content="<?php if( is_single() ): ?><?php the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta name="description" content="<?php if( is_single() ): ?><?php echo get_the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="copyright" content="© <?php echo date("Y") ?> Luis Carlos Pando" />
@@ -76,14 +76,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php the_permalink(); ?>" />
     <meta property="og:title" content="<?php if( is_home() ): ?><?php bloginfo('name'); ?><?php else: ?><?php the_title(); ?><?php echo ' - '; ?><?php bloginfo( 'name' ); ?><?php endif; ?>" />
-    <meta property="og:description" content="<?php if( is_single() ): ?><?php the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta property="og:description" content="<?php if( is_single() ): ?><?php echo get_the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta property="og:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
     <!-- X -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="<?php the_permalink(); ?>" />
     <meta property="twitter:title" content="<?php if( is_home() ): ?><?php bloginfo('name'); ?><?php else: ?><?php the_title(); ?><?php echo ' - '; ?><?php bloginfo( 'name' ); ?><?php endif; ?>" />
-    <meta property="twitter:description" content="<?php if( is_single() ): ?><?php the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
+    <meta property="twitter:description" content="<?php if( is_single() ): ?><?php echo get_the_excerpt(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?>" />
     <meta property="twitter:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
