@@ -15,9 +15,8 @@
     <title><?php single_tag_title('', true); ?> - <?php bloginfo('name'); ?></title>
 <?php
     elseif( is_author() ):
-        $author = get_queried_object();
 ?>
-    <title><?php echo $author->display_name; ?> - <?php bloginfo('name'); ?></title>
+    <title>Archivos del blog - <?php bloginfo('name'); ?></title>
 <?php 
     elseif( is_single() || is_page() ):
 ?>
@@ -76,7 +75,27 @@
 	-->
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="<?php if( is_single() ): ?><?php the_title(); ?><?php echo ' - '; ?><?php endif; ?><?php bloginfo( 'name' ); ?>" />
+    <?php 
+        if( is_category() ):
+        $category = get_queried_object();
+    ?>
+    <meta name="title" content="<?php single_cat_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_tag() ):
+         $tag = get_queried_object();
+    ?>
+    <meta name="title" content="<?php single_tag_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_author() ):
+    ?>
+    <meta name="title" content="Archivos del blog - <?php bloginfo('name'); ?>" />
+    <?php 
+        elseif( is_single() || is_page() ):
+    ?>
+    <meta name="title" content="<?php the_title(); ?> - <?php bloginfo( 'name' ); ?>" />
+    <?php else: ?>
+    <meta name="title" content="<?php bloginfo( 'name' ); ?>" />
+    <?php endif; ?>
     <meta name="description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
@@ -94,16 +113,56 @@
     <meta name="theme-color" content="#0e0f34">
 
     <!-- Open Graph / Facebook -->
+    <?php 
+        if( is_category() ):
+        $category = get_queried_object();
+    ?>
+    <meta name="og:title" content="<?php single_cat_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_tag() ):
+        $tag = get_queried_object();
+    ?>
+    <meta name="og:title" content="<?php single_tag_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_author() ):
+    ?>
+    <meta name="og:title" content="Archivos del blog - <?php bloginfo('name'); ?>" />
+    <?php 
+        elseif( is_single() || is_page() ):
+    ?>
+    <meta name="og:title" content="<?php the_title(); ?> - <?php bloginfo( 'name' ); ?>" />
+    <?php else: ?>
+    <meta name="og:title" content="<?php bloginfo( 'name' ); ?>" />
+    <?php endif; ?>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php the_permalink(); ?>" />
-    <meta property="og:title" content="<?php if( is_single() || is_page() ): ?><?php the_title(); ?><?php echo ' - '; ?><?php endif; ?><?php bloginfo( 'name' ); ?>" />
     <meta property="og:description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
     <meta property="og:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
     <!-- X -->
+    <?php 
+        if( is_category() ):
+        $category = get_queried_object();
+    ?>
+        <meta name="twitter:title" content="<?php single_cat_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_tag() ):
+        $tag = get_queried_object();
+    ?>
+        <meta name="twitter:title content="<?php single_tag_title('', true); ?> - <?php bloginfo('name'); ?>" />
+    <?php
+        elseif( is_author() ):
+    ?>
+        <meta name="twitter:title" content="Archivos del blog - <?php bloginfo('name'); ?>" />
+    <?php 
+        elseif( is_single() || is_page() ):
+    ?>
+        <meta name="twitter:title" content="<?php the_title(); ?> - <?php bloginfo( 'name' ); ?>" />
+    <?php else: ?>
+        <meta name="twitter:title" content="<?php bloginfo( 'name' ); ?>" />
+    <?php endif; ?>
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="<?php the_permalink(); ?>" />
-    <meta property="twitter:title" content="<?php if( is_single() || is_page() ): ?><?php the_title(); ?><?php echo ' - '; ?><?php endif; ?><?php bloginfo( 'name' ); ?>" />
     <meta property="twitter:description" content="<?php if( have_posts()): while (have_posts() ): the_post(); ?><?php if( is_single() || is_page() ): ?><?php the_excerpt_rss(); ?><?php else: ?><?php bloginfo('description'); ?><?php endif; ?><?php endwhile; endif; ?>" />
     <meta property="twitter:image" content="<?php if( is_single() || is_page() ): ?><?php $thumb_id = get_post_thumbnail_id(); $thumb_url = wp_get_attachment_image_src($thumb_id, 'large', true); echo $thumb_url[0]; ?><?php else: ?>https://<?php include('includes/site-domain.php'); ?>/assets/images/logo.png<?php endif; ?>" />
 
