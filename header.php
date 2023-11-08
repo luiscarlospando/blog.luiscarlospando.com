@@ -168,6 +168,7 @@
 
     <!-- Meta Tags Generated with https://metatags.io -->
 
+    <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include('includes/site-domain.php'); ?>/rss/" />
     <link rel="author" href="https://<?php include('includes/site-domain.php'); ?>/humans.txt" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include('includes/site-domain.php'); ?>/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://<?php include('includes/site-domain.php'); ?>/favicon-32x32.png">
@@ -182,8 +183,8 @@
     <link rel="me" href="https://proven.lol/75353b">
 
     <!-- Webmentions -->
-    <link rel="webmention" href="https://webmention.io/luiscarlospando.com/webmention" />
-    <link rel="pingback" href="https://webmention.io/luiscarlospando.com/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/<?php include('includes/site-domain.php'); ?>/webmention" />
+    <link rel="pingback" href="https://webmention.io/<?php include('includes/site-domain.php'); ?>/xmlrpc" />
 
 	<?php wp_head(); ?>
 </head>
