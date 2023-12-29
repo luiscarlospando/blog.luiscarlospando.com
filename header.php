@@ -241,7 +241,7 @@
                         <div class="card-body rounded">
                             <p>
                                 <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
-                                ¡El <a href="https://<?php include('includes/site-domain.php'); ?>/nintendo/mario-kart/">Mode 7 Grand Prix</a> está en vivo!
+                                ¡El <a href="https://<?php include('includes/site-domain.php'); ?>/games/mario-kart/">Mode 7 Grand Prix</a> está en vivo!
                                 <a href="https://<?php include('includes/site-domain.php'); ?>/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
                                     <img style="vertical-align: text-top;" alt="Twitch Status" src="https://img.shields.io/twitch/status/mexicanskynet?logo=twitch&logoColor=white&color=6441a5">
                                 </a>
