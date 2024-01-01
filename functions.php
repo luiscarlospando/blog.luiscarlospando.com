@@ -92,7 +92,7 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.3.min.js', array(), null, true); // jQuery
+        wp_register_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), null, true); // jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
         wp_register_script('clipboardjs', 'https://luiscarlospando.com/assets/js/clipboard.min.js', array(), null, true); // clipboard.js
