@@ -43,25 +43,8 @@
 					</div>
 					<!-- /hashtags -->
 
-					<!-- tinylytics kudos -->
-					<ul class="list-inline" style="margin: 0 !important;">
-						<li class="list-inline-item">
-							<h2>Kudos</h2>
-						</li>
-						<li class="list-inline-item">
-							<span class="badge badge-success">¡Nuevo!</span>
-						</li>
-					</ul>
-
-					<button class="tinylytics_kudos"></button>
-					<!-- /tinylytics kudos -->
-
 					<!-- webmentions -->
-					<ul class="list-inline" style="margin: 0 !important;">
-						<li class="list-inline-item">
-							<h2>Comentarios</h2>
-						</li>
-					</ul>
+					<h2>Comentarios</h2>
 
 					<div class="comments-disclaimer mb-3">
 						Para comentar aquí basta con mandarme un <em>reply</em> o interactuar de alguna manera con el toot de este post (darle <em>like</em> o darle <em>boost</em>) vía <a href="<?php include('includes/mastodon-account.php'); ?>" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>). Si no tienes cuenta y aún así te gustaría decirme algo, entonces me puedes contactar en <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-envelope"></i> hey@luiscarlospando.com</a> o <a href="https://discordapp.com/users/86571896581132288/" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
