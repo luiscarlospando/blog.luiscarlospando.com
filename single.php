@@ -26,7 +26,7 @@
 					<!-- content -->
 					<?php the_content(); // Dynamic Content ?>
 
-					<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary'); ?>
+					<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary mb-3'); ?>
 					<!-- /content -->
 
 					<!-- hashtags -->
@@ -44,7 +44,7 @@
 					<!-- /hashtags -->
 
 					<h2>Kudos</h2>
-					
+
 					<button class="tinylytics_kudos"></button>
 
 					<!-- webmentions -->

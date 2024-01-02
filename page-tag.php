@@ -30,7 +30,7 @@ get_header(); ?>
 
 						<br class="clear">
 
-						<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary btn-sm'); ?>
+						<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary mb-3'); ?>
 						
 					</div>
 
