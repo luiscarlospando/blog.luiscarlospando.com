@@ -233,6 +233,6 @@
 <?php endif; ?>
 
     <!-- Analytics -->
-    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js"></script>
+    <script src="https://tinylytics.app/embed/Y-VX4JqovtEHczrk_wyH.js?kudos=✌️&webring&countries" defer></script>
 </body>
 </html>
