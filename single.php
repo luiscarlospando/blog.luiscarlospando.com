@@ -43,13 +43,23 @@
 					</div>
 					<!-- /hashtags -->
 
+					<ul class="list-inline" style="margin: 0 !important;">
+						<li class="list-inline-item">
+							<h2>Kudos</h2>
+						</li>
+						<li class="list-inline-item">
+							<span class="badge badge-success">¡Nuevo!</span>
+						</li>
+					</ul>
+
+					<!-- tinylytics kudos -->
+					<button class="tinylytics_kudos"></button>
+					<!-- /tinylytics kudos -->
+
 					<!-- webmentions -->
 					<ul class="list-inline" style="margin: 0 !important;">
 						<li class="list-inline-item">
 							<h2>Comentarios</h2>
-						</li>
-						<li class="list-inline-item">
-							<span class="badge badge-success">¡Nuevo!</span>
 						</li>
 					</ul>
 
