@@ -233,6 +233,6 @@
 <?php endif; ?>
 
     <!-- Analytics -->
-    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js" defer></script>
+    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js"></script>
 </body>
 </html>
