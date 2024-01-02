@@ -43,6 +43,7 @@
 					</div>
 					<!-- /hashtags -->
 
+					<!-- tinylytics kudos -->
 					<ul class="list-inline" style="margin: 0 !important;">
 						<li class="list-inline-item">
 							<h2>Kudos</h2>
@@ -52,8 +53,7 @@
 						</li>
 					</ul>
 
-					<!-- tinylytics kudos -->
-					<button class="tinylytics_kudos"></button>
+					<button class="tinylytics_kudos cursor-pointer disabled:font-bold" data-ignore="true">👋</button>
 					<!-- /tinylytics kudos -->
 
 					<!-- webmentions -->
