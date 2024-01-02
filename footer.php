@@ -233,6 +233,52 @@
 <?php endif; ?>
 
     <!-- Analytics -->
-    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=✌️" defer></script>
+    <script>
+        let path = window.location.pathname
+        let should_collect = localStorage.getItem("tinylytics_ignore") == null;
+        let current_url = encodeURIComponent(window.location.href)
+        let collect_url = "https://tinylytics.app/collector/r9xjks1Y65hJnkRx9b8S"
+        let set_ignore_param = new URLSearchParams(document.location.search)?.get("tiny_ignore") || new URLSearchParams(document.location.search)?.get("ti")
+        let referrer = document.referrer.indexOf(window.location.href) < 0 ? document.referrer : ""
+        if(set_ignore_param){
+        if(set_ignore_param === "true" && localStorage.getItem("tinylytics_ignore") == null){
+            localStorage.setItem("tinylytics_ignore", true)
+            should_collect = false
+            alert("tinylytics will no longer track your own hits in this browser.")
+        }
+        else if (set_ignore_param === "false" && localStorage.getItem("tinylytics_ignore") != null){
+            localStorage.removeItem("tinylytics_ignore")
+            should_collect = true
+            alert("tinylytics has been enabled for this website, for this browser.")
+        }
+        }
+        if(should_collect){
+        fetch(`${collect_url}?url=${current_url}&path=${path}&referrer=${referrer}`, {method: "post"})
+        }
+        let kudos_buttons = document.querySelectorAll(".tinylytics_kudos")
+        if(kudos_buttons){
+        let kudos_collect_url = "https://tinylytics.app/kudos/r9xjks1Y65hJnkRx9b8S"
+        kudos_buttons.forEach((kudos_button) => {
+            let kudos_path = kudos_button.getAttribute("data-path") ?? path
+            let kudos_count = 0
+            let private_kudos = kudos_button.getAttribute("data-private")
+            fetch(`${kudos_collect_url}.json?path=${kudos_path}`).then(response => response.json()).then((data) => {if(data.count != null){kudos_button.innerHTML=`✌️${private_kudos == null ? ` ${data.count}` : ""}`; if(private_kudos == null){kudos_button.setAttribute("data-count", data.count);kudos_count = data.count}}}) 
+            let existing_kudos = localStorage.getItem(`tiny_kudos_${kudos_path}`)
+            if(existing_kudos){
+            kudos_button.disabled = "disabled"
+            kudos_button.classList.add("did_select")
+            }
+            else{
+            kudos_button.addEventListener("click", () => {
+                let no_store = kudos_button.getAttribute("data-ignore")
+                kudos_button.disabled = "disabled"
+                fetch(`${kudos_collect_url}?path=${kudos_path}`, {method: "post"}).then(response => response.json()).then((data) => {if(data.id != null && !no_store){localStorage.setItem(`tiny_kudos_${kudos_path}`, data.id)}})
+                kudos_button.innerHTML = `✌️${private_kudos == null ? ` ${kudos_count + 1}` : ""}`
+                kudos_button.classList.add("did_select")
+            })
+            }
+        })
+        }
+    </script>
 </body>
 </html>
