@@ -53,7 +53,7 @@
 						</li>
 					</ul>
 
-					<button class="tinylytics_kudos cursor-pointer disabled:font-bold" data-ignore="true">👋</button>
+					<button class="tinylytics_kudos"></button>
 					<!-- /tinylytics kudos -->
 
 					<!-- webmentions -->
