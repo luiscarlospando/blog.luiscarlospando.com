@@ -44,7 +44,7 @@
 					<!-- /hashtags -->
 
 					<!-- kudos -->
-					<ul class="list-inline">
+					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
 							<h2>Kudos</h2>
 						</li>
