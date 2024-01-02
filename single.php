@@ -43,6 +43,10 @@
 					</div>
 					<!-- /hashtags -->
 
+					<h2>Kudos</h2>
+					
+					<button class="tinylytics_kudos"></button>
+
 					<!-- webmentions -->
 					<h2>Comentarios</h2>
 
