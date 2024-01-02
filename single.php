@@ -46,7 +46,7 @@
 					<!-- kudos -->
 					<h2>Kudos</h2>
 
-					<button class="tinylytics_kudos"></button>
+					<button class="btn btn-primary tinylytics_kudos"></button>
 					<!-- kudos -->
 
 					<!-- webmentions -->
