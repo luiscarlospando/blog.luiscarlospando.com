@@ -44,7 +44,14 @@
 					<!-- /hashtags -->
 
 					<!-- kudos -->
-					<h2>Kudos</h2>
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<h2>Kudos</h2>
+						</li>
+						<li class="list-inline-item">
+							<span class="badge badge-success">¡Nuevo!</span>
+						</li>
+					</ul>
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
 					<!-- kudos -->
