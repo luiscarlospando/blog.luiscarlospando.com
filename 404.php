@@ -7,7 +7,7 @@
 
 				<div class="alert alert-warning" role="alert">
 					<p><strong><?php _e( 'Error 404 - Página no encontrada 😵', 'html5blank' ); ?></strong></p>
-					<p>Hubo un error al intentar de mostrar la página que solicitaste. Puede que la página haya cambiado de ubicación, que ya no exista o de plano que nunca haya existido.</p>
+					<p>Hubo un error al intentar mostrar la página que solicitaste. Puede que la página haya cambiado de ubicación, que ya no exista o de plano que nunca haya existido.</p>
 				</div>
 
 				<hr>
