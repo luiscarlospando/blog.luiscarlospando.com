@@ -241,8 +241,8 @@
                         <div class="card-body rounded">
                             <p>
                                 <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
-                                ¡Estoy <a href="/live/">en vivo</a>!
-                                <a href="/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
+                                ¡Estoy <a href="https://<?php include('includes/site-domain.php'); ?>/live/">en vivo</a>!
+                                <a href="https://<?php include('includes/site-domain.php'); ?>/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
                                     <img style="vertical-align: text-top;" alt="Twitch Status" src="https://img.shields.io/twitch/status/mijodido?style=flat&logo=twitch&logoColor=%23A172F7&link=https%3A%2F%2Fluiscarlospando.com%2Flive">
                                 </a>
                             </p>
