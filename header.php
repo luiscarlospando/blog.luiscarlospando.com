@@ -242,9 +242,6 @@
                             <p>
                                 <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
                                 ¡Estoy <a href="https://<?php include('includes/site-domain.php'); ?>/live/">en vivo</a>!
-                                <a href="https://<?php include('includes/site-domain.php'); ?>/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
-                                    <img style="vertical-align: text-top;" alt="Twitch Status" src="https://img.shields.io/twitch/status/mijostreams?style=flat&logo=twitch&logoColor=%23A172F7&link=https%3A%2F%2Fluiscarlospando.com%2Flive">
-                                </a>
                             </p>
                         </div>
                     </div>
@@ -260,9 +257,6 @@
                             <p>
                                 <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
                                 ¡El <a href="https://<?php include('includes/site-domain.php'); ?>/games/mario-kart/">Mode 7 Grand Prix</a> está en vivo!
-                                <a href="https://<?php include('includes/site-domain.php'); ?>/live/" data-toggle="tooltip" data-placement="top" title="Ver stream en vivo">
-                                    <img style="vertical-align: text-top;" alt="Twitch Status" src="https://img.shields.io/twitch/status/mexicanskynet?logo=twitch&logoColor=white&color=6441a5">
-                                </a>
                             </p>
                             <p>
                                 Código del torneo: <code>0746-6549-8155</code>
