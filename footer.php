@@ -37,7 +37,7 @@
                                 &copy; <?php echo date("Y") ?> Luis Carlos Pando
                             </p>
                             <a href="https://notbyai.fyi" target="_blank">
-                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include('includes/site-domain.php'); ?>/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
+                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include('includes/site-domain.php'); ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
                             </a>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
