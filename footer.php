@@ -33,58 +33,69 @@
                     <hr>
                     <div class="row">
                         <div class="col-12 col-lg-3 copyright my-auto">
-							&copy; <?php echo date("Y") ?> Luis Carlos Pando
+                            <p class="d-inline-block d-lg-block mb-2">
+                                &copy; <?php echo date("Y") ?> Luis Carlos Pando
+                            </p>
+                            <a href="https://notbyai.fyi" target="_blank">
+                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include('includes/site-domain.php'); ?>/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
+                            </a>
                         </div>
-                        <div class="col-12 col-lg-9 version text-md-right my-auto">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
-                                        Deployed on <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include('includes/site-domain.php'); ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
-                                    Privacidad
-                                </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus">
-                                        <span id="system-status"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
-                                        <i class="fa-solid fa-rss"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a rel="me" href="<?php include('includes/mastodon-account.php'); ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
-                                        <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 version text-lg-right my-auto">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Verificado" target="_blank">
-                                        <span class="fa-stack small">
-                                            <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
-                                            <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Ver código fuente" target="_blank">
-                                        <code>Ver código fuente</code>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include('includes/site-domain.php'); ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="<?php bloginfo('name'); ?> v<?php include('includes/site-version.php'); ?>">
-                                        <code>v<?php include('includes/site-version.php'); ?></code>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="col-12 col-lg-9 my-auto">
+                            <div class="row">
+                                <div class="col-12 text-lg-right my-auto">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
+                                                Deployed on <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://<?php include('includes/site-domain.php'); ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
+                                            Privacidad
+                                        </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus">
+                                                <span id="system-status"></span>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
+                                                <i class="fa-solid fa-rss"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include('includes/mastodon-account.php'); ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
+                                                <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 version text-lg-right my-auto">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Verificado" target="_blank">
+                                                <span class="fa-stack small">
+                                                    <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
+                                                    <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Ver código fuente" target="_blank">
+                                                <code>Ver código fuente</code>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://<?php include('includes/site-domain.php'); ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="<?php bloginfo('name'); ?> v<?php include('includes/site-version.php'); ?>">
+                                                <code>v<?php include('includes/site-version.php'); ?></code>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
