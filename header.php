@@ -204,7 +204,6 @@
 		<div class="nav-container">
             <?php if (is_single() ): ?>
                 <p class="d-none d-lg-block">
-                    💬 Estás en:
                     <em>
                         <?php the_title(); ?>
                     </em>
