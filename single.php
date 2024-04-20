@@ -36,7 +36,7 @@
 								echo '<em><span class="meta-sep"></span></em>';
 								foreach( $tags as $tag ) {
 									$sep = ( $tag === end( $tags ) ) ? '' : ' ';
-									echo '<a class="badge badge-primary" href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+									echo '<a class="badge badge-secondary" href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
 								}
 							}
 						?>
