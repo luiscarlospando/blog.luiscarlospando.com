@@ -8,36 +8,46 @@
                     </div>
                     <div class="row">
                     <?php
-                        // DLOCC If URL is Homepage then do this…
-                        $homepage = "/";
-                        $currentpage = $_SERVER['REQUEST_URI'];
-                        $nextpost = get_adjacent_post(false, '', false);
-                        if ( $homepage == $currentpage || $nextpost == "" ) :
-                    ?>
+                    // DLOCC If URL is Homepage then do this…
+                    $homepage = "/";
+                    $currentpage = $_SERVER["REQUEST_URI"];
+                    $nextpost = get_adjacent_post(false, "", false);
+                    if ($homepage == $currentpage || $nextpost == ""): ?>
                         <div class="col-12 col-md-6 offset-md-6 d-flex align-items-center justify-content-md-end">
                             Hola desde Chihuahua, México 👋
                         </div>
                     <?php else: ?>
-                    <?php query_posts('showposts=1'); ?>
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php query_posts("showposts=1"); ?>
+                    <?php while (have_posts()):
+                        the_post(); ?>
                         <div class="col-12 col-md-6">
-							Lo último: <a href="<?php the_permalink() ?>" data-toggle="tooltip" data-placement="top" title="<?php the_title(); ?>"><?php if (strlen($post->post_title) > 30) { echo substr(get_the_title(), 0, 27) . '...'; } else { the_title(); } ?></a>
+							Lo último: <a href="<?php the_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php the_title(); ?>"><?php if (
+    strlen($post->post_title) > 30
+) {
+    echo substr(get_the_title(), 0, 27) . "...";
+} else {
+    the_title();
+} ?></a>
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end">
                             Hola desde Chihuahua, México 👋
                         </div>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
+                    <?php
+                    endwhile; ?>
+                    <?php endif;
+                    ?>
                     <?php wp_reset_query(); ?>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-12 col-lg-3 copyright my-auto">
                             <p class="d-inline-block d-lg-block mb-2">
-                                &copy; <?php echo date("Y") ?> Luis Carlos Pando
+                                &copy; <?php echo date(
+                                    "Y"
+                                ); ?> Luis Carlos Pando
                             </p>
                             <a href="https://notbyai.fyi" target="_blank">
-                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include('includes/site-domain.php'); ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
+                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
                             </a>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
@@ -50,7 +60,7 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://<?php include('includes/site-domain.php'); ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
+                                            <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                             Privacidad
                                         </a>
                                         </li>
@@ -65,7 +75,7 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="me" href="<?php include('includes/mastodon-account.php'); ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
+                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
                                                 <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
                                             </a>
                                         </li>
@@ -75,6 +85,11 @@
                             <div class="row">
                                 <div class="col-12 version text-lg-right my-auto">
                                     <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://discordapp.com/users/86571896581132288/" target="_blank">
+                                                <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
+                                            </a>
+                                        </li>
                                         <li class="list-inline-item">
                                             <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Verificado" target="_blank">
                                                 <span class="fa-stack small">
@@ -89,8 +104,10 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://<?php include('includes/site-domain.php'); ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="<?php bloginfo('name'); ?> v<?php include('includes/site-version.php'); ?>">
-                                                <code>v<?php include('includes/site-version.php'); ?></code>
+                                            <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="<?php bloginfo(
+    "name"
+); ?> v<?php include "includes/site-version.php"; ?>">
+                                                <code>v<?php include "includes/site-version.php"; ?></code>
                                             </a>
                                         </li>
                                     </ul>
@@ -105,7 +122,7 @@
     <!-- /Wrapper for mmenu -->
 
     <div id="back-to-top"></div>
-    
+
     <!-- App -->
     <?php wp_footer(); ?>
 
@@ -115,7 +132,7 @@
     <!-- Instatus -->
     <script src="https://luiscarlospando.instatus.com/widget/script.js"></script>
 
-<?php if ( is_single() ): ?>
+<?php if (is_single()): ?>
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
@@ -273,7 +290,7 @@
                 let kudos_path = kudos_button.getAttribute("data-path") ?? path
                 let kudos_count = 0
                 let private_kudos = kudos_button.getAttribute("data-private")
-                fetch(`${kudos_collect_url}.json?path=${kudos_path}`).then(response => response.json()).then((data) => {if(data.count != null){kudos_button.innerHTML=`✌️${private_kudos == null ? ` ${data.count}` : ""}`; if(private_kudos == null){kudos_button.setAttribute("data-count", data.count);kudos_count = data.count}}}) 
+                fetch(`${kudos_collect_url}.json?path=${kudos_path}`).then(response => response.json()).then((data) => {if(data.count != null){kudos_button.innerHTML=`✌️${private_kudos == null ? ` ${data.count}` : ""}`; if(private_kudos == null){kudos_button.setAttribute("data-count", data.count);kudos_count = data.count}}})
                 let existing_kudos = localStorage.getItem(`tiny_kudos_${kudos_path}`)
                 if(existing_kudos){
                 kudos_button.disabled = "disabled"
