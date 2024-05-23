@@ -4,14 +4,17 @@
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
 				<h1 class="text-center">
-                    <span class="badge badge-secondary">
-                        <?php _e( '', 'html5blank' ); echo single_tag_title('#', false); ?>
+                    <span class="badge badge-dark">
+                        <?php
+                        _e("", "html5blank");
+                        echo single_tag_title("#", false);
+                        ?>
                     </span>
                 </h1>
 
-				<?php get_template_part('loop'); ?>
+				<?php get_template_part("loop"); ?>
 
-				<span class="text-center"><?php get_template_part('pagination'); ?></span>
+				<span class="text-center"><?php get_template_part("pagination"); ?></span>
             </div>
         </div>
     </section>
