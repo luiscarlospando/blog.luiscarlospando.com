@@ -80,6 +80,9 @@
                                 <div class="col-12 version text-lg-right my-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
+                                            <a href="" class="tinylytics_webring">🕸️💍 Webring</a>
+                                        </li>
+                                        <li class="list-inline-item">
                                             <a href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
                                             </a>
@@ -300,6 +303,27 @@
                 })
                 }
             })
+        }
+        let webring_buttons = document.querySelectorAll(".tinylytics_webring")
+        if(webring_buttons){
+          let webring_avatars = false
+          let webring_url = "https://tinylytics.app/webring/random/r9xjks1Y65hJnkRx9b8S"
+          webring_buttons.forEach((webring_button) => {
+            fetch(`${webring_url}`).then(response => response.json()).then((data) =>
+            {if(data.url != null){
+              webring_button.href=`${data.url}`;
+              if(data.avatar != null){
+                const webring_avatar_tag = webring_button.querySelector(".tinylytics_webring_avatar")
+                if(webring_avatar_tag){
+                  webring_avatar_tag.src = data.avatar
+                  webring_avatar_tag.style.display = "inline"
+                  if(data.avatar_2x != null){
+                    webring_avatar_tag.srcset = `${data.avatar_2x} 2x`
+                  }
+                }
+              }
+            }})
+          })
         }
     </script>
 </body>
