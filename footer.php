@@ -21,13 +21,13 @@
                     <?php while (have_posts()):
                         the_post(); ?>
                         <div class="col-12 col-md-6">
-							Lo último: <a href="<?php the_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php the_title(); ?>"><?php if (
+							Lo último: <span id="blog"><a href="<?php the_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php the_title(); ?>"><?php if (
     strlen($post->post_title) > 30
 ) {
     echo substr(get_the_title(), 0, 27) . "...";
 } else {
     the_title();
-} ?></a>
+} ?></a></span>
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end">
                             Hola desde Chihuahua, México 👋
