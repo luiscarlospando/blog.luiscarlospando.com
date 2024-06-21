@@ -80,7 +80,9 @@
                                 <div class="col-12 version text-lg-right my-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <a href="" class="tinylytics_webring">🕸️💍 Webring</a>
+                                            <a href="" class="tinylytics_webring">
+                                                🕸️💍 Webring <img class="tinylytics_webring_avatar" src="" style="display: none"/>
+                                            </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="https://discordapp.com/users/86571896581132288/" target="_blank">
