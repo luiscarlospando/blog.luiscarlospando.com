@@ -308,7 +308,7 @@
         }
         let webring_buttons = document.querySelectorAll(".tinylytics_webring")
         if(webring_buttons){
-          let webring_avatars = false
+          let webring_avatars = true
           let webring_url = "https://tinylytics.app/webring/random/r9xjks1Y65hJnkRx9b8S"
           webring_buttons.forEach((webring_button) => {
             fetch(`${webring_url}`).then(response => response.json()).then((data) =>
