@@ -103,10 +103,8 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="<?php bloginfo(
-    "name"
-); ?> v<?php include "includes/site-version.php"; ?>">
-                                                <code>v<?php include "includes/site-version.php"; ?></code>
+                                            <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="">
+                                                <code>v</code>
                                             </a>
                                         </li>
                                     </ul>
