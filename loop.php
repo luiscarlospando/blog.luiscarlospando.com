@@ -22,10 +22,6 @@
 		</h2>
 		<!-- /post title -->
 
-		<!-- post excerpt -->
-		<?php html5wp_excerpt("html5wp_index"); ?>
-		<!-- /post excerpt -->
-
 		<!-- post details -->
 		<?php include "includes/post-details.php"; ?>
 		<!-- /post details -->
