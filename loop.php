@@ -1,11 +1,18 @@
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
 
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<!-- the category -->
 		<p class="categories small">
-			<?php _e( '', 'html5blank' ); the_category(', '); // Separated by commas ?>
+			<?php
+   _e("", "html5blank");
+   the_category(", ");
+
+        // Separated by commas
+        ?>
 		</p>
 		<!-- /the category -->
 
@@ -15,29 +22,43 @@
 		</h2>
 		<!-- /post title -->
 
+		<!-- post excerpt -->
+		<?php html5wp_excerpt("html5wp_index"); ?>
+		<!-- /post excerpt -->
+
 		<!-- post details -->
-		<?php include 'includes/post-details.php'; ?>
+		<?php include "includes/post-details.php"; ?>
 		<!-- /post details -->
 
-		<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary'); ?>
+		<?php edit_post_link(
+      '<i class="fa-solid fa-pen-to-square"></i> Editar',
+      "",
+      "",
+      null,
+      "btn btn-primary"
+  ); ?>
 
 	</article>
 	<!-- /article -->
 
 	<hr>
 
-<?php endwhile; ?>
+<?php
+    endwhile; ?>
 
-<?php else: ?>
+<?php
+else:
+     ?>
 
 	<!-- article -->
 	<article>
 
 		<p class="title text-center">
-			<?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?> 😵
+			<?php _e("Sorry, nothing to display.", "html5blank"); ?> 😵
 		</p>
 
 	</article>
 	<!-- /article -->
 
-<?php endif; ?>
+<?php
+endif; ?>
