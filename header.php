@@ -116,6 +116,7 @@ elseif (is_author()): ?>
         );endif; ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
+    <meta name="fediverse:creator" content="@mijo@social.lol" />
     <meta name="copyright" content="© <?php echo date(
         "Y"
     ); ?> Luis Carlos Pando" />
