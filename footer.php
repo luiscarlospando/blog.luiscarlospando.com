@@ -257,6 +257,17 @@
     </script>
 <?php endif; ?>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body modal-body-jekyll">
+                    <img class="img-fluid rounded" src="" alt="" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Analytics -->
     <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=❤️&webring=avatars" defer></script>
 </body>
