@@ -66,9 +66,6 @@
 						<li class="list-inline-item">
 							<h2 class="mt-0">Kudos</h2>
 						</li>
-						<li class="list-inline-item">
-							<span class="badge badge-success">¡Nuevo!</span>
-						</li>
 					</ul>
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
