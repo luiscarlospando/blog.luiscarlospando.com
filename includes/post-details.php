@@ -26,7 +26,7 @@ if ($u_modified_time >= $u_time + 86400): ?>
       "",
       "",
       null,
-      "btn btn-primary btn-sm mb-3"
+      "btn btn-primary btn-sm ml-2"
   ); ?>
 	</div>
 <?php else: ?>
@@ -52,7 +52,7 @@ if ($u_modified_time >= $u_time + 86400): ?>
       "",
       "",
       null,
-      "btn btn-primary btn-sm mb-3"
+      "btn btn-primary btn-sm ml-2"
   ); ?>
 	</div>
 <?php endif;
