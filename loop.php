@@ -26,14 +26,6 @@
 		<?php include "includes/post-details.php"; ?>
 		<!-- /post details -->
 
-		<?php edit_post_link(
-      '<i class="fa-solid fa-pen-to-square"></i> Editar',
-      "",
-      "",
-      null,
-      "btn btn-primary"
-  ); ?>
-
 	</article>
 	<!-- /article -->
 
