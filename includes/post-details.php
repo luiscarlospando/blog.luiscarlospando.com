@@ -1,60 +1,105 @@
-<!-- post details -->
 <?php
-$u_time = get_the_time("U");
-$u_modified_time = get_the_modified_time("U");
+/**
+ * Template part for displaying post metadata
+ * Shows author, publication/update date, permalink and edit link
+ */
 
-if ($u_modified_time >= $u_time + 86400): ?>
-	<div class="post-details">
-		<span class="author">
-			<?php _e("Actualizado por", "html5blank"); ?> <?php the_author_posts_link(); ?>
-		</span>
-		<span class="mastodon">(<a href="<?php include "mastodon-account.php"; ?>" data-toggle="tooltip" data-placement="bottom" title="Sígueme en Mastodon" target="_blank">
-			<i class="fa-brands fa-mastodon"></i> @mijo</a>)
-		</span>
-		<time class="date" data-toggle="tooltip" data-placement="bottom" title="<?php the_modified_time(
-      'l, j \d\e F \d\e Y'
-  ); ?> a la(s) <?php the_modified_time("g:i a"); ?>"><?php echo "hace " .
-    human_time_diff(get_the_modified_time("U"), current_time("U")); ?></time>
-		&middot;
-		<span class="permalink">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-				<i class="fa-solid fa-link"></i> Permalink
-			</a>
-		</span>
-		<?php edit_post_link(
-      '<i class="fa-solid fa-pen-to-square"></i> Editar',
-      "",
-      "",
-      null,
-      "btn btn-primary btn-sm ml-2"
-  ); ?>
-	</div>
-<?php else: ?>
-	<div class="post-details">
-		<span class="author">
-			<?php _e("Por", "html5blank"); ?> <?php the_author_posts_link(); ?>
-		</span>
-		<span class="mastodon">(<a href="<?php include "mastodon-account.php"; ?>" data-toggle="tooltip" data-placement="bottom" title="Sígueme en Mastodon" target="_blank">
-			<i class="fa-brands fa-mastodon"></i> @mijo</a>)
-		</span>
-		<time class="date" data-toggle="tooltip" data-placement="bottom" title="<?php the_time(
-      'l, j \d\e F \d\e Y'
-  ); ?> a la(s) <?php the_time("g:i a"); ?>"><?php echo "hace " .
-    human_time_diff(get_the_time("U"), current_time("U")); ?></time>
-		&middot;
-		<span class="permalink">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-				<i class="fa-solid fa-link"></i> Permalink
-			</a>
-		</span>
-		<?php edit_post_link(
-      '<i class="fa-solid fa-pen-to-square"></i> Editar',
-      "",
-      "",
-      null,
-      "btn btn-primary btn-sm ml-2"
-  ); ?>
-	</div>
-<?php endif;
+// Get post timestamps
+$published_timestamp = get_the_time("U");
+$modified_timestamp = get_the_modified_time("U");
+$ONE_DAY_IN_SECONDS = 86400;
+
+// Check if post was meaningfully modified (more than 24h after publication)
+$is_modified =
+    $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
+
+// Common data preparation
+$author_link = get_the_author_posts_link();
+$mastodon_link = include "mastodon-account.php";
+$permalink = get_the_permalink();
+
+// Prepare time-related data
+$current_time = current_time("U");
+$relative_time = human_time_diff(
+    $is_modified ? $modified_timestamp : $published_timestamp,
+    $current_time
+);
+
+// Prepare the full date format
+$date_format = 'l, j \d\e F \d\e Y';
+$time_format = "g:i a";
+$full_date = $is_modified
+    ? get_the_modified_time($date_format)
+    : get_the_time($date_format);
+$full_time = $is_modified
+    ? get_the_modified_time($time_format)
+    : get_the_time($time_format);
 ?>
-<!-- /post details -->
+
+<div class="post-details">
+    <!-- Author -->
+    <span class="author">
+        <?php echo esc_html_e(
+            $is_modified ? "Actualizado por" : "Por",
+            "html5blank"
+        ); ?>
+        <?php echo $author_link; ?>
+    </span>
+
+    <!-- Mastodon -->
+    <span class="mastodon">
+        (<a href="<?php echo esc_url($mastodon_link); ?>"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="<?php echo esc_attr__(
+                "Sígueme en Mastodon",
+                "html5blank"
+            ); ?>"
+            target="_blank"
+            rel="me noopener">
+            <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
+            <span class="screen-reader-text">Mastodon</span> @mijo
+        </a>)
+    </span>
+
+    <!-- Date/Time -->
+    <time class="date"
+          datetime="<?php echo esc_attr(
+              $is_modified ? $modified_timestamp : $published_timestamp
+          ); ?>"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="<?php echo esc_attr("$full_date a la(s) $full_time"); ?>">
+        <?php echo sprintf(
+            esc_html__("hace %s", "html5blank"),
+            $relative_time
+        ); ?>
+    </time>
+
+    <!-- Separator -->
+    <span class="separator" aria-hidden="true">&middot;</span>
+
+    <!-- Permalink -->
+    <span class="permalink">
+        <a href="<?php echo esc_url($permalink); ?>" rel="bookmark">
+            <i class="fa-solid fa-link" aria-hidden="true"></i>
+            <span class="screen-reader-text"><?php esc_html_e(
+                "Enlace permanente",
+                "html5blank"
+            ); ?></span>
+            Permalink
+        </a>
+    </span>
+
+    <!-- Edit Link -->
+    <?php edit_post_link(
+        sprintf(
+            '<i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> %s',
+            esc_html__("Editar", "html5blank")
+        ),
+        '<span class="edit-link">',
+        "</span>",
+        null,
+        "btn btn-primary btn-sm ml-2"
+    ); ?>
+</div>
