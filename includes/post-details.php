@@ -15,7 +15,7 @@ $is_modified =
 
 // Common data preparation
 $author_link = get_the_author_posts_link();
-$mastodon_link = include "mastodon-account.php";
+$mastodon_url = include "mastodon-account.php";
 $permalink = get_the_permalink();
 
 // Prepare time-related data
@@ -48,7 +48,7 @@ $full_time = $is_modified
 
     <!-- Mastodon -->
     <span class="mastodon">
-        (<a href="<?php echo esc_url($mastodon_link); ?>"
+        (<a href="<?php echo esc_url($mastodon_url); ?>"
             data-toggle="tooltip"
             data-placement="bottom"
             title="<?php echo esc_attr__(
