@@ -86,7 +86,7 @@
 					<!-- toot this post -->
 					<div class="share-post card text-center mb-4">
 						<div class="card-body">
-							Si te gustó este post, por favor considera seguir <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" target="_blank"><i class="fa-brands fa-mastodon"></i> @mijo@social.lol</a> en Mastodon para recibir notificaciones o si prefieres, también te puedes suscribir por <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a>.
+							Si te gustó este post <i class="fa-solid fa-heart"></i>, puedes <a class="btn btn-primary btn-sm" href="https://donate.stripe.com/6oEdThfw66PddDG144?locale=es-419" target="_blank"><i class="fa-solid fa-money-bill-wave"></i> Donar</a> lo que gustes. Otra forma de ayudarme es siguiéndome <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> para recibir notificaciones o suscribirte con <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a>.
 						</div>
 					</div>
 					<!-- /toot this post -->
