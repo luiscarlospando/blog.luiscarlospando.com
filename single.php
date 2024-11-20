@@ -83,13 +83,15 @@
 					<div id="webmentions-comments"></div>
 					<!-- /webmentions -->
 
-					<!-- toot this post -->
+					<!-- support me -->
+					<h2>¿Te <i class="fa-solid fa-heart"></i> gustó este post?</h2>
+
 					<div class="share-post card text-center mb-4">
 						<div class="card-body">
-							¿Te <i class="fa-solid fa-heart"></i> gustó este post? Puedes apoyarme al <a class="btn btn-primary btn-sm" href="https://donate.stripe.com/6oEdThfw66PddDG144?locale=es-419" target="_blank"><i class="fa-solid fa-circle-dollar-to-slot"></i> Donar</a> con lo que gustes. Otra forma de ayudarme es siguiéndome en <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> o suscribirte con <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a>.
+							Puedes apoyarme al <a class="btn btn-primary btn-sm" href="https://donate.stripe.com/6oEdThfw66PddDG144?locale=es-419" target="_blank"><i class="fa-solid fa-circle-dollar-to-slot"></i> Donar</a> con lo que gustes. Otra forma de ayudarme es siguiéndome en <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> o suscribirte con <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a>.
 						</div>
 					</div>
-					<!-- /toot this post -->
+					<!-- /suppor me -->
 
 					<!-- prev-next -->
 					<div class="primary_navigation">
