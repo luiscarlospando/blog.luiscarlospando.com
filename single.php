@@ -94,38 +94,7 @@
 					<!-- /suppor me -->
 
 					<!-- prev-next -->
-					<div class="primary_navigation">
-						<div class="row">
-							<div class="col-6 text-left">
-							<?php
-       $previous = get_previous_post();
-       if (strlen($previous->post_title) > 0) { ?>
-								<a href="<?php echo get_permalink(
-            $previous
-        ); ?>" data-toggle="tooltip" data-placement="top" title="<?php echo get_the_title(
-    $previous
-); ?>">
-									<h4><i class="fa-solid fa-arrow-left"></i> Anterior</h4>
-								</a>
-							<?php }
-       ?>
-							</div>
-							<div class="col-6 text-right">
-							<?php
-       $next = get_next_post();
-       if (strlen($next->post_title) > 0) { ?>
-								<a href="<?php echo get_permalink(
-            $next
-        ); ?>" data-toggle="tooltip" data-placement="top" title="<?php echo get_the_title(
-    $next
-); ?>">
-									<h4>Siguiente <i class="fa-solid fa-arrow-right"></i></h4>
-								</a>
-							<?php }
-       ?>
-							</div>
-						</div>
-					</div>
+					<?php include "includes/post-details.php"; ?>
 					<!-- /prev-next -->
 
 				</article>
