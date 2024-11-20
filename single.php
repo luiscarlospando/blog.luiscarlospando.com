@@ -94,7 +94,7 @@
 					<!-- /suppor me -->
 
 					<!-- prev-next -->
-					<?php include "includes/post-details.php"; ?>
+					<?php include "includes/post-navigation.php"; ?>
 					<!-- /prev-next -->
 
 				</article>
