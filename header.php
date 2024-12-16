@@ -3,25 +3,7 @@
 <head profile="http://gmpg.org/xfn/11" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 	<meta charset="<?php bloginfo("charset"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<?php if (is_category()):
-    $category = get_queried_object(); ?>
-    <title><?php single_cat_title("", true); ?> - <?php bloginfo(
-     "name"
- ); ?></title>
-<?php
-elseif (is_tag()):
-    $tag = get_queried_object(); ?>
-    <title><?php single_tag_title("", true); ?> - <?php bloginfo(
-     "name"
- ); ?></title>
-<?php
-elseif (is_author()): ?>
-    <title>Archivos del blog - <?php bloginfo("name"); ?></title>
-<?php elseif (is_single() || is_page()): ?>
-    <title><?php the_title(); ?> - <?php bloginfo("name"); ?></title>
-<?php else: ?>
-    <title><?php bloginfo("name"); ?></title>
-<?php endif; ?>
+    <title><?php echo esc_html(get_page_title()); ?></title>
 
     <!--
     ================================================================================
