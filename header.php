@@ -116,7 +116,7 @@ elseif (is_author()): ?>
     <meta name="msapplication-TileColor" content="#0e0f34">
     <meta name="theme-color" content="#0e0f34">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
 <?php if (is_category()):
     $category = get_queried_object(); ?>
     <meta name="og:title" content="<?php single_cat_title(
@@ -219,7 +219,6 @@ elseif (is_author()): ?>
     endif; ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-
     <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png">
