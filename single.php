@@ -7,7 +7,7 @@
        while (have_posts()):
            the_post(); ?>
 				<!-- article -->
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(["h-entry"]); ?>>
 
 					<!-- the category -->
 					<p class="categories">
@@ -31,10 +31,17 @@
 					<!-- /post details -->
 
 					<!-- content -->
-					<?php the_content();
-           // Dynamic Content
-           ?>
+					<div class="e-content">
+					   <?php the_content(); ?>
+					</div>
 					<!-- /content -->
+
+					<!-- h-card -->
+					<div class="p-author h-card d-none">
+                        <a class="u-url p-name" href="https://<?php include "includes/site-domain.php"; ?>/">Luis Carlos Pando</a>
+                        <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp">
+					</div>
+					<!-- /h-card -->
 
 					<!-- hashtags -->
 					<div class="hashtag-list">

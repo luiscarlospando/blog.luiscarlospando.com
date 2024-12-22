@@ -270,7 +270,7 @@ elseif (is_author()): ?>
                     <div class="row">
                         <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center mb-3 mb-md-0">
                             <div class="mt-3 mb-1 u-photo" id="logo">
-                                <a class="h-card" href="https://<?php include "includes/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" title="" data-original-title="Sígueme en Mastodon: <?php include "includes/mastodon-account.php"; ?>">
+                                <a href="https://<?php include "includes/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" title="" data-original-title="Sígueme en Mastodon: <?php include "includes/mastodon-account.php"; ?>">
                                     <span>Logo</span>
                                 </a>
                             </div>
