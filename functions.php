@@ -664,8 +664,8 @@ function get_meta_image()
             ? $thumb_url[0]
             : "https://" .
                     (include "includes/site-domain.php" .
-                        "/assets/images/logo.png");
+                        "/assets/images/avatar.webp");
     }
     return "https://" .
-        (include "includes/site-domain.php" . "/assets/images/logo.png");
+        (include "includes/site-domain.php" . "/assets/images/avatar.webp");
 }
