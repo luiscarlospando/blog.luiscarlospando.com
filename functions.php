@@ -493,11 +493,8 @@ add_shortcode("html5_shortcode_demo", "html5_shortcode_demo"); // You can place 
 add_shortcode("html5_shortcode_demo_2", "html5_shortcode_demo_2"); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
-/*------------------------------------*\
-	Custom Post Types
-\*------------------------------------*/ /*------------------------------------*\
-	ShortCode Functions
-\*------------------------------------*/ // Shortcode Demo with Nested Capability
+// Custom Post Types
+// Shortcode functions
 function html5_shortcode_demo($atts, $content = null)
 {
     return '<div class="shortcode-demo">' . do_shortcode($content) . "</div>"; // do_shortcode allows for nested Shortcodes
@@ -507,9 +504,8 @@ function html5_shortcode_demo_2($atts, $content = null)
     // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
     return "<h2>" . $content . "</h2>";
 }
-/*------------------------------------*\
-    Función para imprimir títulos
-\*------------------------------------*/ function get_page_title()
+// Function to print titles
+function get_page_title()
 {
     $title = "";
     if (is_category()) {
@@ -524,9 +520,7 @@ function html5_shortcode_demo_2($atts, $content = null)
     return $title
         ? $title . " - " . get_bloginfo("name")
         : get_bloginfo("name");
-} /*------------------------------------*\
-    Shortcodes caption automáticos
-\*------------------------------------*/
+} // Automatic Shortcodes captions
 if (is_admin()) {
     add_filter("image_send_to_editor", "wrap_my_caption", 10, 8);
     function wrap_my_caption(
@@ -593,9 +587,7 @@ if (is_admin()) {
                 "[/caption]";
         }
     }
-} /*----------------------------------------------*\
-    Imágenes Responsivas
-\*----------------------------------------------*/
+} // Responsive images
 function add_image_responsive_class($content)
 {
     global $post;
@@ -604,14 +596,10 @@ function add_image_responsive_class($content)
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
-add_filter(
-    "the_content",
 
-    "add_image_responsive_class"
-);
-/*----------------------------------------------*\
-    Making local jQuery default
-\*----------------------------------------------*/ function modify_jquery()
+add_filter("the_content", "add_image_responsive_class");
+// Making local jQuery default
+function modify_jquery()
 {
     if (!is_admin()) {
         // comment out the next two lines to load the local copy of jQuery
@@ -627,3 +615,36 @@ add_filter(
     }
 }
 add_action("init", "modify_jquery");
+// Function to get the meta tag title
+function get_meta_title()
+{
+    $site_name = get_bloginfo("name");
+    if (is_category()) {
+        return sprintf("%s - %s", single_cat_title("", false), $site_name);
+    }
+    if (is_tag()) {
+        return sprintf("%s - %s", single_tag_title("", false), $site_name);
+    }
+    if (is_author()) {
+        return sprintf("Archivos del blog - %s", $site_name);
+    }
+    if (is_single() || is_page()) {
+        return sprintf("%s - %s", get_the_title(), $site_name);
+    }
+    return $site_name;
+} // Function to get the meta tag description
+function get_meta_description()
+{
+    if (is_single() || is_page()) {
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+                return get_the_excerpt();
+            }
+        }
+    }
+    if (is_author()) {
+        return "Estos son todos los posts que he escrito, ordenados por fecha de manera descendente.";
+    }
+    return get_bloginfo("description");
+}
