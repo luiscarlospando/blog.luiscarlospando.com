@@ -659,7 +659,7 @@ function get_meta_image()
 {
     // Getting the site domain
     $domain = include "includes/site-domain.php"; // Concatenate all parts
-    $default_image = "https://" . $domain . "/assets/images/avatar.webp";
+    $default_image = "https://" . $domain . "/assets/images/logo.png";
     if (is_single() || is_page()) {
         $thumb_id = get_post_thumbnail_id();
         if ($thumb_id) {
