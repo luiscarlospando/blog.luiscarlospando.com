@@ -657,13 +657,17 @@ function get_meta_description()
 // Function to get the meta tag image
 function get_meta_image()
 {
-    // Define base URL and default image
-    $domain = include "includes/site-domain.php";
+    // Getting the site domain
+    $domain = include "includes/site-domain.php"; // Concatenate all parts
     $default_image = "https://" . $domain . "/assets/images/avatar.webp";
     if (is_single() || is_page()) {
         $thumb_id = get_post_thumbnail_id();
-        $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
-        return $thumb_url ? $thumb_url[0] : $default_image;
+        if ($thumb_id) {
+            $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
+            if ($thumb_url && is_array($thumb_url)) {
+                return $thumb_url[0];
+            }
+        }
     }
     return $default_image;
 }
