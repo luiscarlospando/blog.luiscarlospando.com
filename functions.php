@@ -596,7 +596,6 @@ function add_image_responsive_class($content)
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
-
 add_filter("the_content", "add_image_responsive_class");
 // Making local jQuery default
 function modify_jquery()
@@ -635,16 +634,38 @@ function get_meta_title()
 } // Function to get the meta tag description
 function get_meta_description()
 {
+    global $post;
     if (is_single() || is_page()) {
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post();
-                return get_the_excerpt();
-            }
+        // Guardamos el contenido original del post
+        $description = get_the_excerpt($post);
+        if (empty($description)) {
+            $description = wp_trim_words(get_the_content(), 55, "...");
         }
+        return $description;
     }
     if (is_author()) {
         return "Estos son todos los posts que he escrito, ordenados por fecha de manera descendente.";
     }
+    if (is_category()) {
+        return category_description();
+    }
+    if (is_tag()) {
+        return tag_description();
+    }
     return get_bloginfo("description");
+}
+// Function to get the meta tag image
+function get_meta_image()
+{
+    if (is_single() || is_page()) {
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
+        return $thumb_url
+            ? $thumb_url[0]
+            : "https://" .
+                    (include "includes/site-domain.php" .
+                        "/assets/images/logo.png");
+    }
+    return "https://" .
+        (include "includes/site-domain.php" . "/assets/images/logo.png");
 }

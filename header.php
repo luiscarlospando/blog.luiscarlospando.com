@@ -90,13 +90,9 @@
     <meta property="og:description" content="<?php echo esc_attr(
         get_meta_description()
     ); ?>" />
-    <meta property="og:image" content="<?php if (is_single() || is_page()):
-        $thumb_id = get_post_thumbnail_id();
-        $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
-        echo $thumb_url[0];
-    else:
-         ?>https://<?php include "includes/site-domain.php"; ?>/assets/images/logo.png<?php
-    endif; ?>" />
+    <meta property="og:image" content="<?php echo esc_url(
+        get_meta_image()
+    ); ?>" />
 
     <!-- X -->
     <meta name="twitter:title" content="<?php echo esc_attr(
@@ -107,13 +103,9 @@
     <meta property="twitter:description" content="<?php echo esc_attr(
         get_meta_description()
     ); ?>" />
-    <meta property="twitter:image" content="<?php if (is_single() || is_page()):
-        $thumb_id = get_post_thumbnail_id();
-        $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
-        echo $thumb_url[0];
-    else:
-         ?>https://<?php include "includes/site-domain.php"; ?>/assets/images/logo.png<?php
-    endif; ?>" />
+    <meta property="twitter:image" content="<?php echo esc_url(
+        get_meta_image()
+    ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
