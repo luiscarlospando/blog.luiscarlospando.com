@@ -85,7 +85,7 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://discordapp.com/users/86571896581132288/" target="_blank">
+                                            <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
                                             </a>
                                         </li>
