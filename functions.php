@@ -658,7 +658,7 @@ function get_meta_description()
 function get_meta_image()
 {
     // Getting the site domain
-    $domain = include "includes/site-domain.php"; // Concatenate all parts
+    $domain = include "includes/return-site-domain.php"; // Concatenate all parts
     $default_image = "https://" . $domain . "/assets/images/logo.png";
     if (is_single() || is_page()) {
         $thumb_id = get_post_thumbnail_id();
