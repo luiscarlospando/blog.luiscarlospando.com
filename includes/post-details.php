@@ -15,7 +15,7 @@ $is_modified =
 
 // Common data preparation
 $author_link = get_the_author_posts_link();
-$mastodon_url = include "mastodon-account.php";
+$mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
 // Prepare time-related data
