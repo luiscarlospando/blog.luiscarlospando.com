@@ -43,11 +43,7 @@ $full_time = $is_modified
             $is_modified ? "Actualizado por" : "Por",
             "html5blank"
         ); ?>
-        <?php
-        global $authordata;
-        $authordata = get_user_by("login", "me");
-        echo get_the_author_posts_link();
-        ?>
+        <?php echo $author_link; ?>
     </span>
 
     <!-- Mastodon -->
