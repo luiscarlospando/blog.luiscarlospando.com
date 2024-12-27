@@ -1,4 +1,3 @@
 <?php
-	$version = get_field('version', 'option');
-	echo $version;
-?>
+$version = get_field("version", "option");
+echo $version;
