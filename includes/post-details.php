@@ -14,7 +14,7 @@ $is_modified =
     $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
 
 // Common data preparation
-$author_link = get_the_author_posts_link(1);
+$author_link = get_the_author_posts_link();
 $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
@@ -43,7 +43,11 @@ $full_time = $is_modified
             $is_modified ? "Actualizado por" : "Por",
             "html5blank"
         ); ?>
-        <?php echo $author_link; ?>
+        <?php
+        global $authordata;
+        $authordata = get_user_by("login", "me");
+        echo get_the_author_posts_link();
+        ?>
     </span>
 
     <!-- Mastodon -->
