@@ -122,6 +122,9 @@
     <link rel="me" href="https://github.com/luiscarlospando" />
     <link rel="me" href="https://proven.lol/75353b">
 
+    <!-- omg.lol API preconnect -->
+    <link rel="preconnect" href="https://api.omg.lol">
+
     <!-- Webmentions -->
     <link rel="webmention" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/webmention" />
     <link rel="pingback" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/xmlrpc" />
