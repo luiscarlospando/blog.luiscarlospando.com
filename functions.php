@@ -670,5 +670,4 @@ function get_meta_image()
         }
     }
     return $default_image;
-} // Enable HTML inside Markdown blocks
-add_filter("jetpack_markdown_allow_html", "__return_true");
+}
