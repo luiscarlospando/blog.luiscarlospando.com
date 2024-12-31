@@ -33,11 +33,6 @@ $time_format = "g:i a";
 $timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
 $full_date = wp_date($date_format, $timestamp_to_use);
 $full_time = wp_date($time_format, $timestamp_to_use);
-
-echo "Published: " . date("Y-m-d H:i:s", $published_timestamp) . "<br>";
-echo "Modified: " . date("Y-m-d H:i:s", $modified_timestamp) . "<br>";
-echo "Is modified? " . ($is_modified ? "Yes" : "No") . "<br>";
-echo "Timestamp used: " . date("Y-m-d H:i:s", $timestamp_to_use) . "<br>";
 ?>
 
 <div class="post-details">
