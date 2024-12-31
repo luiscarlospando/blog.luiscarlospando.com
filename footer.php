@@ -35,14 +35,25 @@
                     <hr>
                     <div class="row">
                         <div class="col-12 col-lg-3 copyright my-auto">
-                            <p class="d-inline-block d-lg-block mb-2">
-                                &copy; <?php echo date(
-                                    "Y"
-                                ); ?> Luis Carlos Pando
-                            </p>
-                            <a href="https://notbyai.fyi" target="_blank">
-                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
-                            </a>
+                            <ul class="list-unstyled my-0">
+                                <li>
+                                    <p class="d-inline-block d-lg-block mb-2">
+                                        &copy; <?php echo date(
+                                            "Y"
+                                        ); ?> Luis Carlos Pando
+                                    </p>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus">
+                                        <span id="system-status"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://notbyai.fyi" target="_blank">
+                                        <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
                             <div class="row">
@@ -57,11 +68,6 @@
                                             <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                             Privacidad
                                         </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus">
-                                                <span id="system-status"></span>
-                                            </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
