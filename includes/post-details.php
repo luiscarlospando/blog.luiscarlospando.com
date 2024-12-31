@@ -29,11 +29,11 @@ $relative_time = human_time_diff(
 $date_format = 'l, j \d\e F \d\e Y';
 $time_format = "g:i a";
 $full_date = $is_modified
-    ? get_the_modified_time($date_format)
-    : get_the_time($date_format);
+    ? wp_date($date_format, $modified_timestamp)
+    : wp_date($date_format, $published_timestamp);
 $full_time = $is_modified
-    ? get_the_modified_time($time_format)
-    : get_the_time($time_format);
+    ? wp_date($time_format, $modified_timestamp)
+    : wp_date($time_format, $published_timestamp);
 ?>
 
 <div class="post-details">
