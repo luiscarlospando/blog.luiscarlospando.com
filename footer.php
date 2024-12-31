@@ -87,10 +87,10 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a href="https://echofeed.app/" target="_blank">
-                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/img/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
+                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="list-inline-item">
                                             <a href="https://notbyai.fyi" target="_blank">
                                                 <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
                                             </a>
