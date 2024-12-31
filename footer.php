@@ -48,17 +48,17 @@
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
+                                <li class="list-inline-item">
+                                    <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
+                                        Deployed on <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
                             <div class="row">
                                 <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
-                                                Deployed on <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
-                                            </a>
-                                        </li>
                                         <li class="list-inline-item">
                                             <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                             Privacidad
