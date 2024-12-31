@@ -48,11 +48,6 @@
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="https://notbyai.fyi" target="_blank">
-                                        <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
@@ -82,6 +77,22 @@
                                         <li class="list-inline-item">
                                             <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
                                                 <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 version text-lg-right my-auto">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="https://echofeed.app/" target="_blank">
+                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/img/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://notbyai.fyi" target="_blank">
+                                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
                                             </a>
                                         </li>
                                     </ul>
