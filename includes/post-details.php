@@ -5,8 +5,8 @@
  */
 
 // Get post timestamps
-$published_timestamp = get_the_time("U");
-$modified_timestamp = get_the_modified_time("U");
+$published_timestamp = get_post_time("U", false); // false for local time
+$modified_timestamp = get_post_modified_time("U", false); // false for local time
 $ONE_DAY_IN_SECONDS = 86400;
 
 // Check if post was meaningfully modified (more than 24h after publication)
@@ -28,12 +28,11 @@ $relative_time = human_time_diff(
 // Prepare the full date format
 $date_format = 'l, j \d\e F \d\e Y';
 $time_format = "g:i a";
-$full_date = $is_modified
-    ? wp_date($date_format, $modified_timestamp)
-    : wp_date($date_format, $published_timestamp);
-$full_time = $is_modified
-    ? wp_date($time_format, $modified_timestamp)
-    : wp_date($time_format, $published_timestamp);
+
+// Use the appropriate timestamp based on modification status
+$timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
+$full_date = wp_date($date_format, $timestamp_to_use);
+$full_time = wp_date($time_format, $timestamp_to_use);
 ?>
 
 <div class="post-details">
