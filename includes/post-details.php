@@ -7,12 +7,15 @@
 // Set timezone explicitly
 date_default_timezone_set("America/Mexico_City");
 
+// Set locale for Spanish date formatting
+setlocale(LC_TIME, "es_MX.UTF-8", "es_MX", "es");
+
 // Get post timestamps with timezone consideration
 $published_timestamp = get_post_time("U", false); // false for local time
 $modified_timestamp = get_post_modified_time("U", false); // false for local time
 $ONE_DAY_IN_SECONDS = 86400;
 
-// Check if post was meaningfully modified (more than 24h after publication)
+// Check if post was meaningfully modified
 $is_modified =
     $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
 
@@ -22,15 +25,20 @@ $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
 // Create DateTime object with correct timezone
-$datetime = new DateTime("now", new DateTimeZone("America/Mexico_City"));
+$datetime = new DateTime();
 $timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
 $datetime->setTimestamp($timestamp_to_use);
+$datetime->setTimezone(new DateTimeZone("America/Mexico_City"));
 
-// Format dates using the DateTime object
-$date_format = 'l, j \d\e F \d\e Y';
-$time_format = "g:i a";
-$full_date = $datetime->format($date_format);
-$full_time = $datetime->format($time_format);
+// Format dates using strftime for Spanish localization
+$date_format = "%A, %d de %B de %Y"; // Spanish format
+$time_format = "%I:%M %p"; // 12-hour format with AM/PM
+$full_date = strftime($date_format, $datetime->getTimestamp());
+$full_time = strftime($time_format, $datetime->getTimestamp());
+
+// Make first letter uppercase and convert AM/PM to lowercase
+$full_date = ucfirst(mb_strtolower($full_date, "UTF-8"));
+$full_time = mb_strtolower($full_time, "UTF-8");
 
 // Prepare relative time
 $current_time = current_time("U");
