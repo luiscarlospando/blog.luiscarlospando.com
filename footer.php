@@ -80,36 +80,46 @@
                                 <div class="col-12 version text-lg-right my-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <a href="" class="tinylytics_webring" data-toggle="tooltip" data-placement="top" title="🕸️💍 Tinylytics Webring (recarga la página para un sitio aleatorio)">
-                                                🕸️💍 Tinylytics Webring <i class="fa-solid fa-shuffle"></i> <img class="tinylytics_webring_avatar" src="" style="display: none"/>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
                                             <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proven" target="_blank">
-                                                <span class="fa-stack small">
-                                                    <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
-                                                    <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Ver código fuente" target="_blank">
-                                                <code>Ver código fuente</code>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
-                                                <code>v</code>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="" class="tinylytics_webring" data-toggle="tooltip" data-placement="top" title="🕸️💍 Tinylytics Webring (recarga la página para un sitio aleatorio)">
+                                        🕸️💍 Tinylytics Webring <i class="fa-solid fa-shuffle"></i> <img class="tinylytics_webring_avatar" src="" style="display: none"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proven" target="_blank">
+                                        <span class="fa-stack small">
+                                            <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
+                                            <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Ver código fuente" target="_blank">
+                                        <code>Ver código fuente</code>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
+                                        <code>v</code>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
