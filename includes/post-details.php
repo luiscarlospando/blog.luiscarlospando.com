@@ -4,7 +4,10 @@
  * Shows author, publication/update date, permalink and edit link
  */
 
-// Get post timestamps
+// Set timezone explicitly
+date_default_timezone_set("America/Mexico_City");
+
+// Get post timestamps with timezone consideration
 $published_timestamp = get_post_time("U", false); // false for local time
 $modified_timestamp = get_post_modified_time("U", false); // false for local time
 $ONE_DAY_IN_SECONDS = 86400;
@@ -18,19 +21,20 @@ $author_link = get_the_author_posts_link();
 $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
-// Prepare time-related data
-$current_time = current_time("U");
-$relative_time = human_time_diff(
-    $is_modified ? $modified_timestamp : $published_timestamp,
-    $current_time
-);
+// Create DateTime object with correct timezone
+$datetime = new DateTime("now", new DateTimeZone("America/Mexico_City"));
+$timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
+$datetime->setTimestamp($timestamp_to_use);
 
-// Prepare the full date format
+// Format dates using the DateTime object
 $date_format = 'l, j \d\e F \d\e Y';
 $time_format = "g:i a";
-$timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
-$full_date = wp_date($date_format, $timestamp_to_use);
-$full_time = wp_date($time_format, $timestamp_to_use);
+$full_date = $datetime->format($date_format);
+$full_time = $datetime->format($time_format);
+
+// Prepare relative time
+$current_time = current_time("U");
+$relative_time = human_time_diff($timestamp_to_use, $current_time);
 ?>
 
 <div class="post-details">
