@@ -43,8 +43,8 @@
                                         ); ?> Luis Carlos Pando
                                     </p>
                                 </li>
-                                <li class="list-inline-item">
-                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus">
+                                <li class="list-inline-item mb-2">
+                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
@@ -75,19 +75,13 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
-                                                <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 version text-lg-right my-auto">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
                                             <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
+                                                <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
                                             </a>
                                         </li>
                                     </ul>
