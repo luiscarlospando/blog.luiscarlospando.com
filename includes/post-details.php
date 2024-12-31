@@ -4,18 +4,12 @@
  * Shows author, publication/update date, permalink and edit link
  */
 
-// Set timezone explicitly
-date_default_timezone_set("America/Mexico_City");
-
-// Set locale for Spanish date formatting
-setlocale(LC_TIME, "es_MX.UTF-8", "es_MX", "es", "spanish");
-
-// Get post timestamps with timezone consideration
-$published_timestamp = get_post_time("U", true); // true for GMT
-$modified_timestamp = get_post_modified_time("U", true); // true for GMT
+// Get post timestamps
+$published_timestamp = get_the_time("U");
+$modified_timestamp = get_the_modified_time("U");
 $ONE_DAY_IN_SECONDS = 86400;
 
-// Check if post was meaningfully modified
+// Check if post was meaningfully modified (more than 24h after publication)
 $is_modified =
     $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
 
@@ -24,25 +18,22 @@ $author_link = get_the_author_posts_link();
 $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
-// Create DateTime object with correct timezone
-$datetime = new DateTime();
-$timestamp_to_use = $is_modified ? $modified_timestamp : $published_timestamp;
-$datetime->setTimestamp($timestamp_to_use);
-$datetime->setTimezone(new DateTimeZone("America/Mexico_City"));
+// Prepare time-related data
+$current_time = current_time("U");
+$relative_time = human_time_diff(
+    $is_modified ? $modified_timestamp : $published_timestamp,
+    $current_time
+);
 
-// Format dates using strftime for Spanish localization
-$full_date = strftime("%A, %d de %B de %Y", $datetime->getTimestamp());
-$full_time = $datetime->format("g:i a"); // Keep time format as is
-
-// Make first letter lowercase for Spanish style
-$full_date = mb_strtolower($full_date, "UTF-8");
-
-// Debug information
-echo "Debug:<br>";
-echo "Timestamp used: " . $timestamp_to_use . "<br>";
-echo "Raw DateTime: " . $datetime->format("Y-m-d H:i:s") . "<br>";
-echo "Formatted date: " . $full_date . "<br>";
-echo "Formatted time: " . $full_time . "<br>";
+// Prepare the full date format
+$date_format = 'l, j \d\e F \d\e Y';
+$time_format = "g:i a";
+$full_date = $is_modified
+    ? get_the_modified_time($date_format)
+    : get_the_time($date_format);
+$full_time = $is_modified
+    ? get_the_modified_time($time_format)
+    : get_the_time($time_format);
 ?>
 
 <div class="post-details">
