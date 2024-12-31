@@ -1,4 +1,10 @@
 <?php
+echo "Server Time: " . date("Y-m-d H:i:s") . "<br>";
+echo "WordPress Time: " . current_time("Y-m-d H:i:s") . "<br>";
+echo "WordPress GMT Time: " . current_time("Y-m-d H:i:s", true) . "<br>";
+echo "PHP Timezone: " . date_default_timezone_get() . "<br>";
+echo "WordPress Timezone: " . wp_timezone_string() . "<br>";
+
 /**
  * Template part for displaying post metadata
  * Shows author, publication/update date, permalink and edit link
