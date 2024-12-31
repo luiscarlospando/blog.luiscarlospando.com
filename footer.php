@@ -87,20 +87,18 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="" class="tinylytics_webring" data-toggle="tooltip" data-placement="top" title="🕸️💍 Tinylytics Webring (recarga la página para un sitio aleatorio)">
-                                                🕸️💍 Tinylytics Webring <i class="fa-solid fa-shuffle"></i> <img class="tinylytics_webring_avatar" src="" style="display: none"/>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-12 text-center">
+                            <ul class="list-inline my-0">
+                                <li class="list-inline-item">
+                                    <a href="" class="tinylytics_webring" data-toggle="tooltip" data-placement="top" title="🕸️💍 Tinylytics Webring (recarga la página para un sitio aleatorio)">
+                                        🕸️💍 Tinylytics Webring <i class="fa-solid fa-shuffle"></i> <img class="tinylytics_webring_avatar" src="" style="display: none"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="col-12 text-center">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
