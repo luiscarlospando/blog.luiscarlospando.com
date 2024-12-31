@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 version text-lg-right my-auto">
+                                <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <a href="https://echofeed.app/" target="_blank">
