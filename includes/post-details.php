@@ -1,10 +1,4 @@
 <?php
-wp_update_post([
-    "ID" => get_the_ID(),
-    "post_modified" => current_time("mysql"),
-    "post_modified_gmt" => current_time("mysql", 1),
-]);
-
 /**
  * Template part for displaying post metadata
  * Shows author, publication/update date, permalink and edit link
