@@ -8,11 +8,11 @@
 date_default_timezone_set("America/Mexico_City");
 
 // Set locale for Spanish date formatting
-setlocale(LC_TIME, "es_MX.UTF-8", "es_MX", "es");
+setlocale(LC_TIME, "es_MX.UTF-8", "es_MX", "es", "spanish");
 
 // Get post timestamps with timezone consideration
-$published_timestamp = get_post_time("U", false); // false for local time
-$modified_timestamp = get_post_modified_time("U", false); // false for local time
+$published_timestamp = get_post_time("U", true); // true for GMT
+$modified_timestamp = get_post_modified_time("U", true); // true for GMT
 $ONE_DAY_IN_SECONDS = 86400;
 
 // Check if post was meaningfully modified
@@ -31,18 +31,18 @@ $datetime->setTimestamp($timestamp_to_use);
 $datetime->setTimezone(new DateTimeZone("America/Mexico_City"));
 
 // Format dates using strftime for Spanish localization
-$date_format = "%A, %d de %B de %Y"; // Spanish format
-$time_format = "%I:%M %p"; // 12-hour format with AM/PM
-$full_date = strftime($date_format, $datetime->getTimestamp());
-$full_time = strftime($time_format, $datetime->getTimestamp());
+$full_date = strftime("%A, %d de %B de %Y", $datetime->getTimestamp());
+$full_time = $datetime->format("g:i a"); // Keep time format as is
 
-// Make first letter uppercase and convert AM/PM to lowercase
-$full_date = ucfirst(mb_strtolower($full_date, "UTF-8"));
-$full_time = mb_strtolower($full_time, "UTF-8");
+// Make first letter lowercase for Spanish style
+$full_date = mb_strtolower($full_date, "UTF-8");
 
-// Prepare relative time
-$current_time = current_time("U");
-$relative_time = human_time_diff($timestamp_to_use, $current_time);
+// Debug information
+echo "Debug:<br>";
+echo "Timestamp used: " . $timestamp_to_use . "<br>";
+echo "Raw DateTime: " . $datetime->format("Y-m-d H:i:s") . "<br>";
+echo "Formatted date: " . $full_date . "<br>";
+echo "Formatted time: " . $full_time . "<br>";
 ?>
 
 <div class="post-details">
