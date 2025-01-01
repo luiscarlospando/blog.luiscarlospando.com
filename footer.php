@@ -33,7 +33,7 @@
                     <?php wp_reset_query(); ?>
                     </div>
                     <hr>
-                    <div class="row">
+                    <div class="row mb-md-2">
                         <div class="col-12 col-lg-3 copyright my-auto">
                             <ul class="list-unstyled my-0">
                                 <li>
@@ -56,9 +56,9 @@
                             </ul>
                         </div>
                         <div class="col-12 col-lg-9 my-auto">
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col-12 text-lg-right my-auto">
-                                    <ul class="list-inline">
+                                    <ul class="list-inline my-0">
                                         <li class="list-inline-item">
                                             <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                             Privacidad
@@ -82,9 +82,9 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-3 mb-md-0">
                                 <div class="col-12 text-lg-right my-auto">
-                                    <ul class="list-inline">
+                                    <ul class="list-inline my-0">
                                         <li class="list-inline-item">
                                             <a href="https://echofeed.app/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
