@@ -70,6 +70,11 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
+                                            <a rel="me" href="https://mijo.omg.lol/" target="_blank">
+                                                <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
                                             <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
                                             </a>
