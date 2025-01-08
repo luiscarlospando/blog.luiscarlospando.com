@@ -670,4 +670,18 @@ function get_meta_image()
         }
     }
     return $default_image;
+} // RSS text after every item
+function add_rss_footer_text($content)
+{
+    if (is_feed()) {
+        $footer_text =
+            "<hr>" .
+            'Estás leyendo el blog de <a href="https://luiscarlospando.com/">Luis Carlos Pando</a>.<br>' .
+            'Si te gusta algo de lo que ves, puedes apoyarme <a href="https://donate.stripe.com/6oEdThfw66PddDG144?locale=es-419">donando</a> lo que gustes. ' .
+            'Otra forma de ayudarme es siguiéndome en <a href="https://social.lol/@mijo">Mastodon</a>. ' .
+            "Tu apoyo se agradece bastante, muchas gracias.";
+        $content .= $footer_text;
+    }
+    return $content;
 }
+add_filter("the_content", "add_rss_footer_text");
