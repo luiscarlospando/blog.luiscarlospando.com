@@ -91,6 +91,11 @@
                                 <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item">
+                                            <a href="https://people.pledge.party/" target="_blank">
+                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
                                             <a href="https://echofeed.app/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
                                             </a>
