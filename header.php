@@ -108,6 +108,11 @@
     <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
     <link rel="me" href="https://github.com/luiscarlospando" />
     <link rel="me" href="https://proven.lol/75353b">
+    <link rel="pgpkey" href="<?php include "includes/site-domain.php"; ?>/key.txt">
+
+    <!-- OpenID -->
+    <link rel="openid.delegate" href="<?php include "includes/site-domain.php"; ?>" />
+    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
     <!-- omg.lol API preconnect -->
     <link rel="preconnect" href="https://api.omg.lol">
