@@ -94,19 +94,6 @@
         get_meta_image()
     ); ?>" />
 
-    <!-- X -->
-    <meta name="twitter:title" content="<?php echo esc_attr(
-        get_meta_title()
-    ); ?>" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="<?php the_permalink(); ?>" />
-    <meta property="twitter:description" content="<?php echo esc_attr(
-        get_meta_description()
-    ); ?>" />
-    <meta property="twitter:image" content="<?php echo esc_url(
-        get_meta_image()
-    ); ?>" />
-
     <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
