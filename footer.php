@@ -112,7 +112,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 text-center">
-                            <p>🕸️💍 <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
+                            <p>Parte de 🕸️💍 <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
                             <ul class="list-inline my-0">
                                 <li class="list-inline-item">
                                     <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" title="Anterior">
