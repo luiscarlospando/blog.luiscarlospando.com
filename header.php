@@ -97,11 +97,12 @@
     <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://<?php include "includes/site-domain.php"; ?>/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://<?php include "includes/site-domain.php"; ?>/favicon-16x16.png">
-    <link rel="manifest" href="https://<?php include "includes/site-domain.php"; ?>/site.webmanifest">
-    <link rel="mask-icon" href="https://<?php include "includes/site-domain.php"; ?>/safari-pinned-tab.svg" color="#0e0f34">
+    <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
+    <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="LuisCarlosPando.com" />
+    <link rel="manifest" href="https://<?php include "includes/site-domain.php"; ?>/site.webmanifest" />
     <link rel="canonical" href="<?php the_permalink(); ?>">
     <link rel="me" href="https://social.lol/@mijo" />
     <link rel="me" href="https://mastodon.online/@mijo" />
