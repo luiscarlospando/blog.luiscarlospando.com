@@ -108,8 +108,8 @@
     <link rel="me" href="https://mastodon.online/@mijo" />
     <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
     <link rel="me" href="https://github.com/luiscarlospando" />
-    <link rel="me" href="https://proven.lol/75353b">
-    <link rel="pgpkey" href="<?php include "includes/site-domain.php"; ?>/key.txt">
+    <link rel="me" href="https://proven.lol/75353b" />
+    <link rel="pgpkey" href="https://<?php include "includes/site-domain.php"; ?>/key.txt" />
 
     <!-- OpenID -->
     <link rel="openid.delegate" href="<?php include "includes/site-domain.php"; ?>" />
