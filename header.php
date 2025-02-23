@@ -77,11 +77,11 @@
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo(
         "name"
     ); ?>" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="msapplication-TileColor" content="#0e0f34">
-    <meta name="theme-color" content="#0e0f34">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="msapplication-TileColor" content="#0e0f34" />
+    <meta name="theme-color" content="#0e0f34" />
 
     <!-- Open Graph -->
     <meta name="og:title" content="<?php echo esc_attr(get_meta_title()); ?>" />
@@ -116,7 +116,7 @@
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
     <!-- omg.lol API preconnect -->
-    <link rel="preconnect" href="https://api.omg.lol">
+    <link rel="preconnect" href="https://api.omg.lol" />
 
     <!-- Webmentions -->
     <link rel="webmention" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/webmention" />
