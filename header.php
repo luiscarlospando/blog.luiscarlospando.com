@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<head profile="http://gmpg.org/xfn/11">
 	<meta charset="<?php bloginfo("charset"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php echo esc_html(get_page_title()); ?></title>
