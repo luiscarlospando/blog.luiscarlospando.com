@@ -14,7 +14,7 @@
                     $nextpost = get_adjacent_post(false, "", false);
                     if ($homepage == $currentpage || $nextpost == ""): ?>
                         <div class="col-12 col-md-6 offset-md-6 d-flex align-items-center justify-content-md-end">
-                            Hola desde Chihuahua, México 👋
+                            Hola desde Chihuahua, México 🌵
                         </div>
                     <?php else: ?>
                     <?php query_posts("showposts=1"); ?>
@@ -24,7 +24,7 @@
 							Lo último: <span id="blog"></span>
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end">
-                            Hola desde Chihuahua, México 👋
+                            Hola desde Chihuahua, México 🌵
                         </div>
                     <?php
                     endwhile; ?>
