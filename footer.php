@@ -101,8 +101,8 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://notbyai.fyi" target="_blank">
-                                                <img id="written-by-human-not-by-ai-badge-white" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Escrito por un humano, no por IA" class="img-fluid">
+                                            <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
+                                                <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
                                             </a>
                                         </li>
                                     </ul>
