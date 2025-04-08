@@ -60,15 +60,15 @@
 					</div>
 					<!-- /hashtags -->
 
-					<!-- kudos -->
+					<!-- likes -->
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
-							<h2 class="mt-0">Kudos</h2>
+							<h2 class="mt-0">Likes</h2>
 						</li>
 					</ul>
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
-					<!-- kudos -->
+					<!-- likes -->
 
 					<!-- webmentions -->
 					<h2>Comentarios</h2>
