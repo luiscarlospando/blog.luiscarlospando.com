@@ -60,7 +60,7 @@
 					</div>
 					<!-- /hashtags -->
 
-					<!-- likes -->
+					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
 							<h2 class="mt-0">Likes</h2>
@@ -68,14 +68,6 @@
 					</ul>
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
-					<!-- likes -->
-
-					<!-- webmentions -->
-					<h2>Comentarios</h2>
-
-					<div class="comments-disclaimer mb-3">
-						Para comentar aquí basta con mandarme un <em>reply</em> o interactuar de alguna manera con el toot de este post (darle <em>like</em> o darle <em>boost</em>) vía <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>). Si no tienes cuenta y aún así te gustaría decirme algo, me puedes contactar en <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> mi página de contacto</a> o por <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
-					</div>
 
 					<div id="webmentions-likes-subtitle"></div>
 
@@ -84,11 +76,19 @@
 					<div id="webmentions-boosts-subtitle"></div>
 
 					<ul id="webmentions-boosts" class="list-inline"></ul>
+					<!-- /likes & boosts -->
+
+					<!-- comments - replies -->
+					<h2>Comentarios</h2>
+
+					<div class="comments-disclaimer mb-3">
+						Para comentar aquí basta con mandarme un <em>reply</em> o interactuar de alguna manera con el toot de este post (darle <em>like</em> o darle <em>boost</em>) vía <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>). Si no tienes cuenta y aún así te gustaría decirme algo, me puedes contactar en <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> mi página de contacto</a> o por <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
 
 					<div id="webmentions-comments"></div>
-					<!-- /webmentions -->
+					<!-- /comments - replies -->
 
 					<!-- support me -->
 					<h3 class="text-center">¿Te gustó este post? <i class="fa-solid fa-heart"></i></h3>
