@@ -63,7 +63,7 @@
 					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
-							<h3 class="mt-0 mb-4">Likes</h3>
+							<h3 class="mt-0">Likes</h3>
 						</li>
 					</ul>
 
