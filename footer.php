@@ -182,7 +182,6 @@
         const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
         const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
 
-        // Using Promise syntax
         // Likes
         function showLikes() {
             fetch(likesEndpoint, {
@@ -194,7 +193,7 @@
                     document.getElementById("webmentions-likes-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Likes</h3>
+                                <h3>Likes (desde Mastodon)</h3>
                             </li>
                         </ul>`;
 
@@ -223,7 +222,7 @@
                     document.getElementById("webmentions-boosts-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Boosts</h3>
+                                <h3>Boosts (desde Mastodon)</h3>
                             </li>
                         </ul>`;
 
@@ -252,7 +251,7 @@
                     document.getElementById("webmentions-comments-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Replies</h3>
+                                <h3>Replies (desde Mastodon)</h3>
                             </li>
                         </ul>`;
 
