@@ -63,11 +63,11 @@
 					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
-							<h2 class="mt-0">Likes</h2>
+							<h3 class="mt-0 mb-4">Likes</h3>
 						</li>
 					</ul>
 
-					<button class="btn btn-primary tinylytics_kudos"></button>
+					<button class="btn btn-primary tinylytics_kudos mb-3"></button>
 
 					<div id="webmentions-likes-subtitle"></div>
 

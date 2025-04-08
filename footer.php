@@ -193,7 +193,7 @@
                     document.getElementById("webmentions-likes-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Likes (desde Mastodon)</h3>
+                                <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
                         </ul>`;
 
@@ -222,7 +222,7 @@
                     document.getElementById("webmentions-boosts-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Boosts (desde Mastodon)</h3>
+                                <h3>Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
                         </ul>`;
 
@@ -251,7 +251,7 @@
                     document.getElementById("webmentions-comments-subtitle").innerHTML += `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
-                                <h3>Replies (desde Mastodon)</h3>
+                                <h3>Replies (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
                         </ul>`;
 
