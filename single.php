@@ -67,9 +67,9 @@
 						</li>
 					</ul>
 
-					<button class="btn btn-primary tinylytics_kudos"></button>
+					<button class="btn btn-primary tinylytics_kudos mb-3"></button>
 
-					<div id="webmentions-likes-subtitle" class="mt-3"></div>
+					<div id="webmentions-likes-subtitle"></div>
 
 					<ul id="webmentions-likes" class="list-inline"></ul>
 
