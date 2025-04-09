@@ -73,7 +73,7 @@
 
     				<ul id="webmentions-likes" class="list-inline"></ul>
 
-					<div id="webmentions-boosts-subtitle class="mt-3"></div>
+					<div id="webmentions-boosts-subtitle" class="mt-3"></div>
 
     				<ul id="webmentions-boosts" class="list-inline"></ul>
 					<!-- /likes & boosts -->
