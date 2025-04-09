@@ -82,7 +82,7 @@
 					<h2>Comentarios</h2>
 
 					<div class="comments-disclaimer mb-4">
-						Para comentar aquí basta con mandarme un <em>reply</em> o interactuar de alguna manera con el toot de este post (darle <em>like</em> o darle <em>boost</em>) vía <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>). Si no tienes cuenta y aún así te gustaría decirme algo, me puedes contactar en <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> mi página de contacto</a> o por <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						Para comentar es necesario que tengas una cuenta en Mastodon y solo enviarme un <em>reply</em> en el toot de este post (puedes también simplemente darle <em>like</em> o hacerle <em>boost</em>) vía <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>). Si no tienes cuenta y aún así te gustaría decirme algo, me puedes contactar en <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> mi página de contacto</a> o por <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
