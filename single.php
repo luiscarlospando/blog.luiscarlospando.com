@@ -67,17 +67,17 @@
 						</li>
 					</ul>
 
-					<button class="btn btn-primary tinylytics_kudos mb-3"></button>
+					<button class="btn btn-primary tinylytics_kudos"></button>
 
 					<div class="row">
     					<div class="col-md-6">
-    					   <div id="webmentions-likes-subtitle"></div>
+    					   <div id="webmentions-likes-subtitle" class="mt-3"></div>
 
     						<ul id="webmentions-likes" class="list-inline"></ul>
     					</div>
 
     					<div class="col-md-6">
-    						<div id="webmentions-boosts-subtitle"></div>
+    						<div id="webmentions-boosts-subtitle class="mt-3""></div>
 
     						<ul id="webmentions-boosts" class="list-inline"></ul>
     					</div>
