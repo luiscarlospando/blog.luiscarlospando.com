@@ -69,16 +69,18 @@
 
 					<button class="btn btn-primary tinylytics_kudos mb-3"></button>
 
-					<div class="col-md-6">
-					   <div id="webmentions-likes-subtitle"></div>
+					<div class="row">
+    					<div class="col-md-6">
+    					   <div id="webmentions-likes-subtitle"></div>
 
-						<ul id="webmentions-likes" class="list-inline"></ul>
-					</div>
+    						<ul id="webmentions-likes" class="list-inline"></ul>
+    					</div>
 
-					<div class="col-md-6">
-						<div id="webmentions-boosts-subtitle"></div>
+    					<div class="col-md-6">
+    						<div id="webmentions-boosts-subtitle"></div>
 
-						<ul id="webmentions-boosts" class="list-inline"></ul>
+    						<ul id="webmentions-boosts" class="list-inline"></ul>
+    					</div>
 					</div>
 					<!-- /likes & boosts -->
 
