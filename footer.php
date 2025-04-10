@@ -71,12 +71,12 @@
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item mb-1 mb-lg-0">
                                             <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Mastodon" target="_blank">
-                                                <i class="fa-brands fa-mastodon"></i> Mastodon @mijo
+                                                <i class="fa-brands fa-mastodon"></i> Sígueme en Mastodon
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a rel="me" href="<?php include "includes/bluesky-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Bluesky" target="_blank">
-                                                <i class="fa-brands fa-bluesky"></i> Bluesky @luiscarlospando.com
+                                                <i class="fa-brands fa-bluesky"></i> Sígueme en Bluesky
                                             </a>
                                         </li>
                                     </ul>
