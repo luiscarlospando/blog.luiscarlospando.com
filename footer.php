@@ -34,36 +34,57 @@
                     </div>
                     <hr>
                     <div class="row mb-md-2">
-                        <div class="col-12 col-lg-3 copyright my-auto">
+                        <div class="col-6 col-lg-3 copyright my-lg-auto">
                             <ul class="list-unstyled my-0">
-                                <li>
-                                    <p class="d-inline-block d-lg-block mb-2">
+                                <li class="mb-2">
+                                    <p>
                                         &copy; <?php echo date(
                                             "Y"
                                         ); ?> Luis Carlos Pando
                                     </p>
                                 </li>
-                                <li class="list-inline-item mb-2">
+                                <li class="mb-2">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="mb-2">
                                     <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
                                         Deployed on <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
+                                <li class="mb-2">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
+                                        <i class="fa-solid fa-shield-halved"></i> Privacidad
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
+                                        <i class="fa-solid fa-mug-saucer"></i> Buy Me a Coffee
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-9 my-auto">
+                        <div class="col-6 col-lg-9 my-lg-auto">
                             <div class="row mb-2">
                                 <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline my-0">
-                                        <li class="list-inline-item">
-                                            <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
-                                            Privacidad
-                                        </a>
+                                        <li class="list-inline-item mb-1 mb-lg-0">
+                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Mastodon" target="_blank">
+                                                <i class="fa-brands fa-mastodon"></i> Mastodon @mijo
+                                            </a>
                                         </li>
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include "includes/bluesky-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Bluesky" target="_blank">
+                                                <i class="fa-brands fa-bluesky"></i> Bluesky @luiscarlospando.com
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12 text-lg-right my-auto">
+                                    <ul class="list-inline my-0">
                                         <li class="list-inline-item">
                                             <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
                                                 <i class="fa-solid fa-rss"></i>
@@ -79,23 +100,18 @@
                                                 <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
                                             </a>
                                         </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Seguir a @mijo en Mastodon" target="_blank">
-                                                <i class="fa-brands fa-mastodon"></i> Seguir a @mijo
-                                            </a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row mb-3 mb-md-0">
                                 <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline my-0">
-                                        <li class="list-inline-item">
+                                        <li class="list-inline-item mb-2 mb-lg-0">
                                             <a href="https://people.pledge.party/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
                                             </a>
                                         </li>
-                                        <li class="list-inline-item">
+                                        <li class="list-inline-item mb-2 mb-lg-0">
                                             <a href="https://echofeed.app/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
                                             </a>
