@@ -95,7 +95,7 @@
 
 					<div class="share-post card text-center mb-4">
 						<div class="card-body">
-							Puedes apoyarme <a class="btn btn-primary btn-sm" href="https://buymeacoffee.com/luiscarlospando" target="_blank"><i class="fa-solid fa-mug-saucer"></i> Comprándome un café</a>, siguiéndome en <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> y/o en <a class="btn btn-primary btn-sm" href="<?php include "includes/bluesky-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-bluesky"></i> Bluesky</a> o suscribiéndote con <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a> para recibir notificaciones.
+							Puedes apoyarme <a class="btn btn-primary btn-sm" href="https://buymeacoffee.com/luiscarlospando" target="_blank"><i class="fa-solid fa-mug-hot"></i> Comprándome un café</a>, siguiéndome en <a class="btn btn-primary btn-sm" href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> y/o en <a class="btn btn-primary btn-sm" href="<?php include "includes/bluesky-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-bluesky"></i> Bluesky</a> o suscribiéndote con <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" target="_blank"> <i class="fas fa-rss"></i> RSS</a> para recibir notificaciones.
 						</div>
 					</div>
 					<!-- /suppor me -->
