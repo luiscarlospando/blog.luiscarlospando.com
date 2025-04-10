@@ -34,7 +34,7 @@
                     </div>
                     <hr>
                     <div class="row mb-md-2">
-                        <div class="col-6 col-lg-4 copyright my-lg-auto">
+                        <div class="col-6 col-md-4 col-lg-6 copyright my-lg-auto">
                             <ul class="list-unstyled my-0">
                                 <li class="mb-2">
                                     <p>
@@ -65,7 +65,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-6 col-lg-8 my-lg-auto">
+                        <div class="col-6 col-md-8 col-lg-6 my-lg-auto">
                             <div class="row mb-2">
                                 <div class="col-12 text-lg-right my-auto">
                                     <ul class="list-inline my-0">
