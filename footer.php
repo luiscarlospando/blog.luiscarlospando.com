@@ -53,12 +53,12 @@
                                         <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
-                                <li class="mb-2">
+                                <li class="list-inline-item mb-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                         <i class="fa-solid fa-shield-halved"></i> Privacidad
                                     </a>
                                 </li>
-                                <li>
+                                <li class="list-inline-item">
                                     <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
                                         <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
                                     </a>
