@@ -50,7 +50,7 @@
                                 </li>
                                 <li class="mb-2">
                                     <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
-                                        <span class="d-none d-md-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
+                                        <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
                                 <li class="mb-2">
