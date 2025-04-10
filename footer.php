@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-6 col-md-8 col-lg-6 my-lg-auto">
                             <div class="row mb-2">
-                                <div class="col-12 text-lg-right my-auto">
+                                <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item mb-1 mb-lg-0">
                                             <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Mastodon" target="_blank">
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="row mb-2">
-                                <div class="col-12 text-lg-right my-auto">
+                                <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item">
                                             <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3 mb-md-0">
-                                <div class="col-12 text-lg-right my-auto">
+                                <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item mb-2 mb-lg-0">
                                             <a href="https://people.pledge.party/" target="_blank">
