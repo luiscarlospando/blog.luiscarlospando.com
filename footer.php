@@ -6,25 +6,19 @@
                             <div id="currently-listening"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-4">
                     <?php
                     // DLOCC If URL is Homepage then do this…
                     $homepage = "/";
                     $currentpage = $_SERVER["REQUEST_URI"];
                     $nextpost = get_adjacent_post(false, "", false);
                     if ($homepage == $currentpage || $nextpost == ""): ?>
-                        <div class="col-12 col-md-6 offset-md-6 d-flex align-items-center justify-content-md-end">
-                            Hola desde Chihuahua, México 🌵
-                        </div>
                     <?php else: ?>
                     <?php query_posts("showposts=1"); ?>
                     <?php while (have_posts()):
                         the_post(); ?>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 text-center">
 							Lo último: <span id="blog"></span>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end">
-                            Hola desde Chihuahua, México 🌵
                         </div>
                     <?php
                     endwhile; ?>
@@ -34,7 +28,7 @@
                     </div>
                     <hr>
                     <div class="row mb-md-2">
-                        <div class="col-6 col-md-4 col-lg-6 copyright my-lg-auto">
+                        <div class="col-6 col-md-4 col-lg-4 order-lg-1 copyright">
                             <ul class="list-unstyled my-0">
                                 <li class="mb-2">
                                     <p>
@@ -65,7 +59,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-6 col-md-8 col-lg-6 my-lg-auto">
+
+                        <div class="col-6 col-md-8 col-lg-4 order-lg-3">
                             <div class="row mb-2">
                                 <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
@@ -125,9 +120,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 text-center">
+
+                        <div class="col-12 col-lg-4 order-lg-2 mt-3 mt-lg-0 text-center">
+                            <p>Hola desde Chihuahua, México 🌵</p>
                             <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
                             <ul class="list-inline my-0">
                                 <li class="list-inline-item">
@@ -146,8 +141,6 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="col-12 text-center">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proven" target="_blank">
