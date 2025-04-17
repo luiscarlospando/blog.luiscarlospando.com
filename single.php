@@ -9,16 +9,26 @@
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(["h-entry"]); ?>>
 
-					<!-- the category -->
-					<p class="categories">
-						<span class="small"><?php
-      _e("", "html5blank");
-      the_category(", ");
-
-           // Separated by commas
-           ?></span>
-					</p>
-					<!-- /the category -->
+					<!-- the categorie -->
+					<ul class="list-inline">
+                        <?php
+                        $categories = get_the_category();
+                        if ($categories) {
+                            foreach ($categories as $category) {
+                                echo '<li class="list-inline-item">';
+                                echo '<a href="' .
+                                    esc_url(
+                                        get_category_link($category->term_id)
+                                    ) .
+                                    '" class="badge badge-dark">';
+                                echo esc_html($category->name);
+                                echo "</a>";
+                                echo "</li>";
+                            }
+                        }
+                        ?>
+                    </ul>
+					<!-- /the categoies -->
 
 					<!-- post title -->
 					<h1 class="title">
