@@ -9,8 +9,8 @@
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(["h-entry"]); ?>>
 
-					<!-- the categorie -->
-					<ul class="list-inline">
+					<!-- the categories -->
+					<ul class="list-inline mt-4 mb-1">
                         <?php
                         $categories = get_the_category();
                         if ($categories) {

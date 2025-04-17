@@ -5,16 +5,24 @@
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<!-- the category -->
-		<p class="categories small">
-			<?php
-   _e("", "html5blank");
-   the_category(", ");
-
-        // Separated by commas
-        ?>
-		</p>
-		<!-- /the category -->
+    	<!-- the categories -->
+    	<ul class="list-inline mt-4 mb-1">
+            <?php
+            $categories = get_the_category();
+            if ($categories) {
+                foreach ($categories as $category) {
+                    echo '<li class="list-inline-item">';
+                    echo '<a href="' .
+                        esc_url(get_category_link($category->term_id)) .
+                        '" class="badge badge-dark">';
+                    echo esc_html($category->name);
+                    echo "</a>";
+                    echo "</li>";
+                }
+            }
+            ?>
+        </ul>
+        <!-- /the categoies -->
 
 		<!-- post title -->
 		<h2 class="title">
