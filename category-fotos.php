@@ -8,6 +8,10 @@
     single_cat_title();
     ?></h1>
 
+				<p class="text-center">
+                    Fotos que he tomado con mi iPhone o que me han tomado. También puede haber algunas que he haya visto en redes sociales.
+				</p>
+
 				<div class="row">
 				    <?php get_template_part("loop-fotos"); ?>
 				</div>
