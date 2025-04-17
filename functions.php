@@ -676,10 +676,10 @@ function add_rss_footer_text($content)
     if (is_feed()) {
         $footer_text =
             "<hr>" .
-            '<p>Estás leyendo el blog de <a href="https://luiscarlospando.com/">Luis Carlos Pando</a>. ' .
-            'Si te gusta algo de lo que ves, puedes apoyarme <a href="https://donate.stripe.com/6oEdThfw66PddDG144?locale=es-419">donando</a> lo que gustes. ' .
-            'Otra forma de ayudarme es siguiéndome en <a href="https://social.lol/@mijo">Mastodon</a>.</p>' .
-            "<p>Tu apoyo se agradece bastante, muchas gracias.</p>";
+            '<p>Estás leyendo el blog de <a href="https://luiscarlospando.com/">Luis Carlos Pando</a>. 👋 ' .
+            'Si gusta mi contenido, puedes apoyarme <a href="https://buymeacoffee.com/luiscarlospando">comprándome un café</a>, que aunque no es necesario, se agradece bastante. 🙏 ' .
+            'Otra forma de ayudarme es siguiéndome en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
+            "<p>Gracias por leer mi blog vía RSS.</p>";
         $content .= $footer_text;
     }
     return $content;
