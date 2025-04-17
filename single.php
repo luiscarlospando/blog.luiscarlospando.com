@@ -20,7 +20,7 @@
                                     esc_url(
                                         get_category_link($category->term_id)
                                     ) .
-                                    '" class="badge badge-dark">';
+                                    '" class="badge badge-secondary">';
                                 echo esc_html($category->name);
                                 echo "</a>";
                                 echo "</li>";

@@ -5,8 +5,17 @@
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    	<!-- the categories -->
+    	<!-- the post date & categories -->
     	<ul class="list-inline mt-4 mb-1">
+            <li class="list-inline-item">
+                    <a href="<?php echo get_permalink(); ?>" class="badge badge-dark">
+                        <?php echo wp_date(
+                            "d M, Y",
+                            strtotime(get_the_date()),
+                            wp_timezone()
+                        ); ?>
+                    </a>
+                </li>
             <?php
             $categories = get_the_category();
             if ($categories) {
@@ -14,7 +23,7 @@
                     echo '<li class="list-inline-item">';
                     echo '<a href="' .
                         esc_url(get_category_link($category->term_id)) .
-                        '" class="badge badge-dark">';
+                        '" class="badge badge-secondary">';
                     echo esc_html($category->name);
                     echo "</a>";
                     echo "</li>";
@@ -22,7 +31,7 @@
             }
             ?>
         </ul>
-        <!-- /the categoies -->
+        <!-- /the post date & categories -->
 
 		<!-- post title -->
 		<h2 class="title">

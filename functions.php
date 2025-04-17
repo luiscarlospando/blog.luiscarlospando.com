@@ -684,4 +684,21 @@ function add_rss_footer_text($content)
     }
     return $content;
 }
-add_filter("the_content", "add_rss_footer_text");
+add_filter("the_content", "add_rss_footer_text"); // Month abbreviations in Spanish
+function custom_date_translation($months)
+{
+    $months["01"] = "ene";
+    $months["02"] = "feb";
+    $months["03"] = "mar";
+    $months["04"] = "abr";
+    $months["05"] = "may";
+    $months["06"] = "jun";
+    $months["07"] = "jul";
+    $months["08"] = "ago";
+    $months["09"] = "sep";
+    $months["10"] = "oct";
+    $months["11"] = "nov";
+    $months["12"] = "dic";
+    return $months;
+}
+add_filter("month_abbrev", "custom_date_translation");
