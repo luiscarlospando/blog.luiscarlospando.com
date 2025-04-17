@@ -2,6 +2,7 @@
     while (have_posts()):
         the_post(); ?>
 
+        <!-- photo -->
         <div class="col-md-4 mb-4">
             <figure class="figure">
                 <a href="<?php the_permalink(); ?>"
@@ -24,6 +25,8 @@
                 </figcaption>
             </figure>
         </div>
+        <!-- photo -->
+
 <?php
     endwhile; ?>
 
