@@ -16,7 +16,7 @@
                         $wp_query->found_posts
                     );
                     printf('"%s"', get_search_query());
-                    ?> y esto fue lo que se encontró. 👇</p>
+                    ?> y esto fue lo que se encontró en los archivos. 👇</p>
 				</div>
 
 				<?php get_template_part("loop"); ?>
