@@ -4,7 +4,7 @@
 
         <!-- photo -->
         <div class="col-md-4 mb-4">
-            <figure class="figure">
+            <figure class="figure figure-foto">
                 <a href="<?php the_permalink(); ?>"
                    data-toggle="tooltip"
                    data-placement="top"
@@ -20,9 +20,6 @@
                         "caption" => get_the_title(),
                     ]); ?>
                 </a>
-                <figcaption class="figure-caption text-center">
-                    <?php echo get_the_title(); ?>
-                </figcaption>
             </figure>
         </div>
         <!-- photo -->
