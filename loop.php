@@ -6,16 +6,25 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     	<!-- the post date & categories -->
-    	<ul class="list-inline mt-4 mb-1">
+        <ul class="list-inline mt-4 mb-1">
             <li class="list-inline-item">
-                    <a href="<?php echo get_permalink(); ?>" class="badge badge-dark">
-                        <?php echo wp_date(
+                <a href="<?php echo get_permalink(); ?>" class="badge badge-dark">
+                    <?php
+                    // Get the post date using get_the_date()
+                    $post_date = get_the_date("U"); // Get Unix timestamp
+                    if ($post_date) {
+                        echo wp_date("d M, Y", $post_date, wp_timezone());
+                    } else {
+                        // Fallback if no date is found
+                        echo wp_date(
                             "d M, Y",
-                            strtotime(get_the_date()),
+                            current_time("timestamp"),
                             wp_timezone()
-                        ); ?>
-                    </a>
-                </li>
+                        );
+                    }
+                    ?>
+                </a>
+            </li>
             <?php
             $categories = get_the_category();
             if ($categories) {
