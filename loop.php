@@ -22,10 +22,6 @@
 		</h2>
 		<!-- /post title -->
 
-		<!-- post details -->
-		<?php include "includes/post-details.php"; ?>
-		<!-- /post details -->
-
 	</article>
 	<!-- /article -->
 
