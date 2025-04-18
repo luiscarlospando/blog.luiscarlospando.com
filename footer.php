@@ -8,11 +8,26 @@
                     </div>
                     <div class="row mt-4">
                         <?php
-                        // Only hide latest post on homepage
+                        // Hide on homepage and when viewing the latest post
                         $homepage = "/";
                         $currentpage = $_SERVER["REQUEST_URI"];
-                        if ($homepage == $currentpage): ?>
-                        <?php else: ?>
+
+                        // Get the latest post ID
+                        $latest_post_query = new WP_Query([
+                            "posts_per_page" => 1,
+                            "post_type" => "post",
+                        ]);
+
+                        $latest_post_id = $latest_post_query->posts[0]->ID;
+                        wp_reset_postdata();
+
+                        // Only show if not homepage and not viewing the latest post
+                        if (
+                            $homepage != $currentpage &&
+                            (!is_single() ||
+                                (is_single() &&
+                                    get_the_ID() != $latest_post_id))
+                        ): ?>
                             <?php
                             $latest_post = new WP_Query([
                                 "posts_per_page" => 1,
