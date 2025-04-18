@@ -702,4 +702,11 @@ function custom_date_translation($months)
     $months["12"] = "dic";
     return $months;
 }
-add_filter("month_abbrev", "custom_date_translation");
+add_filter("month_abbrev", "custom_date_translation"); // Function to exclude the "Photos" category from main loop
+function exclude_photos_category($query)
+{
+    if ($query->is_main_query() && !is_admin()) {
+        $query->set("category__not_in", [986]);
+    }
+}
+add_action("pre_get_posts", "exclude_photos_category");
