@@ -7,24 +7,34 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                    <?php
-                    // DLOCC If URL is Homepage then do this…
-                    $homepage = "/";
-                    $currentpage = $_SERVER["REQUEST_URI"];
-                    $nextpost = get_adjacent_post(false, "", false);
-                    if ($homepage == $currentpage || $nextpost == ""): ?>
-                    <?php else: ?>
-                    <?php query_posts("showposts=1"); ?>
-                    <?php while (have_posts()):
-                        the_post(); ?>
-                        <div class="col-12 text-center">
-							Lo último: <span id="blog"></span>
-                        </div>
-                    <?php
-                    endwhile; ?>
-                    <?php endif;
-                    ?>
-                    <?php wp_reset_query(); ?>
+                        <?php
+                        // DLOCC If URL is Homepage then do this…
+                        $homepage = "/";
+                        $currentpage = $_SERVER["REQUEST_URI"];
+                        $nextpost = get_adjacent_post(false, "", false);
+                        if ($homepage == $currentpage || $nextpost == ""): ?>
+                        <?php // Reset after using WP_Query
+                            // Reset after using WP_Query
+                            else: ?>
+                            <?php
+                            $latest_post = new WP_Query([
+                                "posts_per_page" => 1,
+                                "post_type" => "post",
+                            ]);
+
+                            if ($latest_post->have_posts()):
+                                while ($latest_post->have_posts()):
+                                    $latest_post->the_post(); ?>
+                                    <div class="col-12 text-center">
+                                        Lo último: <span id="blog"></span>
+                                    </div>
+                                <?php
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                            ?>
+                        <?php endif;
+                        ?>
                     </div>
                     <hr>
                     <div class="row mb-md-2">
