@@ -3,7 +3,7 @@
         the_post(); ?>
 
         <!-- photo -->
-        <div class="col-md-4 mb-4">
+        <div class="col-6 col-md-4 mb-4">
             <figure class="figure figure-foto">
                 <a href="<?php the_permalink(); ?>"
                    data-toggle="tooltip"
