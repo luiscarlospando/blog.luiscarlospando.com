@@ -14,7 +14,7 @@
 				</p>
 
 				<div class="row">
-				    <?php get_template_part("loop-fotos"); ?>
+				    <?php get_template_part("loop-photos"); ?>
 				</div>
 
 				<span class="text-center"><?php get_template_part("pagination"); ?></span>
