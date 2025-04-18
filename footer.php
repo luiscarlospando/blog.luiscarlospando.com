@@ -15,6 +15,8 @@
                         if ($homepage == $currentpage || $nextpost == ""): ?>
                         <?php // Reset after using WP_Query
                             // Reset after using WP_Query
+                            // Reset after using WP_Query
+                            // Reset after using WP_Query
                             else: ?>
                             <?php
                             $latest_post = new WP_Query([
@@ -26,7 +28,7 @@
                                 while ($latest_post->have_posts()):
                                     $latest_post->the_post(); ?>
                                     <div class="col-12 text-center">
-                                        Lo último: <span id="blog"></span>
+                                        Lo último: <span id="blog"><?php the_title(); ?></span>
                                     </div>
                                 <?php
                                 endwhile;
