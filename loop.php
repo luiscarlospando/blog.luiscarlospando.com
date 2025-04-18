@@ -9,20 +9,22 @@
         <ul class="list-inline mt-4 mb-1">
             <li class="list-inline-item">
                 <a href="<?php echo get_permalink(); ?>" class="badge badge-dark">
-                    <?php
-                    // Get the post date using get_the_date()
-                    $post_date = get_the_date("U"); // Get Unix timestamp
-                    if ($post_date) {
-                        echo wp_date("d M, Y", $post_date, wp_timezone());
-                    } else {
-                        // Fallback if no date is found
-                        echo wp_date(
-                            "d M, Y",
-                            current_time("timestamp"),
-                            wp_timezone()
-                        );
-                    }
-                    ?>
+                    <time datetime="<?php echo get_the_date("c"); ?>"
+                            itemprop="datePublished"
+                            pubdate>
+                        <?php
+                        $post_date = get_the_date("U");
+                        if ($post_date) {
+                            echo wp_date("d M, Y", $post_date, wp_timezone());
+                        } else {
+                            echo wp_date(
+                                "d M, Y",
+                                current_time("timestamp"),
+                                wp_timezone()
+                            );
+                        }
+                        ?>
+                    </time>
                 </a>
             </li>
             <?php

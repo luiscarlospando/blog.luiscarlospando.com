@@ -21,20 +21,22 @@
                     ]); ?>
                 </a>
                 <figcaption class="figure-caption text-center">
-                    <?php
-                    // Get the post date using get_the_date()
-                    $post_date = get_the_date("U"); // Get Unix timestamp
-                    if ($post_date) {
-                        echo wp_date("d M, Y", $post_date, wp_timezone());
-                    } else {
-                        // Fallback if no date is found
-                        echo wp_date(
-                            "d M, Y",
-                            current_time("timestamp"),
-                            wp_timezone()
-                        );
-                    }
-                    ?>
+                    <time datetime="<?php echo get_the_date("c"); ?>"
+                            itemprop="datePublished"
+                            pubdate>
+                        <?php
+                        $post_date = get_the_date("U");
+                        if ($post_date) {
+                            echo wp_date("d M, Y", $post_date, wp_timezone());
+                        } else {
+                            echo wp_date(
+                                "d M, Y",
+                                current_time("timestamp"),
+                                wp_timezone()
+                            );
+                        }
+                        ?>
+                    </time>
                 </figcaption>
             </figure>
         </div>
