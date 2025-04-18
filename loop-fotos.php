@@ -1,5 +1,4 @@
 <?php if (have_posts()):
-
     while (have_posts()):
         the_post(); ?>
 
@@ -44,9 +43,7 @@
         <!-- photo -->
 
 <?php
-    endwhile;
-    wp_reset_postdata();
-    ?>
+    endwhile; ?>
 
 <?php
 else:
