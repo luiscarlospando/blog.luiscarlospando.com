@@ -10,7 +10,7 @@
 
 				<p class="text-center">
                     Fotos que he tomado con mi iPhone o que me han tomado.<br>
-                    También puede haber algunas que he haya visto en redes sociales.
+                    También puede haber algunas que haya visto en redes sociales.
 				</p>
 
 				<div class="row">
