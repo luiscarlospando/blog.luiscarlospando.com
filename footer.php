@@ -13,11 +13,7 @@
                         $currentpage = $_SERVER["REQUEST_URI"];
                         $nextpost = get_adjacent_post(false, "", false);
                         if ($homepage == $currentpage || $nextpost == ""): ?>
-                        <?php // Reset after using WP_Query
-                            // Reset after using WP_Query
-                            // Reset after using WP_Query
-                            // Reset after using WP_Query
-                            else: ?>
+                        <?php else: ?>
                             <?php
                             $latest_post = new WP_Query([
                                 "posts_per_page" => 1,
