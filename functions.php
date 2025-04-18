@@ -702,11 +702,15 @@ function custom_date_translation($months)
     $months["12"] = "dic";
     return $months;
 }
-add_filter("month_abbrev", "custom_date_translation"); // Function to exclude the "Photos" category from main loop
+add_filter("month_abbrev", "custom_date_translation"); // Exclude "Photos" category from main loop except in its own archive
 function exclude_photos_category($query)
 {
+    // Only modify main query and not in admin
     if ($query->is_main_query() && !is_admin()) {
-        $query->set("category__not_in", [986]);
+        // Check if we're NOT in the Photos category archive
+        if (!is_category("photos")) {
+            $query->set("category__not_in", [986]);
+        }
     }
 }
 add_action("pre_get_posts", "exclude_photos_category");
