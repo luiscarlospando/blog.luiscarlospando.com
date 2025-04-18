@@ -27,10 +27,10 @@
                         <?php
                         $post_date = get_the_date("U");
                         if ($post_date) {
-                            echo wp_date("d M, Y", $post_date, wp_timezone());
+                            echo wp_date("d m, Y", $post_date, wp_timezone());
                         } else {
                             echo wp_date(
-                                "d M, Y",
+                                "d m, Y",
                                 current_time("timestamp"),
                                 wp_timezone()
                             );
