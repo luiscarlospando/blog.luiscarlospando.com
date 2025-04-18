@@ -8,11 +8,18 @@
                     </div>
                     <div class="row mt-4">
                         <?php
-                        // DLOCC If URL is Homepage then do this…
+                        // Check if it's homepage, first page of any archive, or no next post
                         $homepage = "/";
                         $currentpage = $_SERVER["REQUEST_URI"];
                         $nextpost = get_adjacent_post(false, "", false);
-                        if ($homepage == $currentpage || $nextpost == ""): ?>
+                        $is_first_page =
+                            !is_paged() || get_query_var("paged") == 1;
+
+                        if (
+                            $homepage == $currentpage ||
+                            $nextpost == "" ||
+                            $is_first_page
+                        ): ?>
                         <?php else: ?>
                             <?php
                             $latest_post = new WP_Query([
