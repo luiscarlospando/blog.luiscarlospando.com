@@ -8,23 +8,23 @@
                     </div>
                     <div class="row mt-4">
                         <?php
-                        // DLOCC If URL is Homepage then do this…
-                        $homepage = "/";
-                        $currentpage = $_SERVER["REQUEST_URI"];
-                        $nextpost = get_adjacent_post(false, "", false);
-                        if ($homepage == $currentpage || $nextpost == ""): ?>
-                        <?php else: ?>
+                        // Show latest post section except on homepage
+                        $is_homepage = is_front_page() || is_home();
+                        if (!$is_homepage): ?>
                             <?php
                             $latest_post = new WP_Query([
                                 "posts_per_page" => 1,
                                 "post_type" => "post",
+                                "post_status" => "publish",
+                                // Exclude current post if we're on a single post page
+                                "post__not_in" => [get_queried_object_id()],
                             ]);
 
                             if ($latest_post->have_posts()):
                                 while ($latest_post->have_posts()):
                                     $latest_post->the_post(); ?>
                                     <div class="col-12 text-center">
-                                        Lo último: <span id="blog"><?php the_title(); ?></span>
+                                        Lo último: <span id="blog"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                                     </div>
                                 <?php
                                 endwhile;
