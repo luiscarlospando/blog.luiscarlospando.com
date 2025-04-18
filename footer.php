@@ -103,7 +103,7 @@
                                 <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item">
-                                            <a href="<?php echo site_url(); ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
+                                            <a href="<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
                                                 <i class="fa-solid fa-rss"></i>
                                             </a>
                                         </li>
