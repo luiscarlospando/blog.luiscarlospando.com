@@ -8,18 +8,10 @@
                     </div>
                     <div class="row mt-4">
                         <?php
-                        // Check if it's homepage, first page of any archive, or no next post
+                        // Only hide latest post on homepage
                         $homepage = "/";
                         $currentpage = $_SERVER["REQUEST_URI"];
-                        $nextpost = get_adjacent_post(false, "", false);
-                        $is_first_page =
-                            !is_paged() || get_query_var("paged") == 1;
-
-                        if (
-                            $homepage == $currentpage ||
-                            $nextpost == "" ||
-                            $is_first_page
-                        ): ?>
+                        if ($homepage == $currentpage): ?>
                         <?php else: ?>
                             <?php
                             $latest_post = new WP_Query([
