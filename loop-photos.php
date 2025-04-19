@@ -3,7 +3,7 @@
         the_post(); ?>
 
         <!-- photo -->
-        <div class="col-6 col-md-4 mb-4">
+        <div class="grid-item col-6 col-md-4">
             <figure class="figure figure-foto">
                 <a href="<?php the_permalink(); ?>"
                    data-toggle="tooltip"
@@ -22,8 +22,8 @@
                 </a>
                 <figcaption class="figure-caption text-center">
                     <time datetime="<?php echo get_the_date("c"); ?>"
-                            itemprop="datePublished"
-                            pubdate>
+                          itemprop="datePublished"
+                          pubdate>
                         <?php
                         $post_date = get_the_date("U");
                         if ($post_date) {
@@ -47,21 +47,17 @@
         <!-- photo -->
 
 <?php
-    endwhile; ?>
-
-<?php
+    endwhile;
 else:
      ?>
 
-	<!-- article -->
-	<article>
-
-		<p class="title text-center">
-			<?php _e("Sorry, nothing to display.", "html5blank"); ?> 😵
-		</p>
-
-	</article>
-	<!-- /article -->
+    <!-- article -->
+    <article>
+        <p class="title text-center">
+            <?php _e("Sorry, nothing to display.", "html5blank"); ?> 😵
+        </p>
+    </article>
+    <!-- /article -->
 
 <?php
 endif; ?>
