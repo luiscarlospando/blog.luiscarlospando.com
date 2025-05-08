@@ -53,13 +53,6 @@
                         <div class="col-6 col-md-4 col-lg-4 order-lg-1 copyright">
                             <ul class="list-unstyled my-0">
                                 <li class="mb-2">
-                                    <p>
-                                        &copy; <?php echo date(
-                                            "Y"
-                                        ); ?> Luis Carlos Pando
-                                    </p>
-                                </li>
-                                <li class="mb-2">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
                                     </a>
@@ -80,6 +73,7 @@
                                     </a>
                                 </li>
                             </ul>
+                            <p>Hola desde Chihuahua, México 🌵</p>
                         </div>
 
                         <div class="col-6 col-md-8 col-lg-4 order-lg-3">
@@ -142,9 +136,13 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-12 col-lg-4 order-lg-2 mt-3 mt-lg-0 text-center">
-                            <p>Hola desde Chihuahua, México 🌵</p>
+                        <hr class="d-lg-none">
+                        <div class="col-12 col-lg-4 order-lg-2 text-center">
+                            <p class="copyright">
+                                &copy; <?php echo date(
+                                    "Y"
+                                ); ?> Luis Carlos Pando
+                            </p>
                             <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
                             <ul class="list-inline my-0">
                                 <li class="list-inline-item">
