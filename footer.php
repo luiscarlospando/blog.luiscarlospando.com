@@ -38,7 +38,7 @@
                                 while ($latest_post->have_posts()):
                                     $latest_post->the_post(); ?>
                                     <div class="col-12 text-center">
-                                        Lo último: <span id="blog"><?php the_title(); ?></span>
+                                        🗞️ Lo último: <span id="blog"><?php the_title(); ?></span>
                                     </div>
                                 <?php
                                 endwhile;

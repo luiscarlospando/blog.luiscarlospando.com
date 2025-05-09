@@ -8,8 +8,10 @@ if (!$toot_url) {
 }
 
 if ($toot_url) {
-    echo '<a id="mastodon-toot" href="' .
-        esc_url($toot_url) .
+    echo '<a id="mastodon-toot" href="' . 
+        esc_url($toot_url) . 
         '" target="_blank">en este <em>toot</em></a>';
+} else {
+    // For posts without a corresponding Mastodon toot
+    echo 'a alguno de mis <em>toots</em>';
 }
-?>
