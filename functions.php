@@ -714,22 +714,34 @@ function exclude_photos_category($query)
     }
 }
 add_action("pre_get_posts", "exclude_photos_category");
-// Mastodon toot URL fetching
+// Mastodon toot URL fetcher
 function get_mastodon_toot_url(
     $post_url,
-    $mastodon_instance = "https://social.lol/@mijo"
+    $mastodon_instance = "https://social.lol",
+    $mastodon_username = "mijo"
 ) {
-    // Get the Mastodon instance from your settings
-    if (!$mastodon_instance) {
-        $mastodon_instance = get_option("echofeed_mastodon_instance");
-    } // Remove trailing slash if present
+    // Remove trailing slash if present
     $mastodon_instance = rtrim($mastodon_instance, "/"); // Search URL
-    $search_url = $mastodon_instance . "/api/v2/search"; // Encode the post URL for the search
-    $encoded_url = urlencode($post_url); // Make the API request
+    $search_url = $mastodon_instance . "/api/v2/search"; // Create the search query with the from: operator
+    $search_query =
+        "from:@" .
+        $mastodon_username .
+        "@" .
+        str_replace(["https://", "http://"], "", $mastodon_instance) .
+        " " .
+        $post_url; // Make the API request
     $response = wp_remote_get(
-        add_query_arg(["q" => $post_url, "type" => "statuses"], $search_url)
+        add_query_arg(
+            [
+                "q" => $search_query,
+                "type" => "statuses",
+                "resolve" => "true", // This helps ensure we get the full status
+            ],
+            $search_url
+        )
     );
     if (is_wp_error($response)) {
+        error_log("Mastodon API Error: " . $response->get_error_message());
         return false;
     }
     $body = wp_remote_retrieve_body($response);

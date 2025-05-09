@@ -93,8 +93,6 @@
 
 					<div class="comments-disclaimer mb-4">
 						Si quieres comentar algo debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>) y enviar un <em>reply</em> al <em><?php
-// Add this where you want the toot link to appear in your single.php template
-
 $toot_url = get_post_meta(get_the_ID(), "_mastodon_toot_url", true);
 if ($toot_url) {
     echo '<a id="mastodon-toot" href="' .
