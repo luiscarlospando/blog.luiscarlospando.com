@@ -718,7 +718,7 @@ add_action("pre_get_posts", "exclude_photos_category");
 function get_mastodon_toot_url(
     $post_url,
     $mastodon_instance = "https://social.lol",
-    $mastodon_username = "mijo"
+    $mastodon_username = "@mijo"
 ) {
     // Remove trailing slash if present
     $mastodon_instance = rtrim($mastodon_instance, "/"); // Search URL
