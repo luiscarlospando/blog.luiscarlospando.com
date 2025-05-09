@@ -97,7 +97,7 @@ $toot_url = get_post_meta(get_the_ID(), "_mastodon_toot_url", true);
 if ($toot_url) {
     echo '<a id="mastodon-toot" href="' .
         esc_url($toot_url) .
-        '" target="_blank">Comment on Mastodon</a>';
+        '" target="_blank">toot</a>';
 }
 ?></em> de este post (todos mis posts son <em>auto-tootéados</em> en Mastodon). Si le das like <em>like</em> o le das <em>boost</em> también aparecerás aquí debajo). Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
