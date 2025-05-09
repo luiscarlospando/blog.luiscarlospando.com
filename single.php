@@ -92,33 +92,7 @@
 					<h2>Comentarios</h2>
 
 					<div class="comments-disclaimer mb-4">
-						Si quieres comentar algo debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>) y enviar un <em>reply</em> al <em><?php
-$post_id = get_the_ID();
-$toot_url = get_post_meta($post_id, "_mastodon_toot_url", true);
-
-// Debug output
-error_log("Post ID: " . $post_id);
-error_log("Toot URL from meta: " . ($toot_url ? $toot_url : "not found"));
-
-// If no toot URL is found, try to find it now
-if (!$toot_url) {
-    error_log("No toot URL found, trying to fetch it now...");
-    if (force_check_mastodon_toot($post_id)) {
-        $toot_url = get_post_meta($post_id, "_mastodon_toot_url", true);
-        error_log("Found toot URL after forced check: " . $toot_url);
-    }
-}
-
-if ($toot_url) {
-    echo '<a id="mastodon-toot" href="' .
-        esc_url($toot_url) .
-        '" target="_blank">toot</a>';
-} else {
-    // Debug output in HTML (you can remove this later)
-    echo "<!-- No Mastodon toot URL found for post ID: " . $post_id . " -->";
-}
-?>
-</em> de este post (todos mis posts son <em>auto-tootéados</em> en Mastodon). Si le das like <em>like</em> o le das <em>boost</em> también aparecerás aquí debajo). Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						Si quieres comentar algo debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>) y enviar un <em>reply</em> <?php include "includes/fetched-toot-link.php"; ?>, (todos mis posts son <em>auto-tootéados</em> en Mastodon). Si le das like <em>like</em> o le das <em>boost</em> también aparecerás aquí debajo). Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
