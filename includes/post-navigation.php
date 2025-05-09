@@ -4,13 +4,13 @@
         <div class="col-6 text-left">
             <?php
             // Check if current post is in "Photos" category
-            $in_fotos = has_category("photos");
+            $in_photos = has_category("photos");
 
             // Get previous post, excluding or including only "Photos" based on current post
-            $previous_post = get_previous_post(!$in_fotos, "", "category");
+            $previous_post = get_previous_post(!$in_photos, "", "category");
 
             // If we're in "Photos", get previous post only from "Photos" category
-            if ($in_fotos) {
+            if ($in_photos) {
                 $previous_post = get_previous_post(true, "", "category");
             }
 
@@ -37,13 +37,13 @@
         <div class="col-6 text-right">
             <?php
             // Check if current post is in "Photos" category
-            $in_fotos = has_category("photos");
+            $in_photos = has_category("photos");
 
             // Get next post, excluding or including only "Photos" based on current post
-            $next_post = get_next_post(!$in_fotos, "", "category");
+            $next_post = get_next_post(!$in_photos, "", "category");
 
             // If we're in "Photos", get next post only from "Photos" category
-            if ($in_fotos) {
+            if ($in_photos) {
                 $next_post = get_next_post(true, "", "category");
             }
 
