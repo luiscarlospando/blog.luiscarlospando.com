@@ -713,8 +713,18 @@ function exclude_photos_category($query)
         }
     }
 }
-add_action("pre_get_posts", "exclude_photos_category");
-// Mastodon toot URL fetcher
+add_action("pre_get_posts", "exclude_photos_category"); // Mastodon toot URL fetcher
+// Add a function to save the Mastodon settings
+function save_mastodon_settings()
+{
+    if (!defined("MASTODON_ACCESS_TOKEN")) {
+        define(
+            "MASTODON_ACCESS_TOKEN",
+            "Dp7icijhm9zsnlYVoJAXVHHZiyb0xvVZoUcVHXCdMnY"
+        );
+    }
+}
+add_action("init", "save_mastodon_settings");
 function get_mastodon_toot_url(
     $post_url,
     $mastodon_instance = "https://social.lol",
@@ -722,10 +732,11 @@ function get_mastodon_toot_url(
 ) {
     // Remove trailing slash if present
     $mastodon_instance = rtrim($mastodon_instance, "/"); // Search URL
-    $search_url = $mastodon_instance . "/api/v2/search"; // Create the search query - simplified to ensure it works
+    $search_url = $mastodon_instance . "/api/v2/search";
+    // Create the search query
     $search_query = "from:mijo " . $post_url; // Debug log
     error_log("Searching Mastodon with query: " . $search_query);
-    error_log("Search URL: " . $search_url); // Make the API request
+    error_log("Search URL: " . $search_url); // Make the API request with authentication
     $response = wp_remote_get(
         add_query_arg(
             [
@@ -734,7 +745,8 @@ function get_mastodon_toot_url(
                 "resolve" => "true",
             ],
             $search_url
-        )
+        ),
+        ["headers" => ["Authorization" => "Bearer " . MASTODON_ACCESS_TOKEN]]
     );
     if (is_wp_error($response)) {
         error_log("Mastodon API Error: " . $response->get_error_message());
@@ -753,24 +765,21 @@ function get_mastodon_toot_url(
     }
     error_log("No matching toot found for URL: " . $post_url);
     return false;
-} // Hook to automatically check for toot URL when post is published
+} // Rest of the code remains the same...
 function check_and_save_mastodon_toot($new_status, $old_status, $post)
 {
-    // Only run for published posts
     if ($new_status !== "publish") {
         return;
-    } // Get the post URL
-    $post_url = get_permalink($post->ID); // Debug log
+    }
+    $post_url = get_permalink($post->ID);
     error_log("Checking Mastodon toot for post: " . $post_url);
-    // Try to find the toot URL
     $toot_url = get_mastodon_toot_url($post_url);
     if ($toot_url) {
-        // Save the toot URL as post meta
         update_post_meta($post->ID, "_mastodon_toot_url", $toot_url);
         error_log("Saved toot URL: " . $toot_url);
     }
 }
-add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3); // Add a function to manually check for toot URL
+add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3);
 function force_check_mastodon_toot($post_id)
 {
     $post_url = get_permalink($post_id);
