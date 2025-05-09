@@ -51,7 +51,7 @@
                     <hr>
                     <div class="row mb-md-2">
                         <div class="col-6 col-md-4 col-lg-4 order-lg-1 copyright">
-                            <ul class="list-unstyled my-0">
+                            <ul class="list-unstyled mt-0">
                                 <li class="mb-2">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
