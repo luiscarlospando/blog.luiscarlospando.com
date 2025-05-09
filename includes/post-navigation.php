@@ -3,7 +3,17 @@
         <!-- Previous Post Link -->
         <div class="col-6 text-left">
             <?php
-            $previous_post = get_previous_post();
+            // Check if current post is in "Fotos" category
+            $in_fotos = has_category("fotos");
+
+            // Get previous post, excluding or including only "Fotos" based on current post
+            $previous_post = get_previous_post(!$in_fotos, "", "category");
+
+            // If we're in "Fotos", get previous post only from "Fotos" category
+            if ($in_fotos) {
+                $previous_post = get_previous_post(true, "", "category");
+            }
+
             if (!empty($previous_post)):
 
                 $previous_title = get_the_title($previous_post);
@@ -26,7 +36,17 @@
         <!-- Next Post Link -->
         <div class="col-6 text-right">
             <?php
-            $next_post = get_next_post();
+            // Check if current post is in "Fotos" category
+            $in_fotos = has_category("fotos");
+
+            // Get next post, excluding or including only "Fotos" based on current post
+            $next_post = get_next_post(!$in_fotos, "", "category");
+
+            // If we're in "Fotos", get next post only from "Fotos" category
+            if ($in_fotos) {
+                $next_post = get_next_post(true, "", "category");
+            }
+
             if (!empty($next_post)):
 
                 $next_title = get_the_title($next_post);
