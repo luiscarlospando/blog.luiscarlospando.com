@@ -714,3 +714,47 @@ function exclude_photos_category($query)
     }
 }
 add_action("pre_get_posts", "exclude_photos_category");
+// Mastodon toot URL fetching
+function get_mastodon_toot_url(
+    $post_url,
+    $mastodon_instance = "https://social.lol/@mijo"
+) {
+    // Get the Mastodon instance from your settings
+    if (!$mastodon_instance) {
+        $mastodon_instance = get_option("echofeed_mastodon_instance");
+    } // Remove trailing slash if present
+    $mastodon_instance = rtrim($mastodon_instance, "/"); // Search URL
+    $search_url = $mastodon_instance . "/api/v2/search"; // Encode the post URL for the search
+    $encoded_url = urlencode($post_url); // Make the API request
+    $response = wp_remote_get(
+        add_query_arg(["q" => $post_url, "type" => "statuses"], $search_url)
+    );
+    if (is_wp_error($response)) {
+        return false;
+    }
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true); // Look for the most recent toot that contains our URL
+    if (!empty($data["statuses"])) {
+        foreach ($data["statuses"] as $status) {
+            if (strpos($status["content"], $post_url) !== false) {
+                return $status["url"];
+            }
+        }
+    }
+    return false;
+} // Hook to automatically check for toot URL when post is published
+function check_and_save_mastodon_toot($post_id)
+{
+    // Only run for published posts
+    if (get_post_status($post_id) !== "publish") {
+        return;
+    } // Get the post URL
+    $post_url = get_permalink($post_id);
+    // Try to find the toot URL
+    $toot_url = get_mastodon_toot_url($post_url);
+    if ($toot_url) {
+        // Save the toot URL as post meta
+        update_post_meta($post_id, "_mastodon_toot_url", $toot_url);
+    }
+}
+add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3);

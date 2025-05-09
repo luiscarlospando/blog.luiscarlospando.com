@@ -92,7 +92,16 @@
 					<h2>Comentarios</h2>
 
 					<div class="comments-disclaimer mb-4">
-						Si quieres comentar algo debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>) y enviar un <em>reply</em> al <em>toot</em> de este post (todos mis posts son <em>auto-tootéados</em> en Mastodon). Si le das like <em>like</em> o le das <em>boost</em> también aparecerás aquí debajo). Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						Si quieres comentar algo debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a> (las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>) y enviar un <em>reply</em> al <em><?php
+// Add this where you want the toot link to appear in your single.php template
+
+$toot_url = get_post_meta(get_the_ID(), "_mastodon_toot_url", true);
+if ($toot_url) {
+    echo '<a id="mastodon-toot" href="' .
+        esc_url($toot_url) .
+        '" target="_blank">Comment on Mastodon</a>';
+}
+?></em> de este post (todos mis posts son <em>auto-tootéados</em> en Mastodon). Si le das like <em>like</em> o le das <em>boost</em> también aparecerás aquí debajo). Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
