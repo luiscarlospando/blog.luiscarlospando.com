@@ -6,12 +6,12 @@
             // Check if current post is in "Photos" category
             $in_photos = has_category("photos");
 
-            // Get previous post, excluding or including only "Photos" based on current post
-            $previous_post = get_previous_post(!$in_photos, "", "category");
-
-            // If we're in "Photos", get previous post only from "Photos" category
             if ($in_photos) {
-                $previous_post = get_previous_post(true, "", "category");
+                // If we're in "Photos", get previous post only from "Photos" category
+                $previous_post = get_previous_post(true, "", "photos");
+            } else {
+                // For non-photo posts, exclude the "photos" category
+                $previous_post = get_previous_post(false, "", "photos");
             }
 
             if (!empty($previous_post)):
@@ -39,12 +39,12 @@
             // Check if current post is in "Photos" category
             $in_photos = has_category("photos");
 
-            // Get next post, excluding or including only "Photos" based on current post
-            $next_post = get_next_post(!$in_photos, "", "category");
-
-            // If we're in "Photos", get next post only from "Photos" category
             if ($in_photos) {
-                $next_post = get_next_post(true, "", "category");
+                // If we're in "Photos", get next post only from "Photos" category
+                $next_post = get_next_post(true, "", "photos");
+            } else {
+                // For non-photo posts, exclude the "photos" category
+                $next_post = get_next_post(false, "", "photos");
             }
 
             if (!empty($next_post)):
