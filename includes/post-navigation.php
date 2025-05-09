@@ -1,17 +1,53 @@
+<?php
+// Debugging: Let's see what categories we have
+$post_categories = get_the_category();
+echo "<!-- Categories for this post: ";
+foreach ($post_categories as $category) {
+    echo "ID: " . $category->term_id . ", ";
+    echo "Name: " . $category->name . ", ";
+    echo "Slug: " . $category->slug . " | ";
+}
+echo " -->";
+
+// Get the Photos category ID
+$photos_cat = get_category_by_slug("photos");
+$photos_id = $photos_cat ? $photos_cat->term_id : 0;
+echo "<!-- Photos category ID: " . $photos_id . " -->";
+?>
+
 <nav class="primary_navigation">
     <div class="row">
         <!-- Previous Post Link -->
         <div class="col-6 text-left">
             <?php
+            // Get the Photos category ID
+            $photos_cat = get_category_by_slug("photos");
+            $photos_id = $photos_cat ? $photos_cat->term_id : 0;
+
             // Check if current post is in "Photos" category
-            $in_photos = has_category("photos");
+            $in_photos = has_category($photos_id);
 
             if ($in_photos) {
                 // If we're in "Photos", get previous post only from "Photos" category
-                $previous_post = get_previous_post(true, "", "photos");
+                $args = [
+                    "exclude" => "",
+                    "in_same_term" => true,
+                    "taxonomy" => "category",
+                    "term_id" => $photos_id,
+                ];
+                $previous_post = get_previous_post(
+                    true,
+                    "",
+                    "category",
+                    $photos_id
+                );
             } else {
                 // For non-photo posts, exclude the "photos" category
-                $previous_post = get_previous_post(false, "", "photos");
+                $previous_post = get_previous_post(
+                    true,
+                    [$photos_id],
+                    "category"
+                );
             }
 
             if (!empty($previous_post)):
@@ -36,15 +72,12 @@
         <!-- Next Post Link -->
         <div class="col-6 text-right">
             <?php
-            // Check if current post is in "Photos" category
-            $in_photos = has_category("photos");
-
             if ($in_photos) {
                 // If we're in "Photos", get next post only from "Photos" category
-                $next_post = get_next_post(true, "", "photos");
+                $next_post = get_next_post(true, "", "category", $photos_id);
             } else {
                 // For non-photo posts, exclude the "photos" category
-                $next_post = get_next_post(false, "", "photos");
+                $next_post = get_next_post(true, [$photos_id], "category");
             }
 
             if (!empty($next_post)):
