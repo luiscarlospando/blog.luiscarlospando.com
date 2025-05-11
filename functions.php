@@ -708,16 +708,12 @@ function exclude_photos_category($query)
     // Only modify main query and not in admin
     if ($query->is_main_query() && !is_admin()) {
         // Check if we're NOT in the Photos category archive
-        if (!is_category("photos")) {
-            $query->set("category__not_in", [986]);
+        if (!is_category("photos") && !is_tag()) {
+            $query->set("category__not_in", [986]); // Photos category ID
         }
     }
 }
-add_action(
-    "pre_get_posts",
-
-    "exclude_photos_category"
-); // Mastodon toot URL fetcher
+add_action("pre_get_posts", "exclude_photos_category"); // Mastodon toot URL fetcher
 // Function to save the Mastodon settings
 function save_mastodon_settings()
 {
@@ -746,9 +742,7 @@ function get_mastodon_toot_url(
             ],
             $search_url
         ),
-        [
-            "headers" => ["Authorization" => "Bearer " . MASTODON_ACCESS_TOKEN],
-        ]
+        ["headers" => ["Authorization" => "Bearer " . MASTODON_ACCESS_TOKEN]]
     );
     if (is_wp_error($response)) {
         return false;
