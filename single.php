@@ -89,7 +89,7 @@
 					<!-- /likes & boosts -->
 
 					<!-- comments - replies -->
-					<ul class="list-inline">
+					<ul class="comments-title list-inline">
 	                    <li class="list-inline-item">
 							<h2>Comentarios</h2>
 						</li>
