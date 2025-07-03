@@ -21,7 +21,7 @@
 
 				<?php get_template_part("loop"); ?>
 
-				<span class="text-center"><?php get_template_part("pagination"); ?></span>
+				<?php get_template_part("pagination"); ?>
             </div>
         </div>
     </section>
