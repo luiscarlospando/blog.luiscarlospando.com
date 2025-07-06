@@ -8,10 +8,10 @@ if (!$toot_url) {
 }
 
 if ($toot_url) {
-    echo '<a id="mastodon-toot" href="' . 
-        esc_url($toot_url) . 
-        '" target="_blank">en este <em>toot</em></a>';
+    echo '<a id="mastodon-toot" href="' .
+        esc_url($toot_url) .
+        '" target="_blank"><i class="fa-solid fa-reply"></i> mandarme un reply aquí</a>';
 } else {
     // For posts without a corresponding Mastodon toot
-    echo 'a alguno de mis <em>toots</em>';
+    echo "<i class='fa-solid fa-reply'></i> mandar un reply a alguno de mis <em>toots</em>";
 }
