@@ -13,5 +13,5 @@ if ($toot_url) {
         '" target="_blank"><i class="fa-solid fa-reply"></i> mandarme un reply aquí</a>';
 } else {
     // For posts without a corresponding Mastodon toot
-    echo "<i class='fa-solid fa-reply'></i> mandar un reply a alguno de mis <em>toots</em>";
+    echo "contestar en el toot de este post en Mastodon";
 }
