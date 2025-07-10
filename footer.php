@@ -170,12 +170,12 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
                                         <code>Acerca de</code>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
+                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="" target="_blank">
                                         <code>v</code>
                                     </a>
                                 </li>
