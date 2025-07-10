@@ -170,8 +170,8 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Ver código fuente" target="_blank">
-                                        <i class="fa-solid fa-code-branch"></i> <code>Ver código fuente</code>
+                                    <a href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                        <code>Acerca de</code>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
