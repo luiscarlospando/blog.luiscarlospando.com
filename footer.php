@@ -170,7 +170,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
                                         <code>Acerca de</code>
                                     </a>
                                 </li>
