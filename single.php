@@ -36,10 +36,11 @@
 					</h1>
 					<!-- /post title -->
 
-					<?php echo "home_url: " . home_url(); ?>
-<?php echo "<br>site_url: " . site_url(); ?>
-<?php echo "<br>get_author_posts_url: " .
-    get_author_posts_url(get_the_author_meta("ID")); ?>
+					<?php
+     echo 'get_option("home"): ' . get_option("home") . "<br>";
+     echo 'get_option("siteurl"): ' . get_option("siteurl") . "<br>";
+     ?>
+
 
 
 					<!-- post details -->
