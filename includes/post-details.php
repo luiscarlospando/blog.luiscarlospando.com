@@ -16,18 +16,19 @@ $is_modified =
 // Common data preparation
 global $post;
 if (isset($post->post_author)) {
-    // Fix author URL domain if needed
     $author_url = get_author_posts_url($post->post_author);
+
+    // Replace base domain if incorrect, preserving the path
     if (
         strpos($author_url, "luiscarlospando.com") !== false &&
         strpos($author_url, "blog.luiscarlospando.com") === false
     ) {
-        $author_url = str_replace(
-            "https://luiscarlospando.com",
-            "https://blog.luiscarlospando.com",
-            $author_url
-        );
+        $parsed_url = parse_url($author_url);
+        $path = isset($parsed_url["path"]) ? $parsed_url["path"] : "";
+
+        $author_url = "https://blog.luiscarlospando.com" . $path;
     }
+
     $author_link =
         '<a href="' .
         esc_url($author_url) .
