@@ -16,12 +16,27 @@ $is_modified =
 // Common data preparation
 global $post;
 if (isset($post->post_author)) {
-    // Get author's nicename (slug)
-    $author_nicename = get_the_author_meta("user_nicename", $post->post_author);
+    // Obtener la URL base correcta del sitio (ej: https://blog.luiscarlospando.com)
+    $correct_base_url = home_url();
 
-    // Construct the author URL manually with the correct subdomain
-    $author_url =
-        "https://blog.luiscarlospando.com/author/" . $author_nicename . "/";
+    // Obtener URL del autor tal cual la da WP (puede tener dominio incorrecto)
+    $author_url = get_author_posts_url($post->post_author);
+
+    // Parsear el host de la URL que da WP
+    $author_url_host = parse_url($author_url, PHP_URL_HOST);
+    // Parsear el host de la URL base correcta
+    $correct_base_host = parse_url($correct_base_url, PHP_URL_HOST);
+
+    // Si los hosts no coinciden, reemplazamos el dominio base en la URL del autor
+    if ($author_url_host !== $correct_base_host) {
+        $author_url = str_replace(
+            // Dominio incorrecto (protocolo + host)
+            parse_url($author_url, PHP_URL_SCHEME) . "://" . $author_url_host,
+            // Dominio correcto (protocolo + host)
+            $correct_base_url,
+            $author_url
+        );
+    }
 
     $author_link =
         '<a href="' .
