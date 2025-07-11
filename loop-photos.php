@@ -22,6 +22,7 @@ if (have_posts()):
 
             // Open new masonry grid for this year
             echo '<div class="masonry-grid">';
+            echo '<div class="grid-sizer col-6 col-md-4"></div>';
 
             $current_year = $post_year;
         endif;
