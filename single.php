@@ -36,6 +36,12 @@
 					</h1>
 					<!-- /post title -->
 
+					<?php echo "home_url: " . home_url(); ?>
+<?php echo "<br>site_url: " . site_url(); ?>
+<?php echo "<br>get_author_posts_url: " .
+    get_author_posts_url(get_the_author_meta("ID")); ?>
+
+
 					<!-- post details -->
 					<?php include "includes/post-details.php"; ?>
 					<!-- /post details -->
@@ -132,7 +138,11 @@
 				<!-- article -->
 				<article>
 
-					<h1><?php _e("Sorry, nothing to display.", "html5blank"); ?></h1>
+					<h1><?php _e(
+         "Sorry, nothing to display.",
+
+         "html5blank"
+     ); ?></h1>
 
 				</article>
 				<!-- /article -->
