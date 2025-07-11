@@ -1,6 +1,32 @@
-<?php if (have_posts()):
+<?php
+$current_year = "";
+
+if (have_posts()):
     while (have_posts()):
-        the_post(); ?>
+
+        the_post();
+
+        $post_year = get_the_date("Y");
+
+        // If year has changed, output new heading and open masonry grid
+        if ($post_year !== $current_year):
+            if ($current_year !== ""):
+                // Close previous masonry grid
+                echo "</div>";
+            endif;
+
+            // Output year heading
+            echo '<h2 class="year-heading mb-3">' .
+                esc_html($post_year) .
+                "</h2>";
+
+            // Open new masonry grid for this year
+            echo '<div class="masonry-grid">';
+            echo '<div class="grid-sizer col-6 col-md-4"></div>';
+
+            $current_year = $post_year;
+        endif;
+        ?>
 
         <!-- photo -->
         <div class="grid-item col-6 col-md-4">
@@ -44,10 +70,13 @@
                 </figcaption>
             </figure>
         </div>
-        <!-- photo -->
+        <!-- /photo -->
 
-<?php
+    <?php
     endwhile;
+
+    // Close the last masonry grid
+    echo "</div>";
 else:
      ?>
 
