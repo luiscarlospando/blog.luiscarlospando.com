@@ -14,7 +14,18 @@ $is_modified =
     $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
 
 // Common data preparation
-$author_link = get_the_author_posts_link();
+global $post;
+if (isset($post->post_author)) {
+    $author_link =
+        '<a href="' .
+        esc_url(get_author_posts_url($post->post_author)) .
+        '" rel="author">' .
+        esc_html(get_the_author_meta("display_name", $post->post_author)) .
+        "</a>";
+} else {
+    $author_link = "";
+}
+
 $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
