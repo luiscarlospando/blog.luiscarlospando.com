@@ -16,18 +16,12 @@ $is_modified =
 // Common data preparation
 global $post;
 if (isset($post->post_author)) {
-    $author_url = get_author_posts_url($post->post_author);
+    // Get author's nicename (slug)
+    $author_nicename = get_the_author_meta("user_nicename", $post->post_author);
 
-    // Replace base domain if incorrect, preserving the path
-    if (
-        strpos($author_url, "luiscarlospando.com") !== false &&
-        strpos($author_url, "blog.luiscarlospando.com") === false
-    ) {
-        $parsed_url = parse_url($author_url);
-        $path = isset($parsed_url["path"]) ? $parsed_url["path"] : "";
-
-        $author_url = "https://blog.luiscarlospando.com" . $path;
-    }
+    // Construct the author URL manually with the correct subdomain
+    $author_url =
+        "https://blog.luiscarlospando.com/author/" . $author_nicename . "/";
 
     $author_link =
         '<a href="' .
