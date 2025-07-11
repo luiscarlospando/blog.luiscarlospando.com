@@ -781,4 +781,13 @@ function force_check_mastodon_toot($post_id)
         return true;
     }
     return false;
+} // Sort Photos category by date
+function sort_photos_category_by_date($query)
+{
+    if (!is_admin() && $query->is_main_query() && is_category("photos")) {
+        $query->set("orderby", "date");
+        $query->set("order", "DESC");
+        $query->set("posts_per_page", -1); // display all posts
+    }
 }
+add_action("pre_get_posts", "sort_photos_category_by_date");
