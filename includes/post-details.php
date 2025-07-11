@@ -16,27 +16,12 @@ $is_modified =
 // Common data preparation
 global $post;
 if (isset($post->post_author)) {
-    // Get the correct base URL of the site (e.g., https://blog.luiscarlospando.com)
-    $correct_base_url = home_url();
+    // Get author's nicename (slug)
+    $author_nicename = get_the_author_meta("user_nicename", $post->post_author);
 
-    // Get the author URL as WordPress returns it (may have wrong domain)
-    $author_url = get_author_posts_url($post->post_author);
-
-    // Parse the host from the author URL returned by WP
-    $author_url_host = parse_url($author_url, PHP_URL_HOST);
-    // Parse the host from the correct base URL
-    $correct_base_host = parse_url($correct_base_url, PHP_URL_HOST);
-
-    // If hosts don't match, replace the base domain in the author URL
-    if ($author_url_host !== $correct_base_host) {
-        $author_url = str_replace(
-            // Incorrect domain (scheme + host)
-            parse_url($author_url, PHP_URL_SCHEME) . "://" . $author_url_host,
-            // Correct domain (scheme + host)
-            $correct_base_url,
-            $author_url
-        );
-    }
+    // Construct the author URL manually with the correct subdomain
+    $author_url =
+        "https://blog.luiscarlospando.com/author/" . $author_nicename . "/";
 
     $author_link =
         '<a href="' .
@@ -73,7 +58,7 @@ $full_time = $is_modified
     <!-- Author -->
     <span class="author">
         <?php echo esc_html_e(
-            $is_modified ? "Updated by" : "By",
+            $is_modified ? "Actualizado por" : "Por",
             "html5blank"
         ); ?>
         <?php echo $author_link; ?>
@@ -85,7 +70,7 @@ $full_time = $is_modified
             data-toggle="tooltip"
             data-placement="bottom"
             title="<?php echo esc_attr__(
-                "Follow me on Mastodon",
+                "Sígueme en Mastodon",
                 "html5blank"
             ); ?>"
             target="_blank"
@@ -102,9 +87,9 @@ $full_time = $is_modified
           ); ?>"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="<?php echo esc_attr("$full_date at $full_time"); ?>">
+          title="<?php echo esc_attr("$full_date a la(s) $full_time"); ?>">
         <?php echo sprintf(
-            esc_html__("about %s ago", "html5blank"),
+            esc_html__("hace %s", "html5blank"),
             $relative_time
         ); ?>
     </time>
@@ -117,7 +102,7 @@ $full_time = $is_modified
         <a href="<?php echo esc_url($permalink); ?>" rel="bookmark">
             <i class="fa-solid fa-link" aria-hidden="true"></i>
             <span class="screen-reader-text"><?php esc_html_e(
-                "Permalink",
+                "Enlace permanente",
                 "html5blank"
             ); ?></span>
             Permalink
@@ -128,7 +113,7 @@ $full_time = $is_modified
     <?php edit_post_link(
         sprintf(
             '<i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> %s',
-            esc_html__("Edit", "html5blank")
+            esc_html__("Editar", "html5blank")
         ),
         '<span class="edit-link">',
         "</span>",
