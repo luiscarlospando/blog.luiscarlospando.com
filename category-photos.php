@@ -13,11 +13,7 @@
                 También puede haber algunas que haya visto en redes sociales.
             </p>
 
-            <!-- Remove the row div since masonry will handle the grid -->
-            <div class="masonry-grid">
-                <div class="grid-sizer col-6 col-md-4"></div>
-                <?php get_template_part("loop-photos"); ?>
-            </div>
+            <?php get_template_part("loop-photos"); ?>
 
             <?php get_template_part("pagination"); ?>
         </div>
