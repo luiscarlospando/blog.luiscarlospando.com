@@ -36,13 +36,6 @@
 					</h1>
 					<!-- /post title -->
 
-					<?php
-     echo 'get_option("home"): ' . get_option("home") . "<br>";
-     echo 'get_option("siteurl"): ' . get_option("siteurl") . "<br>";
-     ?>
-
-
-
 					<!-- post details -->
 					<?php include "includes/post-details.php"; ?>
 					<!-- /post details -->
