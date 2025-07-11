@@ -14,7 +14,7 @@ $is_modified =
     $modified_timestamp >= $published_timestamp + $ONE_DAY_IN_SECONDS;
 
 // Common data preparation
-$author_link = get_the_author_posts_link();
+$author_link = 'https://blog.luiscarlospando.com/author/me/'
 $mastodon_url = include "return-mastodon-account.php";
 $permalink = get_the_permalink();
 
