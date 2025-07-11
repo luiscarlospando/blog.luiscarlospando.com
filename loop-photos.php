@@ -15,14 +15,13 @@ if (have_posts()):
                 echo "</div>";
             endif;
 
-            // Output year heading
+            // Output year heading OUTSIDE the grid
             echo '<h2 class="year-heading mb-3">' .
                 esc_html($post_year) .
                 "</h2>";
 
             // Open new masonry grid for this year
             echo '<div class="masonry-grid">';
-            echo '<div class="grid-sizer col-6 col-md-4"></div>';
 
             $current_year = $post_year;
         endif;
