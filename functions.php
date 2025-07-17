@@ -795,7 +795,7 @@ add_action("wp_ajax_load_more_photos", "load_more_photos");
 add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos");
 function load_more_photos()
 {
-    $year = $_POST["year"];
+    $year = sanitize_text_field($_POST["year"]);
     $offset = intval($_POST["offset"]);
     $query = new WP_Query([
         "category_name" => "photos",
@@ -809,16 +809,16 @@ function load_more_photos()
             ],
         ],
     ]);
-    if ($query->have_posts()):
+    if ($query->have_posts()) {
         ob_start();
-        while ($query->have_posts()):
+        while ($query->have_posts()) {
             $query->the_post();
             get_template_part("includes/photo-card");
-        endwhile;
+        }
         wp_reset_postdata();
         $html = ob_get_clean();
         wp_send_json_success(["html" => $html]);
-    else:
+    } else {
         wp_send_json_error(["message" => "No more posts"]);
-    endif;
+    }
 }
