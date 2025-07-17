@@ -796,11 +796,7 @@ if (!defined("ABSPATH")) {
     exit();
 } // Register the AJAX action for logged-in and non-logged-in users
 add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
-add_action(
-    "wp_ajax_nopriv_load_more_photos",
-
-    "load_more_photos_callback"
-);
+add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos_callback");
 function load_more_photos_callback()
 {
     $paged = isset($_POST["page"]) ? intval($_POST["page"]) : 1;
@@ -821,7 +817,7 @@ function load_more_photos_callback()
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            get_template_part("template-parts/photo", "card");
+            get_template_part("includes/photo", "card");
         }
     }
     wp_send_json_success(ob_get_clean());
