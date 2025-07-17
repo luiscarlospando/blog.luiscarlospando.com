@@ -41,7 +41,7 @@ if (have_posts()) {
                 data-total="' .
                 esc_attr(count($post_ids)) .
                 '">';
-            echo '<i class="fa-solid fa-arrow-rotate-right fa-spin d-none me-2"></i> Cargar más fotos';
+            echo '<i class="fa-solid fa-arrow-rotate-right me-2"></i> Cargar más fotos';
             echo "</button>";
             echo "</div>";
         endif;
