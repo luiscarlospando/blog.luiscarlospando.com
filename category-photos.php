@@ -14,8 +14,6 @@
             </p>
 
             <?php get_template_part("loop-photos"); ?>
-
-            <?php get_template_part("pagination"); ?>
         </div>
     </div>
 </section>
