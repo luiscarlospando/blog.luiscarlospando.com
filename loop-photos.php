@@ -16,6 +16,7 @@ if (have_posts()) {
         echo '<div class="masonry-grid" data-year="' . esc_attr($year) . '">';
         echo '<div class="grid-sizer col-6 col-md-4"></div>';
 
+        // Output first 6 posts
         $initial_posts = array_slice($post_ids, 0, 6);
         foreach ($initial_posts as $post_id):
             $post = get_post($post_id);
@@ -25,14 +26,22 @@ if (have_posts()) {
 
         echo "</div>"; // .masonry-grid
 
-        if (count($post_ids) > 6):
+        // Add Load More button if there are more posts
+        $remaining = count($post_ids) - 6;
+        if ($remaining > 0):
             echo '<div class="pagination text-center mt-3" data-year="' .
                 esc_attr($year) .
                 '">';
-            echo '<button class="btn btn-primary load-more-btn" data-year="' .
+            echo '<button
+                class="btn btn-primary load-more-btn"
+                data-year="' .
                 esc_attr($year) .
-                '" data-offset="6">';
-            echo '<i class="fa-solid fa-arrow-rotate-right fa-spin d-none"></i> Cargar más fotos';
+                '"
+                data-offset="6"
+                data-total="' .
+                esc_attr(count($post_ids)) .
+                '">';
+            echo '<i class="fa-solid fa-arrow-rotate-right fa-spin d-none me-2"></i> Cargar más fotos';
             echo "</button>";
             echo "</div>";
         endif;
