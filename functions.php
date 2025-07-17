@@ -800,26 +800,30 @@ function sort_photos_category_by_date($query)
     }
 }
 add_action("pre_get_posts", "sort_photos_category_by_date"); // Photos Ajax handler
-// Exit if accessed directly
-if (!defined("ABSPATH")) {
-    exit();
-} // Register the AJAX action for logged-in and non-logged-in users
 add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
-add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos_callback");
+add_action(
+    "wp_ajax_nopriv_load_more_photos",
+
+    "load_more_photos_callback"
+);
 function load_more_photos_callback()
 {
-    $paged = isset($_POST["page"]) ? intval($_POST["page"]) : 1;
+    // Validate and sanitize inputs
+    $offset = isset($_POST["offset"]) ? intval($_POST["offset"]) : 0;
     $year = isset($_POST["year"]) ? intval($_POST["year"]) : 0;
+    $posts_per_page = 6;
     $args = [
         "post_type" => "post",
-        "posts_per_page" => 6,
-        "paged" => $paged,
+        "posts_per_page" => $posts_per_page,
+        "offset" => $offset,
         "category_name" => "photos",
         "date_query" => [
             [
                 "year" => $year,
             ],
         ],
+        "orderby" => "date",
+        "order" => "DESC",
     ];
     $query = new WP_Query($args);
     ob_start();
@@ -829,13 +833,8 @@ function load_more_photos_callback()
             get_template_part("includes/photo", "card");
         }
     }
-    wp_send_json_success(ob_get_clean());
+    wp_reset_postdata();
+    $html = ob_get_clean();
+    wp_send_json_success($html);
     wp_die();
-} // Output ajaxurl as a JS variable in the footer (only for frontend)
-add_action("wp_footer", function () {
-    if (!is_admin()): ?>
-        <script>
-            const ajaxurl = "<?php echo admin_url("admin-ajax.php"); ?>";
-        </script>
-    <?php endif;
-});
+}
