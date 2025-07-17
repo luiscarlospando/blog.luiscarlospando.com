@@ -1,108 +1,51 @@
 <?php
 $current_year = "";
+$posts_by_year = [];
 
 if (have_posts()):
     while (have_posts()):
-
         the_post();
 
         $post_year = get_the_date("Y");
-
-        // If year has changed, output new heading and open masonry grid
-        if ($post_year !== $current_year):
-            if ($current_year !== ""):
-                // Close previous masonry grid
-                echo "</div>";
-            endif;
-
-            // Output year heading OUTSIDE the grid
-            echo '<h2 class="year-heading mb-3">' .
-                esc_html($post_year) .
-                "</h2>";
-
-            // Open new masonry grid for this year
-            echo '<div class="masonry-grid">';
-            echo '<div class="grid-sizer col-6 col-md-4"></div>';
-
-            $current_year = $post_year;
-        endif;
-        ?>
-
-        <!-- photo -->
-        <div class="grid-item col-6 col-md-4">
-            <figure class="figure figure-foto">
-                <a href="<?php the_permalink(); ?>"
-                   data-toggle="tooltip"
-                   data-placement="top"
-                   title="<?php echo esc_attr(get_the_title()); ?>"
-                   data-original-title="<?php echo esc_attr(
-                       get_the_title()
-                   ); ?>">
-
-                    <?php
-                    $thumb_url = get_the_post_thumbnail_url(
-                        get_the_ID(),
-                        "thumb-foto"
-                    );
-                    $thumb_meta = wp_get_attachment_metadata(
-                        get_post_thumbnail_id()
-                    );
-
-                    if ($thumb_url && $thumb_meta): ?>
-                        <img src="<?php echo esc_url($thumb_url); ?>"
-                            class="thumb-foto rounded img-fluid"
-                            width="<?php echo esc_attr(
-                                $thumb_meta["width"]
-                            ); ?>"
-                            height="<?php echo esc_attr(
-                                $thumb_meta["height"]
-                            ); ?>"
-                            alt="<?php the_title_attribute(); ?>"
-                            title="<?php the_title_attribute(); ?>" />
-                    <?php endif;
-                    ?>
-                </a>
-                <figcaption class="figure-caption text-center">
-                    <time datetime="<?php echo get_the_date("c"); ?>"
-                          itemprop="datePublished"
-                          pubdate>
-                        <?php
-                        $post_date = get_the_date("U");
-                        if ($post_date) {
-                            echo strtolower(
-                                wp_date("d M, Y", $post_date, wp_timezone())
-                            );
-                        } else {
-                            echo strtolower(
-                                wp_date(
-                                    "d M, Y",
-                                    current_time("timestamp"),
-                                    wp_timezone()
-                                )
-                            );
-                        }
-                        ?>
-                    </time>
-                </figcaption>
-            </figure>
-        </div>
-        <!-- /photo -->
-
-    <?php
+        $posts_by_year[$post_year][] = get_the_ID();
     endwhile;
 
-    // Close the last masonry grid
-    echo "</div>";
+    foreach ($posts_by_year as $year => $post_ids):
+        echo '<h2 class="year-heading mb-3">' . esc_html($year) . "</h2>";
+        echo '<div class="masonry-grid" data-year="' . esc_attr($year) . '">';
+        echo '<div class="grid-sizer col-6 col-md-4"></div>';
+
+        // Load first 6 posts
+        $initial_posts = array_slice($post_ids, 0, 6);
+        foreach ($initial_posts as $post_id):
+            setup_postdata(get_post($post_id));
+            get_template_part("template-parts/photo-card");
+        endforeach;
+
+        echo "</div>"; // .masonry-grid
+
+        // If more than 6 posts, add Load More button
+        if (count($post_ids) > 6):
+            echo '<div class="pagination text-center mt-3" data-year="' .
+                esc_attr($year) .
+                '">';
+            echo '<button class="btn btn-primary load-more-btn" data-year="' .
+                esc_attr($year) .
+                '" data-offset="6">';
+            echo '<i class="fa-solid fa-arrow-rotate-right fa-spin d-none"></i> Cargar más fotos';
+            echo "</button>";
+            echo "</div>";
+        endif;
+    endforeach;
+
+    wp_reset_postdata();
 else:
      ?>
-
-    <!-- article -->
     <article>
-        <p class="title text-center">
-            <?php _e("Sorry, nothing to display.", "html5blank"); ?> 😵
-        </p>
+        <p class="title text-center"><?php _e(
+            "Sorry, nothing to display.",
+            "html5blank"
+        ); ?> 😵</p>
     </article>
-    <!-- /article -->
-
 <?php
-endif; ?>
+endif;

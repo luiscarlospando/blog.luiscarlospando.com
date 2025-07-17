@@ -790,4 +790,35 @@ function sort_photos_category_by_date($query)
         $query->set("posts_per_page", -1); // display all posts
     }
 }
-add_action("pre_get_posts", "sort_photos_category_by_date");
+add_action("pre_get_posts", "sort_photos_category_by_date"); // Photos Ajax handler
+add_action("wp_ajax_load_more_photos", "load_more_photos");
+add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos");
+function load_more_photos()
+{
+    $year = $_POST["year"];
+    $offset = intval($_POST["offset"]);
+    $query = new WP_Query([
+        "category_name" => "photos",
+        "posts_per_page" => 6,
+        "offset" => $offset,
+        "orderby" => "date",
+        "order" => "DESC",
+        "date_query" => [
+            [
+                "year" => intval($year),
+            ],
+        ],
+    ]);
+    if ($query->have_posts()):
+        ob_start();
+        while ($query->have_posts()):
+            $query->the_post();
+            get_template_part("template-parts/photo-card");
+        endwhile;
+        wp_reset_postdata();
+        $html = ob_get_clean();
+        wp_send_json_success(["html" => $html]);
+    else:
+        wp_send_json_error(["message" => "No more posts"]);
+    endif;
+}
