@@ -138,7 +138,7 @@ function localize_app_script()
         "url" => admin_url("admin-ajax.php"),
     ]);
 }
-add_action("wp_enqueue_scripts", "localize_app_script");
+add_action("wp_enqueue_scripts", "localize_app_script", 20);
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
