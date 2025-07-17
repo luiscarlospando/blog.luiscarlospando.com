@@ -813,7 +813,7 @@ function load_more_photos()
         ob_start();
         while ($query->have_posts()):
             $query->the_post();
-            get_template_part("template-parts/photo-card");
+            get_template_part("includes/photo-card");
         endwhile;
         wp_reset_postdata();
         $html = ob_get_clean();
