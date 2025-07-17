@@ -791,34 +791,46 @@ function sort_photos_category_by_date($query)
     }
 }
 add_action("pre_get_posts", "sort_photos_category_by_date"); // Photos Ajax handler
-add_action("wp_ajax_load_more_photos", "load_more_photos");
-add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos");
-function load_more_photos()
+// Exit if accessed directly
+if (!defined("ABSPATH")) {
+    exit();
+} // Register the AJAX action for logged-in and non-logged-in users
+add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
+add_action(
+    "wp_ajax_nopriv_load_more_photos",
+
+    "load_more_photos_callback"
+);
+function load_more_photos_callback()
 {
-    $year = sanitize_text_field($_POST["year"]);
-    $offset = intval($_POST["offset"]);
-    $query = new WP_Query([
-        "category_name" => "photos",
+    $paged = isset($_POST["page"]) ? intval($_POST["page"]) : 1;
+    $year = isset($_POST["year"]) ? intval($_POST["year"]) : 0;
+    $args = [
+        "post_type" => "post",
         "posts_per_page" => 6,
-        "offset" => $offset,
-        "orderby" => "date",
-        "order" => "DESC",
+        "paged" => $paged,
+        "category_name" => "photos",
         "date_query" => [
             [
-                "year" => intval($year),
+                "year" => $year,
             ],
         ],
-    ]);
+    ];
+    $query = new WP_Query($args);
+    ob_start();
     if ($query->have_posts()) {
-        ob_start();
         while ($query->have_posts()) {
             $query->the_post();
-            get_template_part("includes/photo-card");
+            get_template_part("template-parts/photo", "card");
         }
-        wp_reset_postdata();
-        $html = ob_get_clean();
-        wp_send_json_success(["html" => $html]);
-    } else {
-        wp_send_json_error(["message" => "No more posts"]);
     }
-}
+    wp_send_json_success(ob_get_clean());
+    wp_die();
+} // Output ajaxurl as a JS variable in the footer (only for frontend)
+add_action("wp_footer", function () {
+    if (!is_admin()): ?>
+        <script>
+            const ajaxurl = "<?php echo admin_url("admin-ajax.php"); ?>";
+        </script>
+    <?php endif;
+});
