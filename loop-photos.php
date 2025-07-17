@@ -39,12 +39,28 @@ if (have_posts()):
                        get_the_title()
                    ); ?>">
 
-                    <?php the_post_thumbnail("thumb-foto", [
-                        "class" => "thumb-foto rounded img-fluid",
-                        "alt" => get_the_title(),
-                        "title" => get_the_title(),
-                        "caption" => get_the_title(),
-                    ]); ?>
+                    <?php
+                    $thumb_url = get_the_post_thumbnail_url(
+                        get_the_ID(),
+                        "thumb-foto"
+                    );
+                    $thumb_meta = wp_get_attachment_metadata(
+                        get_post_thumbnail_id()
+                    );
+
+                    if ($thumb_url && $thumb_meta): ?>
+                        <img src="<?php echo esc_url($thumb_url); ?>"
+                            class="thumb-foto rounded img-fluid"
+                            width="<?php echo esc_attr(
+                                $thumb_meta["width"]
+                            ); ?>"
+                            height="<?php echo esc_attr(
+                                $thumb_meta["height"]
+                            ); ?>"
+                            alt="<?php the_title_attribute(); ?>"
+                            title="<?php the_title_attribute(); ?>" />
+                    <?php endif;
+                    ?>
                 </a>
                 <figcaption class="figure-caption text-center">
                     <time datetime="<?php echo get_the_date("c"); ?>"
