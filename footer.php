@@ -79,14 +79,24 @@
                             <div class="row mb-2">
                                 <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
-                                        <li class="list-inline-item mb-1 mb-lg-0">
-                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Mastodon" target="_blank">
-                                                <i class="fa-brands fa-mastodon"></i> Seguir en Mastodon
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
+                                                <i class="fa-brands fa-mastodon"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/bluesky-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Sígueme en Bluesky" target="_blank">
-                                                <i class="fa-brands fa-bluesky"></i> Seguir en Bluesky
+                                            <a rel="me" href="<?php include "includes/bluesky-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
+                                                <i class="fa-brands fa-bluesky"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include "includes/instagram-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a rel="me" href="<?php include "includes/discord-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
+                                                <i class="fa-brands fa-discord"></i>
                                             </a>
                                         </li>
                                     </ul>
