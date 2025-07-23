@@ -35,6 +35,7 @@
                 <a href="<?php echo esc_url($previous_url); ?>"
                    data-toggle="tooltip"
                    data-placement="top"
+                   aria-label="Anterior"
                    title="<?php echo esc_attr($previous_title); ?>">
                     <h4>
                         <i class="fa-solid fa-arrow-left"></i>
@@ -65,6 +66,7 @@
                 <a href="<?php echo esc_url($next_url); ?>"
                    data-toggle="tooltip"
                    data-placement="top"
+                   aria-label="Siguiente"
                    title="<?php echo esc_attr($next_title); ?>">
                     <h4>
                         Siguiente

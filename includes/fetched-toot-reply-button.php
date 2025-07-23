@@ -10,7 +10,7 @@ if (!$toot_url) {
 if ($toot_url) {
     echo '<li class="list-inline-item"><a class="btn btn-primary btn-sm" id="btn-mastodon-toot" href="' .
         esc_url($toot_url) .
-        '" target="_blank" style="vertical-align: super;"><i class="fa-solid fa-reply"></i> Enviar comentario</a></li>';
+        '" title="Enviar comentario" target="_blank" style="vertical-align: super;"><i class="fa-solid fa-reply"></i> Enviar comentario</a></li>';
 } else {
     // For posts without a corresponding Mastodon toot
     echo "";

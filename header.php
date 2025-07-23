@@ -163,7 +163,7 @@
                     <div class="row">
                         <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center mb-3 mb-md-0">
                             <div class="mt-3 mb-1 u-photo" id="logo">
-                                <a id="greetingTooltip" href="https://<?php include "includes/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" title="" data-original-title="">
+                                <a id="greetingTooltip" href="https://<?php include "includes/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" aria-label="Inicio" title="" data-original-title="">
                                     <span>Logo</span>
                                 </a>
                             </div>
