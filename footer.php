@@ -79,26 +79,65 @@
                             <div class="row mb-2">
                                 <div class="col-12 text-md-right my-auto">
                                     <ul class="list-inline my-0">
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/mastodon-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
-                                                <i class="fa-brands fa-mastodon"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/bluesky-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
-                                                <i class="fa-brands fa-bluesky"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/instagram-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="<?php include "includes/discord-account.php"; ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
-                                                <i class="fa-brands fa-discord"></i>
-                                            </a>
-                                        </li>
+                                        <?php if (
+                                            $mastodon = get_field(
+                                                "mastodon",
+                                                "option"
+                                            )
+                                        ): ?>
+                                            <li class="list-inline-item">
+                                                <a rel="me" href="<?= esc_url(
+                                                    $mastodon
+                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
+                                                    <i class="fa-brands fa-mastodon"></i>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if (
+                                            $bluesky = get_field(
+                                                "bluesky",
+                                                "option"
+                                            )
+                                        ): ?>
+                                            <li class="list-inline-item">
+                                                <a rel="me" href="<?= esc_url(
+                                                    $bluesky
+                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
+                                                    <i class="fa-brands fa-bluesky"></i>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if (
+                                            $instagram = get_field(
+                                                "instagram",
+                                                "option"
+                                            )
+                                        ): ?>
+                                            <li class="list-inline-item">
+                                                <a rel="me" href="<?= esc_url(
+                                                    $instagram
+                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <?php if (
+                                            $discord = get_field(
+                                                "discord",
+                                                "option"
+                                            )
+                                        ): ?>
+                                            <li class="list-inline-item">
+                                                <a rel="me" href="<?= esc_url(
+                                                    $discord
+                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
+                                                    <i class="fa-brands fa-discord"></i>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
                                     </ul>
                                 </div>
                             </div>
