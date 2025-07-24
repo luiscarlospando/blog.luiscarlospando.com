@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p>Hola desde Chihuahua, México 🌵</p>
+                            <p>Saludos desde Chihuahua, México 🏜️🌵</p>
                         </div>
                         <div class="col-6 col-md-8 col-lg-4 order-lg-3">
                             <div class="row mb-2">
