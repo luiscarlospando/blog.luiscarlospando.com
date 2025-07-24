@@ -224,7 +224,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="" target="_blank">
+                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
                                         <code>v</code>
                                     </a>
                                 </li>
