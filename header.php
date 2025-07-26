@@ -95,13 +95,15 @@
     ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-    <link rel="alternate" type="application/rss+xml" title="LuisCarlosPando.com" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo("name"); ?>" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Fotos - <?php bloginfo("name"); ?>" href="https://blog.<?php include "includes/site-domain.php"; ?>/photos/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Links - <?php bloginfo("name" ); ?>" href="https://bg.raindrop.io/rss/public/50598757" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
     <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="LuisCarlosPando.com" />
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo("name" ); ?>" />
     <link rel="manifest" href="https://<?php include "includes/site-domain.php"; ?>/site.webmanifest" />
     <link rel="canonical" href="<?php the_permalink(); ?>">
     <link rel="me" href="https://social.lol/@mijo" />
