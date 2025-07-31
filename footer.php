@@ -51,7 +51,7 @@
                     <hr>
                     <div class="row mb-md-2">
                         <div class="col-6 col-md-6">
-                            <ul id="social" class="list-inline my-0">
+                            <ul id="social" class="list-inline">
                                 <?php if (
                                     $mastodon = get_field("mastodon", "option")
                                 ): ?>
@@ -104,7 +104,7 @@
                                 <?php endif; ?>
                             </ul>
 
-                            <ul class="list-inline my-0">
+                            <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
                                         <i class="fa-solid fa-rss"></i>
@@ -122,7 +122,7 @@
                                 </li>
                             </ul>
 
-                            <ul class="list-inline my-0">
+                            <ul class="list-inline">
                                 <li class="list-inline-item mb-2 mb-lg-0">
                                     <a href="https://people.pledge.party/" target="_blank">
                                         <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
@@ -141,23 +141,23 @@
                             </ul>
                         </div>
                         <div class="col-6 col-md-6 text-right">
-                            <ul class="list-unstyled mt-0">
-                                <li class="mb-2">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
-                                <li class="mb-2">
+                                <li class="list-inline-item">
                                     <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
                                         <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
-                                <li class="mb-2">
+                                <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                         <i class="fa-solid fa-shield-halved"></i> Privacidad
                                     </a>
                                 </li>
-                                <li>
+                                <li class="list-inline-item">
                                     <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
                                         <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
                                     </a>
@@ -168,7 +168,7 @@
                             <p class="copyright">
                                 &copy; <?php echo date(
                                     "Y"
-                                ); ?> Luis Carlos Pando
+                                ); ?> Luis Carlos Pando. Saludos desde Chihuahua, México. 🏜️
                             </p>
                             <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
                             <ul class="list-inline my-0">
@@ -208,7 +208,6 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p>Saludos desde Chihuahua, México 🏜️</p>
                         </div>
                     </div>
                 </div>
