@@ -78,7 +78,7 @@
                         <div class="col-6 col-md-8 col-lg-4 order-lg-3">
                             <div class="row mb-2">
                                 <div class="col-12 text-md-right my-auto">
-                                    <ul class="list-inline my-0">
+                                    <ul id="social" class="list-inline my-0">
                                         <?php if (
                                             $mastodon = get_field(
                                                 "mastodon",
@@ -88,7 +88,7 @@
                                             <li class="list-inline-item">
                                                 <a rel="me" href="<?= esc_url(
                                                     $mastodon
-                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
+                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
                                                     <i class="fa-brands fa-mastodon"></i>
                                                 </a>
                                             </li>
@@ -103,7 +103,7 @@
                                             <li class="list-inline-item">
                                                 <a rel="me" href="<?= esc_url(
                                                     $bluesky
-                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
+                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
                                                     <i class="fa-brands fa-bluesky"></i>
                                                 </a>
                                             </li>
@@ -118,7 +118,7 @@
                                             <li class="list-inline-item">
                                                 <a rel="me" href="<?= esc_url(
                                                     $instagram
-                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
+                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
                                                     <i class="fa-brands fa-instagram"></i>
                                                 </a>
                                             </li>
