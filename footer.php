@@ -161,7 +161,7 @@
                             <p class="copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. Saludos desde Chihuahua, México. 🏜️</p>
                         </div>
                         <div class="col-12 text-center">
-                            <ul id="social" class="list-inline my-0">
+                            <ul id="social" class="list-inline mt-0">
                                 <?php if (
                                     $mastodon = get_field("mastodon", "option")
                                 ): ?>
