@@ -59,7 +59,7 @@
 
                             <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
 
-                            <ul class="list-inline my-0">
+                            <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
                                         <i class="fa-solid fa-arrow-left"></i>
