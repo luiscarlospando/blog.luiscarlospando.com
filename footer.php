@@ -77,6 +77,8 @@
                                 </li>
                             </ul>
 
+                            <p><a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/" target="_blank"">Blogroll</a></p>
+
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
                                     <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
@@ -111,7 +113,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
                                         <i class="fa-solid fa-shield-halved"></i> Privacidad
                                     </a>
                                 </li>
