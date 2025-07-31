@@ -212,6 +212,18 @@
                                         </a>
                                     </li>
                                 <?php endif; ?>
+
+                                <?php if (
+                                    $signal = get_field("signal", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a rel="me" href="<?= esc_url(
+                                            $signal
+                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Contáctame vía Signal" title="Contáctame vía Signal" target="_blank">
+                                            <i class="fa-brands fa-signal-messenger"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
