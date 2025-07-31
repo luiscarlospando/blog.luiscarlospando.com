@@ -50,7 +50,97 @@
                     </div>
                     <hr>
                     <div class="row mb-md-2">
-                        <div class="col-6 col-md-4 col-lg-4 order-lg-1 copyright">
+                        <div class="col-6 col-md-6">
+                            <ul id="social" class="list-inline my-0">
+                                <?php if (
+                                    $mastodon = get_field("mastodon", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a rel="me" href="<?= esc_url(
+                                            $mastodon
+                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
+                                            <i class="fa-brands fa-mastodon"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+
+                                <?php if (
+                                    $bluesky = get_field("bluesky", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a rel="me" href="<?= esc_url(
+                                            $bluesky
+                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
+                                            <i class="fa-brands fa-bluesky"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+
+                                <?php if (
+                                    $instagram = get_field(
+                                        "instagram",
+                                        "option"
+                                    )
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a rel="me" href="<?= esc_url(
+                                            $instagram
+                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+
+                                <?php if (
+                                    $discord = get_field("discord", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a rel="me" href="<?= esc_url(
+                                            $discord
+                                        ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
+                                            <i class="fa-brands fa-discord"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+
+                            <ul class="list-inline my-0">
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
+                                        <i class="fa-solid fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a rel="me" href="https://mijo.omg.lol/" target="_blank">
+                                        <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
+                                        <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline my-0">
+                                <li class="list-inline-item mb-2 mb-lg-0">
+                                    <a href="https://people.pledge.party/" target="_blank">
+                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item mb-2 mb-lg-0">
+                                    <a href="https://echofeed.app/" target="_blank">
+                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
+                                        <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-6 text-right">
                             <ul class="list-unstyled mt-0">
                                 <li class="mb-2">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
@@ -73,119 +163,8 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p>Saludos desde Chihuahua, México 🏜️</p>
                         </div>
-                        <div class="col-6 col-md-8 col-lg-4 order-lg-3">
-                            <div class="row mb-2">
-                                <div class="col-12 text-md-right my-auto">
-                                    <ul id="social" class="list-inline my-0">
-                                        <?php if (
-                                            $mastodon = get_field(
-                                                "mastodon",
-                                                "option"
-                                            )
-                                        ): ?>
-                                            <li class="list-inline-item">
-                                                <a rel="me" href="<?= esc_url(
-                                                    $mastodon
-                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
-                                                    <i class="fa-brands fa-mastodon"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-
-                                        <?php if (
-                                            $bluesky = get_field(
-                                                "bluesky",
-                                                "option"
-                                            )
-                                        ): ?>
-                                            <li class="list-inline-item">
-                                                <a rel="me" href="<?= esc_url(
-                                                    $bluesky
-                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
-                                                    <i class="fa-brands fa-bluesky"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-
-                                        <?php if (
-                                            $instagram = get_field(
-                                                "instagram",
-                                                "option"
-                                            )
-                                        ): ?>
-                                            <li class="list-inline-item">
-                                                <a rel="me" href="<?= esc_url(
-                                                    $instagram
-                                                ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
-                                                    <i class="fa-brands fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-
-                                        <?php if (
-                                            $discord = get_field(
-                                                "discord",
-                                                "option"
-                                            )
-                                        ): ?>
-                                            <li class="list-inline-item">
-                                                <a rel="me" href="<?= esc_url(
-                                                    $discord
-                                                ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
-                                                    <i class="fa-brands fa-discord"></i>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-12 text-md-right my-auto">
-                                    <ul class="list-inline my-0">
-                                        <li class="list-inline-item">
-                                            <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
-                                                <i class="fa-solid fa-rss"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="https://mijo.omg.lol/" target="_blank">
-                                                <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
-                                                <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row mb-3 mb-md-0">
-                                <div class="col-12 text-md-right my-auto">
-                                    <ul class="list-inline my-0">
-                                        <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a href="https://people.pledge.party/" target="_blank">
-                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a href="https://echofeed.app/" target="_blank">
-                                                <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
-                                                <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="d-lg-none">
-                        <div class="col-12 col-lg-4 order-lg-2 text-center">
+                        <div class="col-12 text-center">
                             <p class="copyright">
                                 &copy; <?php echo date(
                                     "Y"
@@ -229,6 +208,7 @@
                                     </a>
                                 </li>
                             </ul>
+                            <p>Saludos desde Chihuahua, México 🏜️</p>
                         </div>
                     </div>
                 </div>
