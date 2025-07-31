@@ -220,7 +220,7 @@
             <div id="dismissable-alert">
                 <p>
                     <em>Agosto, 2025</em> - 👋 Actualmente estoy disponible y abierto a nuevas oportunidades como desarrollador frontend.
-                    <a class="btn btn-primary btn-sm" href="/cv/">
+                    <a class="btn btn-primary btn-sm" href="https://luiscarlospando.com/cv/">
                         <i class="fa-solid fa-circle-info"></i> Más información
                     </a>
                 </p>
