@@ -49,9 +49,119 @@
                         ?>
                     </div>
                     <hr>
-                    <div class="row mb-md-2">
-                        <div class="col-6 col-md-6">
-                            <ul id="social" class="list-inline">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 text-center text-lg-left">
+                            <p class="copyright">
+                                &copy; <?php echo date(
+                                    "Y"
+                                ); ?> Luis Carlos Pando
+                            </p>
+
+                            <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
+
+                            <ul class="list-inline my-0">
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Sitio aleatorio" title="Sitio aleatorio">
+                                        <i class="fa-solid fa-shuffle"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline">
+                                <li class="list-inline-item me-2">
+                                    <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
+                                        <span class="fa-stack small">
+                                            <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
+                                            <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item me-2">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                        <code>Acerca de</code>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
+                                        <code>v</code>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-8 text-center text-lg-right">
+                            <ul class="list-inline mt-lg-0">
+                                <li class="list-inline-item">
+                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
+                                        <span id="system-status"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
+                                        <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
+                                        <i class="fa-solid fa-shield-halved"></i> Privacidad
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
+                                        <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
+                                        <i class="fa-solid fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a rel="me" href="https://mijo.omg.lol/" target="_blank">
+                                        <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
+                                        <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline">
+                                <li class="list-inline-item mb-2 mb-lg-0">
+                                    <a href="https://people.pledge.party/" target="_blank">
+                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item mb-2 mb-lg-0">
+                                    <a href="https://echofeed.app/" target="_blank">
+                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
+                                        <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <p class="copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. Saludos desde Chihuahua, México. 🏜️</p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <ul id="social" class="list-inline my-0">
                                 <?php if (
                                     $mastodon = get_field("mastodon", "option")
                                 ): ?>
@@ -102,111 +212,6 @@
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                            </ul>
-
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
-                                        <i class="fa-solid fa-rss"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a rel="me" href="https://mijo.omg.lol/" target="_blank">
-                                        <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a rel="me" href="https://discordapp.com/users/86571896581132288/" target="_blank">
-                                        <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="list-inline">
-                                <li class="list-inline-item mb-2 mb-lg-0">
-                                    <a href="https://people.pledge.party/" target="_blank">
-                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
-                                    </a>
-                                </li>
-                                <li class="list-inline-item mb-2 mb-lg-0">
-                                    <a href="https://echofeed.app/" target="_blank">
-                                        <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
-                                        <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-6 text-right">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
-                                        <span id="system-status"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
-                                        <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
-                                        <i class="fa-solid fa-shield-halved"></i> Privacidad
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
-                                        <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 text-center">
-                            <p class="copyright">
-                                &copy; <?php echo date(
-                                    "Y"
-                                ); ?> Luis Carlos Pando. Saludos desde Chihuahua, México. 🏜️
-                            </p>
-                            <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank"">CSS JOY Webring</a></p>
-                            <ul class="list-inline my-0">
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                        <i class="fa-solid fa-arrow-left"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Sitio aleatorio" title="Sitio aleatorio">
-                                        <i class="fa-solid fa-shuffle"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "includes/site-domain.php"; ?>" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="list-inline">
-                                <li class="list-inline-item me-2">
-                                    <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
-                                        <span class="fa-stack small">
-                                            <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
-                                            <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
-                                        <code>Acerca de</code>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
-                                        <code>v</code>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
