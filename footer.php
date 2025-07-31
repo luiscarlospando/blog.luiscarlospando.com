@@ -57,7 +57,7 @@
                                 ); ?> Luis Carlos Pando
                             </p>
 
-                            <p>🕸️💍 Parte del <a href="https://cs.sjoy.lol/" target="_blank">CSS JOY Webring</a></p>
+                            <p>Parte del <a href="https://cs.sjoy.lol/" target="_blank">CSS JOY Webring 🕸️💍</a></p>
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
