@@ -13,5 +13,5 @@ if ($toot_url) {
         '" target="_blank"><i class="fa-solid fa-reply"></i> Envía un reply aquí para comentar</a>';
 } else {
     // For posts without a corresponding Mastodon toot
-    echo "Una disculpa, no hay un toot asociado a este post en Mastodon 😐";
+    echo "Una disculpa, no hay un toot asociado a este post en Mastodon 😐, por lo tanto no puedes comentar ni interactuar de ninguna manera.";
 }
