@@ -97,7 +97,7 @@
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						<?php include "includes/fetched-toot-link.php"; ?>. Debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a>, las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>. También, si le das like <em>like</em> o le das <em>boost</em> a este post en Mastodon, aparecerás aquí debajo. Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						<?php include "includes/fetched-toot-link.php"; ?>. Debes de tener una cuenta de <a href="<?php include "includes/mastodon-account.php"; ?>" rel="me" target="_blank"><i class="fa-brands fa-mastodon"></i> Mastodon</a>, las razones las explico <a href="https://blog.luiscarlospando.com/coding/2023/02/hay-nuevo-sistema-de-comentarios-en-mi-blog/">aquí</a>. También, si le das <em>like</em> o le das <em>boost</em> a este post en Mastodon, aparecerás aquí debajo. Si no tienes cuenta y te gustaría decir algo, checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
