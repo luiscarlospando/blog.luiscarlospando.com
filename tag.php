@@ -18,10 +18,13 @@ $tag_post_count = $tag->count;
                 </h1>
 
                 <p class="text-center">
-                    <?php echo $tag_post_count; ?> posts etiquetados con <?php echo single_tag_title(
-     "#",
-     false
- ); ?>
+                    <?php echo $tag_post_count; ?> post<?php if (
+     $tag_post_count > 1
+ ) {
+     echo "s";
+ } ?> etiquetado<?php if ($tag_post_count > 1) {
+     echo "s";
+ } ?> con <?php echo single_tag_title("#", false); ?>
                 </p>
 
 				<?php get_template_part("loop"); ?>
