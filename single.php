@@ -110,7 +110,9 @@
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
-                            <p>Si es así, pues te invito a seguir leyendo más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o tal vez quieras saber qué está pasando conmigo, entonces checa el <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a> o ¿por qué no pasas a firmar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>?</p>
+                            <p>Si es así, pues te invito a seguir leyendo más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o tal vez quieras saber qué está pasando conmigo, entonces checa el <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a>, o ¿por qué no pasas a firmar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>?</p>
+
+                            <br>
 
                             <p>Puedes apoyarme
                             <a class="btn btn-primary btn-sm" href="https://buymeacoffee.com/luiscarlospando" target="_blank">
