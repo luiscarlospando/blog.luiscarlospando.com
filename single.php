@@ -114,7 +114,7 @@
 
                             <br>
 
-                            <p>Otra manera de es apoyarme
+                            <p>Otra manera de apoyarme
                             <a class="btn btn-primary btn-sm" href="https://buymeacoffee.com/luiscarlospando" target="_blank">
                                 <i class="fa-solid fa-mug-hot"></i> Comprándome un café
                             </a>
