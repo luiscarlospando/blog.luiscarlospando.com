@@ -53,7 +53,7 @@
                         <div class="col-12 col-lg-4 text-center text-lg-left">
                             <p class="copyright">
                                 &copy; <?php echo date(
-                                    "Y"
+                                    "Y",
                                 ); ?> Luis Carlos Pando
                             </p>
 
@@ -77,7 +77,14 @@
                                 </li>
                             </ul>
 
-                            <p><a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a></p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
+                                </li>
+                            </ul>
 
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
@@ -169,7 +176,7 @@
                                 ): ?>
                                     <li class="list-inline-item">
                                         <a rel="me" href="<?= esc_url(
-                                            $mastodon
+                                            $mastodon,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
                                             <i class="fa-brands fa-mastodon"></i>
                                         </a>
@@ -181,7 +188,7 @@
                                 ): ?>
                                     <li class="list-inline-item">
                                         <a rel="me" href="<?= esc_url(
-                                            $bluesky
+                                            $bluesky,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
                                             <i class="fa-brands fa-bluesky"></i>
                                         </a>
@@ -191,12 +198,12 @@
                                 <?php if (
                                     $instagram = get_field(
                                         "instagram",
-                                        "option"
+                                        "option",
                                     )
                                 ): ?>
                                     <li class="list-inline-item">
                                         <a rel="me" href="<?= esc_url(
-                                            $instagram
+                                            $instagram,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
                                             <i class="fa-brands fa-instagram"></i>
                                         </a>
@@ -208,7 +215,7 @@
                                 ): ?>
                                     <li class="list-inline-item">
                                         <a rel="me" href="<?= esc_url(
-                                            $discord
+                                            $discord,
                                         ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
                                             <i class="fa-brands fa-discord"></i>
                                         </a>
@@ -220,7 +227,7 @@
                                 ): ?>
                                     <li class="list-inline-item">
                                         <a rel="me" href="<?= esc_url(
-                                            $signal
+                                            $signal,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Contáctame vía Signal" title="Contáctame vía Signal" target="_blank">
                                             <i class="fa-brands fa-signal-messenger"></i>
                                         </a>
