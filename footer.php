@@ -84,7 +84,7 @@
                                 <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/guestbook/">Guestbook</a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
                             </ul>
