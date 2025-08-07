@@ -78,10 +78,10 @@
                             </ul>
 
                             <ul class="list-inline">
-                                <li class="list-inline-item">
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
                             </ul>
