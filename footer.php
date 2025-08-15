@@ -50,7 +50,7 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-12 col-lg-4 text-center text-lg-left">
+                        <div class="col-12 col-lg-5 text-center text-lg-left">
                             <p class="copyright">
                                 &copy; <?php echo date(
                                     "Y",
@@ -87,6 +87,9 @@
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/">Privacidad</a>
+                                </li>
                             </ul>
 
                             <ul class="list-inline">
@@ -110,7 +113,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-8 text-center text-lg-right">
+                        <div class="col-12 col-lg-7 text-center text-lg-right">
                             <ul class="list-inline mt-lg-0">
                                 <li class="list-inline-item">
                                     <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
@@ -120,11 +123,6 @@
                                 <li class="list-inline-item">
                                     <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
                                         <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/" class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="Privacidad">
-                                        <i class="fa-solid fa-shield-halved"></i> Privacidad
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
