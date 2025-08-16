@@ -134,7 +134,7 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/rss/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/suscribete/" class="badge badge-rss" data-toggle="tooltip" data-placement="top" title="RSS">
                                         <i class="fa-solid fa-rss"></i>
                                     </a>
                                 </li>
