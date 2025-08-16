@@ -260,7 +260,7 @@
        data-toggle="tooltip"
        data-placement="top"
        aria-label="Cosas que me gustan"
-       title="Cosas que me gustan">💡</a>
+       title="Cosas que me gustan">⭐</a>
 
     <!-- Back to top component -->
     <div id="back-to-top"></div>
