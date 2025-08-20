@@ -149,7 +149,7 @@
                             </a>.</p>
                         </div>
 					</div>
-					<!-- /suppor me -->
+					<!-- /support me -->
 
 					<!-- prev-next -->
 					<?php include "includes/post-navigation.php"; ?>
