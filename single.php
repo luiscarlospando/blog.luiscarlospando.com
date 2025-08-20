@@ -18,7 +18,7 @@
                                 echo '<li class="list-inline-item">';
                                 echo '<a href="' .
                                     esc_url(
-                                        get_category_link($category->term_id)
+                                        get_category_link($category->term_id),
                                     ) .
                                     '" class="badge badge-secondary">';
                                 echo esc_html($category->name);
@@ -110,7 +110,7 @@
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
-                            <p>Si es así, pues te invito a seguir leyendo más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o tal vez quieras saber qué está pasando conmigo, entonces checa el <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a>, o ¿por qué no pasas a firmar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>?</p>
+                            <p>Si es así, te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a> para saber en que ando, o pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
 
                             <br>
 
@@ -124,7 +124,7 @@
                             ): ?>
                                 siguiéndome en
                                 <a class="btn btn-primary btn-sm" href="<?= esc_url(
-                                    $mastodon
+                                    $mastodon,
                                 ) ?>" rel="me" target="_blank">
                                     <i class="fa-brands fa-mastodon"></i> Mastodon
                                 </a>
@@ -137,7 +137,7 @@
                                     ? " y/o en "
                                     : "siguiéndome en " ?>
                                 <a class="btn btn-primary btn-sm" href="<?= esc_url(
-                                    $bluesky
+                                    $bluesky,
                                 ) ?>" rel="me" target="_blank">
                                     <i class="fa-brands fa-bluesky"></i> Bluesky
                                 </a>
@@ -171,7 +171,7 @@
 					<h1><?php _e(
          "Sorry, nothing to display.",
 
-         "html5blank"
+         "html5blank",
      ); ?></h1>
 
 				</article>
