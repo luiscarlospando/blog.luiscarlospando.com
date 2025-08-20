@@ -114,7 +114,7 @@
 
                             <br>
 
-                            <p>Otra manera de apoyarme es
+                            <p>También me puedes apoyar
                             <a class="btn btn-primary btn-sm" href="https://buymeacoffee.com/luiscarlospando" target="_blank">
                                 <i class="fa-solid fa-mug-hot"></i> Comprándome un café
                             </a>,
@@ -143,10 +143,10 @@
                                 </a>
                             <?php endif; ?>
 
-                            o suscribiéndote con
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/rss/">
-                                <i class="fas fa-rss"></i> RSS
-                            </a> para recibir notificaciones.</p>
+                            o entrar en
+                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/suscribete/">
+                                <i class="fas fa-rss"></i> Suscríbete
+                            </a>.</p>
                         </div>
 					</div>
 					<!-- /suppor me -->
