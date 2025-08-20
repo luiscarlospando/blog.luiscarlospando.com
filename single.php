@@ -110,7 +110,7 @@
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
-                            <p>Si es así, te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a> para saber en que ando, o pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
+                            <p>Entonces te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now"><i class="fa-solid fa-clock"></i> Now</a> para saber en que ando, o a pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
 
                             <br>
 
@@ -143,10 +143,10 @@
                                 </a>
                             <?php endif; ?>
 
-                            o entrar en
+                            o
                             <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/suscribete/">
-                                <i class="fas fa-rss"></i> Suscríbete
-                            </a>.</p>
+                                <i class="fas fa-rss"></i> Suscribiéndote
+                            </a> a mi sitio.</p>
                         </div>
 					</div>
 					<!-- /support me -->
