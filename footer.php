@@ -51,7 +51,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-12 col-lg-5 text-center text-lg-left">
-                            <p class="copyright">
+                            <p id="copyright">
                                 &copy; <?php echo date(
                                     "Y",
                                 ); ?> Luis Carlos Pando
@@ -168,7 +168,7 @@
                                 </li>
                             </ul>
 
-                            <p class="copyright">Saludos desde Chihuahua, México. 🏜️</p>
+                            <p id="greetings">Saludos desde Chihuahua, México. 🏜️</p>
                         </div>
                         <div class="col-12 text-center">
                             <ul id="social" class="list-inline mt-0">
