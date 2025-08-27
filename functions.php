@@ -57,7 +57,7 @@ if (function_exists("add_theme_support")) {
     add_action("after_setup_theme", function () {
         load_theme_textdomain(
             "html5blank",
-            get_template_directory() . "/languages"
+            get_template_directory() . "/languages",
         );
     });
 }
@@ -98,7 +98,7 @@ function html5blank_header_scripts()
             "https://code.jquery.com/jquery-3.7.1.min.js",
             [],
             null,
-            true
+            true,
         ); // jQuery
         wp_enqueue_script("jquery"); // Enqueue it!
 
@@ -107,7 +107,7 @@ function html5blank_header_scripts()
             "https://luiscarlospando.com/assets/js/clipboard.min.js",
             [],
             null,
-            true
+            true,
         ); // clipboard.js
         wp_enqueue_script("clipboardjs"); // Enqueue it!
 
@@ -116,7 +116,7 @@ function html5blank_header_scripts()
             "https://luiscarlospando.com/assets/js/luxon.js",
             [],
             null,
-            true
+            true,
         ); // Luxon.js
         wp_enqueue_script("luxon"); // Enqueue it!
 
@@ -125,7 +125,7 @@ function html5blank_header_scripts()
             "https://luiscarlospando.com/assets/js/app.bundle.js",
             [],
             null,
-            true
+            true,
         ); // App
         wp_enqueue_script("app"); // Enqueue it!
     }
@@ -148,7 +148,7 @@ function html5blank_conditional_scripts()
             "scriptname",
             get_template_directory_uri() . "/js/scriptname.js",
             ["jquery"],
-            "1.0.0"
+            "1.0.0",
         ); // Conditional script(s)
         wp_enqueue_script("scriptname"); // Enqueue it!
     }
@@ -168,7 +168,7 @@ function html5blank_styles()
         "https://luiscarlospando.com/assets/css/jquery.mmenu.all.css",
         [],
         "1.0",
-        "all"
+        "all",
     );
     wp_enqueue_style("mmenu"); // Enqueue it!
 
@@ -177,7 +177,7 @@ function html5blank_styles()
         "https://luiscarlospando.com/assets/css/jquery.mmenu.themes.css",
         [],
         "1.0",
-        "all"
+        "all",
     );
     wp_enqueue_style("mmenu-themes"); // Enqueue it!
 
@@ -186,7 +186,7 @@ function html5blank_styles()
         "https://luiscarlospando.com/assets/css/animate.css",
         [],
         "1.0",
-        "all"
+        "all",
     );
     wp_enqueue_style("animate-css"); // Enqueue it!
 
@@ -195,7 +195,7 @@ function html5blank_styles()
         "https://luiscarlospando.com/assets/css/prism.css",
         [],
         "1.0",
-        "all"
+        "all",
     );
     wp_enqueue_style("prism"); // Enqueue it!
 
@@ -204,7 +204,7 @@ function html5blank_styles()
         "https://luiscarlospando.com/assets/css/main.css",
         [],
         "1.0",
-        "all"
+        "all",
     );
     wp_enqueue_style("main"); // Enqueue it!
 }
@@ -264,7 +264,7 @@ if (function_exists("register_sidebar")) {
         "name" => __("Widget Area 1", "html5blank"),
         "description" => __(
             "Description for this widget-area...",
-            "html5blank"
+            "html5blank",
         ),
         "id" => "widget-area-1",
         "before_widget" => '<div id="%1$s" class="%2$s">',
@@ -278,7 +278,7 @@ if (function_exists("register_sidebar")) {
         "name" => __("Widget Area 2", "html5blank"),
         "description" => __(
             "Description for this widget-area...",
-            "html5blank"
+            "html5blank",
         ),
         "id" => "widget-area-2",
         "before_widget" => '<div id="%1$s" class="%2$s">',
@@ -420,23 +420,23 @@ function html5blankcomments($comment, $args, $depth)
  } ?>
 	<?php printf(
      __('<cite class="fn">%s</cite> <span class="says">says:</span>'),
-     get_comment_author_link()
+     get_comment_author_link(),
  ); ?>
 	</div>
 <?php if ($comment->comment_approved == "0"): ?>
 	<em class="comment-awaiting-moderation"><?php _e(
-     "Your comment is awaiting moderation."
+     "Your comment is awaiting moderation.",
  ); ?></em>
 	<br />
 <?php endif; ?>
 
 	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(
-     get_comment_link($comment->comment_ID)
+     get_comment_link($comment->comment_ID),
  ); ?>">
 		<?php printf(
       __('%1$s at %2$s'),
       get_comment_date(),
-      get_comment_time()
+      get_comment_time(),
   ); ?></a><?php edit_comment_link(__("(Edit)"), "  ", ""); ?>
 	</div>
 
@@ -448,7 +448,7 @@ function html5blankcomments($comment, $args, $depth)
          "add_below" => $add_below,
          "depth" => $depth,
          "max_depth" => $args["max_depth"],
-     ])
+     ]),
  ); ?>
 	</div>
 	<?php if ("div" != $args["style"]): ?>
@@ -543,7 +543,7 @@ if (is_admin()) {
         $align,
         $url,
         $size,
-        $alt
+        $alt,
     ) {
         $completo = 848;
         $grande = 700;
@@ -620,7 +620,7 @@ function modify_jquery()
             "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
             [],
             "1.10.2",
-            true
+            true,
         );
         wp_enqueue_script("jquery");
     }
@@ -688,10 +688,12 @@ function add_rss_footer_text($content)
     if (is_feed()) {
         $footer_text =
             "<hr>" .
-            '<p>Estás leyendo el blog de <a href="https://luiscarlospando.com/">Luis Carlos Pando</a>. 👋 ' .
-            'Si gusta mi contenido, puedes apoyarme <a href="https://buymeacoffee.com/luiscarlospando">comprándome un café</a>, que aunque no es necesario, se agradece bastante. 🙏 ' .
-            'Otra forma de ayudarme es siguiéndome en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
-            "<p>Gracias por leer mi blog vía RSS.</p>";
+            '<p>Gracias por leer mi <a href="https://luiscarlospando.com/">blog</a> y por ser un suscriptor.' .
+            "<hr>" .
+            'Si disfrutas mi contenido, puedes <a href="https://buymeacoffee.com/luiscarlospando">comprarme un café</a>, que aunque no es necesario, se agradece bastante. 🙏 ' .
+            'También me puedes seguir en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
+            "<hr>" .
+            "<p>Hasta la próxima, ¡cuidate! 👋</p>";
         $content .= $footer_text;
     }
     return $content;
@@ -731,7 +733,7 @@ function save_mastodon_settings()
     if (!defined("MASTODON_ACCESS_TOKEN")) {
         define(
             "MASTODON_ACCESS_TOKEN",
-            "Dp7icijhm9zsnlYVoJAXVHHZiyb0xvVZoUcVHXCdMnY"
+            "Dp7icijhm9zsnlYVoJAXVHHZiyb0xvVZoUcVHXCdMnY",
         );
     }
 }
@@ -739,7 +741,7 @@ add_action("init", "save_mastodon_settings");
 function get_mastodon_toot_url(
     $post_url,
     $mastodon_instance = "https://social.lol",
-    $mastodon_username = "mijo"
+    $mastodon_username = "mijo",
 ) {
     $mastodon_instance = rtrim($mastodon_instance, "/");
     $search_url = $mastodon_instance . "/api/v2/search";
@@ -751,9 +753,9 @@ function get_mastodon_toot_url(
                 "type" => "statuses",
                 "resolve" => "true",
             ],
-            $search_url
+            $search_url,
         ),
-        ["headers" => ["Authorization" => "Bearer " . MASTODON_ACCESS_TOKEN]]
+        ["headers" => ["Authorization" => "Bearer " . MASTODON_ACCESS_TOKEN]],
     );
     if (is_wp_error($response)) {
         return false;
@@ -801,11 +803,7 @@ function sort_photos_category_by_date($query)
 }
 add_action("pre_get_posts", "sort_photos_category_by_date"); // Photos Ajax handler
 add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
-add_action(
-    "wp_ajax_nopriv_load_more_photos",
-
-    "load_more_photos_callback"
-);
+add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos_callback");
 function load_more_photos_callback()
 {
     // Validate and sanitize inputs
