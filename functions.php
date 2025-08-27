@@ -688,12 +688,12 @@ function add_rss_footer_text($content)
     if (is_feed()) {
         $footer_text =
             "<hr>" .
-            '<p>Gracias por leer mi <a href="https://luiscarlospando.com/">blog</a> y por ser un suscriptor.' .
-            "<hr>" .
+            '<p>Gracias por leer mi <a href="https://luiscarlospando.com/">blog</a> y ser un suscriptor.' .
+            "<br>" .
             'Si disfrutas mi contenido, puedes <a href="https://buymeacoffee.com/luiscarlospando">comprarme un café</a>, que aunque no es necesario, se agradece bastante. 🙏 ' .
             'También me puedes seguir en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
-            "<hr>" .
-            "<p>Hasta la próxima, ¡cuidate! 👋</p>";
+            "<br>" .
+            "<p>¡Hasta la próxima, cuidate! 👋</p>";
         $content .= $footer_text;
     }
     return $content;
