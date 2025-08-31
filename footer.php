@@ -179,7 +179,7 @@
                                 </li>
                             </ul>
 
-                            <p id="greetings">Saludos desde Chihuahua, México. 🏜️</p>
+                            <p><em>Hola desde Chihuahua, México.</em> <span id="greeting-emoji">🏜️</span></p>
                         </div>
                         <div class="col-12 text-center">
                             <ul id="social" class="list-inline mt-0">
