@@ -88,7 +88,7 @@
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/">Privacidad</a>
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/" rel="privacy-policy">Privacidad</a>
                                 </li>
                             </ul>
 
