@@ -57,7 +57,7 @@
                                 ); ?> Luis Carlos Pando
                             </p>
 
-                            <p>Parte del <a href="https://cs.sjoy.lol/" target="_blank">CSS JOY Webring 🕸️💍</a></p>
+                            <p>Parte del <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a></p>
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
@@ -94,7 +94,7 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
-                                    <a href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
+                                    <a rel="me noreferrer noopener" href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
                                         <span class="fa-stack small">
                                             <i class="fa-solid fa-check fa-stack-1x fa-inverse" style="--fa-stack-z-index: 2;"></i>
                                             <i class="fa-solid fa-certificate fa-stack-2x" style="--fa-stack-z-index: 1;"></i>
@@ -116,17 +116,17 @@
                         <div class="col-12 col-lg-7 text-center text-lg-right">
                             <ul class="list-inline mt-lg-0">
                                 <li class="list-inline-item">
-                                    <a href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
+                                    <a rel="noreferrer noopener" href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
+                                    <a rel="noreferrer noopener" href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
                                         <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
+                                    <a rel="noreferrer noopener" href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
                                         <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
                                     </a>
                                 </li>
@@ -139,12 +139,12 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a rel="me noopener" href="https://mijo.omg.lol/" target="_blank">
+                                    <a rel="me noreferrer noopener" href="https://mijo.omg.lol/" target="_blank">
                                         <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a rel="me noopener" href="https://discordapp.com/users/86571896581132288/" target="_blank">
+                                    <a rel="me noreferrer noopener" href="https://discordapp.com/users/86571896581132288/" target="_blank">
                                         <img src="https://dcbadge.limes.pink/api/shield/86571896581132288?style=flat&amp;theme=discord-inverted" alt="" loading="lazy">
                                     </a>
                                 </li>
@@ -154,17 +154,17 @@
                                 <li>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a href="https://people.pledge.party/" target="_blank">
+                                            <a rel="noreferer noopener" href="https://people.pledge.party/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
                                             </a>
                                         </li>
                                         <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a href="https://echofeed.app/" target="_blank">
+                                            <a rel="noreferer noopener" href="https://echofeed.app/" target="_blank">
                                                 <img width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://ko-fi.com/s/4662b19f61" target="_blank">
+                                            <a rel="noreferer noopener" href="https://ko-fi.com/s/4662b19f61" target="_blank">
                                                 <img src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
                                             </a>
                                         </li>
@@ -187,7 +187,7 @@
                                     $mastodon = get_field("mastodon", "option")
                                 ): ?>
                                     <li class="list-inline-item">
-                                        <a rel="me noopener" href="<?= esc_url(
+                                        <a rel="me noreferrer noopener" href="<?= esc_url(
                                             $mastodon,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Mastodon" title="Sígueme en Mastodon" target="_blank">
                                             <i class="fa-brands fa-mastodon"></i>
@@ -199,7 +199,7 @@
                                     $bluesky = get_field("bluesky", "option")
                                 ): ?>
                                     <li class="list-inline-item">
-                                        <a rel="me noopener" href="<?= esc_url(
+                                        <a rel="me noreferrer noopener" href="<?= esc_url(
                                             $bluesky,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Bluesky" title="Sígueme en Bluesky" target="_blank">
                                             <i class="fa-brands fa-bluesky"></i>
@@ -214,7 +214,7 @@
                                     )
                                 ): ?>
                                     <li class="list-inline-item">
-                                        <a rel="me noopener" href="<?= esc_url(
+                                        <a rel="me noreferrernoopener" href="<?= esc_url(
                                             $instagram,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Sígueme en Instagram" title="Sígueme en Instagram" target="_blank">
                                             <i class="fa-brands fa-instagram"></i>
@@ -226,7 +226,7 @@
                                     $discord = get_field("discord", "option")
                                 ): ?>
                                     <li class="list-inline-item">
-                                        <a rel="me noopener" href="<?= esc_url(
+                                        <a rel="me noreferrer noopener" href="<?= esc_url(
                                             $discord,
                                         ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
                                             <i class="fa-brands fa-discord"></i>
@@ -238,7 +238,7 @@
                                     $signal = get_field("signal", "option")
                                 ): ?>
                                     <li class="list-inline-item">
-                                        <a rel="me noopener" href="<?= esc_url(
+                                        <a rel="me noreferrer noopener" href="<?= esc_url(
                                             $signal,
                                         ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Contáctame vía Signal" title="Contáctame vía Signal" target="_blank">
                                             <i class="fa-brands fa-signal-messenger"></i>
