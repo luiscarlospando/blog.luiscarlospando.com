@@ -297,7 +297,6 @@
             const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
             const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
 
-            // === PASO 2: Se activa el idioma español para Day.js ===
             dayjs.locale('es');
 
             // Likes
@@ -311,7 +310,7 @@
                         document.getElementById("webmentions-likes-subtitle").innerHTML = `
                             <ul class="list-inline" style="margin: 0 !important;">
                                 <li class="list-inline-item">
-                                    <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                    <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3> <small><em>Dale like desde Mastodon para que aparezca aquí tu cara</em></small>
                                 </li>
                             </ul>`;
 
