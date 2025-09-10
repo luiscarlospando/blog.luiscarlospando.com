@@ -312,9 +312,6 @@
                                 <li class="list-inline-item">
                                     <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                                 </li>
-                                <li class="list-inline-item">
-                                    <small><em>Dale like desde Mastodon para que tu cara aparezca aquí</em></small>
-                                </li>
                             </ul>`;
 
                         let likesHtml = '';
