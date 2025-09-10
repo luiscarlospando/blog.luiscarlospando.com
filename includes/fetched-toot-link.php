@@ -10,7 +10,7 @@ if (!$toot_url) {
 if ($toot_url) {
     echo '<a id="mastodon-toot" href="' .
         esc_url($toot_url) .
-        '" target="_blank" rel="noopener noreferrer">este post en<i class="fa-brands fa-mastodon"></i> Mastodon</a>';
+        '" target="_blank" rel="noopener noreferrer">este post en <i class="fa-brands fa-mastodon"></i> Mastodon</a>';
 } else {
     // For posts without a corresponding Mastodon toot
     echo "<i class='fa-brands fa-mastodon'></i> Mastodon (este post no tiene un toot asociado en Mastodon 😐)";
