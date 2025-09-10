@@ -363,41 +363,45 @@
         function showReplies() {
             fetch(repliesEndpoint, {
                 method: "GET",
-                headers: {"Content-type": "application/json;charset=UTF-8"}})
+                headers: {"Content-type": "application/json;charset=UTF-8"}
+            })
             .then(response => response.json())
             .then(data => {
                 if (data.children.length >= 1) {
-                    document.getElementById("webmentions-comments-subtitle").innerHTML += `
+                    // Se crea el subtítulo
+                    document.getElementById("webmentions-comments-subtitle").innerHTML = `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
                                 <h3>Replies (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
                         </ul>`;
 
-                    for (let i = 0; i < data.children.length; i++) {
-                        const postedOn = data.children[i].published;
-                        let lastUpdated = dayjs(postedOn);
+                    let commentsHtml = '';
 
-                        document.getElementById("webmentions-comments").innerHTML += `
-                            <div class="card">
+                    for (let i = 0; i < data.children.length; i++) {
+                        const comment = data.children[i];
+                        const postedOn = dayjs(comment.published).format('DD MMMM YYYY, h:mm a'); // Formato más amigable
+
+                        commentsHtml += `
+                            <div class="card mb-3">
                                 <div class="card-body">
                                     <h5 class="card-title mb-2">
-                                        <a href="${data.children[i].author.url}" target="_blank">
-                                            <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="" />
+                                        <a href="${comment.author.url}" target="_blank">
+                                            <img class="user-thumbnail rounded-circle" src="${comment.author.photo}" alt="" />
                                         </a>
-                                        <a href="${data.children[i].author.url}" target="_blank">
-                                            ${data.children[i].author.name}
+                                        <a href="${comment.author.url}" target="_blank">
+                                            ${comment.author.name}
                                         </a>
                                     </h5>
                                     <p class="card-text">
-                                        ${data.children[i].content.text}
+                                        ${comment.content.text}
                                     </p>
                                 </div>
                                 <div class="card-footer text-muted">
                                     <p class="card-text">
                                         <code>
-                                            <a href="${data.children[i].url}" target="_blank">
-                                                ${lastUpdated}
+                                            <a href="${comment.url}" target="_blank">
+                                                ${postedOn}
                                             </a>
                                         </code>
                                     </p>
@@ -405,9 +409,11 @@
                             </div>
                         `;
                     }
+
+                    document.getElementById("webmentions-comments").innerHTML = commentsHtml;
                 }
             })
-            .catch(error => console.error(error));
+            .catch(error => console.error('Error fetching replies:', error));
         }
 
         // Function calls
