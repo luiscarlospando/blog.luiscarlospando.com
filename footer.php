@@ -284,9 +284,6 @@
     <!-- App -->
     <?php wp_footer(); ?>
 
-    <!-- GitHub -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
     <!-- Instatus -->
     <script src="https://luiscarlospando.instatus.com/widget/script.js"></script>
 
@@ -367,6 +364,9 @@
             })
             .then(response => response.json())
             .then(data => {
+
+                console.log('Datos recibidos para Replies:', data);
+
                 if (data?.children && data.children.length >= 1) {
                     document.getElementById("webmentions-comments-subtitle").innerHTML = `
                         <ul class="list-inline" style="margin: 0 !important;">
