@@ -394,7 +394,7 @@
                             if (contentText.trim() === '') continue;
 
                             const commentUrl = comment.url || '#';
-                            // Esta línea ahora usará el idioma español automáticamente
+
                             const publishedDate = comment.published ? dayjs(comment.published).format('DD [de] MMMM [de] YYYY, h:mm a') : 'Fecha desconocida';
 
                             commentsHtml += `
