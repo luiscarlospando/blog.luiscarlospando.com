@@ -367,8 +367,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                if (data.children.length >= 1) {
-                    // Se crea el subtítulo
+                if (data?.children && data.children.length >= 1) {
                     document.getElementById("webmentions-comments-subtitle").innerHTML = `
                         <ul class="list-inline" style="margin: 0 !important;">
                             <li class="list-inline-item">
@@ -380,28 +379,40 @@
 
                     for (let i = 0; i < data.children.length; i++) {
                         const comment = data.children[i];
-                        const postedOn = dayjs(comment.published).format('DD MMMM YYYY, h:mm a'); // Formato más amigable
+
+                        if (!comment.author) continue;
+
+                        const authorName  = comment.author.name  || 'Usuario Anónimo';
+                        const authorUrl   = comment.author.url   || '#';
+                        const authorPhoto = comment.author.photo || 'https://www.gravatar.com/avatar/?d=mp&s=100';
+
+                        const contentText = comment.content?.text || '';
+
+                        if (contentText.trim() === '') continue;
+
+                        const commentUrl = comment.url || '#';
+                        const publishedDate = comment.published ? dayjs(comment.published).format('DD MMMM YYYY, h:mm a') : 'Fecha desconocida';
 
                         commentsHtml += `
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <h5 class="card-title mb-2">
-                                        <a href="${comment.author.url}" target="_blank">
-                                            <img class="user-thumbnail rounded-circle" src="${comment.author.photo}" alt="" />
+                                        <a href="${authorUrl}" target="_blank">
+                                            <img class="user-thumbnail rounded-circle" src="${authorPhoto}" alt="Avatar de ${authorName}" />
                                         </a>
-                                        <a href="${comment.author.url}" target="_blank">
-                                            ${comment.author.name}
+                                        <a href="${authorUrl}" target="_blank">
+                                            ${authorName}
                                         </a>
                                     </h5>
                                     <p class="card-text">
-                                        ${comment.content.text}
+                                        ${contentText}
                                     </p>
                                 </div>
                                 <div class="card-footer text-muted">
                                     <p class="card-text">
                                         <code>
-                                            <a href="${comment.url}" target="_blank">
-                                                ${postedOn}
+                                            <a href="${commentUrl}" target="_blank">
+                                                ${publishedDate}
                                             </a>
                                         </code>
                                     </p>
@@ -413,7 +424,7 @@
                     document.getElementById("webmentions-comments").innerHTML = commentsHtml;
                 }
             })
-            .catch(error => console.error('Error fetching replies:', error));
+            .catch(error => console.error('Error fetching or processing replies:', error));
         }
 
         // Function calls
