@@ -287,152 +287,142 @@
     <!-- Instatus -->
     <script src="https://luiscarlospando.instatus.com/widget/script.js"></script>
 
-<?php if (is_single()): ?>
-    <!-- Day.js -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <?php if (is_single()): ?>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <script src="https://unpkg.com/dayjs@1/locale/es.js"></script>
 
-    <!-- Webmentions -->
-    <script>
-        // API URLs
-        const likesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=like-of";
-        const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
-        const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
+        <script>
+            // API URLs
+            const likesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=like-of";
+            const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
+            const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
 
-        // Likes
-        function showLikes() {
-            fetch(likesEndpoint, {
-                method: "GET",
-                headers: {"Content-type": "application/json;charset=UTF-8"}})
-            .then(response => response.json())
-            .then(data => {
-                if (data.children.length >= 1) {
-                    document.getElementById("webmentions-likes-subtitle").innerHTML += `
-                        <ul class="list-inline" style="margin: 0 !important;">
-                            <li class="list-inline-item">
-                                <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
-                            </li>
-                        </ul>`;
+            // === PASO 2: Se activa el idioma español para Day.js ===
+            dayjs.locale('es');
 
-                    for (let i = 0; i < data.children.length; i++) {
-                        document.getElementById("webmentions-likes").innerHTML += `
-                            <li class="list-inline-item">
-                                <a href="${data.children[i].author.url}" target="_blank">
-                                    <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="" />
-                                </a>
-                            </li>
-                        `;
+            // Likes
+            function showLikes() {
+                fetch(likesEndpoint, {
+                    method: "GET",
+                    headers: {"Content-type": "application/json;charset=UTF-8"}})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.children.length >= 1) {
+                        document.getElementById("webmentions-likes-subtitle").innerHTML = `
+                            <ul class="list-inline" style="margin: 0 !important;">
+                                <li class="list-inline-item">
+                                    <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                </li>
+                            </ul>`;
+
+                        let likesHtml = '';
+                        for (let i = 0; i < data.children.length; i++) {
+                            if (!data.children[i].author) continue;
+                            likesHtml += `
+                                <li class="list-inline-item">
+                                    <a href="${data.children[i].author.url}" target="_blank">
+                                        <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="Avatar de ${data.children[i].author.name}" />
+                                    </a>
+                                </li>
+                            `;
+                        }
+                        document.getElementById("webmentions-likes").innerHTML = likesHtml;
                     }
-                }
-            })
-            .catch(error => console.error(error));
-        }
+                })
+                .catch(error => console.error('Error fetching likes:', error));
+            }
 
-        // Boosts
-        function showBoosts() {
-            fetch(boostsEndpoint, {
-                method: "GET",
-                headers: {"Content-type": "application/json;charset=UTF-8"}})
-            .then(response => response.json())
-            .then(data => {
-                if (data.children.length >= 1) {
-                    document.getElementById("webmentions-boosts-subtitle").innerHTML += `
-                        <ul class="list-inline" style="margin: 0 !important;">
-                            <li class="list-inline-item">
-                                <h3>Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
-                            </li>
-                        </ul>`;
+            // Boosts
+            function showBoosts() {
+                fetch(boostsEndpoint, {
+                    method: "GET",
+                    headers: {"Content-type": "application/json;charset=UTF-8"}})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.children.length >= 1) {
+                        document.getElementById("webmentions-boosts-subtitle").innerHTML = `
+                            <ul class="list-inline" style="margin: 0 !important;">
+                                <li class="list-inline-item">
+                                    <h3>Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                </li>
+                            </ul>`;
 
-                    for (let i = 0; i < data.children.length; i++) {
-                        document.getElementById("webmentions-boosts").innerHTML += `
-                            <li class="list-inline-item">
-                                <a href="${data.children[i].author.url}" target="_blank">
-                                    <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="" />
-                                </a>
-                            </li>
-                        `;
+                        let boostsHtml = '';
+                        for (let i = 0; i < data.children.length; i++) {
+                            if (!data.children[i].author) continue;
+                            boostsHtml += `
+                                <li class="list-inline-item">
+                                    <a href="${data.children[i].author.url}" target="_blank">
+                                        <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="Avatar de ${data.children[i].author.name}" />
+                                    </a>
+                                </li>
+                            `;
+                        }
+                        document.getElementById("webmentions-boosts").innerHTML = boostsHtml;
                     }
-                }
-            })
-            .catch(error => console.error(error));
-        }
+                })
+                .catch(error => console.error('Error fetching boosts:', error));
+            }
 
-        // Replies
-        function showReplies() {
-            fetch(repliesEndpoint, {
-                method: "GET",
-                headers: {"Content-type": "application/json;charset=UTF-8"}
-            })
-            .then(response => response.json())
-            .then(data => {
+            // Replies
+            function showReplies() {
+                fetch(repliesEndpoint, {
+                    method: "GET",
+                    headers: {"Content-type": "application/json;charset=UTF-8"}
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data?.children && data.children.length >= 1) {
+                        document.getElementById("webmentions-comments-subtitle").innerHTML = `
+                            <ul class="list-inline" style="margin: 0 !important;">
+                                <li class="list-inline-item">
+                                    <h3>Replies (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                </li>
+                            </ul>`;
 
-                console.log('Datos recibidos para Replies:', data);
+                        let commentsHtml = '';
+                        for (let i = 0; i < data.children.length; i++) {
+                            const comment = data.children[i];
+                            if (!comment.author) continue;
 
-                if (data?.children && data.children.length >= 1) {
-                    document.getElementById("webmentions-comments-subtitle").innerHTML = `
-                        <ul class="list-inline" style="margin: 0 !important;">
-                            <li class="list-inline-item">
-                                <h3>Replies (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
-                            </li>
-                        </ul>`;
+                            const authorName  = comment.author.name  || 'Usuario Anónimo';
+                            const authorUrl   = comment.author.url   || '#';
+                            const authorPhoto = comment.author.photo || 'https://www.gravatar.com/avatar/?d=mp&s=100';
+                            const contentText = comment.content?.text || '';
+                            if (contentText.trim() === '') continue;
 
-                    let commentsHtml = '';
+                            const commentUrl = comment.url || '#';
+                            // Esta línea ahora usará el idioma español automáticamente
+                            const publishedDate = comment.published ? dayjs(comment.published).format('DD [de] MMMM [de] YYYY, h:mm a') : 'Fecha desconocida';
 
-                    for (let i = 0; i < data.children.length; i++) {
-                        const comment = data.children[i];
-
-                        if (!comment.author) continue;
-
-                        const authorName  = comment.author.name  || 'Usuario Anónimo';
-                        const authorUrl   = comment.author.url   || '#';
-                        const authorPhoto = comment.author.photo || 'https://www.gravatar.com/avatar/?d=mp&s=100';
-
-                        const contentText = comment.content?.text || '';
-
-                        if (contentText.trim() === '') continue;
-
-                        const commentUrl = comment.url || '#';
-                        const publishedDate = comment.published ? dayjs(comment.published).format('DD MMMM YYYY, h:mm a') : 'Fecha desconocida';
-
-                        commentsHtml += `
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                        <a href="${authorUrl}" target="_blank">
-                                            <img class="user-thumbnail rounded-circle" src="${authorPhoto}" alt="Avatar de ${authorName}" />
-                                        </a>
-                                        <a href="${authorUrl}" target="_blank">
-                                            ${authorName}
-                                        </a>
-                                    </h5>
-                                    <p class="card-text">
-                                        ${contentText}
-                                    </p>
-                                </div>
-                                <div class="card-footer text-muted">
-                                    <p class="card-text">
-                                        <code>
-                                            <a href="${commentUrl}" target="_blank">
-                                                ${publishedDate}
-                                            </a>
-                                        </code>
-                                    </p>
-                                </div>
-                            </div>
-                        `;
+                            commentsHtml += `
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-2">
+                                            <a href="${authorUrl}" target="_blank"><img class="user-thumbnail rounded-circle" src="${authorPhoto}" alt="Avatar de ${authorName}" /></a>
+                                            <a href="${authorUrl}" target="_blank">${authorName}</a>
+                                        </h5>
+                                        <p class="card-text">${contentText}</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <p class="card-text">
+                                            <code><a href="${commentUrl}" target="_blank">${publishedDate}</a></code>
+                                        </p>
+                                    </div>
+                                </div>`;
+                        }
+                        document.getElementById("webmentions-comments").innerHTML = commentsHtml;
                     }
+                })
+                .catch(error => console.error('Error fetching or processing replies:', error));
+            }
 
-                    document.getElementById("webmentions-comments").innerHTML = commentsHtml;
-                }
-            })
-            .catch(error => console.error('Error fetching or processing replies:', error));
-        }
-
-        // Function calls
-        showLikes();
-        showBoosts();
-        showReplies();
-    </script>
-<?php endif; ?>
+            // Function calls
+            showLikes();
+            showBoosts();
+            showReplies();
+        </script>
+    <?php endif; ?>
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
