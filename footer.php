@@ -155,17 +155,22 @@
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mb-2 mb-lg-0">
                                             <a rel="noreferer noopener" href="https://people.pledge.party/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item mb-2 mb-lg-0">
                                             <a rel="noreferer noopener" href="https://echofeed.app/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a rel="noreferer noopener" href="https://ko-fi.com/s/4662b19f61" target="_blank">
-                                                <img class="web-badge" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" class="img-fluid">
+                                                <img class="web-badge" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" />
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mb-2 mb-lg-0">
+                                            <a rel="noopener" href="https://blogsencastellano.wordpress.com/" target="_blank">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog! ¡Blog!" />
                                             </a>
                                         </li>
                                     </ul>
