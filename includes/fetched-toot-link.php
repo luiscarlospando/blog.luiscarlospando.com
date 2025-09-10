@@ -10,8 +10,8 @@ if (!$toot_url) {
 if ($toot_url) {
     echo '<a id="mastodon-toot" href="' .
         esc_url($toot_url) .
-        '" target="_blank"><i class="fa-solid fa-reply"></i> Envía un reply aquí para comentar</a>';
+        '" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-mastodon"></i> Mastodon</a>';
 } else {
     // For posts without a corresponding Mastodon toot
-    echo "Una disculpa, no hay un toot asociado a este post en Mastodon 😐, por lo tanto no puedes comentar ni interactuar de ninguna manera";
+    echo "<i class='fa-brands fa-mastodon'></i> Mastodon (este post no tiene un toot asociado en Mastodon 😐)";
 }
