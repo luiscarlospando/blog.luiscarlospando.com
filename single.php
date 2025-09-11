@@ -96,7 +96,7 @@
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						Por el momento estoy evaluando nuevos sistemas de comentarios para el blog. Pero si le das <em>like</em> o le das <em>boost</em> a <?php include "includes/fetched-toot-link.php"; ?>, aparecerás aquí arriba. Si quieres decirme algo, por favor checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						Por el momento estoy evaluando nuevos sistemas de comentarios para el blog. Pero si le das <em>like</em> o le das <em>boost</em> <?php include "includes/fetched-toot-link.php"; ?>, aparecerás aquí arriba. Si quieres decirme algo, por favor checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
