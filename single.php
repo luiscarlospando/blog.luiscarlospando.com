@@ -91,7 +91,10 @@
 					<!-- comments - replies -->
 					<ul class="comments-title list-inline">
 	                    <li class="list-inline-item">
-							<h2>Comentarios</h2> <span class="badge badge-success">Nuevo</span>
+							<h2>Comentarios</h2>
+						</li>
+						<li class="list-inline-item">
+							<span class="badge badge-success">Nuevo</span>
 						</li>
 					</ul>
 
