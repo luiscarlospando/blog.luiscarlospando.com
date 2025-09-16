@@ -99,16 +99,6 @@
 						 <a href="https://blog.luiscarlospando.com/coding/2025/09/en-busqueda-de-nuevo-sistema-de-comentarios-para-mi-blog/">Sigo evaluando</a> una manera de volver a implementar sistema de comentarios en mi sitio. Pero por mientras puedes interactuar dando <i class="fa-solid fa-thumbs-up"></i> <em>like</em> o <i class="fa-solid fa-rocket"></i> <em>boost</em> <?php include "includes/fetched-toot-link.php"; ?> para aparecer aquí arriba. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
-					<div id="cusdis_thread" class="mb-4"
-                        data-host="https://cusdis.com"
-                        data-app-id="06db7d1c-624a-4b8a-82e3-126a12d44052"
-                        data-page-id="<?php echo get_the_ID(); ?>"
-                        data-page-url="<?php echo get_permalink(); ?>"
-                        data-page-title="<?php echo get_the_title(); ?>"
-                        data-theme="dark"
-                        >
-                    </div>
-
 					<div id="webmentions-comments-subtitle"></div>
 
 					<div id="webmentions-comments"></div>
