@@ -94,7 +94,7 @@
 							<h2>Comentarios</h2>
 						</li>
 						<li class="list-inline-item">
-							<span class="badge badge-success">Nuevo</span>
+							<span class="badge badge-success" style="vertical-align: text-bottom;">Nuevo</span>
 						</li>
 					</ul>
 
