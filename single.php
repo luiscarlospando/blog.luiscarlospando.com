@@ -91,12 +91,12 @@
 					<!-- comments - replies -->
 					<ul class="comments-title list-inline">
 	                    <li class="list-inline-item">
-							<h2>Comentarios</h2>
+							<h2>Comentarios</h2> <span class="badge badge-success">Nuevo</span>
 						</li>
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						Por el momento estoy evaluando nuevos sistemas de comentarios para el blog. Pero si le das <em>like</em> o le das <em>boost</em> <?php include "includes/fetched-toot-link.php"; ?>, aparecerás aquí arriba. Si quieres decirme algo, por favor checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						Usa el formulario de abajo para enviar un comentario, tu comentario necesita ser moderado primero antes de que aparezca aquí. También puedes dar <i class="fa-solid fa-thumbs-up"></i> <em>like</em> o <i class="fa-solid fa-rocket"></i> <em>boost</em> <?php include "includes/fetched-toot-link.php"; ?>, para aparecer aquí arriba. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="cusdis_thread" class="mb-4"
