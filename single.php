@@ -99,6 +99,15 @@
 						Por el momento estoy evaluando nuevos sistemas de comentarios para el blog. Pero si le das <em>like</em> o le das <em>boost</em> <?php include "includes/fetched-toot-link.php"; ?>, aparecerás aquí arriba. Si quieres decirme algo, por favor checa mi <a href="https://luiscarlospando.com/contacto"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
+					<div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="06db7d1c-624a-4b8a-82e3-126a12d44052"
+                        data-page-id="<?php echo get_the_ID(); ?>"
+                        data-page-url="<?php echo get_permalink(); ?>"
+                        data-page-title="<?php echo get_the_title(); ?>"
+                        >
+                    </div>
+
 					<div id="webmentions-comments-subtitle"></div>
 
 					<div id="webmentions-comments"></div>

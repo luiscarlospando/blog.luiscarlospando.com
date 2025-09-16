@@ -288,6 +288,7 @@
     <script src="https://luiscarlospando.instatus.com/widget/script.js"></script>
 
     <?php if (is_single()): ?>
+        <script async src="https://cusdis.com/js/cusdis.es.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
         <script src="https://unpkg.com/dayjs@1/locale/es.js"></script>
 
