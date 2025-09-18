@@ -8,7 +8,7 @@
     <!--
     ================================================================================
     === <?php bloginfo(
-        "name"
+        "name",
     ); ?> vPLACEHOLDER ===========================================
     ================================================================================
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,7 +53,7 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ================================================================================
     =================================================== © <?php echo date(
-        "Y"
+        "Y",
     ); ?> Luis Carlos Pando ===
     ================================================================================
 	-->
@@ -61,13 +61,13 @@
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php echo esc_attr(get_meta_title()); ?>" />
     <meta name="description" content="<?php echo esc_attr(
-        get_meta_description()
+        get_meta_description(),
     ); ?>" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="fediverse:creator" content="@mijo@social.lol" />
     <meta name="copyright" content="© <?php echo date(
-        "Y"
+        "Y",
     ); ?> Luis Carlos Pando" />
     <meta name="email" content="hey@luiscarlospando.com" />
     <meta name="distribution" content="global" />
@@ -75,7 +75,7 @@
     <meta name="ICBM" content="28.6189208162, -106.101984179" />
     <meta name="DC.title" content="<?php bloginfo("name"); ?>" />
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo(
-        "name"
+        "name",
     ); ?>" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -88,22 +88,30 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php the_permalink(); ?>" />
     <meta property="og:description" content="<?php echo esc_attr(
-        get_meta_description()
+        get_meta_description(),
     ); ?>" />
     <meta property="og:image" content="<?php echo esc_url(
-        get_meta_image()
+        get_meta_image(),
     ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo("name"); ?>" href="https://blog.<?php include "includes/site-domain.php"; ?>/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="Fotos - <?php bloginfo("name"); ?>" href="https://blog.<?php include "includes/site-domain.php"; ?>/photos/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="Links - <?php bloginfo("name" ); ?>" href="https://bg.raindrop.io/rss/public/50598757" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?>" href="<?php echo site_url(); ?>/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Fotos - <?php bloginfo(
+        "name",
+    ); ?>" href="<?php echo site_url(); ?>/photos/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Links - <?php bloginfo(
+        "name",
+    ); ?>" href="https://bg.raindrop.io/rss/public/50598757" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
     <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="<?php bloginfo("name" ); ?>" />
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo(
+        "name",
+    ); ?>" />
     <link rel="manifest" href="https://<?php include "includes/site-domain.php"; ?>/site.webmanifest" />
     <link rel="canonical" href="<?php the_permalink(); ?>">
     <link rel="me" href="https://social.lol/@mijo" />
