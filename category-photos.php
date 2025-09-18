@@ -13,6 +13,12 @@
                 También puede haber algunas que haya visto en redes sociales.
             </p>
 
+            <li class="list-inline-item">
+                <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/photos/rss/" rel="me">
+                    <i class="fa-solid fa-rss"></i> Suscribirse
+                </a>
+            </li>
+
             <?php get_template_part("loop-photos"); ?>
         </div>
     </div>
