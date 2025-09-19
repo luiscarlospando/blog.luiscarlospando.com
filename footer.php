@@ -88,7 +88,7 @@
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacidad/" rel="privacy-policy">Privacidad</a>
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacy/" rel="privacy-policy">Privacidad</a>
                                 </li>
                             </ul>
 
@@ -102,7 +102,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/acerca-de/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/about/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
                                         <code>Acerca de</code>
                                     </a>
                                 </li>
