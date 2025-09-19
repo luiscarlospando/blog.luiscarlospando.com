@@ -95,10 +95,10 @@
     ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-    <link rel="alternate" type="application/rss+xml" title="Luis Carlos Pando" href="<?php echo site_url(); ?>/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="Fotos - Luis Carlos Pando" href="<?php echo site_url(); ?>/photos/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="Links - Luis Carlos Pando" href="https://bg.raindrop.io/rss/public/50598757" />
-    <link rel="alternate" type="application/rss+xml" title="Crucial Tracks - Luis Carlos Pando" href="https://app.crucialtracks.org/profile/mijo/feed" />
+    <link rel="alternate" type="application/rss+xml" title="Luis Carlos Pando - Posts" href="<?php echo site_url(); ?>/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Luis Carlos Pando - Fotos" href="<?php echo site_url(); ?>/photos/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Luis Carlos Pando - Links" href="https://bg.raindrop.io/rss/public/50598757" />
+    <link rel="alternate" type="application/rss+xml" title="Luis Carlos Pando - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
