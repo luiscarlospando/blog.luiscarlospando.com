@@ -3,7 +3,13 @@
 <head profile="http://gmpg.org/xfn/11">
 	<meta charset="<?php bloginfo("charset"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo esc_html(get_page_title()); ?></title>
+	<title>
+    <?php if (is_front_page() || is_home()) {
+        echo "Blog - Luis Carlos Pando";
+    } else {
+        echo wp_title("", false, "right") . " - Luis Carlos Pando";
+    } ?>
+    </title>
 
     <!--
     ================================================================================
