@@ -6,6 +6,16 @@
 	<title>
     <?php if (is_front_page() || is_home()) {
         echo "Blog - Luis Carlos Pando";
+    } elseif (is_singular()) {
+        echo single_post_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_archive()) {
+        echo get_the_archive_title() . " - Luis Carlos Pando";
+    } elseif (is_search()) {
+        echo 'Resultados de búsqueda para "' .
+            get_search_query() .
+            '" - Luis Carlos Pando';
+    } elseif (is_404()) {
+        echo "Página no encontrada - Luis Carlos Pando";
     } else {
         echo wp_title("", false, "right") . " - Luis Carlos Pando";
     } ?>
