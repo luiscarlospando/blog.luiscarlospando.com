@@ -106,6 +106,11 @@
                                         <code>Acerca de</code>
                                     </a>
                                 </li>
+                                <li class="list-inline-item me-2">
+                                    <a rel="noreferrer noopener" href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Código fuente">
+                                        <code>Código fuente</code>
+                                    </a>
+                                </li>
                                 <li class="list-inline-item">
                                     <a id="btn-version-blog" href="" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="">
                                         <code>v</code>
