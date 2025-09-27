@@ -143,7 +143,7 @@
                             <?php endif; ?>
 
                             o
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/suscribete/">
+                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/subscribe/">
                                 <i class="fas fa-rss"></i> Suscribiéndote
                             </a> a mi sitio.</p>
                         </div>
