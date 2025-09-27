@@ -92,7 +92,7 @@
                                 </li>
                             </ul>
 
-                            <ul class="list-inline">
+                            <ul id="version" class="list-inline">
                                 <li class="list-inline-item me-2">
                                     <a rel="me noreferrer noopener" href="https://proven.lol/75353b" data-toggle="tooltip" data-placement="top" title="Proof" target="_blank">
                                         <span class="fa-stack small">
