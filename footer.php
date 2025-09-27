@@ -107,7 +107,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a rel="noreferrer noopener" href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Código fuente">
+                                    <a rel="noreferrer noopener" href="https://github.com/luiscarlospando/luiscarlospando.com" data-toggle="tooltip" data-placement="top" data-html="true" title="Código fuente" target="_blank">
                                         <code>Código fuente</code>
                                     </a>
                                 </li>
