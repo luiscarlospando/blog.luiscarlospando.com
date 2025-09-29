@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?> data-theme="dark" data-color-scheme="dark">
 <head profile="http://gmpg.org/xfn/11">
 	<meta charset="<?php bloginfo("charset"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -104,6 +104,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="msapplication-TileColor" content="#0e0f34" />
     <meta name="theme-color" content="#0e0f34" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
 
     <!-- Open Graph -->
     <meta name="og:title" content="<?php echo esc_attr(get_meta_title()); ?>" />
