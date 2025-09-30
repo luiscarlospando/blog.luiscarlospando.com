@@ -127,7 +127,7 @@
     ); ?> - Fotos" href="<?php echo site_url(); ?>/photos/rss/" />
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
         "name",
-    ); ?>- Links" href="https://bg.raindrop.io/rss/public/50598757" />
+    ); ?> - Links" href="https://bg.raindrop.io/rss/public/50598757" />
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
         "name",
     ); ?> - Statuslog" href="https://mijo.status.lol/feed/rss" />
