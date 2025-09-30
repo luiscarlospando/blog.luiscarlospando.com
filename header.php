@@ -119,11 +119,21 @@
     ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
-    <link rel="alternate" type="application/rss+xml" title="<?php the_title(); ?> - Posts" href="<?php echo site_url(); ?>/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="<?php the_title(); ?> - Fotos" href="<?php echo site_url(); ?>/photos/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="<?php the_title(); ?> - Links" href="https://bg.raindrop.io/rss/public/50598757" />
-    <link rel="alternate" type="application/rss+xml" title="<?php the_title(); ?> - Statuslog" href="https://mijo.status.lol/feed/rss" />
-    <link rel="alternate" type="application/rss+xml" title="<?php the_title(); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?> - Posts" href="<?php echo site_url(); ?>/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?> - Fotos" href="<?php echo site_url(); ?>/photos/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?>- Links" href="https://bg.raindrop.io/rss/public/50598757" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?> - Statuslog" href="https://mijo.status.lol/feed/rss" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
