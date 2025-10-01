@@ -13,5 +13,5 @@ if ($toot_url) {
         '" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-mastodon"></i> Mastodon</a> y ahí mismo puedes dar <i class="fa-solid fa-thumbs-up"></i> <em>like</em> o <i class="fa-solid fa-rocket"></i> <em>boost</em> para aparecer aquí arriba';
 } else {
     // For posts without a corresponding Mastodon toot
-    echo '<i class="fa-brands fa-mastodon"></i> Mastodon (aunque parece ser que este post no tiene un toot asociado en Mastodon 😐)';
+    echo '<i class="fa-brands fa-mastodon"></i> Mastodon (aunque parece que este post no tiene un toot asociado en Mastodon 😐)';
 }
