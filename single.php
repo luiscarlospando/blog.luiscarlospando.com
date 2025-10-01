@@ -96,7 +96,7 @@
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						 Puedes enviarme tu comentario por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo</a>. También está la opción de contestar en <?php include "includes/fetched-toot-link.php"; ?> y ahí mismo puedes dar <i class="fa-solid fa-thumbs-up"></i> <em>like</em> o <i class="fa-solid fa-rocket"></i> <em>boost</em> para aparecer aquí arriba. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://<?php include "includes/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						 Puedes enviarme tu comentario por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo</a>. También está la opción de contestar en <?php include "includes/fetched-toot-link.php"; ?>. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://<?php include "includes/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
