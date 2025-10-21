@@ -416,13 +416,13 @@
                                         </h5>
                                         <p class="card-text">${contentText}</p>
                                     </div>
-                                    <footer class="card-footer text-muted">
+                                    <div class="card-footer text-muted">
                                         <p class="card-text">
                                             <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
                                                 <time datetime="${publishedISO}">${publishedFormatted}</time>
                                             </a>
                                         </p>
-                                    </footer>
+                                    </div>
                                 </article>`;
                         }
                         document.getElementById("webmentions-comments").innerHTML = commentsHtml;
