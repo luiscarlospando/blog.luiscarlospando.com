@@ -297,14 +297,14 @@
         <script src="https://unpkg.com/dayjs@1/locale/es.js"></script>
 
         <script>
-            // API URLs
+            // API endpoints
             const likesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=like-of";
             const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
             const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
 
             dayjs.locale('es');
 
-            // Likes
+            // Fetch and display likes
             function showLikes() {
                 fetch(likesEndpoint, {
                     method: "GET",
@@ -322,10 +322,11 @@
                         let likesHtml = '';
                         for (let i = 0; i < data.children.length; i++) {
                             if (!data.children[i].author) continue;
+                            const author = data.children[i].author;
                             likesHtml += `
                                 <li class="list-inline-item">
-                                    <a href="${data.children[i].author.url}" target="_blank">
-                                        <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="Avatar de ${data.children[i].author.name}" />
+                                    <a href="${author.url}" target="_blank" rel="noopener noreferrer">
+                                        <img class="user-thumbnail rounded-circle" src="${author.photo}" alt="Avatar de ${author.name}" loading="lazy" width="48" height="48" />
                                     </a>
                                 </li>
                             `;
@@ -354,10 +355,11 @@
                         let boostsHtml = '';
                         for (let i = 0; i < data.children.length; i++) {
                             if (!data.children[i].author) continue;
+                            const author = data.children[i].author;
                             boostsHtml += `
                                 <li class="list-inline-item">
-                                    <a href="${data.children[i].author.url}" target="_blank">
-                                        <img class="user-thumbnail rounded-circle" src="${data.children[i].author.photo}" alt="Avatar de ${data.children[i].author.name}" />
+                                    <a href="${author.url}" target="_blank" rel="noopener noreferrer">
+                                        <img class="user-thumbnail rounded-circle" src="${author.photo}" alt="Avatar de ${author.name}" loading="lazy" width="48" height="48" />
                                     </a>
                                 </li>
                             `;
@@ -397,23 +399,31 @@
 
                             const commentUrl = comment.url || '#';
 
-                            const publishedDate = comment.published ? dayjs(comment.published).format('DD [de] MMMM [de] YYYY, h:mm a') : 'Fecha desconocida';
+                            // Formato legible y datetime en ISO
+                            const publishedISO = comment.published || '';
+                            const publishedFormatted = comment.published
+                                ? dayjs(comment.published).format('DD [de] MMMM [de] YYYY, h:mm a')
+                                : 'Fecha desconocida';
 
                             commentsHtml += `
-                                <div class="card mb-3">
+                                <article class="card mb-3">
                                     <div class="card-body">
                                         <h5 class="card-title mb-2">
-                                            <a href="${authorUrl}" target="_blank"><img class="user-thumbnail rounded-circle" src="${authorPhoto}" alt="Avatar de ${authorName}" /></a>
-                                            <a href="${authorUrl}" target="_blank">${authorName}</a>
+                                            <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
+                                                <img class="user-thumbnail rounded-circle" src="${authorPhoto}" alt="Avatar de ${authorName}" loading="lazy" width="48" height="48" />
+                                            </a>
+                                            <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
                                         </h5>
                                         <p class="card-text">${contentText}</p>
                                     </div>
-                                    <div class="card-footer text-muted">
+                                    <footer class="card-footer text-muted">
                                         <p class="card-text">
-                                            <code><a href="${commentUrl}" target="_blank">${publishedDate}</a></code>
+                                            <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                <time datetime="${publishedISO}">${publishedFormatted}</time>
+                                            </a>
                                         </p>
-                                    </div>
-                                </div>`;
+                                    </footer>
+                                </article>`;
                         }
                         document.getElementById("webmentions-comments").innerHTML = commentsHtml;
                     }

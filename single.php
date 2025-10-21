@@ -105,7 +105,9 @@
 					<!-- /comments - replies -->
 
 					<!-- support me -->
-					<h3 class="text-center">¿Te gustó este post? <i class="fa-solid fa-heart"></i></h3>
+					<div class="text-center">
+					    <h3 class="heading-inline">¿Te gustó este post? <i class="fa-solid fa-heart"></i></h3>
+					</div>
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
