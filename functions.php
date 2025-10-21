@@ -122,7 +122,7 @@ function html5blank_header_scripts()
 
         wp_register_script(
             "app",
-            "https://luiscarlospando.com/assets/js/app.bundle.js",
+            "https://luiscarlospando.com/assets/dist/app.bundle.js",
             [],
             null,
             true,
@@ -201,7 +201,7 @@ function html5blank_styles()
 
     wp_register_style(
         "main",
-        "https://luiscarlospando.com/assets/css/main.css",
+        "https://luiscarlospando.com/assets/css/styles.css",
         [],
         "1.0",
         "all",
