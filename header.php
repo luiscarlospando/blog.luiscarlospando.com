@@ -86,7 +86,7 @@
         get_meta_description(),
     ); ?>" />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="<?php the_title(); ?>" />
+    <meta name="author" content="Luis Carlos Pando" />
     <meta name="fediverse:creator" content="@mijo@social.lol" />
     <meta name="copyright" content="© <?php echo date(
         "Y",
@@ -166,10 +166,12 @@
 </head>
 <body <?php body_class("gesture"); ?>>
     <span class="p-author h-card d-none">
-        <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="{{ site.author }}'s avatar">
-        <img class="u-logo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="{{ site.author }}'s logo">
-        <a class="p-name" href="https://<?php include "includes/site-domain.php"; ?>" rel="author">{{ site.author }}</a>
-        <span class="p-note"><?php bloginfo("description"); ?></span>
+        <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's avatar">
+        <img class="u-logo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's logo">
+        <a class="p-name" href="https://<?php include "includes/site-domain.php"; ?>" rel="author">Luis Carlos Pando</a>
+        <span class="p-note"><?php echo esc_attr(
+            get_meta_description(),
+        ); ?></span>
         <a rel="me" class="u-url u-uid" href="<?php the_permalink(); ?>">Permalink</a>
     </span>
 
