@@ -193,7 +193,7 @@
 
                             <figure>
                                 <a href="<?php echo site_url(); ?>/personal/2025/08/el-indieweb-es-metal-y-punk/" data-toggle="tooltip" data-placement="top" aria-label="Inspirado en el espíritu del IndieWeb: ten tu propio sitio y sé dueño de tus datos" title="Inspirado en el espíritu del IndieWeb: ten tu propio sitio y sé dueño de tus datos">
-                                    <img class="img-fluid" width="70" src="<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                                    <img class="img-fluid" width="70" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
                                 </a>
                             </figure>
                         </div>
