@@ -259,9 +259,13 @@
                         </div>
                         <div class="col-12 text-center">
                             <figure>
-                                <img class="img-fluid" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                                <a rel="noopener" href="https://indieweb.org/Main_Page-es" target="_blank">
+                                    <img class="img-fluid" width="150" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                                </a>
                                 <figcaption>
-                                    Inspirado en el espíritu del <a rel="noopener" href="https://indieweb.org/Main_Page-es" target="_blank">IndieWeb</a>: ten tu propio sitio y sé dueño de datos
+                                    Inspirado en el espíritu del <a rel="noopener" href="https://indieweb.org/Main_Page-es" target="_blank">IndieWeb</a>:
+                                    <br>
+                                    ten tu propio sitio y sé dueño de datos
                                 </figcaption>
                             </figure>
                         </div>
