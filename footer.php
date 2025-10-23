@@ -131,8 +131,8 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a rel="noreferrer noopener" href="https://buymeacoffee.com/luiscarlospando" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Buy Me a Coffee" target="_blank">
-                                        <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/support/" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Apoya mi sitio">
+                                        <i class="fa-solid fa-hand-holding-heart"></i> Apoya mi sitio
                                     </a>
                                 </li>
                             </ul>
