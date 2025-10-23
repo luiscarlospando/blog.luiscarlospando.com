@@ -190,6 +190,12 @@
                             </ul>
 
                             <p><em>Hola desde Chihuahua, México.</em> <span id="greeting-emoji">🤠</span></p>
+
+                            <figure>
+                                <a href="<?php echo site_url(); ?>/personal/2025/08/el-indieweb-es-metal-y-punk/" data-toggle="tooltip" data-placement="top" aria-label="Inspirado en el espíritu del IndieWeb: ten tu propio sitio y sé dueño de tus datos" title="Inspirado en el espíritu del IndieWeb: ten tu propio sitio y sé dueño de tus datos">
+                                    <img class="img-fluid" width="70" src="<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                                </a>
+                            </figure>
                         </div>
                         <div class="col-12 text-center">
                             <ul id="social" class="list-inline mt-0">
@@ -256,18 +262,6 @@
                                     </li>
                                 <?php endif; ?>
                             </ul>
-                        </div>
-                        <div class="col-12 text-center">
-                            <figure>
-                                <a rel="noopener" href="https://indieweb.org/Main_Page-es" target="_blank">
-                                    <img class="img-fluid" width="150" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
-                                </a>
-                                <figcaption>
-                                    Inspirado en el espíritu del <a rel="noopener" href="https://indieweb.org/Main_Page-es" target="_blank">IndieWeb</a>:
-                                    <br>
-                                    ten tu propio sitio y sé dueño de datos
-                                </figcaption>
-                            </figure>
                         </div>
                     </div>
                 </div>
