@@ -244,7 +244,7 @@
                                     <li class="list-inline-item">
                                         <a rel="me noreferrer noopener" href="<?= esc_url(
                                             $discord,
-                                        ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame en Discord" title="Contáctame en Discord" target="_blank">
+                                        ) ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" aria-label="Contáctame vía Discord" title="Contáctame vía Discord" target="_blank">
                                             <i class="fa-brands fa-discord"></i>
                                         </a>
                                     </li>
