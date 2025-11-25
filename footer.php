@@ -266,7 +266,7 @@
                     </div>
                 </div>
             </div>
-            <div id="dismissable-alert">
+            <!--div id="dismissable-alert">
                 <p>
                     <em><time datetime="2025-11-01T00:00:00.000Z">Noviembre, 2025</time></em> - 👋 Actualmente estoy disponible y abierto a nuevas oportunidades como frontend developer.
                     <a class="btn btn-primary btn-sm" href="https://luiscarlospando.com/cv/">
@@ -274,7 +274,7 @@
                     </a>
                 </p>
                 <button id="alert-close" aria-label="Close alert">✕</button>
-            </div>
+            </div -->
         </footer>
     </div>
     <!-- /Wrapper for mmenu -->
