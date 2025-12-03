@@ -833,4 +833,11 @@ function load_more_photos_callback()
     $html = ob_get_clean();
     wp_send_json_success($html);
     wp_die();
-}
+} // Replace «» with "" only on titles
+add_filter(
+    "the_title",
+    function ($title) {
+        return str_replace(["«", "»"], '"', $title);
+    },
+    10,
+);
