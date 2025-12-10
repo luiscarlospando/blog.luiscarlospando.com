@@ -162,6 +162,21 @@
     <link rel="webmention" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/webmention" />
     <link rel="pingback" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/xmlrpc" />
 
+    <!-- Octothorpe -->
+    <link rel="preload" as="fetch" href="https://octothorp.es/?uri=<?php echo esc_url(
+        get_permalink(),
+    ); ?>">
+    <?php
+    $tags = get_the_tags();
+    if ($tags && !is_wp_error($tags)):
+        foreach ($tags as $tag): ?>
+            <link rel="octo:octothorpes" href="<?php echo esc_attr(
+                $tag->slug,
+            ); ?>">
+        <?php endforeach;
+    endif;
+    ?>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class("gesture"); ?>>
