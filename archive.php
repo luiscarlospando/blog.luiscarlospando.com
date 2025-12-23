@@ -3,7 +3,7 @@
 	<section id="main-content" class="container site-body">
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
-				<h1 class="text-center"><?php _e("Archives", "html5blank"); ?></h1>
+				<h1 class="text-center"><?php echo lcp_archive_title(); ?></h1>
 
 				<?php get_template_part("loop"); ?>
 

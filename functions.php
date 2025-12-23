@@ -867,4 +867,18 @@ function lcp_custom_title()
     } else {
         return wp_title("", false, "right") . " - Luis Carlos Pando";
     }
+} // Título de archive.php
+function lcp_archive_title()
+{
+    if (is_date()) {
+        if (is_year()) {
+            return "Archivos (" . get_the_date("Y") . ")";
+        } elseif (is_month()) {
+            return "Archivos (" . get_the_date("F Y") . ")";
+        } elseif (is_day()) {
+            return "Archivos (" . get_the_date("j F Y") . ")";
+        }
+    } else {
+        return __("Archivos", "html5blank");
+    }
 }
