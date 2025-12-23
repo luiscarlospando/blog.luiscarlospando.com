@@ -835,3 +835,36 @@ function load_more_photos_callback()
     wp_die();
 } // Deactivate wptexturize
 add_filter("run_wptexturize", "__return_false");
+// Custom title function
+function lcp_custom_title()
+{
+    if (is_front_page() || is_home()) {
+        return "Blog - Luis Carlos Pando";
+    } elseif (is_singular()) {
+        return single_post_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_category()) {
+        return single_cat_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_tag()) {
+        return single_tag_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_author()) {
+        return "Archivos del blog - Luis Carlos Pando";
+    } elseif (is_date()) {
+        if (is_year()) {
+            return get_the_date("Y") . " - Luis Carlos Pando";
+        } elseif (is_month()) {
+            return get_the_date("F Y") . " - Luis Carlos Pando";
+        } elseif (is_day()) {
+            return get_the_date("j F Y") . " - Luis Carlos Pando";
+        }
+    } elseif (is_search()) {
+        return 'Resultados de búsqueda para "' .
+            get_search_query() .
+            '" - Luis Carlos Pando';
+    } elseif (is_404()) {
+        return "Página no encontrada - Luis Carlos Pando";
+    } elseif (is_archive()) {
+        return post_type_archive_title("", false) . " - Luis Carlos Pando";
+    } else {
+        return wp_title("", false, "right") . " - Luis Carlos Pando";
+    }
+}

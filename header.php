@@ -3,29 +3,7 @@
 <head profile="http://gmpg.org/xfn/11">
 	<meta charset="<?php bloginfo("charset"); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>
-    <?php if (is_front_page() || is_home()) {
-        echo "Blog - Luis Carlos Pando";
-    } elseif (is_singular()) {
-        echo single_post_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_category()) {
-        echo single_cat_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_tag()) {
-        echo single_tag_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_author()) {
-        echo "Archivos del blog - Luis Carlos Pando";
-    } elseif (is_search()) {
-        echo 'Resultados de búsqueda para "' .
-            get_search_query() .
-            '" - Luis Carlos Pando';
-    } elseif (is_404()) {
-        echo "Página no encontrada - Luis Carlos Pando";
-    } elseif (is_archive()) {
-        echo post_type_archive_title("", false) . " - Luis Carlos Pando";
-    } else {
-        echo wp_title("", false, "right") . " - Luis Carlos Pando";
-    } ?>
-    </title>
+	<title><?php echo lcp_custom_title(); ?></title>
 
     <!--
     ================================================================================
