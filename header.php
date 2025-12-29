@@ -158,51 +158,6 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class("gesture"); ?>>
-    <ul class="lightrope">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-
     <span class="p-author h-card d-none">
         <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's avatar">
         <img class="u-logo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's logo">
