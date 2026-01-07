@@ -145,7 +145,7 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <a rel="me noreferrer noopener" href="https://mijo.omg.lol/" target="_blank">
-                                        <img src="https://camo.githubusercontent.com/9d4da15b04f17090b553f6c2c07630f9bfb454ffaa12e49b5ca13659578a8741/68747470733a2f2f6f6d672e386269747371752e69642f3f757365723d6d696a6f" alt="omg.lol" data-canonical-src="https://omg.8bitsqu.id/?user=mijo" style="max-width: 100%;">
+                                        <img alt="omg.lol" src="https://img.shields.io/badge/%40mijo%20-%20%40mijo?label=omg.lol&labelColor=%235C5C5C&color=%23ED85A8&link=https%3A%2F%2Fmijo.omg.lol%2F">
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
