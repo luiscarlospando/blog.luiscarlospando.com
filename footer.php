@@ -327,7 +327,7 @@
                         document.getElementById("webmentions-likes-subtitle").innerHTML = `
                             <ul class="list-inline" style="margin: 0 !important;">
                                 <li class="list-inline-item">
-                                    <h3>Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                    <h3><i class="fa-solid fa-star"></i> Likes (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                                 </li>
                             </ul>`;
 
@@ -360,7 +360,7 @@
                         document.getElementById("webmentions-boosts-subtitle").innerHTML = `
                             <ul class="list-inline" style="margin: 0 !important;">
                                 <li class="list-inline-item">
-                                    <h3>Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
+                                    <h3><i class="fa-solid fa-rocket"></i> Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                                 </li>
                             </ul>`;
 
