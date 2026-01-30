@@ -484,7 +484,10 @@
         </div>
     </div>
 
-    <!-- Analytics -->
+    <!-- NeatStats -->
+    <script src="https://neatstats.net/view.js"></script>
+
+    <!-- Tinylytics -->
     <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=❤️&webring=avatars" defer></script>
 </body>
 </html>
