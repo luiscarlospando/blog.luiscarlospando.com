@@ -419,7 +419,7 @@
                         // Formato legible y datetime en ISO
                         const publishedISO = comment.published || '';
                         const publishedFormatted = comment.published
-                            ? dayjs(comment.published).format('DD [de] MMMM [de] YYYY, h:mm a')
+                            ? dayjs(comment.published).format('D MMMM YYYY, h:mm A')
                             : 'Fecha desconocida';
 
                         commentsHtml += `
