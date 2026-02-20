@@ -316,38 +316,6 @@
 
         dayjs.locale('es');
 
-        // Linkify reply text: URLs, @mentions, #hashtags
-        function linkifyReply(text, authorUrl) {
-            // Extraer servidor del autor para resolver menciones relativas
-            const serverMatch = authorUrl.match(/^(https?:\/\/[^\/]+)/);
-            const server = serverMatch ? serverMatch[1] : 'https://mastodon.social';
-
-            // URLs
-            text = text.replace(
-                /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim,
-                '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
-            );
-
-            // Menciones @usuario o @usuario@instancia
-            text = text.replace(
-                /@(\w+)(@[\w.-]+)?/g,
-                (match, user, instance) => {
-                    const href = instance
-                        ? `https://${instance.slice(1)}/@${user}`
-                        : `${server}/@${user}`;
-                    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${match}</a>`;
-                }
-            );
-
-            // Hashtags
-            text = text.replace(
-                /#(\w+)/g,
-                `<a href="${server}/tags/$1" target="_blank" rel="noopener noreferrer">#$1</a>`
-            );
-
-            return text;
-        }
-
         // Fetch and display likes
         function showLikes() {
             fetch(likesEndpoint, {
@@ -438,8 +406,11 @@
                         const authorName  = comment.author.name  || 'Usuario Anónimo';
                         const authorUrl   = comment.author.url   || '#';
                         const authorPhoto = comment.author.photo || 'https://www.gravatar.com/avatar/?d=mp&s=100';
+
+                        const contentHtml = comment.content?.html || '';
                         const contentText = comment.content?.text || '';
-                        if (contentText.trim() === '') continue;
+                        const contentRaw  = contentHtml || contentText;
+                        if (contentRaw.trim() === '') continue;
 
                         const commentUrl = comment.url || '#';
 
@@ -453,9 +424,6 @@
                         const publishedFormatted = comment.published
                             ? dayjs(comment.published).format('D MMMM YYYY, h:mm A')
                             : 'Fecha desconocida';
-
-                        // Linkify el texto del reply
-                        const linkedText = linkifyReply(contentText, authorUrl);
 
                         commentsHtml += `
                             <article class="card mb-3">
@@ -480,7 +448,7 @@
                                                     <span class="text-muted"> · </span>
                                                 </div>
                                                 <div class="reply-text mb-2">
-                                                    <p style="white-space: pre-wrap; margin: 0;">${linkedText}</p>
+                                                    <p style="white-space: pre-wrap; margin: 0;">${contentRaw}</p>
                                                 </div>
                                                 <div class="reply-date">
                                                     <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
