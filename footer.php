@@ -316,6 +316,13 @@
 
         dayjs.locale('es');
 
+        // Decodificar entidades HTML (fix para emojis)
+        function decodeHtml(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            return doc.body.innerHTML;
+        }
+
         // Fetch and display likes
         function showLikes() {
             fetch(likesEndpoint, {
@@ -409,7 +416,7 @@
 
                         const contentHtml = comment.content?.html || '';
                         const contentText = comment.content?.text || '';
-                        const contentRaw  = contentHtml || contentText;
+                        const contentRaw  = decodeHtml(contentHtml || contentText);
                         if (contentRaw.trim() === '') continue;
 
                         const commentUrl = comment.url || '#';
