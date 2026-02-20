@@ -414,9 +414,12 @@
 
                         const commentUrl = comment.url || '#';
 
-                        // Extraer handle de la URL del autor
-                        const authorHandle = authorUrl !== '#'
-                            ? '@' + authorUrl.replace(/https?:\/\//, '').split('/').filter(Boolean).pop()
+                        // Extraer handle de la URL del autor, evitando @@ doble
+                        const rawHandle = authorUrl !== '#'
+                            ? authorUrl.replace(/https?:\/\//, '').split('/').filter(Boolean).pop()
+                            : '';
+                        const authorHandle = rawHandle
+                            ? (rawHandle.startsWith('@') ? rawHandle : '@' + rawHandle)
                             : '';
 
                         // Formato legible y datetime en ISO
@@ -426,7 +429,7 @@
                             : 'Fecha desconocida';
 
                         commentsHtml += `
-                            <article class="card mb-3">
+                            <article class="card mb-4">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-2 col-lg-1 text-center">
@@ -448,7 +451,7 @@
                                                     <span class="text-muted"> · </span>
                                                 </div>
                                                 <div class="reply-text mb-2">
-                                                    <p style="white-space: pre-wrap; margin: 0;">${contentRaw}</p>
+                                                    <div style="white-space: pre-wrap;">${contentRaw}</div>
                                                 </div>
                                                 <div class="reply-date">
                                                     <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
