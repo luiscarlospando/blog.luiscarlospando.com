@@ -436,7 +436,7 @@
                                             </a>
                                         </div>
                                         <div class="col-md-10 col-lg-11">
-                                            <div class="reply-content">
+                                            <div class="reply-content mb-4">
                                                 <div class="reply-header mb-2">
                                                     <strong>
                                                         <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
@@ -446,9 +446,11 @@
                                                 </div>
                                                 <div class="reply-text mb-2">
                                                     <p style="white-space: pre-wrap; margin: 0;">${contentText}</p>
-                                                    <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
-                                                        <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
-                                                    </a>
+                                                </div>
+                                                <div class="reply-date">
+                                                  <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                      <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
+                                                  </a>
                                                 </div>
                                             </div>
                                         </div>
