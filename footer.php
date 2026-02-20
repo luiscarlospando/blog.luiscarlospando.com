@@ -416,7 +416,7 @@
 
                         const contentHtml = comment.content?.html || '';
                         const contentText = comment.content?.text || '';
-                        const contentRaw  = decodeHtml(contentHtml || contentText);
+                        const contentRaw = decodeHtml(contentHtml || contentText).replace(/\?{2,}/g, '').trim();
                         if (contentRaw.trim() === '') continue;
 
                         const commentUrl = comment.url || '#';
@@ -455,7 +455,6 @@
                                                         <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
                                                     </strong>
                                                     <span class="text-muted">${authorHandle}</span>
-                                                    <span class="text-muted"> · </span>
                                                 </div>
                                                 <div class="reply-text mb-2">
                                                     <div style="white-space: pre-wrap;">${contentRaw}</div>
