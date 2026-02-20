@@ -443,12 +443,12 @@
                                                     </strong>
                                                     <span class="text-muted">${authorHandle}</span>
                                                     <span class="text-muted"> · </span>
-                                                    <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
-                                                        <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
-                                                    </a>
                                                 </div>
                                                 <div class="reply-text mb-2">
                                                     <p style="white-space: pre-wrap; margin: 0;">${contentText}</p>
+                                                    <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                        <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
