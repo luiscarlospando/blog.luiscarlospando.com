@@ -316,6 +316,38 @@
 
         dayjs.locale('es');
 
+        // Linkify reply text: URLs, @mentions, #hashtags
+        function linkifyReply(text, authorUrl) {
+            // Extraer servidor del autor para resolver menciones relativas
+            const serverMatch = authorUrl.match(/^(https?:\/\/[^\/]+)/);
+            const server = serverMatch ? serverMatch[1] : 'https://mastodon.social';
+
+            // URLs
+            text = text.replace(
+                /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim,
+                '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+            );
+
+            // Menciones @usuario o @usuario@instancia
+            text = text.replace(
+                /@(\w+)(@[\w.-]+)?/g,
+                (match, user, instance) => {
+                    const href = instance
+                        ? `https://${instance.slice(1)}/@${user}`
+                        : `${server}/@${user}`;
+                    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${match}</a>`;
+                }
+            );
+
+            // Hashtags
+            text = text.replace(
+                /#(\w+)/g,
+                `<a href="${server}/tags/$1" target="_blank" rel="noopener noreferrer">#$1</a>`
+            );
+
+            return text;
+        }
+
         // Fetch and display likes
         function showLikes() {
             fetch(likesEndpoint, {
@@ -422,6 +454,9 @@
                             ? dayjs(comment.published).format('D MMMM YYYY, h:mm A')
                             : 'Fecha desconocida';
 
+                        // Linkify el texto del reply
+                        const linkedText = linkifyReply(contentText, authorUrl);
+
                         commentsHtml += `
                             <article class="card mb-3">
                                 <div class="card-body">
@@ -436,7 +471,7 @@
                                             </a>
                                         </div>
                                         <div class="col-md-10 col-lg-11">
-                                            <div class="reply-content mb-4">
+                                            <div class="reply-content">
                                                 <div class="reply-header mb-2">
                                                     <strong>
                                                         <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
@@ -445,12 +480,12 @@
                                                     <span class="text-muted"> · </span>
                                                 </div>
                                                 <div class="reply-text mb-2">
-                                                    <p style="white-space: pre-wrap; margin: 0;">${contentText}</p>
+                                                    <p style="white-space: pre-wrap; margin: 0;">${linkedText}</p>
                                                 </div>
                                                 <div class="reply-date">
-                                                  <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
-                                                      <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
-                                                  </a>
+                                                    <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                        <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
