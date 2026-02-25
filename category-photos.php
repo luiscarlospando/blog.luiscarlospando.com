@@ -14,7 +14,7 @@
             </p>
 
             <p class="text-center">
-                <a class="btn btn-primary btn-sm" href="<?php echo site_url(); ?>/photos/rss/" rel="me">
+                <a class="btn btn-primary btn-sm" href="https://subscribeopenly.net/subscribe/?url=<?php echo site_url(); ?>/photos/rss" rel="me">
                     <i class="fa-solid fa-rss"></i> Suscribirse
                 </a>
             </p>
