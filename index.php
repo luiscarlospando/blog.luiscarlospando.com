@@ -7,7 +7,7 @@
 
 				<ul class="list-inline mb-4 text-center">
                     <li class="list-inline-item">
-                        <a class="btn btn-primary btn-sm" href="https://blog.luiscarlospando.com/rss/" rel="me noopener">
+                        <a class="btn btn-primary btn-sm" href="https://subscribeopenly.net/subscribe/?url=https://blog.luiscarlospando.com/rss" rel="me noopener">
                             <i class="fa-solid fa-rss"></i> Suscribirse
                         </a>
                     </li>
