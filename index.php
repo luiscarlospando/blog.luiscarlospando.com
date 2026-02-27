@@ -3,7 +3,7 @@
 	<section id="main-content" class="container site-body">
 		<div class="row">
 			<div class="col-12 col-md-10 offset-md-1">
-				<h1 class="text-center"><?php _e("Blogd", "html5blank"); ?></h1>
+				<h1 class="text-center"><?php _e("Blog", "html5blank"); ?></h1>
 
 				<ul class="list-inline mb-4 text-center">
                     <li class="list-inline-item">
