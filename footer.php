@@ -304,9 +304,6 @@
     <!-- App -->
     <?php wp_footer(); ?>
 
-    <!-- Instatus -->
-    <script src="https://luiscarlospando.instatus.com/widget/script.js"></script>
-
     <?php if (is_single()): ?>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1/locale/es.js"></script>
@@ -520,10 +517,16 @@
         </div>
     </div>
 
+    <!-- Pocket Bird -->
+    <script src="https://cdn.jsdelivr.net/gh/IdreesInc/Pocket-Bird@main/dist/web/birb.embed.js" async defer></script>
+
+    <!-- Instatus -->
+    <script src="https://luiscarlospando.instatus.com/widget/script.js" async defer></script>
+
     <!-- NeatStats -->
-    <script src="https://neatstats.net/view.js"></script>
+    <script src="https://neatstats.net/view.js" async defer></script>
 
     <!-- Tinylytics -->
-    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=❤️&webring=avatars" defer></script>
+    <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=❤️&webring=avatars" async defer></script>
 </body>
 </html>
