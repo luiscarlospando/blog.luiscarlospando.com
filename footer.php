@@ -439,7 +439,7 @@
                             <article class="card mb-4">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-2 col-lg-1 text-center">
+                                        <div class="col-3 col-md-2 text-center">
                                             <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
                                                 <img src="${authorPhoto}"
                                                      alt="Avatar de ${authorName}"
@@ -448,7 +448,7 @@
                                                      loading="lazy">
                                             </a>
                                         </div>
-                                        <div class="col-md-10 col-lg-11">
+                                        <div class="col-9 col-md-10">
                                             <div class="reply-content">
                                                 <div class="reply-header mb-2">
                                                     <strong>
