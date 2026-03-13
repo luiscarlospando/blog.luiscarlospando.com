@@ -66,7 +66,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Sitio aleatorio" title="Sitio aleatorio">
+                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
                                         <i class="fa-solid fa-shuffle"></i>
                                     </a>
                                 </li>
