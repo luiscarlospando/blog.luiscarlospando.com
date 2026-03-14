@@ -74,9 +74,6 @@
     <meta name="language" content="es-MX" />
     <meta name="ICBM" content="28.6189208162, -106.101984179" />
     <meta name="DC.title" content="<?php bloginfo("name"); ?>" />
-    <meta name="apple-mobile-web-app-title" content="<?php bloginfo(
-        "name",
-    ); ?>" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -113,6 +110,7 @@
         "name",
     ); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
     <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/humans.txt" />
+    <link rel="human-json" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/human.json">
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
     <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
@@ -127,7 +125,7 @@
     <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
     <link rel="me" href="https://github.com/luiscarlospando" />
     <link rel="me" href="https://proven.lol/75353b" />
-    <link rel="pgpkey" href="https://<?php include "includes/site-domain.php"; ?>/pgp-key.txt" />
+    <link rel="pgpkey" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/pgp-key.txt" />
 
     <!-- OpenID -->
     <link rel="openid.delegate" href="<?php include "includes/site-domain.php"; ?>" />
