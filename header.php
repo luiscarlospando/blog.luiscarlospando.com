@@ -112,7 +112,7 @@
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
         "name",
     ); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
-    <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/humans.txt" />
+    <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/humans.txt" />
     <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
     <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
