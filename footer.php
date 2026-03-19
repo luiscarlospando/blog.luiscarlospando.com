@@ -181,11 +181,6 @@
                                                 <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
                                             </a>
                                         </li>
-                                        <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a rel="noopener" href="https://octothorp.es/explore?s=luiscarlospando.com" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://octothorp.es/badge.png" alt="Badge for the Octothorpes main ring" />
-                                            </a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li>
