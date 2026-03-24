@@ -267,7 +267,7 @@
 
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/subscribe/" data-toggle="tooltip" data-placement="top" aria-label="Suscríbete" title="Suscríbete">
-                                        <i class="fa-solid fa-rss"></i>
+                                        <i class="fa-solid fa-square-rss"></i>
                                     </a>
                                 </li>
                             </ul>
