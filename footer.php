@@ -142,7 +142,7 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="https://mijo.omg.lol" rel="me noopener" target="_blank">
+                                    <a href="https://mijo.<?php include "includes/site-domain.php"; ?>/" rel="me noopener" target="_blank">
                                         <img src="https://omg.8bitsqu.id/?user=mijo" alt="omg.lol" height="20" />
                                     </a>
                                 </li>
