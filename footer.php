@@ -172,8 +172,8 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="noreferer noopener" href="https://ko-fi.com/s/4662b19f61" target="_blank">
-                                                <img class="web-badge" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/WrittenByAHuman_04.svg" alt="Written by a human" />
+                                            <a rel="me noreferrer noopener" href="https://url.town/@mijo" target="_blank">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/url-town.png" alt="url.town" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
