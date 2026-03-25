@@ -60,10 +60,6 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php echo esc_attr(get_meta_title()); ?>" />
-    <meta name="description" content="<?php echo esc_attr(
-        get_meta_description(),
-    ); ?>" />
-    <meta name="robots" content="index, follow" />
     <meta name="author" content="Luis Carlos Pando" />
     <meta name="fediverse:creator" content="@mijo@social.lol" />
     <meta name="copyright" content="© <?php echo date(
@@ -81,17 +77,6 @@
     <meta name="theme-color" content="#0e0f34" />
     <meta name="color-scheme" content="dark" />
     <meta name="supported-color-schemes" content="dark" />
-
-    <!-- Open Graph -->
-    <meta name="og:title" content="<?php echo esc_attr(get_meta_title()); ?>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<?php the_permalink(); ?>" />
-    <meta property="og:description" content="<?php echo esc_attr(
-        get_meta_description(),
-    ); ?>" />
-    <meta property="og:image" content="<?php echo esc_url(
-        get_meta_image(),
-    ); ?>" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
