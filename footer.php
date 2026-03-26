@@ -79,6 +79,9 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/">Inicio</a>
+                                </li>
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a>
                                 </li>
                                 <li class="list-inline-item me-2">
@@ -90,8 +93,11 @@
                                 <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/privacy/" rel="privacy-policy">Privacidad</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/contact/">Contacto</a>
                                 </li>
                             </ul>
 
