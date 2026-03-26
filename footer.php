@@ -141,7 +141,7 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/support/" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Apoya mi sitio">
-                                        <i class="fa-solid fa-hand-holding-heart"></i> Apoya mi sitio
+                                        <i class="fa-solid fa-hand-holding-heart"></i> Apóyame
                                     </a>
                                 </li>
                             </ul>
