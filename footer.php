@@ -445,7 +445,7 @@
                                             <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
                                                 <img src="${authorPhoto}"
                                                      alt="Avatar de ${authorName}"
-                                                     class="rounded-circle img-fluid mb-3"
+                                                     class="rounded-circle img-fluid"
                                                      style="max-width: 48px;"
                                                      loading="lazy">
                                             </a>
