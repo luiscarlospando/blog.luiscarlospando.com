@@ -496,6 +496,7 @@
                 </div>
                 <div class="modal-body modal-body-jekyll">
                     <img class="img-fluid rounded" src="" alt="" loading="lazy" />
+                    <figcaption id="modal-caption"></figcaption>
                 </div>
             </div>
         </div>
