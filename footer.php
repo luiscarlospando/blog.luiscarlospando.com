@@ -182,6 +182,11 @@
                                                 <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
                                             </a>
                                         </li>
+                                        <li class="list-inline-item">
+                                            <a rel="noopener" href="https://esuntipazo.com/" target="_blank">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/esuntipazo.gif" alt="Fausto César" />
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
