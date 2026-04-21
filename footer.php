@@ -198,7 +198,10 @@
                                 </li>
                             </ul>
 
-                            <p><em>Hola desde Chihuahua, México.</em> <span id="greeting-emoji">🤠</span></p>
+                            <p>
+                                <span id="weather-location" data-toggle="tooltip" data-placement="top" data-html="true" title="Cargando clima..."><em>Hola desde Chihuahua, México.</em></span>
+                                <span id="greeting-emoji">🤠</span>
+                            </p>
                         </div>
                         <div class="col-12 text-center">
                             <figure>
