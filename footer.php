@@ -198,10 +198,17 @@
                                 </li>
                             </ul>
 
-                            <p>
-                                <span id="weather-location" data-toggle="tooltip" data-placement="top" data-html="true" title="Cargando clima..."><em>Hola desde Chihuahua, México.</em></span>
-                                <span id="greeting-emoji">🤠</span>
-                            </p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span id="weather-location" data-toggle="tooltip" data-placement="top" data-html="true" title="Cargando clima..."><em>Hola desde Chihuahua, México.</em></span>
+                                    <span id="greeting-emoji">🤠</span>
+                                </li>
+                                <li>
+                                    <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/status/" data-toggle="tooltip" data-placement="top" aria-label="Qué está pasando ahorita" title="Qué está pasando ahorita">
+                                        <i class="fa-solid fa-icons"></i> Estatus
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="col-12 text-center">
                             <figure>
