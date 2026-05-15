@@ -50,36 +50,19 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-12 col-lg-5 text-center text-lg-left">
+                        <div class="col-12 col-lg-6 text-center text-lg-left">
                             <p id="copyright">
                                 &copy; <?php echo date(
                                     "Y",
                                 ); ?> Luis Carlos Pando
                             </p>
 
-                            <p>Parte del <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a></p>
-
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                        <i class="fa-solid fa-arrow-left"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
-                                        <i class="fa-solid fa-shuffle"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/">Inicio</a>
+                                </li>
+                                <li class="list-inline-item me-2">
+                                    <a href="https://<?php include "includes/site-domain.php"; ?>/status/">Estatus</a>
                                 </li>
                                 <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a>
@@ -98,6 +81,31 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/contact/">Contacto</a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    Parte del <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                <i class="fa-solid fa-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
+                                                <i class="fa-solid fa-shuffle"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
 
@@ -127,16 +135,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-7 text-center text-lg-right">
+                        <div class="col-12 col-lg-6 text-center text-lg-right">
                             <ul class="list-inline mt-lg-0">
                                 <li class="list-inline-item">
                                     <a rel="noreferrer noopener" href="https://luiscarlospando.instatus.com/" target="_blank" id="site-version" class="badge" data-toggle="tooltip" data-placement="top" data-html="true" title="Estatus de los sistemas">
                                         <span id="system-status"></span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a rel="noreferrer noopener" href="https://m.do.co/c/03bd95f889e7" target="_blank" class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Deployed on DigitalOcean">
-                                        <span class="d-none d-sm-inline-block">Deployed on</span> <i class="fa-brands fa-digital-ocean"></i> DigitalOcean
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
@@ -173,18 +176,8 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="me noreferrer noopener" href="https://url.town/@mijo" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/url-town.png" alt="url.town" />
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
                                             <a rel="noopener" href="https://blogblog.es/" target="_blank">
                                                 <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a rel="noopener" href="https://www.esuntipazo.com/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/esuntipazo.gif" alt="Fausto César" />
                                             </a>
                                         </li>
                                     </ul>
@@ -202,11 +195,6 @@
                                 <li>
                                     <span id="weather-location" data-toggle="tooltip" data-placement="top" data-html="true" title="Cargando clima..."><em>Hola desde Chihuahua, México.</em></span>
                                     <span id="greeting-emoji">🤠</span>
-                                </li>
-                                <li>
-                                    <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/status/" data-toggle="tooltip" data-placement="top" aria-label="Qué está pasando ahorita" title="Qué está pasando ahorita">
-                                        <i class="fa-solid fa-icons"></i> Estatus
-                                    </a>
                                 </li>
                             </ul>
                         </div>
