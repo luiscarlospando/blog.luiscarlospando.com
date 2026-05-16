@@ -468,7 +468,7 @@
                                                     <small class="text-muted">
                                                         <ul class="list-inline mb-0">
                                                             <li class="list-inline-item">
-                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedFormatted}</em></time>
+                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedFormatted}</em></time> ·
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
