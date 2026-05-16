@@ -464,10 +464,19 @@
                                                 <div class="reply-text mb-2">
                                                     <div style="white-space: pre-wrap;">${contentRaw}</div>
                                                 </div>
-                                                <div class="reply-date">
-                                                    <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
-                                                        <time datetime="${publishedISO}"><em>${publishedFormatted}</em></time>
-                                                    </a>
+                                                <div class="reply-footer">
+                                                    <small class="text-muted">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item">
+                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedFormatted}</em></time>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                                    <i class="fa-solid fa-reply"></i> Responder
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </small>
                                                 </div>
                                             </div>
                                         </div>
