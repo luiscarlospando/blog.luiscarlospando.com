@@ -444,7 +444,7 @@
                             <article class="card mb-4">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-3 col-md-2 my-auto text-center">
+                                        <div class="col-3 col-md-2 my-md-auto text-center">
                                             <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
                                                 <img src="${authorPhoto}"
                                                      alt="Avatar de ${authorName}"
