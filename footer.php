@@ -472,7 +472,7 @@
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
-                                                                    <i class="fa-solid fa-reply"></i> Responder
+                                                                    <em><i class="fa-solid fa-reply"></i> Responder</em>
                                                                 </a>
                                                             </li>
                                                         </ul>
