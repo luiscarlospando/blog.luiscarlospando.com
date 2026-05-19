@@ -867,7 +867,7 @@ function lcp_custom_title()
     } else {
         return wp_title("", false, "right") . " - Luis Carlos Pando";
     }
-} // Título de archive.php
+} // archive.php title
 function lcp_archive_title()
 {
     if (is_date()) {
@@ -882,3 +882,15 @@ function lcp_archive_title()
         return __("Archivos", "html5blank");
     }
 }
+
+// Remove spaces from wp_tag_cloud()
+add_filter('wp_tag_cloud', function($output) {
+    return preg_replace_callback(
+        '/(<a[^>]*>)([^<]+)(<\/a>)/',
+        function($matches) {
+            $text_without_spaces = str_replace(' ', '', $matches[2]);
+            return $matches[1] . $text_without_spaces . $matches[3];
+        },
+        $output
+    );
+});
