@@ -55,19 +55,20 @@
 
 					<!-- hashtags -->
 					<div class="hashtag-list">
-    					<?php if ($tags = get_the_tags()) {
-             echo '<em><span class="meta-sep"></span></em>';
-             foreach ($tags as $tag) {
-                 $sep = $tag === end($tags) ? "" : " ";
-                 echo '<a class="badge badge-custom" href="' .
-                     get_term_link($tag, $tag->taxonomy) .
-                     '">#' .
-                     $tag->name .
-                     "</a>" .
-                     $sep;
-             }
-         } ?>
-					</div>
+                    <?php if ($tags = get_the_tags()) {
+                        echo '<em><span class="meta-sep"></span></em>';
+                        foreach ($tags as $tag) {
+                            $sep = $tag === end($tags) ? "" : " ";
+                            $tag_display = str_replace(" ", "", $tag->name);
+                            echo '<a class="badge badge-custom" href="' .
+                                get_term_link($tag, $tag->taxonomy) .
+                                '">#' .
+                                $tag_display .
+                                "</a>" .
+                                $sep;
+                        }
+                    } ?>
+                    </div>
 					<!-- /hashtags -->
 
 					<!-- likes & boosts -->

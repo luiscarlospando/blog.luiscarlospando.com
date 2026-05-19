@@ -8,11 +8,15 @@ $tag_post_count = $tag->count;
 	<section id="main-content" class="container site-body">
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
-				<h1 class="text-center">
+                <h1 class="text-center">
                     <span class="badge badge-custom">
                         <?php
-                        _e("", "html5blank");
-                        echo single_tag_title("#", false);
+                        $tag_display = str_replace(
+                            " ",
+                            "",
+                            single_tag_title("", false),
+                        ); // ← captura sin imprimir
+                        echo "#" . $tag_display;
                         ?>
                     </span>
                 </h1>
@@ -24,7 +28,7 @@ $tag_post_count = $tag->count;
      echo "s";
  } ?> etiquetado<?php if ($tag_post_count > 1) {
      echo "s";
- } ?> con <?php echo single_tag_title("#", false); ?>
+ } ?> con <?php echo "#" . $tag_display; ?>
                 </p>
 
 				<?php get_template_part("loop"); ?>
