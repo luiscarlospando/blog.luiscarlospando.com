@@ -27,13 +27,28 @@ get_header(); ?>
 						<div class="hashtags-container">
                             <?php
                             $tags = get_tags([
-                                "orderby" => "count",
-                                "order" => "DESC",
+                                "orderby" => "name",
+                                "order" => "ASC",
+                                "hide_empty" => true,
                             ]);
                             if ($tags) {
+                                $counts = array_column($tags, "count");
+                                $min_count = min($counts);
+                                $max_count = max($counts);
+                                $min_size = 11;
+                                $max_size = 36;
+
                                 foreach ($tags as $tag) {
-                                    $size = 12 + $tag->count * 2;
-                                    $size = min($size, 40);
+                                    if ($max_count === $min_count) {
+                                        $size = $min_size;
+                                    } else {
+                                        $size =
+                                            $min_size +
+                                            (($tag->count - $min_count) /
+                                                ($max_count - $min_count)) *
+                                                ($max_size - $min_size);
+                                    }
+                                    $size = round($size, 1);
                                     $name = str_replace(" ", "", $tag->name);
                                     echo '<a class="badge badge-custom" href="' .
                                         get_term_link($tag) .
