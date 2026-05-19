@@ -7,49 +7,78 @@ get_header(); ?>
 	<section id="main-content" class="container site-body">
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+			<?php if (have_posts()):
+       while (have_posts()):
+           the_post(); ?>
 
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					
+
 					<!-- post title -->
 					<h1 class="text-center">
 						<?php the_title(); ?>
 					</h1>
 					<!-- /post title -->
-					
+
 					<div class="contenido" style="margin-bottom: 0;">
 
 						<?php the_content(); ?>
-						
+
 						<div class="hashtags-container">
-						
-							<?php wp_tag_cloud(''); ?>
-							
-						</div>
+                            <?php
+                            $tags = get_tags([
+                                "orderby" => "count",
+                                "order" => "DESC",
+                            ]);
+                            if ($tags) {
+                                foreach ($tags as $tag) {
+                                    $size = 12 + $tag->count * 2;
+                                    $size = min($size, 40);
+                                    $name = str_replace(" ", "", $tag->name);
+                                    echo '<a class="badge badge-custom" href="' .
+                                        get_term_link($tag) .
+                                        '" style="font-size:' .
+                                        $size .
+                                        'px;">#' .
+                                        esc_html($name) .
+                                        "</a> ";
+                                }
+                            }
+                            ?>
+                        </div>
 
 						<br class="clear">
 
-						<?php edit_post_link('<i class="fa-solid fa-pen-to-square"></i> Editar', '', '', null, 'btn btn-primary mb-3'); ?>
-						
+						<?php edit_post_link(
+          '<i class="fa-solid fa-pen-to-square"></i> Editar',
+          "",
+          "",
+          null,
+          "btn btn-primary mb-3",
+      ); ?>
+
 					</div>
 
 				</article>
 				<!-- /article -->
 
-			<?php endwhile; ?>
+			<?php
+       endwhile; ?>
 
-			<?php else: ?>
+			<?php
+   else:
+        ?>
 
 				<!-- article -->
 				<article>
 
-					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+					<h2><?php _e("Sorry, nothing to display.", "html5blank"); ?></h2>
 
 				</article>
 				<!-- /article -->
 
-			<?php endif; ?>
+			<?php
+   endif; ?>
             </div>
         </div>
     </section>
