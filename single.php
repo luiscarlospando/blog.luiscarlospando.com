@@ -92,7 +92,7 @@
 					<!-- comments - replies -->
 					<ul class="comments-title list-inline">
 	                    <li class="list-inline-item">
-							<h2>Comentarios</h2>
+							<h2><i class="fa-solid fa-comment"></i> Comentarios</h2>
 						</li>
 						<?php include "includes/fetched-toot-link-button.php"; ?>
 					</ul>
