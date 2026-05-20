@@ -71,7 +71,7 @@
                     </div>
 					<!-- /hashtags -->
 
-					<div class="w-100 d-block">
+					<div class="w-100 float-left d-block">
 					    <hr>
 					</div>
 
