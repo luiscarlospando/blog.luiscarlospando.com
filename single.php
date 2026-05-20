@@ -90,9 +90,9 @@
 
     				<ul id="webmentions-likes" class="list-inline mb-4"></ul>
 
-					<div id="webmentions-boosts-subtitle" class="mb-4"></div>
+					<div id="webmentions-boosts-subtitle" class="mt-4"></div>
 
-    				<ul id="webmentions-boosts" class="list-inline"></ul>
+    				<ul id="webmentions-boosts" class="list-inline mb-4"></ul>
 					<!-- /likes & boosts -->
 
 					<!-- comments - replies -->
