@@ -71,9 +71,11 @@
                     </div>
 					<!-- /hashtags -->
 
+					<!-- separator -->
 					<div class="w-100 float-left d-block">
 					    <hr>
 					</div>
+					<!-- /separator -->
 
 					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
@@ -109,6 +111,12 @@
 
 					<div id="webmentions-comments"></div>
 					<!-- /comments - replies -->
+
+					<!-- separator -->
+					<div class="w-100 float-left d-block">
+					    <hr>
+					</div>
+					<!-- /separator -->
 
 					<!-- support me -->
 					<div class="text-center">
