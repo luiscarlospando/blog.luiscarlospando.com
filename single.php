@@ -71,7 +71,9 @@
                     </div>
 					<!-- /hashtags -->
 
-					<div class="divider"></div>
+					<div class="w-100 d-block">
+					    <hr>
+					</div>
 
 					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
