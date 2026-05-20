@@ -71,7 +71,7 @@
                     </div>
 					<!-- /hashtags -->
 
-					<hr>
+					<div class="divider"></div>
 
 					<!-- likes & boosts -->
 					<ul class="list-inline mb-0">
