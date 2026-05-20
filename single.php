@@ -86,13 +86,13 @@
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
 
-					<div id="webmentions-likes-subtitle" class="mt-4"></div>
+					<div id="webmentions-likes-subtitle"></div>
 
-    				<ul id="webmentions-likes" class="list-inline mb-4"></ul>
+    				<ul id="webmentions-likes" class="list-inline"></ul>
 
-					<div id="webmentions-boosts-subtitle" class="mt-4"></div>
+					<div id="webmentions-boosts-subtitle"></div>
 
-    				<ul id="webmentions-boosts" class="list-inline mb-4"></ul>
+    				<ul id="webmentions-boosts" class="list-inline"></ul>
 					<!-- /likes & boosts -->
 
 					<!-- comments - replies -->

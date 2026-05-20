@@ -337,7 +337,7 @@
             .then(data => {
                 if (data.children.length >= 1) {
                     document.getElementById("webmentions-likes-subtitle").innerHTML = `
-                        <ul class="list-inline" style="margin: 0 !important;">
+                        <ul class="list-inline mb-0">
                             <li class="list-inline-item">
                                 <h3><i class="fa-solid fa-star"></i> Favs (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
@@ -370,7 +370,7 @@
             .then(data => {
                 if (data.children.length >= 1) {
                     document.getElementById("webmentions-boosts-subtitle").innerHTML = `
-                        <ul class="list-inline" style="margin: 0 !important;">
+                        <ul class="list-inline mb-0">
                             <li class="list-inline-item">
                                 <h3><i class="fa-solid fa-rocket"></i> Boosts (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
@@ -404,7 +404,7 @@
             .then(data => {
                 if (data?.children && data.children.length >= 1) {
                     document.getElementById("webmentions-comments-subtitle").innerHTML = `
-                        <ul class="list-inline" style="margin: 0 !important;">
+                        <ul class="list-inline mb-0">
                             <li class="list-inline-item">
                                 <h3><i class="fa-solid fa-reply"></i> Replies (desde <i class="fa-brands fa-mastodon"></i> Mastodon)</h3>
                             </li>
