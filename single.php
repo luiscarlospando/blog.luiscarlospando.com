@@ -73,7 +73,7 @@
 
 					<!-- separator -->
 					<div class="w-100 float-left d-block">
-					    <hr class="mt-3">
+					    <hr class="mt-2">
 					</div>
 					<!-- /separator -->
 
