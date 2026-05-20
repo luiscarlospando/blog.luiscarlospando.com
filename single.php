@@ -88,11 +88,11 @@
 
 					<div id="webmentions-likes-subtitle"></div>
 
-    				<ul id="webmentions-likes" class="list-inline"></ul>
+    				<ul id="webmentions-likes" class="list-inline mb-4"></ul>
 
 					<div id="webmentions-boosts-subtitle"></div>
 
-    				<ul id="webmentions-boosts" class="list-inline"></ul>
+    				<ul id="webmentions-boosts" class="list-inline mb-4"></ul>
 					<!-- /likes & boosts -->
 
 					<!-- comments - replies -->
