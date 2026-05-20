@@ -84,7 +84,7 @@
 						</li>
 					</ul>
 
-					<button class="btn btn-primary tinylytics_kudos mb-4"></button>
+					<button class="btn btn-primary tinylytics_kudos"></button>
 
 					<div id="webmentions-likes-subtitle"></div>
 
