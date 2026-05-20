@@ -94,7 +94,7 @@
 	                    <li class="list-inline-item">
 							<h2>Comentarios</h2>
 						</li>
-						<?php include "includes/fetched-toot-button.php"; ?>
+						<?php include "includes/fetched-toot-link-button.php"; ?>
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
