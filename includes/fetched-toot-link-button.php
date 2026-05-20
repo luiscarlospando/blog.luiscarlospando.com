@@ -10,7 +10,7 @@ if (!$toot_url) {
 if ($toot_url) {
     echo '<li class="list-inline-item"><a class="btn btn-primary btn-sm" href="' .
         esc_url($toot_url) .
-        '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-reply"></i> Responder (en Mastodon)</a></li>';
+        '" target="_blank" rel="noopener noreferrer" style="vertical-align: super;"><i class="fa-solid fa-reply"></i> Responder (en Mastodon)</a></li>';
 } else {
     // For posts without a corresponding Mastodon toot
     echo "";
