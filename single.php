@@ -80,6 +80,8 @@
 
 					<button class="btn btn-primary tinylytics_kudos"></button>
 
+					<hr>
+
 					<div id="webmentions-likes-subtitle" class="mt-3"></div>
 
     				<ul id="webmentions-likes" class="list-inline"></ul>
