@@ -743,13 +743,13 @@ function get_mastodon_toot_url(
 ) {
     $mastodon_instance = rtrim($mastodon_instance, "/");
     $search_url = $mastodon_instance . "/api/v2/search";
-    $search_query = "from:mijo " . $post_url;
+    $search_query = "from:" . $mastodon_username . " " . $post_url;
     $response = wp_remote_get(
         add_query_arg(
             [
                 "q" => $search_query,
                 "type" => "statuses",
-                "resolve" => "true",
+                "limit" => "5",
             ],
             $search_url,
         ),
@@ -761,8 +761,17 @@ function get_mastodon_toot_url(
     $body = wp_remote_retrieve_body($response);
     $data = json_decode($body, true);
     if (!empty($data["statuses"])) {
+        $post_url_normalized = rtrim($post_url, "/");
         foreach ($data["statuses"] as $status) {
-            if (strpos($status["content"], $post_url) !== false) {
+            // URL appears in href attribute even when Mastodon splits it visually with spans
+            if (strpos($status["content"], $post_url_normalized) !== false) {
+                return $status["url"];
+            }
+            // Fallback: some toots attach the URL as a preview card without including it in text
+            if (
+                isset($status["card"]["url"]) &&
+                rtrim($status["card"]["url"], "/") === $post_url_normalized
+            ) {
                 return $status["url"];
             }
         }
@@ -783,12 +792,22 @@ function check_and_save_mastodon_toot($new_status, $old_status, $post)
 add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3); // Function to manually check for toot URL
 function force_check_mastodon_toot($post_id)
 {
+    $transient_key = "mastodon_toot_checked_" . $post_id;
+    if (get_transient($transient_key)) {
+        return false;
+    }
+
     $post_url = get_permalink($post_id);
     $toot_url = get_mastodon_toot_url($post_url);
     if ($toot_url) {
         update_post_meta($post_id, "_mastodon_toot_url", $toot_url);
         return true;
     }
+
+    // Avoid hammering the API on every page load — retry window depends on post age
+    $post_age_days = (time() - get_post_time("U", false, $post_id)) / DAY_IN_SECONDS;
+    $retry_seconds = $post_age_days < 1 ? HOUR_IN_SECONDS : 12 * HOUR_IN_SECONDS;
+    set_transient($transient_key, "not_found", $retry_seconds);
     return false;
 } // Sort Photos category by date
 function sort_photos_category_by_date($query)
