@@ -62,6 +62,9 @@
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/">Inicio</a>
                                 </li>
                                 <li class="list-inline-item me-2">
+                                    <a href="https://blog.<?php include "includes/site-domain.php"; ?>/">Blog</a>
+                                </li>
+                                <li class="list-inline-item me-2">
                                     <a href="https://<?php include "includes/site-domain.php"; ?>/status/">Estatus</a>
                                 </li>
                                 <li class="list-inline-item me-2">
