@@ -9,8 +9,7 @@
             ?></h1>
 
             <p class="text-center">
-                Fotos que he tomado con mi iPhone o que me han tomado.<br>
-                También puede haber algunas que haya visto en redes sociales.
+                Fotos que tomo con el fono o fotos que me han tomado.
             </p>
 
             <p class="text-center">
