@@ -894,3 +894,13 @@ add_filter('wp_tag_cloud', function($output) {
         $output
     );
 });
+
+// Load styles for editor
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_style(
+        'lcp-editor',
+        get_template_directory_uri() . '/editor.css',
+        [],
+        '1.0'
+    );
+});
