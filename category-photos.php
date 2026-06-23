@@ -9,7 +9,7 @@
             ?></h1>
 
             <p class="text-center">
-                Algunas fotos que tomo con mi teléfono o fotos que me han tomado alguien más.
+                Algunas fotos que tomo con mi teléfono o fotos que me ha tomado alguien más.
             </p>
 
             <p class="text-center">
