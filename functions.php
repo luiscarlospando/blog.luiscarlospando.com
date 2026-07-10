@@ -670,7 +670,7 @@ function get_meta_description()
 function get_meta_image()
 {
     // Getting the site domain
-    $domain = include "includes/return-site-domain.php"; // Concatenate all parts
+    $domain = include "template-parts/return-site-domain.php"; // Concatenate all parts
     $default_image = "https://" . $domain . "/assets/images/logo.png";
     if (is_single() || is_page()) {
         $thumb_id = get_post_thumbnail_id();
@@ -845,7 +845,7 @@ function load_more_photos_callback()
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            get_template_part("includes/photo", "card");
+            get_template_part("template-parts/photo", "card");
         }
     }
     wp_reset_postdata();

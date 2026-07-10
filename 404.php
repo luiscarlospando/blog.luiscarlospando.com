@@ -20,7 +20,7 @@
 
 				<h2>Estatus del sistema</h2>
 
-				<p>El estatus del sistema <a href="https://luiscarlospando.instatus.com/" target="_blank">se puede consultar aquí</a> pero si algo no anda bien por favor <a href="<?php include "includes/site-domain.php"; ?>/contacto">házmelo saber</a>.</p>
+				<p>El estatus del sistema <a href="https://luiscarlospando.instatus.com/" target="_blank">se puede consultar aquí</a> pero si algo no anda bien por favor <a href="<?php include "template-parts/site-domain.php"; ?>/contacto">házmelo saber</a>.</p>
 
 				<div class="text-center">
 					<a class="btn btn-primary mb-3" href="<?php echo home_url(); ?>">

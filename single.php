@@ -37,7 +37,7 @@
 					<!-- /post title -->
 
 					<!-- post details -->
-					<?php include "includes/post-details.php"; ?>
+					<?php include "template-parts/post-details.php"; ?>
 					<!-- /post details -->
 
 					<!-- content -->
@@ -48,8 +48,8 @@
 
 					<!-- h-card -->
 					<div class="p-author h-card d-none">
-                        <a class="u-url p-name" href="https://<?php include "includes/site-domain.php"; ?>/">Luis Carlos Pando</a>
-                        <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp">
+                        <a class="u-url p-name" href="https://<?php include "template-parts/site-domain.php"; ?>/">Luis Carlos Pando</a>
+                        <img class="u-photo" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/avatar.webp">
 					</div>
 					<!-- /h-card -->
 
@@ -100,11 +100,11 @@
 	                    <li class="list-inline-item">
 							<h2><i class="fa-solid fa-comment"></i> Comentarios</h2>
 						</li>
-						<?php include "includes/fetched-toot-link-button.php"; ?>
+						<?php include "template-parts/fetched-toot-link-button.php"; ?>
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						 Envíame tu comentario por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo electrónico</a>. También puedes contestarme en <?php include "includes/fetched-toot-link.php"; ?>. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://<?php include "includes/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						 Envíame tu comentario por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo electrónico</a>. También puedes contestarme en <?php include "template-parts/fetched-toot-link.php"; ?>. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
@@ -125,12 +125,12 @@
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
-                            <p>Entonces te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "includes/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/now/"><i class="fa-solid fa-clock"></i> Now</a> para saber en qué ando, o a pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/guestbook/"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
+                            <p>Entonces te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "template-parts/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/now/"><i class="fa-solid fa-clock"></i> Now</a> para saber en qué ando, o a pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/guestbook/"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
 
                             <br>
 
                             <p>También me puedes apoyar
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/support/">
+                            <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/support/">
                                 <i class="fa-solid fa-mug-hot"></i> Comprándome un café
                             </a>,
 
@@ -159,7 +159,7 @@
                             <?php endif; ?>
 
                             o
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "includes/site-domain.php"; ?>/subscribe/">
+                            <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/">
                                 <i class="fas fa-rss"></i> Suscribiéndote
                             </a> a mi sitio.</p>
                         </div>
@@ -167,7 +167,7 @@
 					<!-- /support me -->
 
 					<!-- prev-next -->
-					<?php include "includes/post-navigation.php"; ?>
+					<?php include "template-parts/post-navigation.php"; ?>
 					<!-- /prev-next -->
 
 				</article>

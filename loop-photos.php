@@ -21,7 +21,7 @@ if (have_posts()) {
         foreach ($initial_posts as $post_id):
             $post = get_post($post_id);
             setup_postdata($post);
-            get_template_part("includes/photo-card");
+            get_template_part("template-parts/photo-card");
         endforeach;
 
         echo "</div>"; // .masonry-grid

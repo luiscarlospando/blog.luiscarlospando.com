@@ -94,34 +94,34 @@
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
         "name",
     ); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
-    <link rel="author" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/humans.txt" />
-    <link rel="human-json" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/human.json">
-    <link rel="icon" type="image/png" href="https://<?php include "includes/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="https://<?php include "includes/site-domain.php"; ?>/favicon.svg" />
-    <link rel="shortcut icon" href="https://<?php include "includes/site-domain.php"; ?>/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "includes/site-domain.php"; ?>/apple-touch-icon.png" />
+    <link rel="author" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/humans.txt" />
+    <link rel="human-json" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/human.json">
+    <link rel="icon" type="image/png" href="https://<?php include "template-parts/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://<?php include "template-parts/site-domain.php"; ?>/favicon.svg" />
+    <link rel="shortcut icon" href="https://<?php include "template-parts/site-domain.php"; ?>/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://<?php include "template-parts/site-domain.php"; ?>/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo(
         "name",
     ); ?>" />
-    <link rel="manifest" href="https://<?php include "includes/site-domain.php"; ?>/site.webmanifest" />
+    <link rel="manifest" href="https://<?php include "template-parts/site-domain.php"; ?>/site.webmanifest" />
     <link rel="canonical" href="<?php the_permalink(); ?>">
     <link rel="me" href="https://social.lol/@mijo" />
     <link rel="me" href="https://mastodon.online/@mijo" />
     <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
     <link rel="me" href="https://github.com/luiscarlospando" />
     <link rel="me" href="https://proven.lol/75353b" />
-    <link rel="pgpkey" href="https://<?php include "includes/site-domain.php"; ?>/.well-known/pgp-key.txt" />
+    <link rel="pgpkey" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/pgp-key.txt" />
 
     <!-- OpenID -->
-    <link rel="openid.delegate" href="<?php include "includes/site-domain.php"; ?>" />
+    <link rel="openid.delegate" href="<?php include "template-parts/site-domain.php"; ?>" />
     <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
     <!-- omg.lol API preconnect -->
     <link rel="preconnect" href="https://api.omg.lol" />
 
     <!-- Webmentions -->
-    <link rel="webmention" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/webmention" />
-    <link rel="pingback" href="https://webmention.io/<?php include "includes/site-domain.php"; ?>/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/<?php include "template-parts/site-domain.php"; ?>/webmention" />
+    <link rel="pingback" href="https://webmention.io/<?php include "template-parts/site-domain.php"; ?>/xmlrpc" />
 
     <!-- Octothorpe -->
     <link rel="preload" as="fetch" href="https://octothorp.es/?uri=<?php echo esc_url(
@@ -142,9 +142,9 @@
 </head>
 <body <?php body_class("gesture"); ?>>
     <span class="p-author h-card d-none">
-        <img class="u-photo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's avatar">
-        <img class="u-logo" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's logo">
-        <a class="p-name" href="https://<?php include "includes/site-domain.php"; ?>" rel="author">Luis Carlos Pando</a>
+        <img class="u-photo" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's avatar">
+        <img class="u-logo" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/avatar.webp" alt="Luis Carlos Pando's logo">
+        <a class="p-name" href="https://<?php include "template-parts/site-domain.php"; ?>" rel="author">Luis Carlos Pando</a>
         <span class="p-note"><?php echo esc_attr(
             get_meta_description(),
         ); ?></span>
@@ -181,7 +181,7 @@
                     <div class="row">
                         <div id="logo-container" class="col-12 col-md-3 col-lg-2 d-flex align-items-center mb-3 mb-md-0">
                             <div class="mt-3 mb-1 u-photo" id="logo">
-                                <a id="greetingTooltip" href="https://<?php include "includes/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" aria-label="Inicio" title="" data-original-title="">
+                                <a id="greetingTooltip" href="https://<?php include "template-parts/site-domain.php"; ?>/" data-toggle="tooltip" data-placement="right" aria-label="Inicio" title="" data-original-title="">
                                     <span>Logo</span>
                                 </a>
                             </div>
@@ -202,7 +202,7 @@
                         <div class="card-body rounded">
                             <p>
                                 <i id="live-icon" class="fa-solid fa-circle animated live infinite"></i>
-                                ¡Estoy <a href="https://<?php include "includes/site-domain.php"; ?>/live/">en vivo</a>!
+                                ¡Estoy <a href="https://<?php include "template-parts/site-domain.php"; ?>/live/">en vivo</a>!
                             </p>
                         </div>
                     </div>

@@ -59,31 +59,31 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/">Inicio</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/">Inicio</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://blog.<?php include "includes/site-domain.php"; ?>/">Blog</a>
+                                    <a href="https://blog.<?php include "template-parts/site-domain.php"; ?>/">Blog</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/status/">Estatus</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/status/">Estatus</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/blogroll/">Blogroll</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/blogroll/">Blogroll</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/guestbook/">Guestbook</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/guestbook/">Guestbook</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/paintbook/">Paintbook</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/paintbook/">Paintbook</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/newsletter/">Newsletter</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/newsletter/">Newsletter</a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/privacy/" rel="privacy-policy">Privacidad</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/privacy/" rel="privacy-policy">Privacidad</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/contact/">Contacto</a>
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact/">Contacto</a>
                                 </li>
                             </ul>
 
@@ -100,17 +100,17 @@
                                 <li class="list-inline-item">
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
                                                 <i class="fa-solid fa-arrow-left"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
                                                 <i class="fa-solid fa-shuffle"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "includes/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </a>
                                         </li>
@@ -128,7 +128,7 @@
                                     </a>
                                 </li>
                                 <li class="list-inline-item me-2">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/about/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/about/" data-toggle="tooltip" data-placement="top" data-html="true" title="Acerca de">
                                         <code>Acerca de</code>
                                     </a>
                                 </li>
@@ -147,7 +147,7 @@
                         <div class="col-12 col-lg-6 text-center text-lg-right">
                             <ul class="list-inline mt-lg-0">
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/support/" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Apóyame">
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/support/" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Apóyame">
                                         <i class="fa-solid fa-hand-holding-heart"></i> Apóyame
                                     </a>
                                 </li>
@@ -160,7 +160,7 @@
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="https://mijo.<?php include "includes/site-domain.php"; ?>/" rel="me noopener" target="_blank">
+                                    <a href="https://mijo.<?php include "template-parts/site-domain.php"; ?>/" rel="me noopener" target="_blank">
                                         <img src="https://omg.8bitsqu.id/?user=mijo" alt="omg.lol" height="20" />
                                     </a>
                                 </li>
@@ -176,23 +176,23 @@
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item mb-2 mb-lg-0">
                                             <a rel="noreferer noopener" href="https://people.pledge.party/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge" />
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/People-Pledge-Badge-Cream-Pink.svg" alt="The People Pledge" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item mb-2 mb-lg-0">
                                             <a rel="noreferer noopener" href="https://echofeed.app/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed" />
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a rel="noopener" href="https://blogblog.es/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/badges/">
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/badges/">
                                         <small>
                                             <em>Ver mi badge wall</em>
                                         </small>
@@ -210,7 +210,7 @@
                         <div class="col-12 text-center">
                             <figure>
                                 <a href="<?php echo site_url(); ?>/personal/2025/08/el-indieweb-es-metal-y-punk/" data-toggle="tooltip" data-placement="top" aria-label="El IndieWeb es metal (y punk)" title="El IndieWeb es metal (y punk)">
-                                    <img class="img-fluid" width="70" src="https://<?php include "includes/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                                    <img class="img-fluid" width="70" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
                                 </a>
                             </figure>
                         </div>
@@ -280,7 +280,7 @@
                                 <?php endif; ?>
 
                                 <li class="list-inline-item">
-                                    <a href="https://<?php include "includes/site-domain.php"; ?>/subscribe/" data-toggle="tooltip" data-placement="top" aria-label="Suscríbete" title="Suscríbete">
+                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/" data-toggle="tooltip" data-placement="top" aria-label="Suscríbete" title="Suscríbete">
                                         <i class="fa-solid fa-square-rss"></i>
                                     </a>
                                 </li>
