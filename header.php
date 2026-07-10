@@ -110,6 +110,7 @@
     <link rel="me" href="https://hachyderm.io/@luiscarlospando" />
     <link rel="me" href="https://github.com/luiscarlospando" />
     <link rel="me" href="https://proven.lol/75353b" />
+    <link rel="me" href="https://sifa.id/p/luiscarlospando.com">
     <link rel="pgpkey" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/pgp-key.txt" />
 
     <!-- OpenID -->
