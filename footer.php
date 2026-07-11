@@ -93,6 +93,9 @@
                                 ? $webring_others[array_rand($webring_others)]
                                 : null;
                             ?>
+
+                            <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
+
                             <ul class="list-unstyled my-0">
                                 <li class="mb-2">
                                     <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
@@ -116,14 +119,10 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
-
-                            <ul class="list-inline my-0">
-                                <li class="list-inline-item me-2">
-                                    Parte del <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a>
+                                <li class="mb-2">
+                                    <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
                                             <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
