@@ -923,3 +923,46 @@ add_action('enqueue_block_editor_assets', function () {
         '1.0'
     );
 });
+
+// Fetch blogblog.es webring participants (excluding our own site), cached to avoid hammering blogblog.es on every page load
+function get_blogblog_webring_others()
+{
+    $cache_key = "blogblog_webring_others";
+    $cached = get_transient($cache_key);
+    if ($cached !== false) {
+        return $cached;
+    }
+
+    $own_domain = get_field("dominio", "option");
+    $others = [];
+
+    $response = wp_remote_get("https://blogblog.es/blogs.json", ["timeout" => 5]);
+    if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+        $blogs = json_decode(wp_remote_retrieve_body($response), true);
+        if (is_array($blogs)) {
+            foreach ($blogs as $blog) {
+                if (empty($blog["Webring"])) {
+                    continue;
+                }
+                if ($own_domain && strpos($blog["Webring"], $own_domain) !== false) {
+                    continue;
+                }
+                $others[] = [
+                    "name" => $blog["Nombre"],
+                    "url" => $blog["Webring"],
+                ];
+            }
+        }
+    }
+
+    if (!empty($others)) {
+        set_transient($cache_key, $others, 6 * HOUR_IN_SECONDS);
+        update_option("blogblog_webring_others_fallback", $others);
+        return $others;
+    }
+
+    // blogblog.es didn't respond: fall back to the last known good list and retry sooner
+    $fallback = get_option("blogblog_webring_others_fallback", []);
+    set_transient($cache_key, $fallback, 15 * MINUTE_IN_SECONDS);
+    return $fallback;
+}

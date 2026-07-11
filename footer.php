@@ -87,11 +87,37 @@
                                 </li>
                             </ul>
 
-                            <ul class="list-inline my-0">
-                                <li class="list-inline-item">
-                                    <div class="webring-container"><script defer="" src="https://blogblog.es/webring.js"></script></div>
+                            <?php
+                            $webring_others = get_blogblog_webring_others();
+                            $webring_random = !empty($webring_others)
+                                ? $webring_others[array_rand($webring_others)]
+                                : null;
+                            ?>
+                            <ul class="list-unstyled my-0">
+                                <li class="mb-2">
+                                    <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
+                                </li>
+                                <li class="mb-3">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://www.quiroptero.blog/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                <i class="fa-solid fa-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="webring-blogblog-random" class="btn btn-primary btn-sm" href="<?php echo $webring_random ? esc_url($webring_random["url"]) : "https://blogblog.es/"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio<?php echo $webring_random ? ": " . esc_attr($webring_random["name"]) : ""; ?>">
+                                                <i class="fa-solid fa-shuffle"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://jorgesanz.net/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
+                            <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
 
                             <ul class="list-inline my-0">
                                 <li class="list-inline-item me-2">
