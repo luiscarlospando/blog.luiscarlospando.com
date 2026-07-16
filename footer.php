@@ -263,48 +263,56 @@
 
                             <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
 
-                            <ul class="list-unstyled my-0">
-                                <li class="mb-2">
-                                    <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
-                                </li>
-                                <li class="mb-3">
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://www.quiroptero.blog/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                                <i class="fa-solid fa-arrow-left"></i>
-                                            </a>
+                            <ul class="list-inline my-0">
+                                <li class="list-inline-item">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
                                         </li>
-                                        <li class="list-inline-item">
-                                            <a id="webring-blogblog-random" class="btn btn-primary btn-sm" href="<?php echo $webring_random ? esc_url($webring_random["url"]) : "https://blogblog.es/"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio<?php echo $webring_random ? ": " . esc_attr($webring_random["name"]) : ""; ?>">
-                                                <i class="fa-solid fa-shuffle"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://jorgesanz.net/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
+                                        <li class="mb-3">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a class="btn btn-primary btn-sm" href="https://www.quiroptero.blog/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                        <i class="fa-solid fa-arrow-left"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a id="webring-blogblog-random" class="btn btn-primary btn-sm" href="<?php echo $webring_random ? esc_url($webring_random["url"]) : "https://blogblog.es/"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio<?php echo $webring_random ? ": " . esc_attr($webring_random["name"]) : ""; ?>">
+                                                        <i class="fa-solid fa-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="btn btn-primary btn-sm" href="https://jorgesanz.net/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                        <i class="fa-solid fa-arrow-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="mb-2">
-                                    <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring</a>
-                                </li>
-                                <li>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                                <i class="fa-solid fa-arrow-left"></i>
-                                            </a>
+                                <li class="list-inline-item">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring</a>
                                         </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
-                                                <i class="fa-solid fa-shuffle"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
+                                        <li>
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                        <i class="fa-solid fa-arrow-left"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
+                                                        <i class="fa-solid fa-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                        <i class="fa-solid fa-arrow-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
