@@ -87,61 +87,82 @@
                                 </li>
                             </ul>
 
-                            <?php
-                            $webring_others = get_blogblog_webring_others();
-                            $webring_random = !empty($webring_others)
-                                ? $webring_others[array_rand($webring_others)]
-                                : null;
-                            ?>
+                           <figure>
+                               <a href="<?php echo site_url(); ?>/personal/2025/08/el-indieweb-es-metal-y-punk/" data-toggle="tooltip" data-placement="top" aria-label="El IndieWeb es metal (y punk)" title="El IndieWeb es metal (y punk)">
+                                   <img class="img-fluid" width="70" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
+                               </a>
+                           </figure>
 
-                            <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
+                           <ul id="social" class="list-inline mt-0">
+                               <?php if (
+                                   $mastodon = get_field("mastodon", "option")
+                               ): ?>
+                                   <li class="list-inline-item">
+                                       <a rel="me noreferrer noopener" href="<?= esc_url(
+                                           $mastodon,
+                                       ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Mastodon" title="Mastodon" target="_blank">
+                                           <i class="fa-brands fa-mastodon"></i>
+                                       </a>
+                                   </li>
+                               <?php endif; ?>
 
-                            <ul class="list-unstyled my-0">
-                                <li class="mb-2">
-                                    <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
-                                </li>
-                                <li class="mb-3">
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://www.quiroptero.blog/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                                <i class="fa-solid fa-arrow-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="webring-blogblog-random" class="btn btn-primary btn-sm" href="<?php echo $webring_random ? esc_url($webring_random["url"]) : "https://blogblog.es/"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio<?php echo $webring_random ? ": " . esc_attr($webring_random["name"]) : ""; ?>">
-                                                <i class="fa-solid fa-shuffle"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://jorgesanz.net/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring 🕸️💍</a>
-                                </li>
-                                <li>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
-                                                <i class="fa-solid fa-arrow-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
-                                                <i class="fa-solid fa-shuffle"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
-                                                <i class="fa-solid fa-arrow-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                               <?php if (
+                                   $bluesky = get_field("bluesky", "option")
+                               ): ?>
+                                   <li class="list-inline-item">
+                                       <a rel="me noreferrer noopener" href="<?= esc_url(
+                                           $bluesky,
+                                       ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Bluesky" title="Bluesky" target="_blank">
+                                           <i class="fa-brands fa-bluesky"></i>
+                                       </a>
+                                   </li>
+                               <?php endif; ?>
+
+                               <?php if (
+                                   $instagram = get_field(
+                                       "instagram",
+                                       "option",
+                                   )
+                               ): ?>
+                                   <li class="list-inline-item">
+                                       <a rel="me noreferrernoopener" href="<?= esc_url(
+                                           $instagram,
+                                       ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Instagram" title="Instagram" target="_blank">
+                                           <i class="fa-brands fa-instagram"></i>
+                                       </a>
+                                   </li>
+                               <?php endif; ?>
+
+                               <?php if (
+                                   $discord = get_field("discord", "option")
+                               ): ?>
+                                   <li class="list-inline-item">
+                                       <a rel="me noreferrer noopener" href="<?= esc_url(
+                                           $discord,
+                                       ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Discord" title="Discord" target="_blank">
+                                           <i class="fa-brands fa-discord"></i>
+                                       </a>
+                                   </li>
+                               <?php endif; ?>
+
+                               <?php if (
+                                   $signal = get_field("signal", "option")
+                               ): ?>
+                                   <li class="list-inline-item">
+                                       <a rel="me noreferrer noopener" href="<?= esc_url(
+                                           $signal,
+                                       ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Signal" title="Signal" target="_blank">
+                                           <i class="fa-brands fa-signal-messenger"></i>
+                                       </a>
+                                   </li>
+                               <?php endif; ?>
+
+                               <li class="list-inline-item">
+                                   <a href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/" data-toggle="tooltip" data-placement="top" aria-label="Suscríbete" title="Suscríbete">
+                                       <i class="fa-solid fa-square-rss"></i>
+                                   </a>
+                               </li>
+                           </ul>
 
                             <ul id="version" class="list-inline">
                                 <li class="list-inline-item me-2">
@@ -233,81 +254,59 @@
                             </ul>
                         </div>
                         <div class="col-12 text-center">
-                            <figure>
-                                <a href="<?php echo site_url(); ?>/personal/2025/08/el-indieweb-es-metal-y-punk/" data-toggle="tooltip" data-placement="top" aria-label="El IndieWeb es metal (y punk)" title="El IndieWeb es metal (y punk)">
-                                    <img class="img-fluid" width="70" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/indieweb@2x.webp" alt="IndieWeb">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="col-12 text-center">
-                            <ul id="social" class="list-inline mt-0">
-                                <?php if (
-                                    $mastodon = get_field("mastodon", "option")
-                                ): ?>
-                                    <li class="list-inline-item">
-                                        <a rel="me noreferrer noopener" href="<?= esc_url(
-                                            $mastodon,
-                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Mastodon" title="Mastodon" target="_blank">
-                                            <i class="fa-brands fa-mastodon"></i>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
+                            <?php
+                            $webring_others = get_blogblog_webring_others();
+                            $webring_random = !empty($webring_others)
+                                ? $webring_others[array_rand($webring_others)]
+                                : null;
+                            ?>
 
-                                <?php if (
-                                    $bluesky = get_field("bluesky", "option")
-                                ): ?>
-                                    <li class="list-inline-item">
-                                        <a rel="me noreferrer noopener" href="<?= esc_url(
-                                            $bluesky,
-                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Bluesky" title="Bluesky" target="_blank">
-                                            <i class="fa-brands fa-bluesky"></i>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
+                            <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
 
-                                <?php if (
-                                    $instagram = get_field(
-                                        "instagram",
-                                        "option",
-                                    )
-                                ): ?>
-                                    <li class="list-inline-item">
-                                        <a rel="me noreferrernoopener" href="<?= esc_url(
-                                            $instagram,
-                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Instagram" title="Instagram" target="_blank">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-
-                                <?php if (
-                                    $discord = get_field("discord", "option")
-                                ): ?>
-                                    <li class="list-inline-item">
-                                        <a rel="me noreferrer noopener" href="<?= esc_url(
-                                            $discord,
-                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Discord" title="Discord" target="_blank">
-                                            <i class="fa-brands fa-discord"></i>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-
-                                <?php if (
-                                    $signal = get_field("signal", "option")
-                                ): ?>
-                                    <li class="list-inline-item">
-                                        <a rel="me noreferrer noopener" href="<?= esc_url(
-                                            $signal,
-                                        ) ?>" data-toggle="tooltip" data-placement="top" aria-label="Signal" title="Signal" target="_blank">
-                                            <i class="fa-brands fa-signal-messenger"></i>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-
-                                <li class="list-inline-item">
-                                    <a href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/" data-toggle="tooltip" data-placement="top" aria-label="Suscríbete" title="Suscríbete">
-                                        <i class="fa-solid fa-square-rss"></i>
-                                    </a>
+                            <ul class="list-unstyled my-0">
+                                <li class="mb-2">
+                                    <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
+                                </li>
+                                <li class="mb-3">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://www.quiroptero.blog/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                <i class="fa-solid fa-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="webring-blogblog-random" class="btn btn-primary btn-sm" href="<?php echo $webring_random ? esc_url($webring_random["url"]) : "https://blogblog.es/"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio<?php echo $webring_random ? ": " . esc_attr($webring_random["name"]) : ""; ?>">
+                                                <i class="fa-solid fa-shuffle"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://jorgesanz.net/" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="https://cs.sjoy.lol/" rel="noopener noreferrer" target="_blank">CSS JOY Webring</a>
+                                </li>
+                                <li>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/previous?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Anterior" title="Anterior">
+                                                <i class="fa-solid fa-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/random?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Ir a un sitio aleatorio" title="Ir a un sitio aleatorio">
+                                                <i class="fa-solid fa-shuffle"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn btn-primary btn-sm" href="https://webri.ng/webring/cssjoy/next?via=https://<?php include "template-parts/site-domain.php"; ?>" rel="noopener" data-toggle="tooltip" data-placement="top" aria-label="Siguiente" title="Siguiente">
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
