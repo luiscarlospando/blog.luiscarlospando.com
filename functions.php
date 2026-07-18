@@ -966,3 +966,130 @@ function get_blogblog_webring_others()
     set_transient($cache_key, $fallback, 15 * MINUTE_IN_SECONDS);
     return $fallback;
 }
+
+/*------------------------------------*\
+	Reply Context (IndieWeb)
+\*------------------------------------*/
+
+// Get the first node's text for an XPath query, or "" if nothing matched
+function reply_context_node_text($xpath, $query, $context_node = null)
+{
+    $nodes = $context_node
+        ? $xpath->query($query, $context_node)
+        : $xpath->query($query);
+    return $nodes->length > 0 ? trim($nodes->item(0)->textContent) : "";
+}
+
+// Title fallback chain: microformats2 (h-entry > p-name) -> Open Graph -> <title>
+function reply_context_extract_title($xpath)
+{
+    $mf2Title = reply_context_node_text(
+        $xpath,
+        '//*[contains(concat(" ", normalize-space(@class), " "), " h-entry ")]//*[contains(concat(" ", normalize-space(@class), " "), " p-name ")]'
+    );
+    if ($mf2Title) {
+        return $mf2Title;
+    }
+
+    $ogNodes = $xpath->query('//meta[@property="og:title"]/@content');
+    if ($ogNodes->length > 0) {
+        return trim($ogNodes->item(0)->nodeValue);
+    }
+
+    return reply_context_node_text($xpath, "//title");
+}
+
+// Author fallback chain: microformats2 (p-author, with or without a nested p-name) -> Open Graph site name
+function reply_context_extract_author($xpath)
+{
+    $authorNodes = $xpath->query(
+        '//*[contains(concat(" ", normalize-space(@class), " "), " p-author ")]'
+    );
+
+    if ($authorNodes->length > 0) {
+        $authorNode = $authorNodes->item(0);
+        $nestedName = reply_context_node_text(
+            $xpath,
+            './/*[contains(concat(" ", normalize-space(@class), " "), " p-name ")]',
+            $authorNode
+        );
+        return $nestedName ?: trim($authorNode->textContent);
+    }
+
+    $ogSiteNodes = $xpath->query('//meta[@property="og:site_name"]/@content');
+    if ($ogSiteNodes->length > 0) {
+        return trim($ogSiteNodes->item(0)->nodeValue);
+    }
+
+    return "";
+}
+
+// Fetch a remote post and guess its title + author. Returns false when the
+// request fails or no title could be found at all.
+function fetch_reply_context($url)
+{
+    $response = wp_remote_get($url, [
+        "timeout" => 8,
+        "headers" => [
+            "User-Agent" => "Mozilla/5.0 (compatible; ReplyContextBot/1.0; +https://luiscarlospando.com)",
+        ],
+    ]);
+
+    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+        return false;
+    }
+
+    $html = wp_remote_retrieve_body($response);
+    if (empty($html)) {
+        return false;
+    }
+
+    libxml_use_internal_errors(true);
+    $dom = new DOMDocument();
+    $dom->loadHTML($html);
+    libxml_clear_errors();
+    $xpath = new DOMXPath($dom);
+
+    $title = reply_context_extract_title($xpath);
+    if (!$title) {
+        return false;
+    }
+
+    return [
+        "title" => $title,
+        "author" => reply_context_extract_author($xpath),
+    ];
+}
+
+// When a post is marked as a reply, auto-fill reply_title / reply_author from
+// reply_url — but only the fields the author left empty, never overwriting a
+// manual edit. Runs after ACF's own save so the fresh field values are there to read.
+add_action("acf/save_post", "fill_reply_context_from_url", 20);
+function fill_reply_context_from_url($post_id)
+{
+    if (get_post_type($post_id) !== "post") {
+        return;
+    }
+
+    $reply_context = get_field("reply_context", $post_id);
+    if (empty($reply_context["is_reply"]) || empty($reply_context["reply_url"])) {
+        return;
+    }
+
+    if (!empty($reply_context["reply_title"]) && !empty($reply_context["reply_author"])) {
+        return;
+    }
+
+    $fetched = fetch_reply_context($reply_context["reply_url"]);
+    if (!$fetched) {
+        return;
+    }
+
+    if (empty($reply_context["reply_title"]) && !empty($fetched["title"])) {
+        update_field("reply_title", $fetched["title"], $post_id);
+    }
+
+    if (empty($reply_context["reply_author"]) && !empty($fetched["author"])) {
+        update_field("reply_author", $fetched["author"], $post_id);
+    }
+}

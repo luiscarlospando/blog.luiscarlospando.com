@@ -5,6 +5,10 @@
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+		<!-- reply context -->
+		<?php include "template-parts/reply-context.php"; ?>
+		<!-- /reply context -->
+
     	<!-- the post date & categories -->
         <ul class="list-inline mt-4 mb-1">
             <li class="list-inline-item">

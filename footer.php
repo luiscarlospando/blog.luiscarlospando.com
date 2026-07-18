@@ -264,7 +264,7 @@
                             <script type="application/json" id="webring-blogblog-data"><?php echo str_replace("</", "<\/", wp_json_encode($webring_others)); ?></script>
 
                             <ul class="list-inline my-0">
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" style="margin-right: 1rem;">
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <a href="https://blogblog.es/" rel="noopener noreferrer" target="_blank">¡Blog!¡Blog! Webring</a>
