@@ -190,7 +190,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-lg-6 text-center text-lg-right">
+                        <div class="col-12 col-lg-6 my-auto text-center text-lg-right">
                             <ul class="list-inline mt-lg-0">
                                 <li class="list-inline-item">
                                     <a href="https://<?php include "template-parts/site-domain.php"; ?>/support/" class="badge badge-warning bmac" data-toggle="tooltip" data-placement="top" title="Apóyame">
