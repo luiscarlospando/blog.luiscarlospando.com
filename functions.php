@@ -1131,10 +1131,19 @@ function fill_reply_context_from_url($post_id)
     }
 
     if (empty($reply_context["reply_title"]) && !empty($fetched["title"])) {
-        update_field("reply_title", $fetched["title"], $post_id);
+        $updated = update_field("reply_title", $fetched["title"], $post_id);
+        error_log("[reply_context] update_field(reply_title) returned: " . var_export($updated, true)); // TEMPORAL
     }
 
     if (empty($reply_context["reply_author"]) && !empty($fetched["author"])) {
-        update_field("reply_author", $fetched["author"], $post_id);
+        $updated = update_field("reply_author", $fetched["author"], $post_id);
+        error_log("[reply_context] update_field(reply_author) returned: " . var_export($updated, true)); // TEMPORAL
     }
+
+    // TEMPORAL: confirm the write actually stuck, both right away and at the
+    // very end of the request (in case something else re-saves over it).
+    error_log("[reply_context] immediate re-read: " . var_export(get_field("reply_context", $post_id), true));
+    add_action("shutdown", function () use ($post_id) {
+        error_log("[reply_context] shutdown re-read: " . var_export(get_field("reply_context", $post_id), true));
+    });
 }
