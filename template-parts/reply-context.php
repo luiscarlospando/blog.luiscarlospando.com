@@ -20,7 +20,7 @@ $is_own_domain =
         <small>
             <i class="fa-solid fa-comments reply-context-icon"></i>
             Respondiendo a
-            <a class="u-in-reply-to" href="<?php echo esc_url($reply_context["reply_url"]); ?>" target="_blank" rel="noopener">&ldquo;<?php echo esc_html($reply_context["reply_title"]); ?>&rdquo;</a><?php if (!empty($reply_context["reply_author"]) && !$is_own_domain): ?> por <?php echo esc_html($reply_context["reply_author"]); ?><?php endif; ?>
+            <a class="u-in-reply-to" href="<?php echo esc_url($reply_context["reply_url"]); ?>"<?php echo $is_own_domain ? "" : ' target="_blank" rel="noopener"'; ?>>&ldquo;<?php echo esc_html($reply_context["reply_title"]); ?>&rdquo;</a><?php if (!empty($reply_context["reply_author"]) && !$is_own_domain): ?> por <?php echo esc_html($reply_context["reply_author"]); ?><?php endif; ?>
         </small>
     </p>
 </div>
