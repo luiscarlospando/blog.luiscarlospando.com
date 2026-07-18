@@ -1059,21 +1059,12 @@ function fetch_reply_context($url)
         ],
     ]);
 
-    // TEMPORAL: quitar este bloque de logging una vez diagnosticado el problema
-    if (is_wp_error($response)) {
-        error_log("[reply_context] wp_remote_get error for {$url}: " . $response->get_error_message());
+    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
         return false;
     }
-    $response_code = wp_remote_retrieve_response_code($response);
-    error_log("[reply_context] wp_remote_get for {$url} returned HTTP {$response_code}");
-    if ($response_code !== 200) {
-        return false;
-    }
-    // /TEMPORAL
 
     $html = wp_remote_retrieve_body($response);
     if (empty($html)) {
-        error_log("[reply_context] empty response body for {$url}"); // TEMPORAL
         return false;
     }
 
@@ -1084,17 +1075,13 @@ function fetch_reply_context($url)
     $xpath = new DOMXPath($dom);
 
     $title = reply_context_extract_title($xpath);
-    error_log("[reply_context] extracted title: " . var_export($title, true)); // TEMPORAL
     if (!$title) {
         return false;
     }
 
-    $author = reply_context_extract_author($xpath);
-    error_log("[reply_context] extracted author: " . var_export($author, true)); // TEMPORAL
-
     return [
         "title" => $title,
-        "author" => $author,
+        "author" => reply_context_extract_author($xpath),
     ];
 }
 
@@ -1104,33 +1091,25 @@ function fetch_reply_context($url)
 add_action("acf/save_post", "fill_reply_context_from_url", 20);
 function fill_reply_context_from_url($post_id)
 {
-    error_log("[reply_context] acf/save_post fired for post {$post_id}"); // TEMPORAL
-
     if (get_post_type($post_id) !== "post") {
-        error_log("[reply_context] skipped: post type is " . get_post_type($post_id)); // TEMPORAL
         return;
     }
 
     $reply_context = get_field("reply_context", $post_id);
-    error_log("[reply_context] reply_context field value: " . var_export($reply_context, true)); // TEMPORAL
-
     if (empty($reply_context["is_reply"]) || empty($reply_context["reply_url"])) {
-        error_log("[reply_context] skipped: is_reply or reply_url is empty"); // TEMPORAL
         return;
     }
 
     if (!empty($reply_context["reply_title"]) && !empty($reply_context["reply_author"])) {
-        error_log("[reply_context] skipped: reply_title and reply_author already set"); // TEMPORAL
         return;
     }
 
     $fetched = fetch_reply_context($reply_context["reply_url"]);
-    error_log("[reply_context] fetch_reply_context returned: " . var_export($fetched, true)); // TEMPORAL
     if (!$fetched) {
         return;
     }
 
-    // Updating reply_title/reply_author directly by name doesn't reliably
+    // Writing reply_title/reply_author directly by name doesn't reliably
     // resolve for sub-fields of a Group outside of a real ACF form submission
     // (get_field() walks the tree fine, update_field() doesn't). Writing the
     // whole group back at once sidesteps that lookup entirely.
@@ -1147,14 +1126,6 @@ function fill_reply_context_from_url($post_id)
     }
 
     if ($changed) {
-        $updated = update_field("reply_context", $reply_context, $post_id);
-        error_log("[reply_context] update_field(reply_context) returned: " . var_export($updated, true)); // TEMPORAL
+        update_field("reply_context", $reply_context, $post_id);
     }
-
-    // TEMPORAL: confirm the write actually stuck, both right away and at the
-    // very end of the request (in case something else re-saves over it).
-    error_log("[reply_context] immediate re-read: " . var_export(get_field("reply_context", $post_id), true));
-    add_action("shutdown", function () use ($post_id) {
-        error_log("[reply_context] shutdown re-read: " . var_export(get_field("reply_context", $post_id), true));
-    });
 }
