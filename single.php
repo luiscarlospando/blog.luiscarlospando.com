@@ -35,7 +35,7 @@
 					<!-- /the categoies -->
 
 					<!-- post title -->
-					<h1 class="title">
+					<h1 class="title p-name">
 						<?php the_title(); ?>
 					</h1>
 					<!-- /post title -->

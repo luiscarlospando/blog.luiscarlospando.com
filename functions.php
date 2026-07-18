@@ -981,11 +981,16 @@ function reply_context_node_text($xpath, $query, $context_node = null)
 }
 
 // Title fallback chain: microformats2 (h-entry > p-name) -> Open Graph -> <title>
+//
+// p-name is excluded when it's nested inside a p-author/h-card block — some
+// pages (including our own theme, before this was fixed) mark the author's
+// name with p-name too, and without this guard that decoy wins just by being
+// the first (or only) p-name found inside the h-entry.
 function reply_context_extract_title($xpath)
 {
     $mf2Title = reply_context_node_text(
         $xpath,
-        '//*[contains(concat(" ", normalize-space(@class), " "), " h-entry ")]//*[contains(concat(" ", normalize-space(@class), " "), " p-name ")]'
+        '//*[contains(concat(" ", normalize-space(@class), " "), " h-entry ")]//*[contains(concat(" ", normalize-space(@class), " "), " p-name ")][not(ancestor::*[contains(concat(" ", normalize-space(@class), " "), " p-author ")])][not(ancestor::*[contains(concat(" ", normalize-space(@class), " "), " h-card ")])]'
     );
     if ($mf2Title) {
         return $mf2Title;
