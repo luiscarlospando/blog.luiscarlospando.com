@@ -1129,3 +1129,19 @@ function fill_reply_context_from_url($post_id)
         update_field("reply_context", $reply_context, $post_id);
     }
 }
+
+// Expose reply_context in the REST API — it's not there by default, and even
+// with ACF's "Show in REST" it would come nested under `acf`, not top-level.
+// This lets the Jekyll homepage widget (blog-posts.js) request it via
+// _fields=...,reply_context alongside the other trimmed fields.
+add_action("rest_api_init", function () {
+    register_rest_field("post", "reply_context", [
+        "get_callback" => function ($post) {
+            return get_field("reply_context", $post["id"]) ?: null;
+        },
+        "schema" => [
+            "description" => "IndieWeb reply context (is_reply, reply_url, reply_title, reply_author)",
+            "type" => "object",
+        ],
+    ]);
+});
