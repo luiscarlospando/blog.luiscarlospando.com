@@ -1000,14 +1000,38 @@ function reply_context_extract_title($xpath)
 }
 
 // Author fallback chain: microformats2 (p-author, with or without a nested p-name) -> Open Graph site name
+//
+// p-author is looked up *inside the h-entry first* — pages often have an unrelated
+// p-author decoration elsewhere (e.g. a "Home" nav link with rel="author"), and that
+// would otherwise win just by appearing earlier in the document.
 function reply_context_extract_author($xpath)
 {
-    $authorNodes = $xpath->query(
-        '//*[contains(concat(" ", normalize-space(@class), " "), " p-author ")]'
+    $entryNodes = $xpath->query(
+        '//*[contains(concat(" ", normalize-space(@class), " "), " h-entry ")]'
     );
 
-    if ($authorNodes->length > 0) {
-        $authorNode = $authorNodes->item(0);
+    $authorNode = null;
+
+    if ($entryNodes->length > 0) {
+        $scopedAuthorNodes = $xpath->query(
+            './/*[contains(concat(" ", normalize-space(@class), " "), " p-author ")]',
+            $entryNodes->item(0)
+        );
+        if ($scopedAuthorNodes->length > 0) {
+            $authorNode = $scopedAuthorNodes->item(0);
+        }
+    }
+
+    if (!$authorNode) {
+        $authorNodes = $xpath->query(
+            '//*[contains(concat(" ", normalize-space(@class), " "), " p-author ")]'
+        );
+        if ($authorNodes->length > 0) {
+            $authorNode = $authorNodes->item(0);
+        }
+    }
+
+    if ($authorNode) {
         $nestedName = reply_context_node_text(
             $xpath,
             './/*[contains(concat(" ", normalize-space(@class), " "), " p-name ")]',
@@ -1035,12 +1059,21 @@ function fetch_reply_context($url)
         ],
     ]);
 
-    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+    // TEMPORAL: quitar este bloque de logging una vez diagnosticado el problema
+    if (is_wp_error($response)) {
+        error_log("[reply_context] wp_remote_get error for {$url}: " . $response->get_error_message());
         return false;
     }
+    $response_code = wp_remote_retrieve_response_code($response);
+    error_log("[reply_context] wp_remote_get for {$url} returned HTTP {$response_code}");
+    if ($response_code !== 200) {
+        return false;
+    }
+    // /TEMPORAL
 
     $html = wp_remote_retrieve_body($response);
     if (empty($html)) {
+        error_log("[reply_context] empty response body for {$url}"); // TEMPORAL
         return false;
     }
 
@@ -1051,13 +1084,17 @@ function fetch_reply_context($url)
     $xpath = new DOMXPath($dom);
 
     $title = reply_context_extract_title($xpath);
+    error_log("[reply_context] extracted title: " . var_export($title, true)); // TEMPORAL
     if (!$title) {
         return false;
     }
 
+    $author = reply_context_extract_author($xpath);
+    error_log("[reply_context] extracted author: " . var_export($author, true)); // TEMPORAL
+
     return [
         "title" => $title,
-        "author" => reply_context_extract_author($xpath),
+        "author" => $author,
     ];
 }
 
@@ -1067,20 +1104,28 @@ function fetch_reply_context($url)
 add_action("acf/save_post", "fill_reply_context_from_url", 20);
 function fill_reply_context_from_url($post_id)
 {
+    error_log("[reply_context] acf/save_post fired for post {$post_id}"); // TEMPORAL
+
     if (get_post_type($post_id) !== "post") {
+        error_log("[reply_context] skipped: post type is " . get_post_type($post_id)); // TEMPORAL
         return;
     }
 
     $reply_context = get_field("reply_context", $post_id);
+    error_log("[reply_context] reply_context field value: " . var_export($reply_context, true)); // TEMPORAL
+
     if (empty($reply_context["is_reply"]) || empty($reply_context["reply_url"])) {
+        error_log("[reply_context] skipped: is_reply or reply_url is empty"); // TEMPORAL
         return;
     }
 
     if (!empty($reply_context["reply_title"]) && !empty($reply_context["reply_author"])) {
+        error_log("[reply_context] skipped: reply_title and reply_author already set"); // TEMPORAL
         return;
     }
 
     $fetched = fetch_reply_context($reply_context["reply_url"]);
+    error_log("[reply_context] fetch_reply_context returned: " . var_export($fetched, true)); // TEMPORAL
     if (!$fetched) {
         return;
     }
