@@ -9,14 +9,9 @@ $reply_context = get_field("reply_context");
 
 <?php if (!empty($reply_context["is_reply"]) && !empty($reply_context["reply_url"])): ?>
 <div class="reply-context">
-    <div class="reply-context-thread" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
     <p class="mb-0">
         <small>
-            <i class="fa-solid fa-comments"></i>
+            <i class="fa-solid fa-comments reply-context-icon"></i>
             Respondiendo a
             <a class="u-in-reply-to" href="<?php echo esc_url($reply_context["reply_url"]); ?>" target="_blank" rel="noopener">&ldquo;<?php echo esc_html($reply_context["reply_title"]); ?>&rdquo;</a><?php if (!empty($reply_context["reply_author"])): ?> por <?php echo esc_html($reply_context["reply_author"]); ?><?php endif; ?>
         </small>
