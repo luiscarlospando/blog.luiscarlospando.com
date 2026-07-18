@@ -1130,14 +1130,25 @@ function fill_reply_context_from_url($post_id)
         return;
     }
 
+    // Updating reply_title/reply_author directly by name doesn't reliably
+    // resolve for sub-fields of a Group outside of a real ACF form submission
+    // (get_field() walks the tree fine, update_field() doesn't). Writing the
+    // whole group back at once sidesteps that lookup entirely.
+    $changed = false;
+
     if (empty($reply_context["reply_title"]) && !empty($fetched["title"])) {
-        $updated = update_field("reply_title", $fetched["title"], $post_id);
-        error_log("[reply_context] update_field(reply_title) returned: " . var_export($updated, true)); // TEMPORAL
+        $reply_context["reply_title"] = $fetched["title"];
+        $changed = true;
     }
 
     if (empty($reply_context["reply_author"]) && !empty($fetched["author"])) {
-        $updated = update_field("reply_author", $fetched["author"], $post_id);
-        error_log("[reply_context] update_field(reply_author) returned: " . var_export($updated, true)); // TEMPORAL
+        $reply_context["reply_author"] = $fetched["author"];
+        $changed = true;
+    }
+
+    if ($changed) {
+        $updated = update_field("reply_context", $reply_context, $post_id);
+        error_log("[reply_context] update_field(reply_context) returned: " . var_export($updated, true)); // TEMPORAL
     }
 
     // TEMPORAL: confirm the write actually stuck, both right away and at the
