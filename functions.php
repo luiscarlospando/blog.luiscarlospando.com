@@ -696,7 +696,7 @@ function add_rss_footer_text($content)
     }
     return $content;
 }
-add_filter("the_content", "add_rss_footer_text"); // Month abbreviations in Spanish
+add_filter("the_content_feed", "add_rss_footer_text"); // Month abbreviations in Spanish
 function custom_date_translation($months)
 {
     $months["01"] = "ene";
