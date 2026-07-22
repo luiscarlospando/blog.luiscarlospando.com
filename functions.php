@@ -1,18 +1,12 @@
 <?php
-/*
- *  Author: Todd Motto | @toddmotto
- *  URL: html5blank.com | @html5blank
- *  Custom functions, support, custom post types and more.
+/**
+ * Theme functions.
+ *
+ * Based on the html5blank starter theme (Todd Motto), heavily customized since.
  */
 
 /*------------------------------------*\
-	External Modules/Files
-\*------------------------------------*/
-
-// Load any external files you have here
-
-/*------------------------------------*\
-	Theme Support
+	Theme Setup
 \*------------------------------------*/
 
 if (!isset($content_width)) {
@@ -20,35 +14,14 @@ if (!isset($content_width)) {
 }
 
 if (function_exists("add_theme_support")) {
-    // Add Menu Support
     add_theme_support("menus");
 
-    // Add Thumbnail Theme Support
     add_theme_support("post-thumbnails");
     add_image_size("large", 700, "", true); // Large Thumbnail
     add_image_size("medium", 250, "", true); // Medium Thumbnail
     add_image_size("small", 120, "", true); // Small Thumbnail
     add_image_size("custom-size", 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
     add_image_size("thumb-foto", 600, 9999, false); // Custom Thumbnail Size call using the_post_thumbnail('thumb-foto');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
 
     // Enables post and comment RSS feed links to head
     add_theme_support("automatic-feed-links");
@@ -63,33 +36,10 @@ if (function_exists("add_theme_support")) {
 }
 
 /*------------------------------------*\
-	Functions
+	Scripts & Styles
 \*------------------------------------*/
 
-// HTML5 Blank navigation
-function html5blank_nav()
-{
-    wp_nav_menu([
-        "theme_location" => "header-menu",
-        "menu" => "",
-        "container" => "div",
-        "container_class" => "menu-{menu slug}-container",
-        "container_id" => "",
-        "menu_class" => "menu",
-        "menu_id" => "",
-        "echo" => true,
-        "fallback_cb" => "wp_page_menu",
-        "before" => "",
-        "after" => "",
-        "link_before" => "",
-        "link_after" => "",
-        "items_wrap" => '<ul>%3$s</ul>',
-        "depth" => 0,
-        "walker" => "",
-    ]);
-}
-
-// Load HTML5 Blank scripts (header.php)
+// Load scripts (header.php)
 function html5blank_header_scripts()
 {
     if ($GLOBALS["pagenow"] != "wp-login.php" && !is_admin()) {
@@ -130,6 +80,7 @@ function html5blank_header_scripts()
         wp_enqueue_script("app"); // Enqueue it!
     }
 }
+add_action("init", "html5blank_header_scripts");
 
 // Localize app script
 function localize_app_script()
@@ -140,29 +91,9 @@ function localize_app_script()
 }
 add_action("wp_enqueue_scripts", "localize_app_script", 20);
 
-// Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
-    if (is_page("pagenamehere")) {
-        wp_register_script(
-            "scriptname",
-            get_template_directory_uri() . "/js/scriptname.js",
-            ["jquery"],
-            "1.0.0",
-        ); // Conditional script(s)
-        wp_enqueue_script("scriptname"); // Enqueue it!
-    }
-}
-
-// Load HTML5 Blank styles
+// Load styles
 function html5blank_styles()
 {
-    // wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
-    // wp_enqueue_style('normalize'); // Enqueue it!
-
-    // wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    // wp_enqueue_style('html5blank'); // Enqueue it!
-
     wp_register_style(
         "mmenu",
         "https://luiscarlospando.com/assets/css/jquery.mmenu.all.css",
@@ -208,6 +139,28 @@ function html5blank_styles()
     );
     wp_enqueue_style("main"); // Enqueue it!
 }
+add_action("wp_enqueue_scripts", "html5blank_styles");
+
+// Load styles for editor
+add_action("enqueue_block_editor_assets", function () {
+    wp_enqueue_style(
+        "lcp-editor",
+        get_template_directory_uri() . "/editor.css",
+        [],
+        "1.0",
+    );
+});
+
+// Remove 'text/css' from our enqueued stylesheet
+function html5_style_remove($tag)
+{
+    return preg_replace('~\s+type=["\'][^"\']++["\']~', "", $tag);
+}
+add_filter("style_loader_tag", "html5_style_remove");
+
+/*------------------------------------*\
+	Navigation
+\*------------------------------------*/
 
 // Register HTML5 Blank Navigation
 function register_html5_menu()
@@ -219,6 +172,7 @@ function register_html5_menu()
         "extra-menu" => __("Extra Menu", "html5blank"), // Extra Navigation if needed (duplicate as many as you need!)
     ]);
 }
+add_action("init", "register_html5_menu");
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = "")
@@ -226,18 +180,31 @@ function my_wp_nav_menu_args($args = "")
     $args["container"] = false;
     return $args;
 }
+add_filter("wp_nav_menu_args", "my_wp_nav_menu_args");
 
-// Remove Injected classes, ID's and Page ID's from Navigation <li> items
-function my_css_attributes_filter($var)
-{
-    return is_array($var) ? [] : "";
-}
+/*------------------------------------*\
+	Head & Body Cleanup
+\*------------------------------------*/
 
-// Remove invalid rel attribute values in the categorylist
-function remove_category_rel_from_category_list($thelist)
+remove_action("wp_head", "feed_links_extra", 3); // Display the links to the extra feeds such as category feeds
+remove_action("wp_head", "feed_links", 2); // Display the links to the general feeds: Post and Comment Feed
+remove_action("wp_head", "rsd_link"); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action("wp_head", "wlwmanifest_link"); // Display the link to the Windows Live Writer manifest file.
+remove_action("wp_head", "index_rel_link"); // Index link
+remove_action("wp_head", "parent_post_rel_link", 10, 0); // Prev link
+remove_action("wp_head", "start_post_rel_link", 10, 0); // Start link
+remove_action("wp_head", "adjacent_posts_rel_link", 10, 0); // Display relational links for the posts adjacent to the current post.
+remove_action("wp_head", "wp_generator"); // Display the XHTML generator that is generated on the wp_head hook, WP version
+remove_action("wp_head", "adjacent_posts_rel_link_wp_head", 10, 0);
+remove_action("wp_head", "rel_canonical");
+remove_action("wp_head", "wp_shortlink_wp_head", 10, 0);
+
+// Remove Admin bar
+function remove_admin_bar()
 {
-    return str_replace('rel="category tag"', 'rel="tag"', $thelist);
+    return false;
 }
+add_filter("show_admin_bar", "remove_admin_bar");
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
 function add_slug_to_body_class($classes)
@@ -256,6 +223,20 @@ function add_slug_to_body_class($classes)
 
     return $classes;
 }
+add_filter("body_class", "add_slug_to_body_class");
+
+// Custom Gravatar in Settings > Discussion
+function html5blankgravatar($avatar_defaults)
+{
+    $myavatar = get_template_directory_uri() . "/img/gravatar.jpg";
+    $avatar_defaults[$myavatar] = "Custom Gravatar";
+    return $avatar_defaults;
+}
+add_filter("avatar_defaults", "html5blankgravatar");
+
+/*------------------------------------*\
+	Widgets & Sidebars
+\*------------------------------------*/
 
 // If Dynamic Sidebar Exists
 if (function_exists("register_sidebar")) {
@@ -297,89 +278,15 @@ function my_remove_recent_comments_style()
         "recent_comments_style",
     ]);
 }
+add_action("widgets_init", "my_remove_recent_comments_style");
 
-// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function html5wp_pagination()
-{
-    global $wp_query;
-    $big = 999999999;
-    echo paginate_links([
-        "base" => str_replace($big, "%#%", get_pagenum_link($big)),
-        "format" => "?paged=%#%",
-        "current" => max(1, get_query_var("paged")),
-        "total" => $wp_query->max_num_pages,
-    ]);
-}
+// Allow shortcodes in Dynamic Sidebar, without the auto <p> tags (better!)
+add_filter("widget_text", "do_shortcode");
+add_filter("widget_text", "shortcode_unautop");
 
-// Custom Excerpts
-function html5wp_index($length)
-{
-    // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
-    return 20;
-}
-
-// Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
-function html5wp_custom_post($length)
-{
-    return 40;
-}
-
-// Create 60 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_excerpt');
-function html5wp_custom_excerpt($length)
-{
-    return 60;
-}
-
-// Create the Custom Excerpts callback
-function html5wp_excerpt($length_callback = "", $more_callback = "")
-{
-    global $post;
-    if (function_exists($length_callback)) {
-        add_filter("excerpt_length", $length_callback);
-    }
-    if (function_exists($more_callback)) {
-        add_filter("excerpt_more", $more_callback);
-    }
-    $output = get_the_excerpt();
-    $output = apply_filters("wptexturize", $output);
-    $output = apply_filters("convert_chars", $output);
-    $output = "<p>" . $output . "</p>";
-    echo $output;
-}
-
-// Custom View Article link to Post
-function html5_blank_view_article($more)
-{
-    global $post;
-    return "";
-}
-
-// Remove Admin bar
-function remove_admin_bar()
-{
-    return false;
-}
-
-// Remove 'text/css' from our enqueued stylesheet
-function html5_style_remove($tag)
-{
-    return preg_replace('~\s+type=["\'][^"\']++["\']~', "", $tag);
-}
-
-// Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-function remove_thumbnail_dimensions($html)
-{
-    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
-    return $html;
-}
-
-// Custom Gravatar in Settings > Discussion
-function html5blankgravatar($avatar_defaults)
-{
-    $myavatar = get_template_directory_uri() . "/img/gravatar.jpg";
-    $avatar_defaults[$myavatar] = "Custom Gravatar";
-    return $avatar_defaults;
-}
+/*------------------------------------*\
+	Comments
+\*------------------------------------*/
 
 // Threaded Comments
 function enable_threaded_comments()
@@ -394,6 +301,7 @@ function enable_threaded_comments()
         }
     }
 }
+add_action("get_header", "enable_threaded_comments");
 
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
@@ -455,84 +363,80 @@ function html5blankcomments($comment, $args, $depth)
 	</div>
 	<?php endif; ?>
 <?php
-} /*------------------------------------*\
-	Actions + Filters + ShortCodes
-\*------------------------------------*/ // Add Actions
-add_action("init", "html5blank_header_scripts");
-// Add Custom Scripts to wp_head
-add_action("wp_print_scripts", "html5blank_conditional_scripts"); // Add Conditional Page Scripts
-add_action("get_header", "enable_threaded_comments"); // Enable Threaded Comments
-add_action("wp_enqueue_scripts", "html5blank_styles"); // Add Theme Stylesheet
-add_action("init", "register_html5_menu"); // Add HTML5 Blank Menu
-// add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action("widgets_init", "my_remove_recent_comments_style"); // Remove inline Recent Comment Styles from wp_head()
-add_action("init", "html5wp_pagination"); // Add our HTML5 Pagination
-// Remove Actions
-remove_action("wp_head", "feed_links_extra", 3); // Display the links to the extra feeds such as category feeds
-remove_action("wp_head", "feed_links", 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action("wp_head", "rsd_link"); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action("wp_head", "wlwmanifest_link"); // Display the link to the Windows Live Writer manifest file.
-remove_action("wp_head", "index_rel_link"); // Index link
-remove_action("wp_head", "parent_post_rel_link", 10, 0); // Prev link
-remove_action("wp_head", "start_post_rel_link", 10, 0); // Start link
-remove_action("wp_head", "adjacent_posts_rel_link", 10, 0); // Display relational links for the posts adjacent to the current post.
-remove_action("wp_head", "wp_generator"); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action("wp_head", "adjacent_posts_rel_link_wp_head", 10, 0);
-remove_action("wp_head", "rel_canonical");
-remove_action("wp_head", "wp_shortlink_wp_head", 10, 0); // Add Filters
-add_filter("avatar_defaults", "html5blankgravatar"); // Custom Gravatar in Settings > Discussion
-add_filter("body_class", "add_slug_to_body_class"); // Add slug to body class (Starkers build)
-add_filter("widget_text", "do_shortcode"); // Allow shortcodes in Dynamic Sidebar
-add_filter("widget_text", "shortcode_unautop");
-// Remove <p> tags in Dynamic Sidebars (better!)
-add_filter("wp_nav_menu_args", "my_wp_nav_menu_args"); // Remove surrounding <div> from WP Navigation
-// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
-// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
-add_filter("the_category", "remove_category_rel_from_category_list"); // Remove invalid rel attribute
+}
+
+/*------------------------------------*\
+	Pagination
+\*------------------------------------*/
+
+// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
+// Called directly from pagination.php
+function html5wp_pagination()
+{
+    global $wp_query;
+    $big = 999999999;
+    echo paginate_links([
+        "base" => str_replace($big, "%#%", get_pagenum_link($big)),
+        "format" => "?paged=%#%",
+        "current" => max(1, get_query_var("paged")),
+        "total" => $wp_query->max_num_pages,
+    ]);
+}
+
+/*------------------------------------*\
+	Excerpts & Content Filters
+\*------------------------------------*/
+
 add_filter("the_excerpt", "shortcode_unautop"); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter("the_excerpt", "do_shortcode"); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
+remove_filter("the_excerpt", "wpautop"); // Remove <p> tags from Excerpt altogether
+
+// Custom View Article link to Post
+function html5_blank_view_article($more)
+{
+    return "";
+}
 add_filter("excerpt_more", "html5_blank_view_article"); // Add 'View Article' button instead of [...] for Excerpts
-add_filter("show_admin_bar", "remove_admin_bar");
-// Remove Admin bar
-add_filter("style_loader_tag", "html5_style_remove"); // Remove 'text/css' from enqueued stylesheet
+
+// Allow the Jetpack Markdown block to contribute to auto-generated excerpts (RSS description, etc.)
+function allow_jetpack_markdown_in_excerpt($allowed_blocks)
+{
+    $allowed_blocks[] = "jetpack/markdown";
+    return $allowed_blocks;
+}
+add_filter("excerpt_allowed_blocks", "allow_jetpack_markdown_in_excerpt");
+
+// Remove invalid rel attribute values in the categorylist
+function remove_category_rel_from_category_list($thelist)
+{
+    return str_replace('rel="category tag"', 'rel="tag"', $thelist);
+}
+add_filter("the_category", "remove_category_rel_from_category_list");
+
+// Deactivate wptexturize
+add_filter("run_wptexturize", "__return_false");
+
+// Responsive images
+function add_image_responsive_class($content)
+{
+    global $post;
+    $pattern = "/<img(.*?)class=\"(.*?)\"(.*?)>/i";
+    $replacement = '<img$1class="$2 img-fluid"$3>';
+    $content = preg_replace($pattern, $replacement, $content);
+    return $content;
+}
+add_filter("the_content", "add_image_responsive_class");
+
+// Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
+function remove_thumbnail_dimensions($html)
+{
+    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
+    return $html;
+}
 add_filter("post_thumbnail_html", "remove_thumbnail_dimensions", 10); // Remove width and height dynamic attributes to thumbnails
 add_filter("image_send_to_editor", "remove_thumbnail_dimensions", 10); // Remove width and height dynamic attributes to post images
-// Remove Filters
-remove_filter("the_excerpt", "wpautop"); // Remove <p> tags from Excerpt altogether
-// Shortcodes
-add_shortcode("html5_shortcode_demo", "html5_shortcode_demo"); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode("html5_shortcode_demo_2", "html5_shortcode_demo_2"); // Place [html5_shortcode_demo_2] in Pages, Posts now.
-// Shortcodes above would be nested like this -
-// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
-// Custom Post Types
-// Shortcode functions
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . "</div>"; // do_shortcode allows for nested Shortcodes
-} // Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null)
-{
-    // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-    return "<h2>" . $content . "</h2>";
-}
-// Function to print titles
-function get_page_title()
-{
-    $title = "";
-    if (is_category()) {
-        $title = single_cat_title("", false);
-    } elseif (is_tag()) {
-        $title = single_tag_title("", false);
-    } elseif (is_author()) {
-        $title = "Archivos del blog";
-    } elseif (is_single() || is_page()) {
-        $title = get_the_title();
-    }
-    return $title
-        ? $title . " - " . get_bloginfo("name")
-        : get_bloginfo("name");
-} // Automatic Shortcodes captions
+
+// Automatic Shortcodes captions
 if (is_admin()) {
     add_filter("image_send_to_editor", "wrap_my_caption", 10, 8);
     function wrap_my_caption(
@@ -599,33 +503,93 @@ if (is_admin()) {
                 "[/caption]";
         }
     }
-} // Responsive images
-function add_image_responsive_class($content)
-{
-    global $post;
-    $pattern = "/<img(.*?)class=\"(.*?)\"(.*?)>/i";
-    $replacement = '<img$1class="$2 img-fluid"$3>';
-    $content = preg_replace($pattern, $replacement, $content);
-    return $content;
 }
-add_filter("the_content", "add_image_responsive_class");
-// Making local jQuery default
-function modify_jquery()
+
+// Remove spaces from wp_tag_cloud()
+add_filter("wp_tag_cloud", function ($output) {
+    return preg_replace_callback(
+        '/(<a[^>]*>)([^<]+)(<\/a>)/',
+        function ($matches) {
+            $text_without_spaces = str_replace(" ", "", $matches[2]);
+            return $matches[1] . $text_without_spaces . $matches[3];
+        },
+        $output,
+    );
+});
+
+// Month abbreviations in Spanish
+function custom_date_translation($months)
 {
-    if (!is_admin()) {
-        // comment out the next two lines to load the local copy of jQuery
-        wp_deregister_script("jquery");
-        wp_register_script(
-            "jquery",
-            "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-            [],
-            "1.10.2",
-            true,
-        );
-        wp_enqueue_script("jquery");
+    $months["01"] = "ene";
+    $months["02"] = "feb";
+    $months["03"] = "mar";
+    $months["04"] = "abr";
+    $months["05"] = "may";
+    $months["06"] = "jun";
+    $months["07"] = "jul";
+    $months["08"] = "ago";
+    $months["09"] = "sep";
+    $months["10"] = "oct";
+    $months["11"] = "nov";
+    $months["12"] = "dic";
+    return $months;
+}
+add_filter("month_abbrev", "custom_date_translation");
+
+/*------------------------------------*\
+	SEO / Meta Tags
+\*------------------------------------*/
+
+// Custom title function
+function lcp_custom_title()
+{
+    if (is_front_page() || is_home()) {
+        return "Blog - Luis Carlos Pando";
+    } elseif (is_singular()) {
+        return single_post_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_category()) {
+        return single_cat_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_tag()) {
+        return single_tag_title("", false) . " - Luis Carlos Pando";
+    } elseif (is_author()) {
+        return "Archivos del blog - Luis Carlos Pando";
+    } elseif (is_date()) {
+        if (is_year()) {
+            return get_the_date("Y") . " - Luis Carlos Pando";
+        } elseif (is_month()) {
+            return get_the_date("F Y") . " - Luis Carlos Pando";
+        } elseif (is_day()) {
+            return get_the_date("j F Y") . " - Luis Carlos Pando";
+        }
+    } elseif (is_search()) {
+        return 'Resultados de búsqueda para "' .
+            get_search_query() .
+            '" - Luis Carlos Pando';
+    } elseif (is_404()) {
+        return "Página no encontrada - Luis Carlos Pando";
+    } elseif (is_archive()) {
+        return post_type_archive_title("", false) . " - Luis Carlos Pando";
+    } else {
+        return wp_title("", false, "right") . " - Luis Carlos Pando";
     }
 }
-add_action("init", "modify_jquery");
+
+// archive.php title
+function lcp_archive_title()
+{
+    if (is_date()) {
+        if (is_year()) {
+            return "Archivos (" . get_the_date("Y") . ")";
+        } elseif (is_month()) {
+            return "Archivos (" . get_the_date("F Y") . ")";
+        } elseif (is_day()) {
+            return "Archivos (" . get_the_date("j F Y") . ")";
+        }
+    } else {
+        return __("Archivos", "html5blank");
+    }
+}
+
 // Function to get the meta tag title
 function get_meta_title()
 {
@@ -643,7 +607,9 @@ function get_meta_title()
         return sprintf("%s - %s", get_the_title(), $site_name);
     }
     return $site_name;
-} // Function to get the meta tag description
+}
+
+// Function to get the meta tag description
 function get_meta_description()
 {
     global $post;
@@ -656,7 +622,7 @@ function get_meta_description()
         return $description;
     }
     if (is_author()) {
-        return "Estos son todos los posts que he escrito, ordenados por fecha de manera descendente.";
+        return "Estos son todos los posts que he publicado, ordenados por fecha de manera descendente.";
     }
     if (is_category()) {
         return category_description();
@@ -666,60 +632,12 @@ function get_meta_description()
     }
     return get_bloginfo("description");
 }
-// Function to get the meta tag image
-function get_meta_image()
-{
-    // Getting the site domain
-    $domain = include "template-parts/return-site-domain.php"; // Concatenate all parts
-    $default_image = "https://" . $domain . "/assets/images/logo.png";
-    if (is_single() || is_page()) {
-        $thumb_id = get_post_thumbnail_id();
-        if ($thumb_id) {
-            $thumb_url = wp_get_attachment_image_src($thumb_id, "large", true);
-            if ($thumb_url && is_array($thumb_url)) {
-                return $thumb_url[0];
-            }
-        }
-    }
-    return $default_image;
-} // Allow the Jetpack Markdown block to contribute to auto-generated excerpts (RSS description, etc.)
-function allow_jetpack_markdown_in_excerpt($allowed_blocks)
-{
-    $allowed_blocks[] = "jetpack/markdown";
-    return $allowed_blocks;
-}
-add_filter("excerpt_allowed_blocks", "allow_jetpack_markdown_in_excerpt"); // RSS text after every item
-function add_rss_footer_text($content)
-{
-    if (is_feed()) {
-        $footer_text =
-            "<hr>" .
-            '<p>Gracias por leer mi <a href="https://luiscarlospando.com/">blog</a> y ser un suscriptor.</p>' .
-            '<p>Si disfrutas mi contenido, puedes <a href="https://buymeacoffee.com/luiscarlospando">comprarme un café</a>, que aunque no es necesario, se agradece bastante. 🙏 ' .
-            'También me puedes seguir en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
-            "<p>¡Hasta la próxima, cuidate! 👋</p>";
-        $content .= $footer_text;
-    }
-    return $content;
-}
-add_filter("the_content_feed", "add_rss_footer_text"); // Month abbreviations in Spanish
-function custom_date_translation($months)
-{
-    $months["01"] = "ene";
-    $months["02"] = "feb";
-    $months["03"] = "mar";
-    $months["04"] = "abr";
-    $months["05"] = "may";
-    $months["06"] = "jun";
-    $months["07"] = "jul";
-    $months["08"] = "ago";
-    $months["09"] = "sep";
-    $months["10"] = "oct";
-    $months["11"] = "nov";
-    $months["12"] = "dic";
-    return $months;
-}
-add_filter("month_abbrev", "custom_date_translation"); // Exclude "Photos" category from main loop except in its own archive
+
+/*------------------------------------*\
+	Photos Category
+\*------------------------------------*/
+
+// Exclude "Photos" category from main loop except in its own archive
 function exclude_photos_category($query)
 {
     // Only modify main query and not in admin
@@ -730,7 +648,59 @@ function exclude_photos_category($query)
         }
     }
 }
-add_action("pre_get_posts", "exclude_photos_category"); // Mastodon toot URL fetcher
+add_action("pre_get_posts", "exclude_photos_category");
+
+// Sort Photos category by date
+function sort_photos_category_by_date($query)
+{
+    if (!is_admin() && $query->is_main_query() && is_category("photos")) {
+        $query->set("orderby", "date");
+        $query->set("order", "DESC");
+        $query->set("posts_per_page", -1); // display all posts
+    }
+}
+add_action("pre_get_posts", "sort_photos_category_by_date");
+
+// Photos Ajax handler
+add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
+add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos_callback");
+function load_more_photos_callback()
+{
+    // Validate and sanitize inputs
+    $offset = isset($_POST["offset"]) ? intval($_POST["offset"]) : 0;
+    $year = isset($_POST["year"]) ? intval($_POST["year"]) : 0;
+    $posts_per_page = 6;
+    $args = [
+        "post_type" => "post",
+        "posts_per_page" => $posts_per_page,
+        "offset" => $offset,
+        "category_name" => "photos",
+        "date_query" => [
+            [
+                "year" => $year,
+            ],
+        ],
+        "orderby" => "date",
+        "order" => "DESC",
+    ];
+    $query = new WP_Query($args);
+    ob_start();
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part("template-parts/photo", "card");
+        }
+    }
+    wp_reset_postdata();
+    $html = ob_get_clean();
+    wp_send_json_success($html);
+    wp_die();
+}
+
+/*------------------------------------*\
+	Mastodon Integration
+\*------------------------------------*/
+
 // Function to save the Mastodon settings
 function save_mastodon_settings()
 {
@@ -742,6 +712,8 @@ function save_mastodon_settings()
     }
 }
 add_action("init", "save_mastodon_settings");
+
+// Mastodon toot URL fetcher
 function get_mastodon_toot_url(
     $post_url,
     $mastodon_instance = "https://social.lol",
@@ -783,7 +755,9 @@ function get_mastodon_toot_url(
         }
     }
     return false;
-} // Hook to automatically check for toot URL when post is published
+}
+
+// Hook to automatically check for toot URL when post is published
 function check_and_save_mastodon_toot($new_status, $old_status, $post)
 {
     if ($new_status !== "publish") {
@@ -795,7 +769,9 @@ function check_and_save_mastodon_toot($new_status, $old_status, $post)
         update_post_meta($post->ID, "_mastodon_toot_url", $toot_url);
     }
 }
-add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3); // Function to manually check for toot URL
+add_action("transition_post_status", "check_and_save_mastodon_toot", 10, 3);
+
+// Function to manually check for toot URL
 function force_check_mastodon_toot($post_id)
 {
     $transient_key = "mastodon_toot_checked_" . $post_id;
@@ -815,120 +791,11 @@ function force_check_mastodon_toot($post_id)
     $retry_seconds = $post_age_days < 1 ? HOUR_IN_SECONDS : 12 * HOUR_IN_SECONDS;
     set_transient($transient_key, "not_found", $retry_seconds);
     return false;
-} // Sort Photos category by date
-function sort_photos_category_by_date($query)
-{
-    if (!is_admin() && $query->is_main_query() && is_category("photos")) {
-        $query->set("orderby", "date");
-        $query->set("order", "DESC");
-        $query->set("posts_per_page", -1); // display all posts
-    }
-}
-add_action("pre_get_posts", "sort_photos_category_by_date"); // Photos Ajax handler
-add_action("wp_ajax_load_more_photos", "load_more_photos_callback");
-add_action("wp_ajax_nopriv_load_more_photos", "load_more_photos_callback");
-function load_more_photos_callback()
-{
-    // Validate and sanitize inputs
-    $offset = isset($_POST["offset"]) ? intval($_POST["offset"]) : 0;
-    $year = isset($_POST["year"]) ? intval($_POST["year"]) : 0;
-    $posts_per_page = 6;
-    $args = [
-        "post_type" => "post",
-        "posts_per_page" => $posts_per_page,
-        "offset" => $offset,
-        "category_name" => "photos",
-        "date_query" => [
-            [
-                "year" => $year,
-            ],
-        ],
-        "orderby" => "date",
-        "order" => "DESC",
-    ];
-    $query = new WP_Query($args);
-    ob_start();
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            get_template_part("template-parts/photo", "card");
-        }
-    }
-    wp_reset_postdata();
-    $html = ob_get_clean();
-    wp_send_json_success($html);
-    wp_die();
-} // Deactivate wptexturize
-add_filter("run_wptexturize", "__return_false");
-// Custom title function
-function lcp_custom_title()
-{
-    if (is_front_page() || is_home()) {
-        return "Blog - Luis Carlos Pando";
-    } elseif (is_singular()) {
-        return single_post_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_category()) {
-        return single_cat_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_tag()) {
-        return single_tag_title("", false) . " - Luis Carlos Pando";
-    } elseif (is_author()) {
-        return "Archivos del blog - Luis Carlos Pando";
-    } elseif (is_date()) {
-        if (is_year()) {
-            return get_the_date("Y") . " - Luis Carlos Pando";
-        } elseif (is_month()) {
-            return get_the_date("F Y") . " - Luis Carlos Pando";
-        } elseif (is_day()) {
-            return get_the_date("j F Y") . " - Luis Carlos Pando";
-        }
-    } elseif (is_search()) {
-        return 'Resultados de búsqueda para "' .
-            get_search_query() .
-            '" - Luis Carlos Pando';
-    } elseif (is_404()) {
-        return "Página no encontrada - Luis Carlos Pando";
-    } elseif (is_archive()) {
-        return post_type_archive_title("", false) . " - Luis Carlos Pando";
-    } else {
-        return wp_title("", false, "right") . " - Luis Carlos Pando";
-    }
-} // archive.php title
-function lcp_archive_title()
-{
-    if (is_date()) {
-        if (is_year()) {
-            return "Archivos (" . get_the_date("Y") . ")";
-        } elseif (is_month()) {
-            return "Archivos (" . get_the_date("F Y") . ")";
-        } elseif (is_day()) {
-            return "Archivos (" . get_the_date("j F Y") . ")";
-        }
-    } else {
-        return __("Archivos", "html5blank");
-    }
 }
 
-// Remove spaces from wp_tag_cloud()
-add_filter('wp_tag_cloud', function($output) {
-    return preg_replace_callback(
-        '/(<a[^>]*>)([^<]+)(<\/a>)/',
-        function($matches) {
-            $text_without_spaces = str_replace(' ', '', $matches[2]);
-            return $matches[1] . $text_without_spaces . $matches[3];
-        },
-        $output
-    );
-});
-
-// Load styles for editor
-add_action('enqueue_block_editor_assets', function () {
-    wp_enqueue_style(
-        'lcp-editor',
-        get_template_directory_uri() . '/editor.css',
-        [],
-        '1.0'
-    );
-});
+/*------------------------------------*\
+	Webring
+\*------------------------------------*/
 
 // Fetch blogblog.es webring participants (excluding our own site), cached to avoid hammering blogblog.es on every page load
 function get_blogblog_webring_others()
@@ -972,6 +839,26 @@ function get_blogblog_webring_others()
     set_transient($cache_key, $fallback, 15 * MINUTE_IN_SECONDS);
     return $fallback;
 }
+
+/*------------------------------------*\
+	RSS Feed
+\*------------------------------------*/
+
+// RSS text after every item
+function add_rss_footer_text($content)
+{
+    if (is_feed()) {
+        $footer_text =
+            "<hr>" .
+            '<p>Gracias por suscribirte a mi <a href="https://luiscarlospando.com/">blog</a>.</p>' .
+            '<p>Si disfrutas lo que hago, puedes <a href="https://buymeacoffee.com/luiscarlospando">comprarme un café</a> si te nace. ☕ ' .
+            'También me puedes apoyar siguiéndome en <a href="https://social.lol/@mijo">Mastodon</a> y/o en <a href="https://bsky.app/profile/luiscarlospando.com">Bluesky</a>.</p>' .
+            "<p>¡Nos vemos en la próxima! 👋</p>";
+        $content .= $footer_text;
+    }
+    return $content;
+}
+add_filter("the_content_feed", "add_rss_footer_text");
 
 /*------------------------------------*\
 	Reply Context (IndieWeb)
@@ -1099,7 +986,6 @@ function fetch_reply_context($url)
 // When a post is marked as a reply, auto-fill reply_title / reply_author from
 // reply_url — but only the fields the author left empty, never overwriting a
 // manual edit. Runs after ACF's own save so the fresh field values are there to read.
-add_action("acf/save_post", "fill_reply_context_from_url", 20);
 function fill_reply_context_from_url($post_id)
 {
     if (get_post_type($post_id) !== "post") {
@@ -1140,6 +1026,7 @@ function fill_reply_context_from_url($post_id)
         update_field("reply_context", $reply_context, $post_id);
     }
 }
+add_action("acf/save_post", "fill_reply_context_from_url", 20);
 
 // Expose reply_context in the REST API — it's not there by default, and even
 // with ACF's "Show in REST" it would come nested under `acf`, not top-level.
