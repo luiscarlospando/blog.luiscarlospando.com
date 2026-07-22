@@ -682,7 +682,13 @@ function get_meta_image()
         }
     }
     return $default_image;
-} // RSS text after every item
+} // Allow the Jetpack Markdown block to contribute to auto-generated excerpts (RSS description, etc.)
+function allow_jetpack_markdown_in_excerpt($allowed_blocks)
+{
+    $allowed_blocks[] = "jetpack/markdown";
+    return $allowed_blocks;
+}
+add_filter("excerpt_allowed_blocks", "allow_jetpack_markdown_in_excerpt"); // RSS text after every item
 function add_rss_footer_text($content)
 {
     if (is_feed()) {
