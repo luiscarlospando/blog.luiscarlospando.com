@@ -94,6 +94,9 @@
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
         "name",
     ); ?> - Crucial Tracks" href="https://app.crucialtracks.org/profile/mijo/feed" />
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
+        "name",
+    ); ?> - Canciones favoritas" href="https://luiscarlospando.com/api/loved-tracks" />
     <link rel="author" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/humans.txt" />
     <link rel="human-json" href="https://<?php include "template-parts/site-domain.php"; ?>/.well-known/human.json">
     <link rel="icon" type="image/png" href="https://<?php include "template-parts/site-domain.php"; ?>/favicon-96x96.png" sizes="96x96" />
