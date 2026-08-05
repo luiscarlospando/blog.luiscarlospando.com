@@ -108,7 +108,7 @@
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						 Coméntame por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo</a> o respóndeme en  <?php include "template-parts/fetched-toot-link.php"; ?>. Para otros temas <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> contáctame aquí</a> o en <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						 Coméntame por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo</a> o respóndeme en <?php include "template-parts/fetched-toot-link.php"; ?>. ¿Algo que no tenga que ver con este post? Pásate a mi página de <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame en <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
