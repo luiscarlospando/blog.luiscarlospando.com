@@ -131,6 +131,8 @@
                        	<div class="card-body">
                             <p>Lee más en el <a class="btn btn-primary btn-sm" href="https://blog.<?php include "template-parts/site-domain.php"; ?>/"><i class="fa-solid fa-message"></i> Blog</a>, revisa en qué ando <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/now/"><i class="fa-solid fa-clock"></i> Now</a>, o déjame un saludo en el <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/guestbook/"><i class="fa-solid fa-pen-nib"></i> Guestbook</a>.</p>
 
+                            <p>Más maneras de apoyarme:</p>
+
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
                                     <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/support/">
