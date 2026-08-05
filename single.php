@@ -108,7 +108,7 @@
 					</ul>
 
 					<div class="comments-disclaimer mb-4">
-						 Envíame tu comentario por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo electrónico</a>. También puedes contestarme en <?php include "template-parts/fetched-toot-link.php"; ?>. Si quieres decirme algo que no tenga nada que ver con este post entonces ve a mi <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> página de contacto</a> o contáctame vía <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
+						 Coméntame por <a href="mailto:hey@luiscarlospando.com?subject=Re:%20<?php the_title(); ?>"><i class="fa-solid fa-envelope"></i> correo</a> o respóndeme en  <?php include "template-parts/fetched-toot-link.php"; ?>. Para otros temas <a href="https://<?php include "template-parts/site-domain.php"; ?>/contact"><i class="fa-solid fa-address-card"></i> contáctame aquí</a> o en <a href="https://discordapp.com/users/86571896581132288/" rel="me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>.
 					</div>
 
 					<div id="webmentions-comments-subtitle"></div>
@@ -129,43 +129,44 @@
 
 					<div class="share-post card text-center mb-4">
                        	<div class="card-body">
-                            <p>Entonces te invito a leer más posts del <a class="btn btn-primary btn-sm" href="https://blog.<?php include "template-parts/site-domain.php"; ?>/"><i class="fa-solid fa-file-pen"></i> Blog</a>, o a checar mi <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/now/"><i class="fa-solid fa-clock"></i> Now</a> para saber en qué ando, o a pasar a dejarme un saludo en mi <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/guestbook/"><i class="fa-solid fa-file-signature"></i> Guestbook</a>.</p>
+                            <p>Lee más en el <a class="btn btn-primary btn-sm" href="https://blog.<?php include "template-parts/site-domain.php"; ?>/"><i class="fa-solid fa-message"></i> Blog</a>,revisa en qué ando <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/now/"><i class="fa-solid fa-clock"></i> Now</a>, o déjame un saludos en el <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/guestbook/"><i class="fa-solid fa-pen-nib"></i> Guestbook</a>.</p>
 
                             <br>
 
-                            <p>También me puedes apoyar
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/support/">
-                                <i class="fa-solid fa-mug-hot"></i> Comprándome un café
-                            </a>,
-
-                            <?php if (
-                                $mastodon = get_field("mastodon", "option")
-                            ): ?>
-                                siguiéndome en
-                                <a class="btn btn-primary btn-sm" href="<?= esc_url(
-                                    $mastodon,
-                                ) ?>" rel="me" target="_blank">
-                                    <i class="fa-brands fa-mastodon"></i> Mastodon
-                                </a>
-                            <?php endif; ?>
-
-                            <?php if (
-                                $bluesky = get_field("bluesky", "option")
-                            ): ?>
-                                <?= $mastodon
-                                    ? " y/o en "
-                                    : "siguiéndome en " ?>
-                                <a class="btn btn-primary btn-sm" href="<?= esc_url(
-                                    $bluesky,
-                                ) ?>" rel="me" target="_blank">
-                                    <i class="fa-brands fa-bluesky"></i> Bluesky
-                                </a>
-                            <?php endif; ?>
-
-                            o
-                            <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/">
-                                <i class="fas fa-rss"></i> Suscribiéndote
-                            </a> a mi sitio.</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/support/">
+                                        <i class="fa-solid fa-mug-hot"></i> Cómprame un café
+                                    </a>
+                                </li>
+                                <?php if (
+                                    $mastodon = get_field("mastodon", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-primary btn-sm" href="<?= esc_url(
+                                            $mastodon,
+                                        ) ?>" rel="me" target="_blank">
+                                            <i class="fa-brands fa-mastodon"></i> Sígueme en Mastodon
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if (
+                                    $bluesky = get_field("bluesky", "option")
+                                ): ?>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-primary btn-sm" href="<?= esc_url(
+                                            $bluesky,
+                                        ) ?>" rel="me" target="_blank">
+                                            <i class="fa-brands fa-bluesky"></i> Sígueme en Bluesky
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary btn-sm" href="https://<?php include "template-parts/site-domain.php"; ?>/subscribe/">
+                                        <i class="fas fa-rss"></i> Suscríbete por RSS
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 					</div>
 					<!-- /support me -->
