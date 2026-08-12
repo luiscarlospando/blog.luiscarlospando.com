@@ -88,7 +88,7 @@
 						</li>
 					</ul>
 
-					<button class="btn btn-primary tinylytics_kudos"></button>
+					<button class="btn btn-primary mb-3 tinylytics_kudos"></button>
 
 					<div id="webmentions-likes-subtitle"></div>
 
@@ -100,7 +100,7 @@
 					<!-- /likes & boosts -->
 
 					<!-- comments - replies -->
-					<ul class="comments-title list-inline">
+					<ul id="comments-title" class="list-inline">
 	                    <li class="list-inline-item">
 							<h2><i class="fa-solid fa-comment"></i> Comentarios</h2>
 						</li>
