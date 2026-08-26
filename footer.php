@@ -370,9 +370,14 @@
         dayjs.locale('es');
 
         // Decodificar entidades HTML (fix para emojis)
+        // y marcar como UGC cualquier enlace que la persona haya incluido en su respuesta
         function decodeHtml(html) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
+            doc.body.querySelectorAll('a').forEach(a => {
+                a.setAttribute('rel', 'ugc nofollow noopener noreferrer');
+                a.setAttribute('target', '_blank');
+            });
             return doc.body.innerHTML;
         }
 
@@ -397,7 +402,7 @@
                         const author = data.children[i].author;
                         likesHtml += `
                             <li class="list-inline-item">
-                                <a href="${author.url}" target="_blank" rel="noopener noreferrer">
+                                <a href="${author.url}" target="_blank" rel="ugc nofollow noopener noreferrer">
                                     <img class="user-thumbnail rounded-circle" src="${author.photo}" alt="Avatar de ${author.name}" loading="lazy" width="48" height="48" />
                                 </a>
                             </li>
@@ -430,7 +435,7 @@
                         const author = data.children[i].author;
                         boostsHtml += `
                             <li class="list-inline-item">
-                                <a href="${author.url}" target="_blank" rel="noopener noreferrer">
+                                <a href="${author.url}" target="_blank" rel="ugc nofollow noopener noreferrer">
                                     <img class="user-thumbnail rounded-circle" src="${author.photo}" alt="Avatar de ${author.name}" loading="lazy" width="48" height="48" />
                                 </a>
                             </li>
@@ -493,7 +498,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-3 col-md-2 my-md-auto text-center">
-                                            <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">
+                                            <a href="${authorUrl}" target="_blank" rel="ugc nofollow noopener noreferrer">
                                                 <img src="${authorPhoto}"
                                                      alt="Avatar de ${authorName}"
                                                      class="rounded-circle img-fluid"
@@ -505,7 +510,7 @@
                                             <div class="reply-content">
                                                 <div class="reply-header mb-2">
                                                     <strong>
-                                                        <a href="${authorUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
+                                                        <a href="${authorUrl}" target="_blank" rel="ugc nofollow noopener noreferrer">${authorName}</a>
                                                     </strong>
                                                     <span class="text-muted">${authorHandle}</span>
                                                 </div>
@@ -522,7 +527,7 @@
                                                                 ·
                                                             </li>
                                                             <li class="list-inline-item">
-                                                                <a href="${commentUrl}" target="_blank" rel="noopener noreferrer">
+                                                                <a href="${commentUrl}" target="_blank" rel="ugc nofollow noopener noreferrer">
                                                                     <em><i class="fa-solid fa-reply"></i> Responder</em>
                                                                 </a>
                                                             </li>
