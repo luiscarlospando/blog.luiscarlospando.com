@@ -358,16 +358,16 @@
     <?php wp_footer(); ?>
 
     <?php if (is_single()): ?>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://unpkg.com/dayjs@1/locale/es.js"></script>
-
     <script>
+        // dayjs (con locale es-mx y el plugin de tiempo relativo ya configurados)
+        // se expone en window desde assets/src/webmentions.js, parte del bundle
+        // "app" que ya se carga en este footer — así evitamos cargarlo aparte.
+        const dayjs = window.dayjs;
+
         // API endpoints
         const likesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=like-of";
         const boostsEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=repost-of";
         const repliesEndpoint = "https://justcors.com/l_zoyat40jyqi/https://webmention.io/api/mentions.jf2?target=<?php the_permalink(); ?>&wm-property=in-reply-to";
-
-        dayjs.locale('es');
 
         // Decodificar entidades HTML (fix para emojis)
         // y marcar como UGC cualquier enlace que la persona haya incluido en su respuesta
@@ -521,10 +521,13 @@
                             ? (rawHandle.startsWith('@') ? rawHandle : '@' + rawHandle)
                             : '';
 
-                        // Formato legible y datetime en ISO
+                        // Hora relativa y datetime en ISO
                         const publishedISO = comment.published || '';
-                        const publishedFormatted = comment.published
-                            ? dayjs(comment.published).format('D MMMM YYYY, h:mm A')
+                        const publishedDate = comment.published
+                            ? dayjs(comment.published)
+                            : null;
+                        const publishedRelative = publishedDate
+                            ? dayjs().to(publishedDate)
                             : 'Fecha desconocida';
 
                         commentsHtml += `
@@ -556,7 +559,7 @@
                                                     <small class="text-muted">
                                                         <ul class="list-inline mb-0">
                                                             <li class="list-inline-item">
-                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedFormatted}</em></time>
+                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedRelative}</em></time>
                                                             </li>
                                                             <li class="list-inline-item">
                                                                 ·
