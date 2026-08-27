@@ -447,6 +447,41 @@
             .catch(error => console.error('Error fetching boosts:', error));
         }
 
+        // Construye el HTML de imágenes/gifs adjuntos a una respuesta (jf2 "photo"/"video")
+        function buildAttachmentsHtml(comment) {
+            const photos = Array.isArray(comment.photo)
+                ? comment.photo
+                : (comment.photo ? [comment.photo] : []);
+            const videos = Array.isArray(comment.video)
+                ? comment.video
+                : (comment.video ? [comment.video] : []);
+
+            if (photos.length === 0 && videos.length === 0) return '';
+
+            let attachmentsHtml = '<div class="reply-attachments mb-2">';
+
+            photos.forEach(photoUrl => {
+                const src = typeof photoUrl === 'string' ? photoUrl : photoUrl?.value;
+                if (!src) return;
+                attachmentsHtml += `
+                    <a href="${src}" target="_blank" rel="ugc nofollow noopener noreferrer">
+                        <img src="${src}" alt="Imagen adjunta" class="img-fluid rounded mb-2" style="max-height: 300px;" loading="lazy">
+                    </a>`;
+            });
+
+            videos.forEach(videoUrl => {
+                const src = typeof videoUrl === 'string' ? videoUrl : videoUrl?.value;
+                if (!src) return;
+                attachmentsHtml += `
+                    <video class="img-fluid rounded mb-2" style="max-height: 300px;" autoplay muted loop playsinline controls>
+                        <source src="${src}">
+                    </video>`;
+            });
+
+            attachmentsHtml += '</div>';
+            return attachmentsHtml;
+        }
+
         // Replies
         function showReplies() {
             fetch(repliesEndpoint, {
@@ -475,7 +510,8 @@
                         const contentHtml = comment.content?.html || '';
                         const contentText = comment.content?.text || '';
                         const contentRaw = decodeHtml(contentHtml || contentText).replace(/\?{2,}/g, '').trim();
-                        if (contentRaw.trim() === '') continue;
+                        const attachmentsHtml = buildAttachmentsHtml(comment);
+                        if (contentRaw.trim() === '' && attachmentsHtml === '') continue;
 
                         const commentUrl = comment.url || '#';
 
@@ -515,6 +551,7 @@
                                                     <span class="text-muted">${authorHandle}</span>
                                                 </div>
                                                 <div class="reply-text mb-2">
+                                                    ${attachmentsHtml}
                                                     <div style="white-space: pre-wrap;">${contentRaw}</div>
                                                 </div>
                                                 <div class="reply-footer">
