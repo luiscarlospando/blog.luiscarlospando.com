@@ -464,9 +464,7 @@
                 const src = typeof photoUrl === 'string' ? photoUrl : photoUrl?.value;
                 if (!src) return;
                 attachmentsHtml += `
-                    <a href="${src}" target="_blank" rel="ugc nofollow noopener noreferrer">
-                        <img src="${src}" alt="Imagen adjunta" class="img-fluid rounded mb-2" style="max-height: 300px;" loading="lazy">
-                    </a>`;
+                    <img src="${src}" alt="Imagen adjunta" class="img-fluid rounded mb-2 reply-attachment-img" style="max-height: 300px; cursor: pointer;" loading="lazy">`;
             });
 
             videos.forEach(videoUrl => {
