@@ -557,19 +557,11 @@
                                                 </div>
                                                 <div class="reply-footer">
                                                     <small class="text-muted">
-                                                        <ul class="list-inline mb-0">
-                                                            <li class="list-inline-item">
-                                                                <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedRelative}</em></time>
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                ·
-                                                            </li>
-                                                            <li class="list-inline-item">
-                                                                <a href="${commentUrl}" target="_blank" rel="ugc nofollow noopener noreferrer">
-                                                                    <em><i class="fa-solid fa-reply"></i> Responder</em>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
+                                                        <time datetime="${publishedISO}"><em><i class="fa-solid fa-clock"></i> ${publishedRelative}</em></time>
+                                                        ·
+                                                        <a href="${commentUrl}" target="_blank" rel="ugc nofollow noopener noreferrer">
+                                                            <em><i class="fa-solid fa-reply"></i> Responder</em>
+                                                        </a>
                                                     </small>
                                                 </div>
                                             </div>
