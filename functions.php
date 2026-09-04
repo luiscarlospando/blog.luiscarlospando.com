@@ -16,6 +16,11 @@ if (!isset($content_width)) {
 if (function_exists("add_theme_support")) {
     add_theme_support("menus");
 
+    // Lets the block editor's alignment toolbar offer "Wide"/"Full width" for
+    // images (emits alignwide/alignfull) and exempts them from the
+    // $content_width=900 cap that otherwise limits full-size inserted images.
+    add_theme_support("align-wide");
+
     add_theme_support("post-thumbnails");
     add_image_size("large", 700, "", true); // Large Thumbnail
     add_image_size("medium", 250, "", true); // Medium Thumbnail
