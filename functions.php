@@ -67,15 +67,6 @@ function html5blank_header_scripts()
         wp_enqueue_script("clipboardjs"); // Enqueue it!
 
         wp_register_script(
-            "luxon",
-            "https://luiscarlospando.com/assets/js/luxon.js",
-            [],
-            null,
-            true,
-        ); // Luxon.js
-        wp_enqueue_script("luxon"); // Enqueue it!
-
-        wp_register_script(
             "app",
             "https://luiscarlospando.com/assets/dist/app.bundle.js",
             [],
