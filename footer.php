@@ -226,13 +226,13 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item mb-2 mb-lg-0">
-                                            <a rel="noreferer noopener" href="https://echofeed.app/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/powered-by-echofeed-orange-large.svg" alt="Powered by EchoFeed" />
+                                            <a rel="noopener" href="https://blogblog.es/" target="_blank">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a rel="noopener" href="https://blogblog.es/" target="_blank">
-                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/blogblog.webp" alt="¡Blog!¡Blog!" />
+                                            <a rel="noopener" href="https://bubbles.town/source/luiscarlospando.com" target="_blank">
+                                                <img class="web-badge" width="88" height="31" src="https://<?php include "template-parts/site-domain.php"; ?>/assets/images/buttons/bubbles_88x31.png" alt="Bubbles" />
                                             </a>
                                         </li>
                                     </ul>
