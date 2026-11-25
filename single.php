@@ -82,16 +82,20 @@
 					<!-- /separator -->
 
 					<!-- likes & boosts -->
-					<ul class="list-inline">
+					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
 							<h3 class="mt-0"><i class="fa-solid fa-heart"></i> Likes</h3>
+						</li>
+					</ul>
+
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<button class="btn btn-primary mb-3 tinylytics_kudos"></button>
 						</li>
 						<li class="list-inline-item mb-0">
 						    <div class="bubbles-vote"></div>
 						</li>
 					</ul>
-
-					<button class="btn btn-primary mb-3 tinylytics_kudos"></button>
 
 					<div id="webmentions-likes-subtitle"></div>
 
