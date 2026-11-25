@@ -626,5 +626,8 @@
 
     <!-- Tinylytics -->
     <script src="https://tinylytics.app/embed/r9xjks1Y65hJnkRx9b8S.js?kudos=❤️&webring=avatars" async defer></script>
+
+    <!-- Bubbles -->
+    <script src="https://bubbles.town/vote.js" defer></script>
 </body>
 </html>

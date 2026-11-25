@@ -82,9 +82,12 @@
 					<!-- /separator -->
 
 					<!-- likes & boosts -->
-					<ul class="list-inline mb-0">
+					<ul class="list-inline">
 						<li class="list-inline-item">
 							<h3 class="mt-0"><i class="fa-solid fa-heart"></i> Likes</h3>
+						</li>
+						<li class="list-inline mb-0">
+						    <div class="bubbles-vote"></div>
 						</li>
 					</ul>
 
