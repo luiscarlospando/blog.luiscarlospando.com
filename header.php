@@ -77,6 +77,7 @@
     <meta name="theme-color" content="#0e0f34" />
     <meta name="color-scheme" content="dark" />
     <meta name="supported-color-schemes" content="dark" />
+    <meta name="bubbles:fediverse" content="@mijo@social.lol">
 
     <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(
